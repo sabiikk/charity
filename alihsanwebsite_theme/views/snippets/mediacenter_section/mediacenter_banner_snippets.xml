@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="mediacenter_banner_section" name="Media Center Banner Section">
+        <section class="mc-sec s_mc_banner pt16 pb0">
+            <div class="container">
+                <div class="mc-banner mc-fade">
+                    <div class="pj-crumb" role="navigation" aria-label="Breadcrumb"><a href="/"><span>Home</span></a><i>/</i><span>Media Center</span></div>
+                    <div class="pj-eyebrow"><i></i><span>MEDIA CENTER</span></div>
+                    <h1>Media Center</h1>
+                    <p>News, photos, videos and events — everything from Al Ihsan in one place.</p>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

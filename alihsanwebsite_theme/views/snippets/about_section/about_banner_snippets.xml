@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="about_banner_section" name="About Banner Section">
+        <section class="ab-sec s_ab_banner pt16 pb40" aria-label="About Al Ihsan">
+            <div class="container">
+                <div class="ab-banner">
+                    <img src="/alihsanwebsite_theme/static/src/img/news.jpg" alt="" loading="eager"/>
+                    <span class="ab-badge">Since 1990</span>
+                    <div class="ab-bin">
+                        <nav class="pj-crumb" aria-label="Breadcrumb">
+                            <a href="/"><span>Home</span></a>
+                            <i>/</i>
+                            <span>About Us</span>
+                        </nav>
+                        <span class="ab-eye">ABOUT AL IHSAN</span>
+                        <h1>Good that lives on, <em>since 1990</em></h1>
+                        <p>Al Ihsan Charity Association — a pioneer of humanitarian and charitable work in Ajman and the UAE.</p>
+                        <div class="ab-bbtn">
+                            <a class="ab-b1" href="/shop">Donate now</a>
+                            <a class="ab-b2" href="#story">Read our story</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

@@ -1,0 +1,56 @@
+/* ==========================================================
+   Sponsorship snippets — converted from "Al Ihsan web 7/sponsorship.html"
+   ========================================================== */
+
+/* ---------- base: restore the static site's globals inside our sections ---------- */
+.spn-sec{--spn-ff:'Plus Jakarta Sans','IBM Plex Sans Arabic','Noto Sans Arabic',system-ui,-apple-system,'Segoe UI',sans-serif;font-family:var(--spn-ff);color:#173b32;font-size:16px;line-height:normal;-webkit-font-smoothing:antialiased}
+html[lang^=ar] .spn-sec{--spn-ff:'IBM Plex Sans Arabic','Plus Jakarta Sans','Noto Sans Arabic',system-ui,sans-serif}
+.spn-sec *{box-sizing:border-box}
+.spn-sec *:not(em){font-family:inherit}
+.spn-sec>.container{max-width:1240px;padding-inline:20px}
+.spn-sec h1,.spn-sec h3{color:inherit;margin:0;line-height:normal;letter-spacing:-.02em}
+.spn-sec a{color:inherit;text-decoration:none}
+.spn-sec svg{flex-shrink:0}
+[dir=rtl] .spn-sec h1,[dir=rtl] .spn-sec h3{letter-spacing:0}
+
+/* ---------- 1. banner: breadcrumb + title as one mint card ---------- */
+.sp-bc{position:relative;z-index:1;display:flex;align-items:center;flex-wrap:wrap;gap:8px;row-gap:4px;margin:0;padding:26px 34px 0;border-radius:24px 24px 0 0;background:linear-gradient(110deg,#eaf5ef,#f7fbf9 70%);font-size:13px;font-weight:600;color:#6a7872;overflow:hidden}
+.sp-bc a,.sp-bc b{white-space:nowrap}
+.spn-sec .sp-bc a:hover{color:#00705a}
+.sp-bc i{font-style:normal;opacity:.5}
+.sp-bc b{color:#00793f;font-weight:700}
+.spn-sec .sp-title{position:relative;overflow:hidden;margin:0 0 26px;padding-block:12px 30px;padding-inline:52px 34px;border-radius:0 0 24px 24px;background:linear-gradient(110deg,#eaf5ef,#f7fbf9 70%);font-size:clamp(30px,4vw,46px);font-weight:800;letter-spacing:-1px;line-height:1.15;color:#0b2a21}
+.sp-title:before{content:'';position:absolute;inset-inline-start:34px;top:18px;bottom:36px;width:6px;border-radius:6px;background:linear-gradient(180deg,#00a251,#d9b564)}
+.sp-title:after{content:'';position:absolute;inset-inline-end:-60px;top:-150px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,#00a25126 0 30%,#00a2511a 30% 55%,#00a25110 55% 100%);pointer-events:none}
+
+/* ---------- 2. tabs + cards ---------- */
+.sp-tabs{display:flex;gap:6px;margin:0 0 30px;padding:8px;border-radius:20px;background:#e6f0ed;width:fit-content;max-width:100%;overflow-x:auto;scrollbar-width:none}
+.sp-tabs::-webkit-scrollbar{display:none}
+.sp-tab{flex:none;border:0;background:transparent;padding:11px 24px;border-radius:14px;font:inherit;font-weight:600;font-size:15px;color:#35514a;cursor:pointer;transition:background .25s,color .25s}
+.sp-tab:hover{color:#00793f}
+.sp-tab.selected{background:linear-gradient(135deg,#00a251,#00793f);color:#fff;box-shadow:0 6px 14px #00793f44}
+.sp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.sp-card{display:flex;flex-direction:column;overflow:hidden;border:1px solid #e1ece5;border-radius:18px;background:#fff;transition:transform .3s,box-shadow .3s}
+.sp-card:hover{transform:translateY(-6px);box-shadow:0 18px 32px -16px #0e3a2a40}
+.sp-img{display:block;aspect-ratio:16/10;overflow:hidden;background:#eef2ec}
+.sp-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.sp-card:hover .sp-img img{transform:scale(1.05)}
+.sp-body{display:flex;flex-direction:column;gap:14px;padding:22px 22px 20px}
+.spn-sec .sp-body h3{margin:0;font-size:22px;font-weight:600;letter-spacing:-.3px;color:#101a17}
+.sp-amt{display:flex;align-items:center;gap:8px;margin:0;font-size:14px;color:#6a7872}
+.sp-amt svg{width:18px;height:18px;color:#00793f}
+.sp-amt b{color:#101a17;font-weight:600}
+.sp-foot{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:10px}
+.spn-sec .sp-terms{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:#c9960c}
+.sp-terms svg{width:15px;height:15px}
+.spn-sec .sp-terms:hover{color:#c9960c;text-decoration:underline}
+.spn-sec .sp-sub{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:150px;height:42px;padding:0 20px;border-radius:10px;background:linear-gradient(135deg,#00a251,#00793f);color:#fff;font-weight:700;font-size:14px;box-shadow:0 8px 16px -8px #00793f99;transition:transform .2s,box-shadow .2s}
+.spn-sec .sp-sub:hover{color:#fff;transform:translateY(-2px);box-shadow:0 12px 20px -8px #00793fbb}
+.sp-sub svg{width:16px;height:16px}
+/* diagonal arrow slides out and back on hover */
+.sp-sub:hover svg{animation:spnArrowDiag .7s cubic-bezier(.22,.7,.2,1) both}
+@keyframes spnArrowDiag{0%{translate:0 0;opacity:1}42%{translate:10px -10px;opacity:0}43%{translate:-10px 10px;opacity:0}100%{translate:0 0;opacity:1}}
+@media(max-width:1000px){.sp-grid{grid-template-columns:repeat(2,1fr);gap:22px}}
+@media(max-width:620px){.sp-grid{grid-template-columns:1fr}.sp-bc{padding:20px 20px 0}.spn-sec .sp-title{padding-block:10px 24px;padding-inline:38px 20px}.sp-title:before{inset-inline-start:20px}.spn-sec>.container{padding-inline:14px}}
+@media(hover:none){.sp-sub:hover svg{animation:none}}
+@media(prefers-reduced-motion:reduce){.sp-card,.sp-img img,.sp-sub,.sp-tab{transition:none}.sp-sub:hover svg{animation:none}}

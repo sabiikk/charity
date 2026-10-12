@@ -1,0 +1,41 @@
+/* "Projects with a personal story": dark green, glass panels, gold */
+#latest.latest{position:relative;overflow:hidden;border:0;color:#fff;background:radial-gradient(circle at 92% 0%,#0b7a5f66 0%,transparent 48%),linear-gradient(135deg,#06472e 0%,#04361f 100%)}
+#latest.latest:before{content:'';position:absolute;inset-inline-start:-90px;bottom:-110px;width:300px;height:300px;border-radius:50%;border:1.5px solid #d9b56438;box-shadow:0 0 0 30px #d9b5600d,0 0 0 60px #d9b56408;pointer-events:none}
+#latest .eyebrow{color:#d9b564}
+#latest h2{color:#fff}
+#latest .underlink{padding:11px 22px;border:1.5px solid #d9b564;border-radius:999px;color:#d9b564;text-decoration:none;transition:.25s}
+#latest .underlink:hover{background:#d9b564;color:#06472e}
+/* layout: content left, photo right */
+#latest .latest-layout{grid-template-columns:1.1fr .9fr;gap:34px}
+#latest .latest-panel{order:1}
+#latest .latest-visual{order:2;min-height:440px;border-radius:30px;border:1px solid #ffffff2e;box-shadow:0 30px 60px -28px #000a}
+#latest .latest-visual:after{background:linear-gradient(185deg,transparent 50%,#04361f99 100%)}
+#latest .latest-visual figcaption{transform:none;inset:auto 16px 16px;padding:20px 22px;border-radius:20px;background:#04361f8c;backdrop-filter:blur(12px);border:1px solid #ffffff2e}
+#latest .latest-visual .quote-mark{color:#d9b564;font-size:38px}
+#latest .latest-visual figcaption p{max-width:none;font-size:14.5px}
+/* tabs */
+#latest .latest-tabs{display:flex;width:100%;gap:6px;margin-top:0;padding:6px;border-radius:20px;background:#ffffff14;border:1px solid #ffffff26}
+#latest .latest-tabs button{flex:1;justify-content:center;padding:13px 10px;border-radius:14px;color:#ffffffc7;font-size:13.5px;font-weight:600;background:transparent}
+#latest .latest-tabs button svg{color:#ffffffb3}
+#latest .latest-tabs button:hover{background:#ffffff14;color:#fff}
+#latest .latest-tabs button.selected{background:#d9b564;color:#06472e;box-shadow:0 10px 20px -8px #d9b564aa}
+#latest .latest-tabs button.selected svg{color:#06472e}
+/* content card */
+#latest .latest-panel .recent-grid{margin-top:18px}
+#latest-host .empty-project{min-height:300px;justify-content:center;background:#ffffff0f;border:1px solid #ffffff26;border-radius:26px;box-shadow:none;backdrop-filter:blur(8px)}
+#latest-host .empty-icon{width:68px;height:68px;background:#d9b5642e;color:#f3dc9a;box-shadow:0 0 0 8px #d9b56414}
+#latest-host .empty-project h3{color:#fff;font-size:26px;letter-spacing:-.4px}
+#latest-host .empty-project p{color:#ffffffb8;font-size:15px}
+#latest-host .empty-project .btn{background:#d9b564;color:#06472e;border-radius:999px;padding:15px 30px;font-weight:800;box-shadow:0 14px 26px -10px #d9b564aa}
+#latest-host .empty-project .btn:hover{background:#f3dc9a;color:#06472e}
+#latest-host .saved-project{background:#ffffff0f;border:1px solid #ffffff26;color:#fff}
+#latest-host .saved-project h3,#latest-host .saved-meta strong{color:#fff}
+#latest-host .saved-project p,#latest-host .saved-meta span{color:#ffffffb3}
+#latest-host .saved-icon,#latest-host .badge-pill{background:#d9b5642e;color:#f3dc9a}
+#latest-host .saved-project .underlink{border:0;padding:0;color:#d9b564;text-decoration:underline}
+@media(max-width:1100px){
+  #latest .latest-layout{grid-template-columns:1fr;gap:22px}
+  #latest .latest-visual{order:1;min-height:260px;border-radius:24px}
+  #latest .latest-panel{order:2;background:none;border:0;padding:0}
+}
+@media(max-width:620px){#latest .latest-tabs{flex-direction:column}#latest .latest-visual figcaption{padding:16px}}

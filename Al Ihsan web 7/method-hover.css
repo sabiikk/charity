@@ -1,0 +1,42 @@
+/* Giving-method cards: cursor spotlight, 3D tilt, icon ring pulse, text slide */
+.donation-methods .method{--mx:50%;--my:50%;--rx:0deg;--ry:0deg}
+.method-glow{position:absolute;inset:0;z-index:0;pointer-events:none;border-radius:inherit;opacity:0;transition:opacity .35s ease;background:radial-gradient(240px circle at var(--mx) var(--my),#ffffff40,#ffffff12 45%,transparent 70%)}
+.donation-methods .method>*:not(.method-glow):not(.method-photo):not(.hv-shine):not(.method-number):not(.method-arrow){position:relative;z-index:1}
+.donation-methods .method:hover .method-glow{opacity:1}
+@media(hover:hover) and (pointer:fine){
+  .donation-methods.motion-ready.is-visible .method:hover,.donation-methods .method:hover{transform:perspective(900px) translateY(-7px) rotateX(var(--rx)) rotateY(var(--ry)) scale(1.015);transition:transform .18s ease-out,box-shadow .35s ease,filter .35s ease;box-shadow:0 22px 40px -12px #0d553355}
+  .donation-methods.motion-ready.is-visible .method.is-leaving{transition:transform .5s cubic-bezier(.2,.75,.2,1),box-shadow .35s ease}
+}
+.donation-methods .method:active{transform:scale(.985)!important;transition:transform .12s ease!important}
+/* icon: pulse ring */
+.donation-methods .method-icon{position:relative}
+.donation-methods .method-icon:after{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid #ffffff99;opacity:0;pointer-events:none}
+.donation-methods .method:hover .method-icon:after{animation:method-ring 1.2s ease-out infinite}
+.donation-methods .method:hover .method-icon svg{animation:method-wiggle .7s ease both}
+@keyframes method-ring{0%{transform:scale(1);opacity:.9}100%{transform:scale(1.7);opacity:0}}
+@keyframes method-wiggle{0%,100%{transform:rotate(0)}25%{transform:rotate(-12deg) scale(1.1)}60%{transform:rotate(8deg) scale(1.1)}}
+/* text slides, description brightens */
+.donation-methods .method h3,.donation-methods .method p{transition:transform .35s cubic-bezier(.2,.75,.2,1),color .3s,letter-spacing .35s}
+.donation-methods .method:hover h3{transform:translateX(6px)}
+.donation-methods .method:hover p{transform:translateX(6px);color:#fff}
+[dir=rtl] .donation-methods .method:hover h3,[dir=rtl] .donation-methods .method:hover p{transform:translateX(-6px)}
+.donation-methods .method-badge{transition:transform .3s,background .3s}
+.donation-methods .method:hover .method-badge{transform:translateX(6px);background:#ffffff45}
+/* number badge + dot pattern */
+.donation-methods .method-number{transition:transform .35s cubic-bezier(.2,.75,.2,1),background .3s}
+.donation-methods .method:hover .method-number{transform:translateY(-3px) scale(1.12);background:#ffffff40}
+/* arrow nudges diagonally */
+.donation-methods .method:hover .method-arrow svg{animation:method-nudge .9s ease-in-out infinite}
+@keyframes method-nudge{0%,100%{transform:translate(0,0)}50%{transform:translate(2px,-2px)}}
+.donation-methods .method:focus-visible{outline:3px solid #fff;outline-offset:-6px}
+@media(prefers-reduced-motion:reduce){.method-glow,.donation-methods .method *{animation:none!important}.donation-methods .method:hover{transform:none!important}}
+/* hover-fx.js already lifts .hv-card via `translate`; the tilt rule above handles the lift here */
+.donation-methods .method.hv-card:hover{translate:none}
+/* remove the dotted grid pattern */
+.donation-methods .method:not(.primary-method):after{display:none}
+.donation-methods .primary-method:after{background-image:linear-gradient(125deg,rgba(0,151,70,.92),rgba(0,122,61,.86) 55%,rgba(0,74,38,.95));background-size:100% 100%}
+.donation-methods .method>.method-number{z-index:1}
+/* Direct donation card: solid colour, no photo/overlay */
+.donation-methods .primary-method:after{display:none}
+.method-photo{display:none}
+.donation-methods .primary-method{background:#009746}

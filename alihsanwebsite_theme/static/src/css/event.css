@@ -1,0 +1,48 @@
+/* ==========================================================
+   Event snippets — converted from "Al Ihsan web 7/event.html".
+   Layout, search, year filter, pager come from image.css / image.js
+   (event sections use the same .gl-sec classes); this file adds the event-only rules.
+   ========================================================== */
+
+/* date + status badges on the card image */
+.ev-date{position:absolute;top:14px;inset-inline-start:14px;min-width:56px;padding:8px 10px;border-radius:12px;background:#fff;color:#10201a;text-align:center;line-height:1;box-shadow:0 6px 16px #0003}
+.ev-date b{display:block;font-size:24px;font-weight:800}
+.ev-date small{display:block;margin-top:4px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#00705a}
+.ev-status{position:absolute;top:14px;inset-inline-end:14px;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:700;background:#00705a;color:#fff}
+.ev-status:empty{display:none}/* filled by event.js; empty in the editor */
+.ev-status.past{background:#ffffffe6;color:#5b6a64}
+.ev-card .gl-img{cursor:pointer}
+.ev-card .gl-img:after{content:'';position:absolute;inset:0;background:linear-gradient(#0000 55%,#0000004d);pointer-events:none}
+.ev-loc{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:14px;color:#6a7872}
+.ev-loc svg{width:18px;height:18px;color:#00705a;flex:none}
+.gl-sec .ev-card h3{margin-top:8px}
+.ev-more{display:inline-flex;align-items:center;gap:8px;margin-top:14px;border:0;background:none;padding:0;font:inherit;font-size:16px;font-weight:700;color:#00705a;cursor:pointer}
+.ev-more svg{width:18px;height:18px;transition:transform .25s}
+.ev-more:hover svg{transform:translateX(5px)}
+[dir=rtl] .ev-more svg{transform:scaleX(-1)}
+[dir=rtl] .ev-more:hover svg{transform:scaleX(-1) translateX(5px)}
+
+/* description: only shown in the details pop-up — but editable in the website editor */
+.ev-d{display:none}
+.editor_enable .ev-d{display:block;margin:10px 0 0;padding:8px 10px;border:1px dashed #00a25166;border-radius:8px;font-size:14px;color:#5b6a64}
+
+/* All / Upcoming / Past inside the media toolbar */
+.gl-sec .mc-bar .nw-chips.ev-filter{flex:none;margin:0;padding:0;background:none;gap:6px;overflow:visible;flex-wrap:nowrap}
+.gl-sec .mc-bar .nw-chips.ev-filter .nw-chip{padding:8px 16px;font-size:13.5px;border:1.5px solid #dbe7e1;background:#fff;color:#35514a;cursor:pointer}
+.gl-sec .mc-bar .nw-chips.ev-filter .nw-chip.selected{background:#e6f4ec;color:#00793f;border-color:#00a251;box-shadow:none}
+@media(max-width:700px){.gl-sec .mc-bar .nw-chips.ev-filter{width:100%;overflow-x:auto}}
+
+/* details pop-up (built by event.js) */
+.ev-modal{display:grid;grid-template-columns:1fr 1fr;width:min(900px,92vw);max-height:88vh;overflow:auto;background:#fff;color:#173b32;border-radius:22px;box-shadow:0 30px 70px #0008}
+.gl-lb .ev-modal>img{width:100%;height:100%;min-height:320px;object-fit:cover}
+.ev-mb{position:relative;padding:34px;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.ev-mb .ev-status{position:static}
+.ev-mb h3{margin:0;font-size:26px;line-height:1.25;color:inherit}
+.ev-mb ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:15px;color:#33433d}
+.ev-mb li{display:flex;align-items:center;gap:10px}
+.ev-mb li svg{width:20px;height:20px;color:#00705a;flex:none}
+.ev-mb p{margin:0;color:#5b6a64;line-height:1.7}
+.ev-donate{display:inline-flex;align-items:center;gap:12px;margin-top:auto;height:50px;padding:0 24px;border-radius:999px;background:#0a6a55;color:#fff;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 12px 24px #0a6a5540;transition:.25s}
+.ev-donate:hover{background:#08553f;color:#fff;transform:translateY(-2px)}
+.ev-donate svg{width:20px;height:20px}
+@media(max-width:760px){.ev-modal{grid-template-columns:1fr}.gl-lb .ev-modal>img{min-height:0;aspect-ratio:16/9}}

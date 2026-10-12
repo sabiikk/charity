@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="about_vision_mission_section" name="About Vision Mission Section">
+        <section class="ab-sec s_ab_vm pt64 pb64">
+            <div class="container">
+                <div class="ab-vm">
+                    <div class="ab-card">
+                        <span class="ab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
+                        <h2>Our Vision</h2>
+                        <p>To be pioneers in providing humanitarian and charity deeds within UAE.</p>
+                    </div>
+                    <div class="ab-card dark">
+                        <span class="ab-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4h12l-2 4 2 4H5"/></svg></span>
+                        <h2>Our Mission</h2>
+                        <p>Providing financial, in-kind and health assistance to community individuals with low-income and qualifying them to be effective and sustainable.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

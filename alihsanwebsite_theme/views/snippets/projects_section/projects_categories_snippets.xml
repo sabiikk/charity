@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="projects_categories_section" name="Projects Categories Section">
+        <section class="mc-sec s_pj_categories pt64 pb88">
+            <div class="container">
+                <div class="mc-sec-head mc-fade">
+                    <h2>Explore our projects</h2>
+                    <p>Pick a category to jump in.</p>
+                </div>
+                <div class="mc-grid">
+                    <a class="mc-card mc-fade" href="/projects-campaigns?cat=endowment#pj-tabs" style="--d:0s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>Endowment Projects</h3>
+                        <p>Build a lasting endowment whose returns keep supporting families and good causes for generations.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+
+                    <a class="mc-card mc-fade" href="/projects-campaigns?cat=general#pj-tabs" style="--d:0.08s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>General Project</h3>
+                        <p>Support our everyday charitable work, from food and water to education and essential care.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+
+                    <a class="mc-card mc-fade" href="/projects-campaigns?cat=seasonal#pj-tabs" style="--d:0.16s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>Seasonal Projects</h3>
+                        <p>Give during Ramadan, Eid and Udhiyah seasons with projects that bring joy when it matters most.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+
+                    <a class="mc-card mc-fade" href="/projects-campaigns?cat=campaigns#pj-tabs" style="--d:0.24s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>Campaigns</h3>
+                        <p>Join our active campaigns and help reach urgent goals for communities in need.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+
+                    <a class="mc-card mc-fade" href="/projects-campaigns?cat=initiatives#pj-tabs" style="--d:0s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>Initiatives</h3>
+                        <p>Explore community initiatives that create new ways to spread kindness across the UAE.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+
+                    <a class="mc-card mc-fade" href="/projects-campaigns?cat=hospital#pj-tabs" style="--d:0.08s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>Al Safia Hospital</h3>
+                        <p>Help provide medical treatment, dialysis care and essential healthcare to patients in need.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+
+                    <a class="mc-card mc-fade" href="/projects-campaigns?cat=sponsor#pj-tabs" style="--d:0.16s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>Sponsorship</h3>
+                        <p>Sponsor orphans, families and students with monthly support that changes lives.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+
+                    <a class="mc-card mc-fade" href="/projects-campaigns" style="--d:0.24s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>All Projects</h3>
+                        <p>Browse every project and campaign in one place and choose where your giving goes.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

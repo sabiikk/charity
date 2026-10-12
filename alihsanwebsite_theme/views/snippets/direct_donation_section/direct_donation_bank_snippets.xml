@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="direct_donation_bank_section" name="Bank Donation Section">
+        <section class="dn-sec s_direct_donation_bank pt0 pb48" data-dn-panel="bank">
+            <div class="container">
+                <div class="dn-other"><div class="dn-info" data-panel="bank"><div class="sms-wrap"><div class="sms-card bk-card"><table class="sms-table bk-table"><thead><tr><th>S.No</th><th>Bank Name</th><th>Account Name</th><th>IBAN Number</th><th>Note</th><th/></tr></thead><tbody><tr style="--d:0.0s"><td data-l="S.No">01</td><td data-l="Bank Name"><span>ADIB</span></td><td data-l="Account Name"><span>Al Ihsan Charity Association (The Main Branch)</span></td><td data-l="IBAN Number" class="iban">AE480500000000017495970</td><td data-l="Note"/><td class="sms-act"><button type="button" class="bk-copy" data-copy="AE480500000000017495970"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><span>Copy</span></button></td></tr><tr style="--d:0.08s"><td data-l="S.No">02</td><td data-l="Bank Name"><span>Dubai Islamic Bank</span></td><td data-l="Account Name"><span>Al Ihsan Charity Association (General Charity)</span></td><td data-l="IBAN Number" class="iban">AE750240009520676777005</td><td data-l="Note"/><td class="sms-act"><button type="button" class="bk-copy" data-copy="AE750240009520676777005"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><span>Copy</span></button></td></tr></tbody></table></div><p class="bk-hint">Please confirm the account details before making a transfer.</p></div></div></div>
+            </div>
+        </section>
+    </template>
+</odoo>

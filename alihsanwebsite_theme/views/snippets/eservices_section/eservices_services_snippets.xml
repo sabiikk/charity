@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="eservices_services_section" name="E-Services Services Section">
+        <section class="mc-sec s_es_services pt64 pb88">
+            <div class="container">
+                <div class="mc-sec-head mc-fade">
+                    <h2>Choose a service</h2>
+                    <p>Pick a service to get started.</p>
+                </div>
+                <div class="mc-grid mc-grid-3">
+                    <a class="mc-card mc-fade" href="/aid-registration" style="--d:0s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>Aid Registration</h3>
+                        <p>Limited-income UAE citizens living in Ajman and Ras Al Khaimah can apply online for financial or in-kind aid.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+                    <a class="mc-card mc-fade" href="https://ramadanaman.com/intro.php" target="_blank" rel="noopener" style="--d:0.08s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>Ramadan Aman Portal</h3>
+                        <p>Register for Ramadan support programmes, including iftar meals and food baskets for families in need.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+                    <a class="mc-card mc-fade" href="https://docs.google.com/forms/d/e/1FAIpQLSdgJpBCncP6JgWGnspjG2m8OKPc8YfvROAaapin0b7bJZZ7Bg/viewform" target="_blank" rel="noopener" style="--d:0.16s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>Volunteer</h3>
+                        <p>Give your time and skills — join Al Ihsan volunteers at campaigns, distributions and community events.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

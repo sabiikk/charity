@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="donations_methods_section" name="Donations Methods Section">
+        <section class="mc-sec s_dn_methods pt64 pb88">
+            <div class="container">
+                <div class="mc-sec-head mc-fade">
+                    <h2>Choose how to give</h2>
+                    <p>Pick a method to jump in.</p>
+                </div>
+                <div class="mc-grid">
+                    <a class="mc-card mc-fade" href="/directdonation" style="--d:0s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>Direct Donation</h3>
+                        <p>Give securely online in a few steps and choose exactly where your donation goes.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+
+                    <a class="mc-card mc-fade" href="/sms-donation" style="--d:0.08s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>SMS Donation</h3>
+                        <p>Donate instantly from your phone by sending a text message to one of our SMS numbers.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+
+                    <a class="mc-card mc-fade" href="/bank-donation" style="--d:0.16s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>Bank Donation</h3>
+                        <p>Transfer your donation directly to our official bank accounts using the IBAN details.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+
+                    <a class="mc-card mc-fade" href="/site-representative" style="--d:0.24s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>Site Representative</h3>
+                        <p>Find an authorised Al Ihsan representative near you and donate in person.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+
+                    <a class="mc-card mc-fade" href="/request-for-a-delegate" style="--d:0s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>Request For A Delegate</h3>
+                        <p>Ask for a delegate to visit you at a time that suits you to collect your donation.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+
+                    <a class="mc-card mc-fade" href="/gifts" style="--d:0.08s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>Gifts</h3>
+                        <p>Send a donation as a meaningful gift in the name of someone you love.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+
+                    <a class="mc-card mc-fade" href="/subscriptions" style="--d:0.16s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>Subscriptions</h3>
+                        <p>Set up a recurring monthly donation and keep your good deeds going all year.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+
+                    <a class="mc-card mc-fade" href="/directdonation" style="--d:0.24s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>All Ways to Give</h3>
+                        <p>See every donation method in one place and pick the one that suits you best.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="event_gallery_section" name="Event Gallery Section">
+        <!-- data-donate-url: target of the "Donate to support" button in the details pop-up -->
+        <section class="gl-sec s_ev_gallery pt40 pb40" id="events" data-donate-url="/shop">
+            <div class="container">
+                <h2 class="gl-title gl-fade">All Events</h2>
+                <div class="gl-grid">
+                    <article class="gl-card ev-card gl-fade">
+                        <button class="gl-img" type="button" aria-label="Details: Annual Charity Gala Dinner"><img src="/alihsanwebsite_theme/static/src/img/news.jpg" alt="Annual Charity Gala Dinner" loading="lazy"/><span class="ev-date"><b>14</b><small>Nov</small></span><span class="ev-status"></span></button>
+                        <div class="gl-meta">
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><time datetime="2026-11-14">Nov 14, 2026</time></span>
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>7:00 PM</span></span>
+                        </div>
+                        <div class="ev-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Venue to be announced</span></div>
+                        <h3>Annual Charity Gala Dinner</h3>
+                        <p class="ev-d">An evening bringing supporters, partners and families together to celebrate a year of giving.</p>
+                        <button class="ev-more nw-more" type="button"><span>View details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                    </article>
+                    <article class="gl-card ev-card gl-fade">
+                        <button class="gl-img" type="button" aria-label="Details: Volunteer Orientation Day"><img src="/alihsanwebsite_theme/static/src/img/volunteers.jpg" alt="Volunteer Orientation Day" loading="lazy"/><span class="ev-date"><b>25</b><small>Oct</small></span><span class="ev-status"></span></button>
+                        <div class="gl-meta">
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><time datetime="2026-10-25">Oct 25, 2026</time></span>
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>9:00 AM</span></span>
+                        </div>
+                        <div class="ev-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Venue to be announced</span></div>
+                        <h3>Volunteer Orientation Day</h3>
+                        <p class="ev-d">Meet the team, learn how projects run and choose where you want to help.</p>
+                        <button class="ev-more nw-more" type="button"><span>View details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                    </article>
+                    <article class="gl-card ev-card gl-fade">
+                        <button class="gl-img" type="button" aria-label="Details: Winter Clothing Drive Launch"><img src="/alihsanwebsite_theme/static/src/img/community.jpg" alt="Winter Clothing Drive Launch" loading="lazy"/><span class="ev-date"><b>5</b><small>Dec</small></span><span class="ev-status"></span></button>
+                        <div class="gl-meta">
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><time datetime="2026-12-05">Dec 5, 2026</time></span>
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>10:00 AM</span></span>
+                        </div>
+                        <div class="ev-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Venue to be announced</span></div>
+                        <h3>Winter Clothing Drive Launch</h3>
+                        <p class="ev-d">Kick-off of our winter clothing drive, collecting warm clothes for families in need.</p>
+                        <button class="ev-more nw-more" type="button"><span>View details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                    </article>
+                    <article class="gl-card ev-card gl-fade">
+                        <button class="gl-img" type="button" aria-label="Details: Ramadan Iftar for Workers"><img src="/alihsanwebsite_theme/static/src/img/food.jpg" alt="Ramadan Iftar for Workers" loading="lazy"/><span class="ev-date"><b>10</b><small>Mar</small></span><span class="ev-status"></span></button>
+                        <div class="gl-meta">
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><time datetime="2026-03-10">Mar 10, 2026</time></span>
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>5:30 PM</span></span>
+                        </div>
+                        <div class="ev-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Community venue</span></div>
+                        <h3>Ramadan Iftar for Workers</h3>
+                        <p class="ev-d">Hundreds of workers shared iftar meals prepared and served by our volunteers.</p>
+                        <button class="ev-more nw-more" type="button"><span>View details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                    </article>
+                    <article class="gl-card ev-card gl-fade">
+                        <button class="gl-img" type="button" aria-label="Details: Children’s Community Day"><img src="/alihsanwebsite_theme/static/src/img/media-zayed.jpg" alt="Children’s Community Day" loading="lazy"/><span class="ev-date"><b>2</b><small>Nov</small></span><span class="ev-status"></span></button>
+                        <div class="gl-meta">
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><time datetime="2025-11-02">Nov 2, 2025</time></span>
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>4:00 PM</span></span>
+                        </div>
+                        <div class="ev-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Community venue</span></div>
+                        <h3>Children’s Community Day</h3>
+                        <p class="ev-d">Children and volunteers took part in games, learning stations and giving activities.</p>
+                        <button class="ev-more nw-more" type="button"><span>View details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                    </article>
+                    <article class="gl-card ev-card gl-fade">
+                        <button class="gl-img" type="button" aria-label="Details: Excellence Award Ceremony"><img src="/alihsanwebsite_theme/static/src/img/media-award.jpg" alt="Excellence Award Ceremony" loading="lazy"/><span class="ev-date"><b>25</b><small>Aug</small></span><span class="ev-status"></span></button>
+                        <div class="gl-meta">
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><time datetime="2025-08-25">Aug 25, 2025</time></span>
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>11:00 AM</span></span>
+                        </div>
+                        <div class="ev-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Ceremony hall</span></div>
+                        <h3>Excellence Award Ceremony</h3>
+                        <p class="ev-d">The association was honoured for transparent and effective charitable work.</p>
+                        <button class="ev-more nw-more" type="button"><span>View details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                    </article>
+                    <article class="gl-card ev-card gl-fade">
+                        <button class="gl-img" type="button" aria-label="Details: Partners Meeting"><img src="/alihsanwebsite_theme/static/src/img/water.jpg" alt="Partners Meeting" loading="lazy"/><span class="ev-date"><b>14</b><small>Jun</small></span><span class="ev-status"></span></button>
+                        <div class="gl-meta">
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><time datetime="2025-06-14">Jun 14, 2025</time></span>
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>3:00 PM</span></span>
+                        </div>
+                        <div class="ev-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Meeting room</span></div>
+                        <h3>Partners Meeting</h3>
+                        <p class="ev-d">Partners and board members reviewed achievements and set priorities for the year ahead.</p>
+                        <button class="ev-more nw-more" type="button"><span>View details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                    </article>
+                </div>
+                <p class="nw-empty gl-empty d-none">No matching events.</p>
+                <nav class="gl-pager" aria-label="Pagination"></nav>
+            </div>
+        </section>
+    </template>
+</odoo>

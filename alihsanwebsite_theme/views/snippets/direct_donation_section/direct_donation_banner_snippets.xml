@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- The breadcrumb's last item follows the selected tab of the Direct Donation Tabs snippet. -->
+    <template id="direct_donation_banner_section" name="Direct Donation Banner Section">
+        <section class="dn-sec s_direct_donation_banner pt16 pb0">
+            <div class="container">
+                <div class="dn-bc"><a href="/">Home</a><i>›</i><a href="/direct-donation">Donations</a><i>›</i><b aria-current="page">Direct Donation</b></div>
+                <h2 class="dn-title donate">Ways to give</h2>
+            </div>
+        </section>
+    </template>
+</odoo>

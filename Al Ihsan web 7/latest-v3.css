@@ -1,0 +1,39 @@
+/* "Projects with a personal story": photo background + white floating card */
+#latest.latest{position:relative;overflow:hidden;border:0;color:#fff;background:#06472e;min-height:560px;padding-block:64px}
+#latest-host{display:grid;grid-template-columns:minmax(0,1fr) 470px;grid-template-rows:auto 1fr;column-gap:50px;align-items:start}
+#latest .section-heading{grid-column:1;grid-row:1;display:block;align-self:start;position:relative;z-index:2}
+#latest .eyebrow{color:#d9b564}
+#latest h2{color:#fff;font-size:clamp(34px,4.2vw,54px);line-height:1.1;letter-spacing:-1.5px;max-width:520px}
+#latest .underlink{display:inline-flex;margin-top:24px;padding:12px 24px;border:1.5px solid #ffffffb3;border-radius:999px;color:#fff;text-decoration:none;font-weight:700;transition:.25s}
+#latest .underlink:hover{background:#fff;color:#06472e;border-color:#fff}
+/* photo becomes the section background */
+#latest .latest-layout{display:contents}
+#latest .latest-visual{position:absolute;inset:0;z-index:0;min-height:0;margin:0;border-radius:0;box-shadow:none;border:0;background:#06472e}
+#latest .latest-visual img{object-position:50% 30%}
+#latest .latest-visual:after{background:linear-gradient(90deg,#04361ff2 0%,#04361fc7 42%,#04361f66 100%)}
+#latest .latest-visual figcaption{position:absolute;inset:auto auto 50px 45px;z-index:2;transform:none;padding:0;max-width:430px;background:none;backdrop-filter:none;border:0}
+#latest .latest-visual .quote-mark{color:#d9b564;font-size:44px}
+#latest .latest-visual figcaption p{max-width:none;font-size:16px;line-height:1.7;color:#ffffffe0}
+/* white card */
+#latest .latest-panel{position:relative;z-index:2;grid-column:2;grid-row:1/span 2;order:0;background:#fff;color:#10201a;border-radius:28px;padding:10px 22px 26px;box-shadow:0 34px 70px -28px #000b}
+#latest .latest-tabs{display:flex;width:100%;gap:0;margin:0;padding:0;border-radius:0;background:none;border:0;border-bottom:1.5px solid #e3ebe7}
+#latest .latest-tabs button{flex:1;justify-content:center;gap:8px;padding:18px 6px 14px;border-radius:0;background:none;box-shadow:none;color:#6a7872;font-size:13.5px;font-weight:700;border-bottom:3px solid transparent;margin-bottom:-1.5px;transition:.25s}
+#latest .latest-tabs button svg{color:#8a9690}
+#latest .latest-tabs button:hover{background:none;color:#00705a;transform:none;box-shadow:none}
+#latest .latest-tabs button.selected{background:none;box-shadow:none;color:#00705a;border-bottom-color:#00705a}
+#latest .latest-tabs button.selected svg{color:#00705a}
+#latest .latest-panel .recent-grid{margin-top:0}
+#latest-host .empty-project{min-height:0;padding:34px 8px 6px;background:none;border:0;box-shadow:none;border-radius:0}
+#latest-host .empty-icon{width:72px;height:72px;box-shadow:0 0 0 8px color-mix(in srgb,var(--accent) 10%,transparent)}
+#latest-host .empty-project h3{color:#10201a;font-size:25px;letter-spacing:-.4px}
+#latest-host .empty-project p{color:#5b6a64;font-size:15px}
+#latest-host .empty-project .btn{margin-top:10px;background:#00705a;color:#fff;border-radius:999px;padding:15px 32px;font-weight:700}
+#latest-host .empty-project .btn:hover{background:#005c49}
+#latest-host .saved-project{background:#f4f8f6;border-color:#e3ebe7;color:#10201a;margin-top:12px}
+@media(max-width:1100px){
+  #latest-host{grid-template-columns:1fr;row-gap:26px}
+  #latest .latest-panel{grid-column:1;grid-row:auto}
+  #latest .latest-visual:after{background:linear-gradient(180deg,#04361fe6,#04361fb3)}
+  #latest .latest-visual figcaption{display:none}
+}
+@media(max-width:620px){#latest .latest-tabs button{flex-direction:column;gap:4px;font-size:11.5px;padding:14px 2px 10px}}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="chairman_message_section" name="Chairman Message Section">
+        <section class="ch-sec s_chair_msg pt0 pb0" id="chair-msg">
+            <div class="container">
+                <div class="chair-msg">
+                    <aside class="chair-aside">
+                        <div class="chair-aside-card">
+                            <span class="cm-frame"><img src="/alihsanwebsite_theme/static/src/img/chairman.jpeg" alt="Sheikh Mohammed bin Ali bin Rashid Al Nuaimi"/></span>
+                            <div><b>Chairman of the Board</b><br/><span>Al Ihsan Charity Association</span></div>
+                        </div>
+                        <div class="chair-aside-links">
+                            <a href="/general-manager-s-message"><span>General Manager's message</span><span class="circle-ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+                            <a href="/#leadership"><span>Leadership</span><span class="circle-ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+                            <a href="/about-us"><span>About Al Ihsan</span><span class="circle-ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+                        </div>
+                    </aside>
+                    <article class="chair-article">
+                        <div class="chair-kicker"><i></i><span>Chairman's message</span></div>
+                        <p class="chair-lead">At Al Ihsan, every project begins with a simple question: who needs help today, and how can we reach them with dignity? This message is a placeholder for the approved text.</p>
+                        <p class="body">Our donors, volunteers and partners make this work possible. We are committed to transparency in how every dirham is used and to reporting back on the impact of your giving.</p>
+                        <p class="body">Thank you for standing with us.</p>
+                        <figure class="chair-pullquote">
+                            <blockquote>We measure our work by the lives it touches, not the projects it counts.</blockquote>
+                        </figure>
+                        <div class="chair-sign-off"><i></i><b>Chairman of the Board</b><span>Al Ihsan Charity Association</span></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

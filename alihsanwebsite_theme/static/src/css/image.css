@@ -1,0 +1,96 @@
+/* ==========================================================
+   Image gallery snippets — converted from "Al Ihsan web 7/image.html"
+   (image.css + the news.css / projects.css rules that page used)
+   ========================================================== */
+
+/* ---------- base: restore the static site's globals inside our sections ---------- */
+.gl-sec,.gl-lb{--line:#dfe6e1;--ink:#173b32;--gold:#edc76b;--gl-ff:'Plus Jakarta Sans','IBM Plex Sans Arabic','Noto Sans Arabic',system-ui,-apple-system,'Segoe UI',sans-serif;font-family:var(--gl-ff);-webkit-font-smoothing:antialiased}
+html[lang^=ar] .gl-sec,html[lang^=ar] .gl-lb{--gl-ff:'IBM Plex Sans Arabic','Plus Jakarta Sans','Noto Sans Arabic',system-ui,sans-serif}
+.gl-sec{color:var(--ink);font-size:16px;line-height:normal}
+.gl-sec *,.gl-lb *{box-sizing:border-box}
+.gl-sec *:not(em),.gl-lb *{font-family:inherit}
+.gl-sec>.container{max-width:1240px;padding-inline:20px}
+.gl-sec h2,.gl-sec h3{color:inherit;margin:0;line-height:normal;letter-spacing:-.02em}
+.gl-sec a{color:inherit;text-decoration:none}
+.gl-sec img{max-width:100%}
+[dir=rtl] .gl-sec h2,[dir=rtl] .gl-sec h3{letter-spacing:0}
+
+/* ---------- 1. header: breadcrumb, title, tabs + search + year filter ---------- */
+.gl-sec .mc-crumb ol{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0;padding:0;list-style:none;font-size:14px;color:#8a9590}
+.gl-sec .mc-crumb li{display:flex;align-items:center;gap:6px}
+.gl-sec .mc-crumb svg{width:15px;height:15px;color:#a3ada8}
+.gl-sec .mc-crumb a{color:#8a9590;transition:color .2s}
+.gl-sec .mc-crumb a:hover{color:#00705a}
+.gl-sec .mc-crumb [aria-current]{color:#00705a;font-weight:500}
+[dir=rtl] .gl-sec .mc-crumb svg{transform:scaleX(-1)}
+.gl-sec .pj-eyebrow{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:800;letter-spacing:2.5px;color:#00705a;margin-bottom:10px}
+.gl-sec .pj-eyebrow i{width:40px;height:3px;border-radius:2px;background:var(--gold)}
+.gl-sec .mc-head{display:block;text-align:start;margin:26px 0 18px}
+.gl-sec .mc-head .dn-title{margin:0;font-size:clamp(28px,3.4vw,40px);font-weight:800;letter-spacing:-1px;color:#101a17;line-height:1.1}
+.gl-sec .mc-head .pj-sub{margin:6px 0 0;color:#6a7872;font-size:15px}
+.gl-sec .mc-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:10px;border:1px solid #e1ece5;border-radius:999px;background:#fff;box-shadow:0 10px 26px #0e3a2a12}
+.gl-sec .nw-chips{display:flex;gap:2px;flex:none;margin:0;padding:5px;background:#eef5f1;border-radius:999px;flex-wrap:nowrap}
+.gl-sec .nw-chip{border:0;background:transparent;font-size:14.5px;font-weight:600;color:#33433d;padding:9px 20px;border-radius:999px;transition:.25s}
+.gl-sec .nw-chip:hover{color:#00705a;transform:translateY(-2px)}
+.gl-sec .nw-chip.selected{background:linear-gradient(135deg,#00a251,#00793f);color:#fff;box-shadow:0 6px 14px #00793f44}
+.gl-tools{display:flex;align-items:center;justify-content:space-between;flex:1;min-width:260px;margin:0;gap:10px}
+.gl-search{position:relative;display:flex;align-items:center;flex:1;margin:0;padding-block:0;padding-inline:20px 5px;border-radius:999px;background:#f4f8f6;transition:box-shadow .25s}
+.gl-search:focus-within{box-shadow:0 0 0 2px #00a25155}
+.gl-search input{flex:1;min-width:0;height:44px;border:0;background:none;outline:0;box-shadow:none;-webkit-appearance:none;appearance:none;font:inherit;font-size:15px;color:var(--ink)}
+.gl-sbtn,.gl-fb{flex:none;width:38px;height:38px;border:0;border-radius:50%;background:linear-gradient(135deg,#00a251,#00793f);color:#fff;display:grid;place-items:center}
+.gl-sbtn svg{width:20px;height:20px}
+.gl-filter{position:relative}
+.gl-fb{cursor:pointer;transition:.2s}
+.gl-fb:hover{transform:translateY(-2px)}
+.gl-fb svg{width:22px;height:22px}
+.gl-pop{position:absolute;z-index:30;top:52px;inset-inline-end:0;width:240px;padding:18px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 40px #09261526;animation:glPopIn .25s ease both}
+.gl-pop label{display:grid;gap:8px;margin:0;font-size:13px;font-weight:700;color:#00705a}
+.gl-pop select{height:44px;border:1.5px solid var(--line);border-radius:10px;padding:0 12px;font:inherit;font-size:15px;color:var(--ink);background:#fff}
+@keyframes glPopIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media(max-width:700px){.gl-sec .mc-bar{border-radius:22px}.gl-sec .nw-chips{width:100%;overflow-x:auto}}
+
+/* ---------- 2. gallery grid ---------- */
+.gl-sec .gl-title{display:flex;align-items:center;gap:16px;margin:0 0 24px;font-size:clamp(26px,3.4vw,36px);font-weight:800;letter-spacing:-.6px;color:#0b2a21}
+.gl-title:before{content:'';flex:none;width:6px;height:1.1em;border-radius:6px;background:linear-gradient(180deg,#00a251,#d9b564)}
+.gl-title:after{content:'';flex:1;height:2px;border-radius:2px;background:linear-gradient(90deg,#d9e8e0,#d9e8e000)}
+[dir=rtl] .gl-title:after{background:linear-gradient(270deg,#d9e8e0,#d9e8e000)}
+.gl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px 30px}
+.gl-img{position:relative;display:block;width:100%;aspect-ratio:3/2;padding:0;border:0;border-radius:14px;overflow:hidden;background:#eef3f1;cursor:zoom-in}
+.gl-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.gl-card:hover .gl-img img{transform:scale(1.06)}
+.gl-zoom{position:absolute;inset:0;display:grid;place-items:center;background:#06472e66;color:#fff;opacity:0;transition:opacity .3s}
+.gl-zoom svg{width:46px;height:46px;transform:scale(.8);transition:transform .3s}
+.gl-card:hover .gl-zoom,.gl-img:focus-visible .gl-zoom{opacity:1}
+.gl-card:hover .gl-zoom svg{transform:none}
+.gl-meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:14px;padding-bottom:12px;border-bottom:1.5px dashed #dde5e1;font-size:14px;color:#33433d}
+.gl-meta>span{display:flex;align-items:center;gap:7px}
+.gl-meta svg{width:20px;height:20px;color:#00705a;flex:none}
+.gl-sec .gl-card h3{margin:16px 0 0;font-size:22px;font-weight:500;line-height:1.3}
+.gl-empty{text-align:center;color:#6a7872;padding:40px 0;margin:0}
+.gl-pager{display:flex;justify-content:center;gap:10px;margin:56px 0 0}
+.gl-pager:empty{display:none}
+.gl-pager button{width:42px;height:42px;border-radius:50%;border:1.5px solid #00705a;background:#fff;color:#00705a;font:inherit;font-size:16px;cursor:pointer;transition:.2s}
+.gl-pager button:hover:not(:disabled){background:#e5efed}
+.gl-pager button.on{background:#00705a;color:#fff}
+.gl-pager button:disabled{border-color:var(--line);color:#b6c0bb;cursor:default}
+@media(max-width:1000px){.gl-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.gl-grid{grid-template-columns:1fr}.gl-tools{gap:12px}.gl-sec>.container{padding-inline:14px}}
+
+/* ---------- lightbox (built by image.js) ---------- */
+.gl-lb{position:fixed;inset:0;z-index:1100;background:#04281bf0;display:flex;align-items:center;justify-content:center;gap:16px;padding:20px;animation:glLbIn .3s ease both}
+@keyframes glLbIn{from{opacity:0}}
+.gl-lb figure{margin:0;max-width:min(980px,86vw);text-align:center;color:#fff}
+.gl-lb img{max-width:100%;max-height:78vh;border-radius:14px;box-shadow:0 30px 70px #0008}
+.gl-lb figcaption{margin-top:14px;font-size:17px}
+.gl-lb figcaption small{display:block;opacity:.7;font-size:13px;margin-top:4px}
+.gl-a,.gl-x{border:0;background:#ffffff26;color:#fff;border-radius:50%;cursor:pointer;transition:.2s}
+.gl-a{width:48px;height:48px;font-size:30px;line-height:1;flex:none}
+.gl-x{position:absolute;top:18px;inset-inline-end:22px;width:44px;height:44px;font-size:28px;line-height:1}
+.gl-a:hover,.gl-x:hover{background:var(--gold);color:#173b32}
+[dir=rtl] .gl-a{transform:scaleX(-1)}
+@media(max-width:620px){.gl-a{position:absolute;bottom:22px}.gl-a.prev{inset-inline-start:22px}.gl-a.next{inset-inline-end:22px}}
+
+/* ---------- fade-in on scroll (driven by image.js; never in edit mode) ---------- */
+.gl-sec [data-glv]{transition:opacity .8s ease var(--d,0s),transform .8s ease var(--d,0s)}
+.gl-sec [data-glv]:not(.gl-in){opacity:0;transform:translateY(34px)}
+@media(prefers-reduced-motion:reduce){.gl-sec [data-glv]{opacity:1!important;transform:none!important;transition:none!important}.gl-img img,.gl-zoom,.gl-zoom svg,.gl-lb,.gl-pop{transition:none;animation:none}}

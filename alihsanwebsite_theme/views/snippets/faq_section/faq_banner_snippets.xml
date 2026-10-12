@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- The search box filters every FAQ list (.fq-list) on the page -->
+    <template id="faq_banner_section" name="FAQ Banner Section">
+        <section class="fq-sec s_fq_banner pt16 pb0">
+            <div class="container">
+                <div class="fq-crumb" role="navigation" aria-label="Breadcrumb">
+                    <a href="/">Home</a><i>/</i><span aria-current="page">FAQs</span>
+                </div>
+                <div class="fq-hero">
+                    <span class="fq-eye">HELP CENTRE</span>
+                    <h1>How can we <em>help you?</em></h1>
+                    <p>Welcome to information land 🙂 if you have a question about Al Ihsan Charity Association, you’re in the right place.</p>
+                    <label class="fq-search">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.500-3.500"/></svg>
+                        <input class="fq-search-in" type="search" placeholder="Search questions…" autocomplete="off" aria-label="Search questions"/>
+                    </label>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

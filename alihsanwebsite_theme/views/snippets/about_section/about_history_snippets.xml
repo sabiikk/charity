@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="about_history_section" name="About History Section">
+        <section class="ab-sec s_ab_history pt32 pb48">
+            <div class="container">
+                <div class="ab-hist">
+                    <div class="ab-hl">
+                        <span class="ab-big" aria-hidden="true">1990</span>
+                        <span class="ab-eye">OUR HISTORY</span>
+                        <h2>Al Ihsan Charity Association <em>was founded in 1990</em></h2>
+                        <p>Founded by individual efforts, it was officially declared in 1998 at Ajman Emirate under the name of Al Ihsan Charity Association Center through a noble deed of H.H. Sheikh Humaid bin Rashid Alnuwaimi, Member of the Higher Council Ruler of Ajman.</p>
+                    </div>
+                    <ol class="ab-miles">
+                        <li><i></i><b>1990</b><span>Founded</span></li>
+                        <li><i></i><b>1998</b><span>Officially declared</span></li>
+                        <li><i></i><b>2012</b><span>Public welfare</span></li>
+                        <li><i></i><b>ISO 9001</b><span>Quality management</span></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

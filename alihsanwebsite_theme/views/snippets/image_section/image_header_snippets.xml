@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="image_header_section" name="Image Header Section">
+        <section class="gl-sec s_gl_header pt16 pb0">
+            <div class="container">
+                <div class="mc-crumb" role="navigation" aria-label="Breadcrumb">
+                    <ol>
+                        <li><a href="/">Home</a></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><a href="/media-center">Media Center</a></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><span aria-current="page">Images</span></li>
+                    </ol>
+                </div>
+                <div class="nw-head mc-head gl-fade">
+                    <div>
+                        <div class="pj-eyebrow"><i></i><span>MEDIA CENTER</span></div>
+                        <h2 class="dn-title">Media Center</h2>
+                        <p class="pj-sub">Explore all the news, photos, videos &amp; events here.</p>
+                    </div>
+                </div>
+                <div class="mc-bar gl-fade">
+                    <div class="nw-chips mc-pills">
+                        <a class="nw-chip" href="/news">News</a>
+                        <a class="nw-chip selected" href="/images" aria-current="page">Images</a>
+                        <a class="nw-chip" href="/videos">Videos</a>
+                        <a class="nw-chip" href="/events">Events</a>
+                    </div>
+                    <div class="gl-tools">
+                        <label class="gl-search"><input class="gl-q" type="search" placeholder="Type a keyword" aria-label="Search galleries"/><span class="gl-sbtn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span></label>
+                        <div class="gl-filter">
+                            <button class="gl-fb" type="button" aria-expanded="false" aria-label="Filter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg></button>
+                            <div class="gl-pop d-none">
+                                <label>Year<select class="gl-year"><option value="all">All years</option></select></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

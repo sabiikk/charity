@@ -1,0 +1,34 @@
+/* About banner v2: split layout, light panel + rounded photo */
+.ab-banner{display:grid;grid-template-columns:1.05fr 1fr;align-items:stretch;min-height:480px;padding:14px;gap:10px;border-radius:36px;background:linear-gradient(120deg,#f0f7f3,#fff 70%);color:#10201a;box-shadow:0 26px 60px -34px #0a4a3a66;border:1px solid #e1ebe5;overflow:hidden;isolation:isolate}
+.ab-banner:before{display:none}
+.ab-banner>img{position:relative;inset:auto;grid-column:2;grid-row:1;width:100%;height:100%;min-height:440px;z-index:0;border-radius:26px;filter:none;transform:none;animation:none;object-fit:cover;object-position:60% 30%}
+/* floating badge */
+.ab-banner:after{content:'Since 1990';position:absolute;inset:auto;inset-inline-end:44px;bottom:44px;z-index:2;padding:14px 22px;border-radius:18px;background:#ffffffe6;backdrop-filter:blur(10px);color:#00705a;font-weight:800;font-size:17px;letter-spacing:.2px;box-shadow:0 16px 30px -12px #0a3a2c77;border:0;animation:abFloat 5s ease-in-out infinite}
+[dir=rtl] .ab-banner:after{content:'منذ 1990'}
+@keyframes abFloat{50%{transform:translateY(-8px)}}
+.ab-bin{grid-column:1;grid-row:1;max-width:none;align-self:center;padding:30px 36px 30px 40px}
+[dir=rtl] .ab-bin{padding:30px 40px 30px 36px}
+.ab-banner .pj-crumb{color:#6a7872;margin-bottom:24px}
+.ab-banner .pj-crumb a{color:#00705a;font-weight:700}
+.ab-banner .ab-eye{color:#00705a}
+.ab-banner .ab-eye:before{background:#c18f00}
+.ab-banner h1{color:#0b1a14;font-size:clamp(36px,4.6vw,60px);letter-spacing:-1.6px}
+.ab-banner h1 em{background:linear-gradient(90deg,#00a14b,#00705a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ab-banner p{color:#4f5f58;max-width:480px}
+.ab-b1{background:linear-gradient(135deg,#00a14b,#007a3d);color:#fff;box-shadow:0 14px 26px -10px #009746aa}
+.ab-b2{background:#fff;border:1.5px solid #cfe0d7;color:#10201a}
+.ab-b2:hover{background:#f0f7f3;border-color:#00a14b}
+@media(max-width:900px){
+  .ab-banner{grid-template-columns:1fr;min-height:0;padding:12px}
+  .ab-banner>img{grid-column:1;grid-row:1;min-height:0;height:auto;aspect-ratio:16/10}
+  .ab-bin{grid-column:1;grid-row:2;padding:26px 14px 18px}
+  .ab-banner:after{inset-inline-end:28px;bottom:auto;top:calc(12px + 100vw*.6*.1);font-size:14px;padding:10px 16px}
+}
+@media(prefers-reduced-motion:reduce){.ab-banner:after{animation:none}}
+
+/* photo: smooth zoom on hover */
+.ab-banner>img{clip-path:inset(0 round 26px);transform:scale(1);transition:transform 1.1s cubic-bezier(.2,.7,.2,1),filter .8s ease;will-change:transform}
+.ab-banner>img:hover{transform:scale(1.07);filter:saturate(1.08) contrast(1.02)}
+.ab-banner:has(>img:hover):after{box-shadow:0 22px 38px -12px #0a3a2c99;background:#fff;transition:box-shadow .6s,background .6s}
+@media(hover:none){.ab-banner>img:hover{transform:none;filter:none}}
+@media(prefers-reduced-motion:reduce){.ab-banner>img{transition:none}.ab-banner>img:hover{transform:none}}

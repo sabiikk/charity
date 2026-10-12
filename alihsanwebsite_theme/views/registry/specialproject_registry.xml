@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="specialproject_snippets" inherit_id="website.snippets" name="Special Project Snippets">
+        <!--       Group Creation         -->
+        <xpath expr="//snippets[@id='snippet_groups']" position="inside">
+            <t snippet-group="specialprojectgroup" t-snippet="website.s_snippet_group" string="Special Projects"/>
+        </xpath>
+
+        <!--       Adding Snippets Into The Group         -->
+        <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+            <t t-snippet="alihsanwebsite_theme.specialproject_banner_section" string="Special Project Banner Section" group="specialprojectgroup"/>
+            <t t-snippet="alihsanwebsite_theme.specialproject_projects_section" string="Special Project Projects Section" group="specialprojectgroup"/>
+        </xpath>
+    </template>
+</odoo>

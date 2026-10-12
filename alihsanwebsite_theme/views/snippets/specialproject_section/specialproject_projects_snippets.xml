@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="specialproject_projects_section" name="Special Project Projects Section">
+        <section class="mc-sec s_sp_projects pt64 pb88">
+            <div class="container">
+                <div class="mc-sec-head mc-fade">
+                    <h2>Choose your special project</h2>
+                    <p>Pick a section to jump in.</p>
+                </div>
+                <div class="mc-grid mc-grid-3">
+                    <a class="mc-card mc-fade" href="/personalised-project" style="--d:0s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>Personalised Project</h3>
+                        <p>Choose a mosque, well or other project in the country you prefer and build it in your name or in the name of a loved one.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+
+                    <a class="mc-card mc-fade" href="/projects-campaigns" style="--d:0.08s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>Shared Project</h3>
+                        <p>Join others in funding a larger project together, so every contribution — big or small — adds up to lasting impact.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+
+                    <a class="mc-card mc-fade" href="/sponsorship" style="--d:0.16s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>Sponsorship</h3>
+                        <p>Sponsor an orphan, a family, a student or elderly parents with monthly support that changes lives.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

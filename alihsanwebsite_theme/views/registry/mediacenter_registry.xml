@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="mediacenter_snippets" inherit_id="website.snippets" name="Media Center Snippets">
+        <!--       Group Creation         -->
+        <xpath expr="//snippets[@id='snippet_groups']" position="inside">
+            <t snippet-group="mediacentergroup" t-snippet="website.s_snippet_group" string="Media Center"/>
+        </xpath>
+
+        <!--       Adding Snippets Into The Group         -->
+        <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+            <t t-snippet="alihsanwebsite_theme.mediacenter_banner_section" string="Media Center Banner Section" group="mediacentergroup"/>
+            <t t-snippet="alihsanwebsite_theme.mediacenter_sections_section" string="Media Center Sections Section" group="mediacentergroup"/>
+        </xpath>
+    </template>
+</odoo>

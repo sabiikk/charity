@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="about_story_section" name="About Story Section">
+        <section class="ab-sec s_ab_story pt72 pb0" id="story">
+            <div class="container">
+                <div class="ab-story2">
+                    <div class="ab-sh">
+                        <span class="ab-eye">OUR STORY</span>
+                        <h2>Our Story</h2>
+                    </div>
+                    <ol class="ab-rail">
+                        <li>
+                            <span class="ab-yr">1990</span>
+                            <div>
+                                <h3>Founded by individual efforts</h3>
+                                <p>Al Ihsan began as a noble initiative driven by the efforts of individuals.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="ab-yr">1998</span>
+                            <div>
+                                <h3>Officially declared in Ajman</h3>
+                                <p>Declared at Ajman Emirate as Al Ihsan Charity Association Center, through a noble deed of H.H. Sheikh Humaid bin Rashid Al Nuaimi.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="ab-yr">2012</span>
+                            <div>
+                                <h3>Declared a public-welfare association</h3>
+                                <p>Ministerial Decision No. (44) of the Ministry of Social Affairs declared Al Ihsan Charity Association, under No. (140) of the Ministry Records.</p>
+                            </div>
+                        </li>
+                    </ol>
+                    <div class="ab-chs">
+                        <div class="ab-ch">
+                            <p>HH Ruler of Ajman is keen to embody the meanings of goodness and charity established on the bases of the social solidarity and preservation of the family structure. Ministry of Social Affairs has issued the Ministerial Decision No. (44) for 2012 regarding declaration of “Al Ihsan Charity Association”, of the public welfare, under No. (140) of the Ministry Records.</p>
+                        </div>
+                        <div class="ab-ch">
+                            <p>The Association seeks through its vision of the leadership of philanthropy in UAE, to achieve the principle of social solidarity between members of society; by setting specific goals, comprehensive plan and clear visions based on providing help to the needy and poor families within the state. Including financial and food assistance with the development of services and the expansion and modernization of the Association facilities and its various departments.</p>
+                        </div>
+                        <div class="ab-ch">
+                            <p>The procession of the Association goes on the path of good with a significant support of HH Sheikh Mohammed bin Ali bin Rashid Al Nuaimi, May Allah protect him, and under the leadership of HH Sheikh Dr. Abdulaziz bin Ali bin Rashid Al Nuaimi, Chief Executive Officer, who spares no effort in his constant support for the needy families.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

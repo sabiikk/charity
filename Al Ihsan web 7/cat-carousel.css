@@ -1,0 +1,82 @@
+/* home: category carousel — big icon circle over a grey card, green on hover */
+.cat-carousel{max-width:1260px;margin:30px auto 20px;padding:0 20px}
+.cat-h{margin:0 0 6px;text-align:center;font-size:clamp(30px,3.6vw,46px);font-weight:700;letter-spacing:-.5px;color:#0a0f0d}
+.cat-wrap{position:relative;padding:0 54px}
+.cat-track{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:26px 6px 34px}
+.cat-track::-webkit-scrollbar{display:none}
+.cat-card{position:relative;isolation:isolate;flex:0 0 calc((100% - 96px)/5);min-height:172px;scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;padding:112px 14px 22px;color:#10201a;font-size:15px;line-height:1.5;text-align:center;text-decoration:none;transition:transform .4s cubic-bezier(.22,.7,.2,1),color .3s}
+.cat-card:before{content:'';position:absolute;z-index:-1;inset:50px 0 0 0;border-radius:20px;background:#f8f8f8;transition:background .35s,box-shadow .4s}
+.cat-ic{position:absolute;top:0;left:50%;display:grid;place-items:center;width:100px;height:100px;margin-left:-50px;border-radius:50%;background:#e4eeeb;color:#00705a;transition:transform .5s cubic-bezier(.3,1.5,.5,1),box-shadow .4s}
+.cat-ic svg{width:44px;height:44px}
+.cat-card:hover{transform:translateY(-6px);color:#fff}
+.cat-card:hover:before{background:#00705a;box-shadow:0 18px 30px -16px #00705acc}
+.cat-card:hover .cat-ic{transform:scale(1.06);box-shadow:0 12px 22px -10px #0a3a2c66}
+.cat-card:hover .cat-ic svg{animation:catIc .7s cubic-bezier(.3,1.4,.5,1) both}
+@keyframes catIc{0%{transform:scale(1) rotate(0)}35%{transform:scale(1.22) rotate(-12deg)}70%{transform:scale(1.12) rotate(7deg)}100%{transform:scale(1.15) rotate(0)}}
+.cat-card:focus-visible{outline:3px solid #c9960c;outline-offset:4px;border-radius:20px}
+.cat-nav{position:absolute;top:calc(50% - 8px);z-index:3;display:grid;place-items:center;width:36px;height:36px;border:0;border-radius:50%;background:#f1f1f1;color:#00705a;transform:translateY(-50%);transition:background .25s,color .25s,transform .25s,opacity .25s}
+.cat-nav svg{width:16px;height:16px}
+.cat-nav:hover:not(:disabled){background:#00705a;color:#fff;transform:translateY(-50%) scale(1.1)}
+.cat-nav:disabled{opacity:.35}
+.cat-nav.prev{inset-inline-start:6px}.cat-nav.next{inset-inline-end:6px}
+[dir=rtl] .cat-nav svg{transform:scaleX(-1)}
+@media(max-width:1100px){.cat-card{flex-basis:calc((100% - 48px)/3)}}
+@media(max-width:800px){.cat-wrap{padding:0}.cat-nav{display:none}.cat-track{padding-inline:16px;gap:16px}.cat-card{flex-basis:min(58%,210px)}}
+@media(prefers-reduced-motion:reduce){.cat-card,.cat-ic{transition:none}.cat-card:hover .cat-ic svg{animation:none}}
+
+/* heading */
+.cat-head{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:4px}
+.cat-eye{display:inline-flex;align-items:center;gap:14px;font-size:12px;font-weight:800;letter-spacing:3px;color:#00705a}
+.cat-eye:before,.cat-eye:after{content:'';width:34px;height:2px;border-radius:2px;background:#d9b564}
+.cat-head .cat-h{position:relative;margin:12px 0 0;padding-bottom:20px;font-size:clamp(36px,5vw,62px);font-weight:800;letter-spacing:-2px;line-height:1.05;background:linear-gradient(100deg,#06281d 0%,#00705a 55%,#00a14b 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cat-head .cat-h:after{content:'';position:absolute;left:50%;bottom:0;width:64px;height:5px;margin-left:-32px;border-radius:5px;background:linear-gradient(90deg,#d9b564,#f3dc9a)}
+.cat-sub{margin:16px 0 0;max-width:460px;font-size:16.5px;line-height:1.6;color:#5b6a64}
+@media(max-width:700px){.cat-head .cat-h{font-size:clamp(34px,10vw,44px);letter-spacing:-1.2px}.cat-sub{font-size:15px}}
+
+/* hover colour: same green gradient as the Donate now button */
+.cat-card:hover:before{background:linear-gradient(135deg,#00a14b 0%,#007a3d 100%);box-shadow:0 18px 30px -14px #009746cc,0 0 0 4px #00974622}
+.cat-nav:hover:not(:disabled){background:linear-gradient(135deg,#00a14b,#007a3d);box-shadow:0 10px 18px -8px #009746cc}
+
+/* medium-small size */
+.cat-carousel{max-width:1080px;margin:18px auto 10px}
+.cat-eye{font-size:11px;letter-spacing:2.5px}
+.cat-eye:before,.cat-eye:after{width:28px}
+.cat-head .cat-h{margin-top:8px;padding-bottom:14px;font-size:clamp(28px,3.6vw,44px);letter-spacing:-1.4px}
+.cat-head .cat-h:after{width:52px;height:4px;margin-left:-26px}
+.cat-sub{margin-top:10px;font-size:14.5px}
+.cat-wrap{padding:0 46px}
+.cat-track{gap:18px;padding:18px 6px 24px}
+.cat-card{flex-basis:calc((100% - 72px)/5);min-height:130px;padding:84px 10px 16px;font-size:13.5px}
+.cat-card:before{inset:38px 0 0 0;border-radius:16px}
+.cat-ic{width:76px;height:76px;margin-left:-38px}
+.cat-ic svg{width:34px;height:34px}
+.cat-nav{width:32px;height:32px}
+@media(max-width:1100px){.cat-card{flex-basis:calc((100% - 36px)/3)}}
+@media(max-width:800px){.cat-wrap{padding:0}.cat-track{gap:14px}.cat-card{flex-basis:min(52%,180px)}}
+
+/* heading: title only (no label, no subtitle) */
+.cat-eye,.cat-sub{display:none}
+.cat-head .cat-h{margin-top:0}
+.cat-head .cat-h{font-size:clamp(24px,2.8vw,32px);letter-spacing:-.8px;padding-bottom:12px}
+.cat-head .cat-h:after{width:44px;height:4px;margin-left:-22px}
+
+/* tablet & mobile: arrows tucked in, whole cards only (no half-cut card at the edge) */
+@media(max-width:800px){
+  .cat-carousel{padding:0 16px;margin:10px auto 6px}
+  .cat-wrap{padding:0 38px}
+  .cat-nav{display:grid;width:30px;height:30px;top:calc(50% + 6px)}
+  .cat-nav.prev{inset-inline-start:0}.cat-nav.next{inset-inline-end:0}
+  .cat-track{gap:12px;padding:16px 0 20px;scroll-padding-inline:0}
+  .cat-card{flex-basis:calc((100% - 24px)/3)}
+}
+@media(max-width:560px){
+  .cat-wrap{padding:0}
+  .cat-nav{display:none}
+  .cat-track{gap:12px;padding:14px 2px 18px}
+  .cat-card{flex-basis:calc((100% - 12px)/2);min-height:118px;padding:72px 8px 14px;font-size:13px}
+  .cat-card:before{inset:32px 0 0 0;border-radius:14px}
+  .cat-ic{width:64px;height:64px;margin-left:-32px}
+  .cat-ic svg{width:28px;height:28px}
+  .cat-head .cat-h{font-size:24px;padding-bottom:10px}
+}
+@media(max-width:340px){.cat-card{flex-basis:100%}}

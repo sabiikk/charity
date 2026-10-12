@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="sponsorship_snippets" inherit_id="website.snippets" name="Sponsorship Snippets">
+        <!--       Group Creation         -->
+        <xpath expr="//snippets[@id='snippet_groups']" position="inside">
+            <t snippet-group="sponsorshipgroup" t-snippet="website.s_snippet_group" string="Sponsorship"/>
+        </xpath>
+
+        <!--       Adding Snippets Into The Group         -->
+        <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+            <t t-snippet="alihsanwebsite_theme.sponsorship_banner_section" string="Sponsorship Banner Section" group="sponsorshipgroup"/>
+            <t t-snippet="alihsanwebsite_theme.sponsorship_projects_section" string="Sponsorship Projects Section" group="sponsorshipgroup"/>
+        </xpath>
+    </template>
+</odoo>

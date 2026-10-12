@@ -1,0 +1,94 @@
+/* ==========================================================
+   FAQ snippets — converted from "Al Ihsan web 7/faq.html"
+   ========================================================== */
+
+/* ---------- base: restore the static site's globals inside our sections ---------- */
+.fq-sec{--fq-ff:'Plus Jakarta Sans','IBM Plex Sans Arabic','Noto Sans Arabic',system-ui,-apple-system,'Segoe UI',sans-serif;font-family:var(--fq-ff);color:#173b32;font-size:16px;line-height:normal;-webkit-font-smoothing:antialiased}
+html[lang^=ar] .fq-sec{--fq-ff:'IBM Plex Sans Arabic','Plus Jakarta Sans','Noto Sans Arabic',system-ui,sans-serif}
+.fq-sec *{box-sizing:border-box}
+.fq-sec *:not(em){font-family:inherit}
+.fq-sec>.container{max-width:1180px;padding-inline:24px}
+.fq-sec h1,.fq-sec h2{color:inherit;line-height:1.25;letter-spacing:-.02em;font-weight:500}
+.fq-sec em{font-family:Georgia,'Noto Sans Arabic',serif;font-weight:400}
+.fq-sec a{text-decoration:none}
+.fq-sec svg{flex-shrink:0}
+[dir=rtl] .fq-sec h1,[dir=rtl] .fq-sec h2{letter-spacing:0}
+
+/* ---------- 1. banner: breadcrumb + hero with search ---------- */
+.fq-crumb{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:26px;font-size:14px;color:#6c7670}
+.fq-sec .fq-crumb a{display:flex;align-items:center;gap:8px;color:#00705a;font-weight:600}
+.fq-crumb i{font-style:normal;opacity:.5}
+.fq-hero{display:grid;grid-template-columns:1fr minmax(280px,440px);gap:20px 50px;align-items:end;padding:0 0 34px;border-bottom:1px solid #e1ece5;color:#10201a}
+.fq-eye{grid-column:1;justify-self:start;color:#0a6a55;font-size:12px;font-weight:800;letter-spacing:2px;display:flex;align-items:center;gap:10px}
+.fq-eye:before{content:'';width:34px;height:2px;background:#c18f00}
+.fq-sec .fq-hero h1{grid-column:1;margin:0;font-size:clamp(38px,5.4vw,72px);line-height:1;letter-spacing:-2.4px;font-weight:800;color:#10201a}
+.fq-hero h1 em{font-style:normal;color:#c18f00;display:block}
+.fq-hero>p{grid-column:1;margin:0;max-width:540px;font-size:17px;line-height:1.65;color:#5b6a64}
+.fq-search{grid-column:2;grid-row:1/4;align-self:end;display:flex;align-items:center;gap:12px;height:62px;margin:0;padding:0 20px;border-radius:18px;background:#f3f7f4;border:1.5px solid transparent;color:#0a6a55;transition:.25s}
+.fq-search:focus-within{background:#fff;border-color:#00705a;box-shadow:0 0 0 5px #00705a1a}
+.fq-search svg{width:22px;height:22px;flex:none}
+.fq-search input{flex:1;min-width:0;border:0;background:none;font:inherit;font-size:16.5px;color:#10201a;outline:0}
+
+/* ---------- 2. question list (accordion) ---------- */
+.fq-count{margin:0 0 6px;font-size:13px;color:#8a9690}
+.fq-item{position:relative;border-bottom:1px solid #e1ece5}
+.fq-q{display:flex;align-items:flex-start;gap:22px;width:100%;padding:28px 0;border:0;background:none;font:inherit;text-align:start;cursor:pointer;color:#10201a}
+.fq-n{font-size:15px;font-weight:700;color:#c18f00;min-width:28px;padding-top:5px;font-variant-numeric:tabular-nums;letter-spacing:.5px}
+.fq-t{flex:1;font-size:21px;font-weight:600;line-height:1.35;letter-spacing:-.3px;transition:color .25s}
+.fq-q:hover .fq-t,.fq-item.open .fq-t{color:#0a6a55}
+.fq-pm{position:relative;width:38px;height:38px;border-radius:50%;background:#f3f7f4;flex:none;transition:.35s}
+.fq-pm:before,.fq-pm:after{content:'';position:absolute;inset:50% auto auto 50%;width:14px;height:2px;background:#0a6a55;border-radius:2px;transform:translate(-50%,-50%);transition:transform .35s,background .35s}
+.fq-pm:after{transform:translate(-50%,-50%) rotate(90deg)}
+.fq-item.open .fq-pm{background:#00705a;transform:rotate(180deg)}
+.fq-item.open .fq-pm:before,.fq-item.open .fq-pm:after{background:#fff}
+.fq-item.open .fq-pm:after{transform:translate(-50%,-50%) rotate(0)}
+.fq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s cubic-bezier(.2,.7,.2,1)}
+.fq-item.open .fq-a{grid-template-rows:1fr}
+.fq-a>div{overflow:hidden}
+.fq-a p{margin:0 60px 30px 50px;padding:18px 22px;border-inline-start:3px solid #edc76b;background:#fbf8ee;border-radius:0 14px 14px 0;font-size:16px;line-height:1.8;color:#41524b}
+[dir=rtl] .fq-a p{margin:0 50px 30px 60px;border-radius:14px 0 0 14px}
+.fq-empty{display:grid;gap:6px;padding:40px 0;color:#5b6a64}
+.fq-empty b{font-size:20px;color:#173b32}
+/* in the website editor every answer is shown so it can be edited */
+.editor_enable .fq-sec .fq-a{grid-template-rows:1fr}
+
+/* ---------- 3. "Can't find your way?" strip ---------- */
+.fq-ask{position:relative;display:grid;grid-template-columns:auto 1fr minmax(300px,420px);gap:10px 34px;align-items:center;padding:34px 40px;border-radius:30px;border:1px solid #0b5a47;overflow:hidden;color:#fff;background:radial-gradient(500px 240px at 100% 0,#0f8a63 0,transparent 65%),linear-gradient(120deg,#093d31,#0b5a47);box-shadow:0 26px 50px #0a4a3a30}
+.fq-ill{grid-row:1/3}
+.fq-ill svg{width:120px;height:120px}
+.fq-sec .fq-ask h2{margin:0;font-size:28px;font-weight:700;color:#fff;align-self:end}
+.fq-ask>p{margin:0;font-size:15px;color:#cfe6da;align-self:start}
+.fq-form{grid-column:3;grid-row:1/3;display:grid;gap:10px}
+.fq-text{width:100%;padding:14px 16px;border:1.5px solid #ffffff30;border-radius:16px;background:#ffffff1a;font:inherit;font-size:15px;resize:none;outline:0;color:#fff}
+.fq-text::placeholder{color:#b9d8c9}
+.fq-text:focus{background:#fff;color:#10201a;border-color:#fff;box-shadow:0 0 0 4px #edc76b66}
+.fq-text.bad{border-color:#ffc2bb}
+.fq-msg{margin:0;font-size:13.5px;color:#ffc2bb}
+.fq-msg.ok{color:#9ff0c6}
+.fq-submit{height:50px;border:0;border-radius:14px;background:#edc76b;color:#173b32;font:inherit;font-size:16px;font-weight:700;cursor:pointer;transition:.25s}
+.fq-submit:hover{background:#f3d27d;transform:translateY(-2px)}
+.fq-submit:disabled{opacity:.6;pointer-events:none}
+.fq-contact{grid-column:2;display:flex;gap:10px;flex-wrap:wrap;align-self:start}
+.fq-sec .fq-contact a{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;background:#ffffff1f;color:#fff;font-size:14px;font-weight:600}
+.fq-sec .fq-contact a:hover{background:#ffffff38}
+.fq-contact svg{width:17px;height:17px;color:#edc76b}
+
+/* ---------- responsive ---------- */
+@media(max-width:1000px){
+  .fq-hero{grid-template-columns:1fr}
+  .fq-search{grid-column:1;grid-row:auto}
+  .fq-ask{grid-template-columns:1fr;padding:28px 22px}
+  .fq-ill{grid-row:auto}
+  .fq-form,.fq-contact{grid-column:1;grid-row:auto}
+}
+@media(max-width:560px){
+  .fq-sec>.container{padding-inline:14px}
+  .fq-crumb{gap:6px 8px;margin-bottom:14px}
+  .fq-t{font-size:17px}
+  .fq-q{gap:12px;padding:20px 0}
+  .fq-n{min-width:22px}
+  .fq-a p{margin:0 0 22px 34px;padding:14px 16px;font-size:15px}
+  [dir=rtl] .fq-a p{margin:0 34px 22px 0}
+  .fq-pm{width:34px;height:34px}
+}
+@media(prefers-reduced-motion:reduce){.fq-a,.fq-pm,.fq-pm:before,.fq-pm:after{transition:none}}

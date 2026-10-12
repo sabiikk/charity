@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="aidregistration_terms_section" name="Aid Registration Terms Section">
+        <section class="ar-sec s_ar_terms pt72 pb40" id="terms">
+            <div class="container">
+                <div class="ar-main">
+                    <h2 class="ar-title ar-fade">Electronic submission of aid</h2>
+                    <h3 class="ar-sub ar-fade">Terms &amp; Conditions</h3>
+                    <ol class="ar-terms">
+                        <li class="ar-fade" style="--d:0s"><span>1</span><p>One full calendar year must pass since the last assistance was received.</p></li>
+                        <li class="ar-fade" style="--d:0.08s"><span>2</span><p>Registration will be considered cancelled if the case is registered on a day not designated for it, for example a resident registering on a day designated for a national, and vice versa.</p></li>
+                        <li class="ar-fade" style="--d:0.16s"><span>3</span><p>Registration will be considered cancelled if cases from the Ajman branch are registered in Ras Al Khaimah and vice versa.</p></li>
+                        <li class="ar-fade" style="--d:0s"><span>4</span><p>The required documents must be provided after the researcher contacts the case via phone text messages within a period not exceeding 5 working days.</p></li>
+                        <li class="ar-fade" style="--d:0.08s"><span>5</span><p>Bring the case’s original documents and copies of them for verification.</p></li>
+                        <li class="ar-fade" style="--d:0.16s"><span>6</span><p>Medical cases that require assistance for treatment by the Association will be registered, and a recent medical report must be presented.</p></li>
+                    </ol>
+                    <div class="ar-decl ar-fade">
+                        <p>A day has been allocated to provide assistance to citizens, and you will be informed of the date of submission to other nationalities through the website. I, the applicant, undertake that I have read the above-mentioned points and that I am fully aware that if I do not meet the above-mentioned conditions, then the request will be automatically rejected and the aid file will be completely closed by Al Ihsan Charity Association.</p>
+                        <p>The above has been read and approved, and I pledge that I am a citizen of the country and I hold an Emirati passport, and everything that will be mentioned on the application page is correct and identical to all supporting documents.</p>
+                        <label class="ar-agree"><input type="checkbox" class="ar-ok"/><i></i><span>I have read and agree to the terms</span></label>
+                    </div>
+                    <div class="ar-actions ar-fade" id="apply">
+                        <a class="ar-follow" href="https://alihsan.ae/ar" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Follow Up</span></a>
+                        <a class="ar-apply" href="https://alihsan.ae/ar" target="_blank" rel="noopener" aria-disabled="true"><span>Apply</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                    </div>
+                    <p class="ar-hint">Please agree to the terms to continue.</p>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

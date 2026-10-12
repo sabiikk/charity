@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="general_manager_message_section" name="General Manager Message Section">
+        <section class="ch-sec s_gm_msg pt0 pb0" id="gm-msg">
+            <div class="container">
+                <div class="chair-msg">
+                    <aside class="chair-aside">
+                        <div class="chair-aside-card dark">
+                            <span class="cm-frame"><img src="/alihsanwebsite_theme/static/src/img/general-manager.jpeg" alt="General Manager of Al Ihsan Charity Association"/></span>
+                            <div><b>General Manager, Al Ihsan Charity Association</b></div>
+                        </div>
+                        <div class="chair-aside-links">
+                            <a href="/chairman"><span>Chairman's message</span><span class="circle-ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+                            <a href="/#leadership"><span>Leadership</span><span class="circle-ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+                            <a href="/about-us"><span>About Al Ihsan</span><span class="circle-ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+                        </div>
+                    </aside>
+                    <article class="chair-article">
+                        <div class="chair-kicker"><i></i><span>General Manager's message</span></div>
+                        <p class="chair-lead">At Al Ihsan, we believe real good is the kind whose effect lasts long after the moment of giving. This message is a placeholder for the approved text.</p>
+                        <p class="body">Our donors, volunteers and partners make this work possible. We are committed to transparency in how every dirham is used and to reporting back on the impact of your giving.</p>
+                        <p class="body">Thank you for standing with us.</p>
+                        <figure class="chair-pullquote">
+                            <blockquote>Kindness is most powerful when it lasts.</blockquote>
+                        </figure>
+                        <div class="chair-sign-off"><i></i><b>General Manager</b><span>Al Ihsan Charity Association</span></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

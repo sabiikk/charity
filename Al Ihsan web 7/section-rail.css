@@ -1,0 +1,34 @@
+/* home: fixed section rail — frosted pill with a sliding green thumb (see section-rail.js) */
+.sec-rail{position:fixed;z-index:70;inset-inline-end:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:6px;padding:7px;border:1px solid #ffffffb3;border-radius:99px;background:#ffffffc7;-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);box-shadow:0 14px 34px -14px #0b3a2a55,0 0 0 1px #0b3a2a0f;transition:opacity .35s,transform .35s,visibility .35s}
+.sec-rail.away{opacity:0;visibility:hidden;transform:translateY(-50%) translateX(24px)}
+[dir=rtl] .sec-rail.away{transform:translateY(-50%) translateX(-24px)}
+.sec-thumb{position:absolute;top:0;left:7px;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#00a14b,#00705a);box-shadow:0 8px 16px -6px #00705acc,0 0 0 4px #00a14b1f;transition:transform .5s cubic-bezier(.3,1.35,.5,1)}
+[dir=rtl] .sec-thumb{left:auto;right:7px}
+.sec-dot{position:relative;z-index:1;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;color:#71807a;text-decoration:none;transition:color .3s,background .25s}
+.sec-dot svg{width:20px;height:20px;transition:transform .3s cubic-bezier(.3,1.5,.5,1)}
+.sec-dot:hover:not(.on){background:#00705a12;color:#00705a}
+.sec-dot:hover svg{transform:scale(1.12)}
+.sec-dot.on{color:#fff}
+.sec-dot:focus-visible{outline:2.5px solid #c9960c;outline-offset:2px}
+.sec-tag{position:absolute;top:50%;inset-inline-end:calc(100% + 20px);padding:7px 14px;border-radius:99px;background:#00705a;color:#fff;font-size:13.5px;font-weight:600;letter-spacing:.1px;line-height:1.2;white-space:nowrap;pointer-events:none;box-shadow:0 10px 20px -10px #00705acc;opacity:0;transform:translate(10px,-50%) scale(.92);transform-origin:right center;transition:opacity .3s,transform .35s cubic-bezier(.3,1.35,.5,1)}
+.sec-tag:after{content:'';position:absolute;top:50%;inset-inline-start:100%;margin-top:-5px;border:5px solid transparent;border-inline-start-color:#00705a}
+[dir=rtl] .sec-tag{transform:translate(-10px,-50%) scale(.92);transform-origin:left center}
+.sec-dot.on .sec-tag,.sec-dot:hover .sec-tag,.sec-dot:focus-visible .sec-tag{opacity:1;transform:translate(0,-50%) scale(1)}
+.sec-dot:hover:not(.on) .sec-tag{background:#24332d}
+.sec-dot:hover:not(.on) .sec-tag:after{border-inline-start-color:#24332d}
+/* only show one tag at a time: hovering another icon hides the active tag */
+.sec-rail:has(.sec-dot:hover:not(.on)) .sec-dot.on .sec-tag{opacity:0}
+@media(max-width:1100px),(max-height:480px){.sec-rail{display:none}}
+@media(prefers-reduced-motion:reduce){.sec-rail,.sec-thumb,.sec-dot,.sec-tag{transition:none}}
+
+/* taller rail: bigger stops and more space between them */
+.sec-rail{gap:16px;padding:10px}
+.sec-dot,.sec-thumb{width:48px;height:48px}
+.sec-thumb{left:10px}
+[dir=rtl] .sec-thumb{right:10px}
+.sec-dot svg{width:23px;height:23px}
+.sec-tag{inset-inline-end:calc(100% + 22px);font-size:14px;padding:8px 15px}
+@media(max-height:620px){.sec-rail{gap:8px;padding:8px}.sec-dot,.sec-thumb{width:42px;height:42px}.sec-thumb{left:8px}[dir=rtl] .sec-thumb{right:8px}}
+
+/* no name tags beside the stops (names stay as aria-labels for screen readers) */
+.sec-tag{display:none!important}

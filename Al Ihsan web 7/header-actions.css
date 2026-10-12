@@ -1,0 +1,55 @@
+/* header action area: language switch · cart · donate */
+.header-actions{display:flex;align-items:center;gap:14px}
+.header-actions .language#language{display:none}
+/* language segmented switch */
+.ha-lang{position:relative;display:inline-grid;grid-template-columns:1fr 1fr;align-items:center;height:42px;padding:4px;border-radius:999px;background:#eef3f1;border:1px solid #dfe8e3;isolation:isolate;direction:ltr}
+.ha-lang button{position:relative;z-index:1;min-width:46px;height:34px;padding:0 12px;border:0;border-radius:999px;background:none;font:inherit;font-size:13.5px;font-weight:700;color:#5b6a64;cursor:pointer;transition:color .3s}
+.ha-lang button.on{color:#fff}
+.ha-lang .ha-thumb{position:absolute;z-index:0;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:999px;background:linear-gradient(135deg,#00705a,#009746);box-shadow:0 4px 10px #00705a55;transition:transform .35s cubic-bezier(.3,1.3,.5,1)}
+.ha-lang[data-l=ar] .ha-thumb{transform:translateX(100%)}
+.ha-lang button[data-l=ar]{font-size:15px}
+/* cart */
+.ha-cart{position:relative}
+.ha-cart-btn,.header-actions .basket-toggle.ha-cart-btn{position:relative;display:inline-grid;place-items:center;width:46px;height:46px;border:0;border-radius:50%;background:#eef3f1;color:#0a6a55;cursor:pointer;font-size:0;transition:background .25s,transform .25s}
+.ha-cart-btn:hover{background:#dff0e8;transform:translateY(-2px)}
+.ha-cart-btn svg{width:22px;height:22px}
+.ha-badge{position:absolute;top:-4px;inset-inline-end:-4px;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:#e0a21b;color:#173b32;font-size:11.5px;font-weight:800;line-height:20px;text-align:center;border:2px solid #fff}
+.ha-badge.bump{animation:haBump .45s}
+@keyframes haBump{40%{transform:scale(1.5)}}
+.ha-pop{position:absolute;z-index:80;top:calc(100% + 14px);inset-inline-end:0;width:350px;max-width:calc(100vw - 24px);padding:20px;border-radius:22px;background:#fff;border:1px solid #e3ebe6;box-shadow:0 26px 60px #09261533;opacity:0;visibility:hidden;transform:translateY(10px) scale(.98);transform-origin:top right;transition:opacity .25s,transform .3s cubic-bezier(.22,.7,.2,1),visibility .25s;color:#10201a;text-align:start}
+[dir=rtl] .ha-pop{transform-origin:top left}
+.ha-pop.open{opacity:1;visibility:visible;transform:none}
+.ha-pop:before{content:'';position:absolute;top:-7px;inset-inline-end:16px;width:14px;height:14px;background:#fff;border-left:1px solid #e3ebe6;border-top:1px solid #e3ebe6;transform:rotate(45deg)}
+.ha-pop h4{margin:0 0 12px;font-size:17px}
+.ha-list{display:grid;gap:8px;max-height:240px;overflow:auto;margin-bottom:14px}
+.ha-row{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:14px;background:#f5f8f6}
+.ha-row b{display:block;font-size:14px;line-height:1.3}
+.ha-row small{color:#6a7872;font-size:12.5px}
+.ha-row div{flex:1;min-width:0}
+.ha-row button{flex:none;width:28px;height:28px;border:0;border-radius:50%;background:#e3ebe6;color:#33433d;font-size:16px;line-height:1;cursor:pointer;transition:.2s}
+.ha-row button:hover{background:#c0392b;color:#fff}
+.ha-empty{margin:0 0 14px;padding:18px;border-radius:14px;background:#f5f8f6;color:#6a7872;font-size:14px;line-height:1.6;text-align:center}
+.ha-total{display:flex;justify-content:space-between;align-items:baseline;padding:12px 2px;border-top:1px dashed #cfd9d4;margin-bottom:12px}
+.ha-total strong{font-size:22px}
+.ha-go{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;height:48px;border-radius:12px;background:#00705a;color:#fff!important;font-weight:700;font-size:15px;transition:.25s}
+.ha-go:hover{background:#005c49;transform:translateY(-2px)}
+/* donate */
+.header-actions .btn.small.ha-donate{position:relative;display:inline-flex;align-items:center;gap:9px;height:46px;padding:0 22px;border-radius:999px;background:linear-gradient(135deg,#00a251,#00793f);box-shadow:0 8px 18px #00793f55;font-size:14.5px;white-space:nowrap;overflow:visible}
+.ha-donate svg{width:19px;height:19px}
+.ha-donate:before{content:'';position:absolute;inset:-4px;border-radius:999px;border:2px solid #00a25155;animation:haRing 2.6s ease-out infinite;pointer-events:none}
+@keyframes haRing{0%{transform:scale(.96);opacity:.9}100%{transform:scale(1.18);opacity:0}}
+.header-actions .btn.small.ha-donate:hover{background:linear-gradient(135deg,#00b35a,#008a47);box-shadow:0 12px 24px #00793f66}
+.ha-donate.hv-btn{overflow:hidden}
+@media(max-width:1100px){.header-actions{gap:10px}.ha-donate span{display:none}.header-actions .btn.small.ha-donate{width:46px;padding:0;justify-content:center}}
+@media(max-width:760px){.header-actions .btn.small.ha-donate{display:inline-flex!important}.ha-lang button{min-width:38px;padding:0 8px}.ha-cart-btn{width:42px;height:42px}}
+@media(prefers-reduced-motion:reduce){.ha-donate:before{animation:none}}
+/* keep the whole action area inside the header on laptop widths */
+@media(max-width:1500px){
+ .header-actions{gap:8px}
+ .ha-lang{height:38px}.ha-lang button{min-width:40px;height:30px;padding:0 9px;font-size:12.5px}.ha-lang button[data-l=ar]{font-size:14px}
+ .ha-cart-btn,.header-actions .basket-toggle.ha-cart-btn{width:42px;height:42px}
+ .header-actions .btn.small.ha-donate{height:42px;padding:0 16px;font-size:13.5px;gap:7px}
+ .ha-donate svg{width:17px;height:17px}
+ .header-actions .login-toggle{padding-inline:12px}
+}
+@media(max-width:1320px){.ha-donate span{display:none}.header-actions .btn.small.ha-donate{width:42px;padding:0;justify-content:center}}

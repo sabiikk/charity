@@ -1,0 +1,80 @@
+/* ==========================================================
+   Aid Registration snippets — converted from "Al Ihsan web 7/aidregistration.html"
+   (aidregistration.css + the .pj-main / .fade rules it used from projects.css)
+   ========================================================== */
+
+/* ---------- base: restore the static site's globals inside our sections ---------- */
+.ar-sec{--line:#dfe6e1;--ar-ff:'Plus Jakarta Sans','IBM Plex Sans Arabic','Noto Sans Arabic',system-ui,-apple-system,'Segoe UI',sans-serif;font-family:var(--ar-ff);color:#173b32;font-size:16px;line-height:normal;-webkit-font-smoothing:antialiased}
+html[lang^=ar] .ar-sec{--ar-ff:'IBM Plex Sans Arabic','Plus Jakarta Sans','Noto Sans Arabic',system-ui,sans-serif}
+.ar-sec *{box-sizing:border-box}
+.ar-sec *:not(em){font-family:inherit}
+.ar-sec>.container{max-width:1240px;padding-inline:20px}
+.ar-sec h1,.ar-sec h2,.ar-sec h3{color:inherit;margin:0;line-height:normal;letter-spacing:-.02em}
+.ar-sec h3{font-weight:600}
+.ar-sec a{color:inherit;text-decoration:none}
+.ar-sec svg{width:24px;height:24px;flex-shrink:0}
+[dir=rtl] .ar-sec h1,[dir=rtl] .ar-sec h2,[dir=rtl] .ar-sec h3{letter-spacing:0}
+
+/* ---------- 1. banner: soft mint card, accent bar, rings ---------- */
+.ar-banner{position:relative;overflow:hidden;padding-block:28px 30px;padding-inline:52px 34px;border-radius:24px;background:linear-gradient(110deg,#eaf5ef,#f7fbf9 70%)}
+.ar-banner:before{content:'';position:absolute;inset-inline-end:-60px;top:-150px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,#00a25126 0 30%,#00a2511a 30% 55%,#00a25110 55% 100%);pointer-events:none}
+.ar-banner>*{position:relative;z-index:1}
+.ar-bc{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-size:13px;font-weight:600;color:#6a7872}
+.ar-sec .ar-bc a:hover{color:#00793f}
+.ar-bc i{font-style:normal;opacity:.5}
+.ar-bc b{color:#00793f;font-weight:700}
+.ar-sec .ar-banner h1{position:relative;margin:14px 0 10px;max-width:760px;font-size:clamp(26px,3.4vw,40px);font-weight:800;letter-spacing:-.8px;line-height:1.2;color:#0b2a21}
+.ar-banner h1:before{content:'';position:absolute;inset-inline-start:-18px;top:5px;bottom:5px;width:6px;border-radius:6px;background:linear-gradient(180deg,#00a251,#d9b564)}
+.ar-banner p{margin:0;max-width:760px;font-size:15.5px;line-height:1.7;color:#5b6a64}
+@media(max-width:700px){.ar-banner{padding-block:22px 24px;padding-inline:38px 20px;border-radius:20px}.ar-banner h1:before{inset-inline-start:-16px}}
+
+/* ---------- 2. schedule: notice + three registration days ---------- */
+.ar-notice{display:flex;align-items:flex-start;gap:16px;margin:0 auto;max-width:1170px;padding:22px 28px;border-radius:20px;background:#e5efed;color:#005c49}
+.ar-ni{flex:none;width:44px;height:44px;border-radius:50%;background:#00705a;color:#fff;display:grid;place-items:center;transition:transform .3s,background .3s,color .3s}
+.ar-sec .ar-ni svg{width:22px;height:22px}
+.ar-notice p{margin:0;font-size:16.5px;line-height:1.7;font-weight:500}
+.ar-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1170px;margin:22px auto 0}
+.ar-step{position:relative;padding:26px;border:1px solid var(--line);border-radius:20px;background:#fff;transition:transform .3s,box-shadow .3s}
+.ar-step:hover{transform:translateY(-4px);box-shadow:0 14px 30px #0926151a}
+.ar-n{position:absolute;top:22px;inset-inline-end:22px;width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#00705a,#009746);color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px}
+.ar-sec .ar-step h3{margin:0 0 16px;font-size:19px;padding-inline-end:40px}
+.ar-when{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:15px;color:#33433d}
+.ar-sec .ar-when svg{width:19px;height:19px;color:#00705a;flex:none}
+.ar-step p{margin:12px 0 0;color:#6a7872;font-size:14px}
+@media(max-width:900px){.ar-steps{grid-template-columns:1fr}}
+@media(max-width:620px){.ar-notice{padding:18px}}
+
+/* ---------- 3. terms, declaration, agree + apply ---------- */
+.ar-main{max-width:1170px;margin:0 auto}
+.ar-sec .ar-title{margin:0 0 18px;padding-bottom:18px;border-bottom:1px solid #d9e0dc;font-size:clamp(30px,4vw,44px);font-weight:700;letter-spacing:-.5px;color:#101a17}
+.ar-sec .ar-sub{margin:26px 0 16px;font-size:20px;font-weight:700}
+.ar-terms{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.ar-terms li{display:flex;gap:14px;align-items:flex-start;padding:16px 20px;border-radius:14px;background:#f7faf8;border:1px solid #e6eeea;transition:background .2s}
+.ar-terms li:hover{background:#eef6f2}
+.ar-terms li span{flex:none;width:28px;height:28px;border-radius:50%;background:#00705a;color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+.ar-terms p{margin:2px 0 0;font-size:15.5px;line-height:1.65;color:#33433d}
+.ar-decl{margin-top:30px;padding:26px 28px;border-radius:20px;background:#f4f4f4}
+.ar-decl p{margin:0 0 14px;font-size:15px;line-height:1.75;color:#4a5a54}
+.ar-agree{position:relative;display:flex;align-items:center;gap:12px;margin:20px 0 0;font-weight:600;cursor:pointer}
+.ar-agree input{position:absolute;opacity:0}
+.ar-agree i{width:26px;height:26px;border-radius:8px;border:2px solid #00705a;flex:none;display:grid;place-items:center;transition:.2s;background:#fff}
+.ar-agree input:checked+i{background:#00705a}
+.ar-agree input:checked+i:after{content:'✓';color:#fff;font-size:15px;font-style:normal}
+.ar-agree input:focus-visible+i{box-shadow:0 0 0 4px #00705a33}
+.ar-actions{display:flex;justify-content:center;gap:16px;margin-top:34px;flex-wrap:wrap}
+.ar-sec .ar-follow,.ar-sec .ar-apply{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 34px;border-radius:12px;font-weight:700;font-size:16px;transition:.25s}
+.ar-sec .ar-follow svg,.ar-sec .ar-apply svg{width:20px;height:20px}
+.ar-sec .ar-follow{border:1.5px solid #00705a;color:#00705a;background:#fff}
+.ar-sec .ar-follow:hover{background:#00705a;color:#fff}
+.ar-sec .ar-apply{background:#00705a;color:#fff;box-shadow:0 12px 24px #00705a40}
+.ar-sec .ar-apply:hover{background:#005c49;color:#fff;transform:translateY(-2px)}
+.ar-sec .ar-apply[aria-disabled=true]{background:#b9c6c1;box-shadow:none;cursor:not-allowed;pointer-events:none}
+.editor_enable .ar-sec .ar-apply[aria-disabled=true]{pointer-events:auto}/* keep the link editable in the website editor */
+.ar-hint{text-align:center;color:#8a9690;font-size:14px;margin:14px 0 0}
+.ar-hint.ok{visibility:hidden}
+@media(max-width:620px){.ar-decl{padding:20px}}
+
+/* ---------- fade-in on scroll (driven by aidregistration.js; never in edit mode) ---------- */
+.ar-sec [data-arv]{transition:opacity .8s ease var(--d,0s),transform .8s ease var(--d,0s)}
+.ar-sec [data-arv]:not(.ar-in){opacity:0;transform:translateY(34px)}
+@media(prefers-reduced-motion:reduce){.ar-sec [data-arv]{opacity:1!important;transform:none!important;transition:none!important}}

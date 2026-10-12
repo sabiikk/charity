@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="sponsorship_projects_section" name="Sponsorship Projects Section">
+        <!-- tabs filter the cards by data-cat; clicking the selected tab again shows all -->
+        <section class="spn-sec s_spn_projects pt0 pb40">
+            <div class="container">
+                <div class="sp-tabs" role="tablist">
+                    <button type="button" class="sp-tab" role="tab" aria-selected="false" data-f="kaflat">Kaflat</button>
+                    <button type="button" class="sp-tab" role="tab" aria-selected="false" data-f="ongoing">Ongoing Charity</button>
+                </div>
+                <div class="sp-grid">
+                    <article class="sp-card" data-cat="kaflat">
+                        <a class="sp-img" href="https://alihsan.ae/ar" target="_blank" rel="noopener"><img src="/alihsanwebsite_theme/static/src/img/sponsor-orphan.jpg" alt="Orphan Sponsorship" loading="lazy"/></a>
+                        <div class="sp-body">
+                            <h3>Orphan Sponsorship</h3>
+                            <p class="sp-amt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="12" rx="2"/><circle cx="12" cy="13" r="2.5"/><path d="M7 7V5h12v2"/></svg><span>Amount:</span> <b>300 <span>AED</span></b></p>
+                            <div class="sp-foot">
+                                <a class="sp-terms" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><span>Terms &amp; Condition</span></a>
+                                <a class="sp-sub" href="https://alihsan.ae/ar" target="_blank" rel="noopener"><span>Subscribe</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="sp-card" data-cat="kaflat">
+                        <a class="sp-img" href="https://alihsan.ae/ar" target="_blank" rel="noopener"><img src="/alihsanwebsite_theme/static/src/img/sponsor-monthly.jpg" alt="Sponsorships" loading="lazy"/></a>
+                        <div class="sp-body">
+                            <h3>Sponsorships</h3>
+                            <p class="sp-amt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="12" rx="2"/><circle cx="12" cy="13" r="2.5"/><path d="M7 7V5h12v2"/></svg><span>Amount:</span> <b>300 <span>AED</span></b></p>
+                            <div class="sp-foot">
+                                <a class="sp-terms" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><span>Terms &amp; Condition</span></a>
+                                <a class="sp-sub" href="https://alihsan.ae/ar" target="_blank" rel="noopener"><span>Subscribe</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="sp-card" data-cat="ongoing">
+                        <a class="sp-img" href="https://alihsan.ae/ar" target="_blank" rel="noopener"><img src="/alihsanwebsite_theme/static/src/img/sponsor-ongoing.jpg" alt="Ongoing - Charity" loading="lazy"/></a>
+                        <div class="sp-body">
+                            <h3>Ongoing - Charity</h3>
+                            <p class="sp-amt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="12" rx="2"/><circle cx="12" cy="13" r="2.5"/><path d="M7 7V5h12v2"/></svg><span>Amount:</span> <b>100 <span>AED</span></b></p>
+                            <div class="sp-foot">
+                                <a class="sp-terms" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><span>Terms &amp; Condition</span></a>
+                                <a class="sp-sub" href="https://alihsan.ae/ar" target="_blank" rel="noopener"><span>Subscribe</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="sp-card" data-cat="ongoing">
+                        <a class="sp-img" href="https://alihsan.ae/ar" target="_blank" rel="noopener"><img src="/alihsanwebsite_theme/static/src/img/sponsor-parents.jpg" alt="Parents' Package" loading="lazy"/></a>
+                        <div class="sp-body">
+                            <h3>Parents' Package</h3>
+                            <p class="sp-amt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="12" rx="2"/><circle cx="12" cy="13" r="2.5"/><path d="M7 7V5h12v2"/></svg><span>Amount:</span> <b>500 <span>AED</span></b></p>
+                            <div class="sp-foot">
+                                <a class="sp-terms" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><span>Terms &amp; Condition</span></a>
+                                <a class="sp-sub" href="https://alihsan.ae/ar" target="_blank" rel="noopener"><span>Subscribe</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="general_manager_snippets" inherit_id="website.snippets" name="General Manager Snippets">
+        <!--       Group Creation         -->
+        <xpath expr="//snippets[@id='snippet_groups']" position="inside">
+            <t snippet-group="gmgroup" t-snippet="website.s_snippet_group" string="General Manager"/>
+        </xpath>
+
+        <!--       Adding Snippets Into The Group         -->
+        <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+            <t t-snippet="alihsanwebsite_theme.general_manager_hero_section" string="General Manager Hero Section" group="gmgroup"/>
+            <t t-snippet="alihsanwebsite_theme.general_manager_message_section" string="General Manager Message Section" group="gmgroup"/>
+            <t t-snippet="alihsanwebsite_theme.general_manager_next_section" string="General Manager Next Section" group="gmgroup"/>
+        </xpath>
+    </template>
+</odoo>

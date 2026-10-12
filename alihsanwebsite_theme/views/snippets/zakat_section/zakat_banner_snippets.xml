@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="zakat_banner_section" name="Zakat Banner Section">
+        <section class="zk-sec s_zk_banner pt16 pb0">
+            <div class="container">
+                <div class="zk-crumb" role="navigation" aria-label="Breadcrumb">
+                    <a href="/">Home</a><i>/</i><a href="/#services">Services</a><i>/</i><span aria-current="page">Zakat Calculator</span>
+                </div>
+                <div class="zk-head">
+                    <span class="zk-eyebrow">GIVE YOUR ZAKAT WITH EASE</span>
+                    <h1>Zakat <em>Calculator</em></h1>
+                    <p>Work out the Zakat on your gold and wealth in seconds, then give it securely through Al Ihsan.</p>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

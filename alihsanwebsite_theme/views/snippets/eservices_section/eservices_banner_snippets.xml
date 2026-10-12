@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="eservices_banner_section" name="E-Services Banner Section">
+        <section class="mc-sec s_es_banner pt16 pb0">
+            <div class="container">
+                <div class="mc-banner mc-fade">
+                    <div class="pj-crumb" role="navigation" aria-label="Breadcrumb"><a href="/"><span>Home</span></a><i>/</i><span>E-Services</span></div>
+                    <div class="pj-eyebrow"><i></i><span>ONLINE SERVICES</span></div>
+                    <h1>E-Services</h1>
+                    <p>Request aid, register for Ramadan programmes or join us as a volunteer — all online.</p>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

@@ -1,0 +1,38 @@
+/* "Our projects" v2: cards with ringed icons, green flood on hover */
+#category-host .cause-wrap{max-width:1180px}
+#category-host .cause-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;justify-content:stretch;padding:34px 8px 10px;overflow:visible}
+
+#category-host .cause-grid:has(.cause-card:hover) .cause-card:not(:hover){opacity:1;filter:none;transform:none}
+#category-host .cause-card{--ac:#009746;position:relative;isolation:isolate;overflow:hidden;width:auto;min-height:206px;padding:26px 14px 20px;border:1px solid #e3ebe6;border-radius:24px;background:#fff;box-shadow:0 10px 26px -18px #0a3a2c55;justify-content:flex-start;gap:16px;transition:transform .5s cubic-bezier(.22,.7,.2,1),box-shadow .5s,border-color .4s,opacity .3s!important}
+/* green flood from the icon */
+#category-host .cause-card:before{display:block;content:'';position:absolute;z-index:-1;inset:auto;top:56px;left:50%;width:30px;height:30px;margin-left:-15px;border-radius:50%;background:linear-gradient(150deg,#00a14b,#06472e);transform:scale(0);transition:transform .7s cubic-bezier(.22,.7,.2,1)}
+#category-host .cause-card:after{display:none}
+#category-host .cause-card:hover{transform:translateY(-10px)!important;border-color:transparent;box-shadow:0 28px 40px -20px #00705acc}
+#category-host .cause-card:hover:before{transform:scale(13)}
+/* icon: gradient ring + soft inner circle */
+#category-host .cause-blob{width:76px;height:76px;flex:none}
+#category-host .cause-blob:before{display:block;inset:-6px;border:0;border-radius:50%;background:conic-gradient(from 200deg,#009746,#d9b564,#009746);opacity:.9;animation:none;filter:none;-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 2.5px),#000 calc(100% - 2px));mask:radial-gradient(farthest-side,transparent calc(100% - 2.5px),#000 calc(100% - 2px));transition:transform .8s cubic-bezier(.22,.7,.2,1)}
+#category-host .cause-card:hover .cause-blob:before{animation:causeSpin 4s linear infinite;background:conic-gradient(from 0deg,#fff,#d9b564,#fff)}
+@keyframes causeSpin{to{transform:rotate(360deg)}}
+#category-host .cause-blob:after{background:#e6f4ec;box-shadow:none;transition:background .4s,transform .5s cubic-bezier(.3,1.5,.5,1)}
+#category-host .cause-card:hover .cause-blob:after{background:#fff;box-shadow:0 10px 20px -8px #0006;transform:scale(1.04)}
+#category-host .cause-icon,#category-host .cause-card:hover .cause-icon{color:#009746!important}
+#category-host .cause-icon svg{width:30px;height:30px}
+#category-host .cause-card:hover .cause-icon svg{animation:causeIcon .7s cubic-bezier(.3,1.4,.5,1) both}
+/* label */
+#category-host .cause-copy{flex:1;display:flex;align-items:center;justify-content:center;margin:0}
+#category-host .cause-copy strong{font-size:15px;font-weight:600;line-height:1.35;color:#10201a;padding:0;transition:color .35s,transform .4s}
+#category-host .cause-copy strong:after{display:none}
+#category-host .cause-card:hover .cause-copy strong{color:#fff;transform:translateY(-2px)}
+/* explore pill slides up on hover */
+#category-host .cause-go{display:flex;justify-content:center;align-self:center;width:auto;margin:0;gap:6px;height:0;opacity:0;transform:translateY(10px);transition:opacity .35s .1s,transform .45s cubic-bezier(.22,.7,.2,1) .1s,height .45s}
+#category-host .cause-go b{display:none}
+#category-host .cause-go i{display:inline-flex;align-items:center;gap:6px;width:auto;height:auto;padding:7px 14px;border-radius:999px;background:#fff;color:#007a3d;font-size:12.5px;font-weight:700;font-style:normal;box-shadow:none;transform:none!important}
+#category-host .cause-go i:before{content:'Explore'}
+[dir=rtl] #category-host .cause-go i:before{content:'اكتشف'}
+#category-host .cause-card:hover .cause-go{height:30px;opacity:1;transform:none}
+#category-host .cause-card:focus-visible{outline:3px solid #c9960c;outline-offset:3px}
+@media(max-width:1100px){#category-host .cause-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){#category-host .cause-grid{grid-template-columns:repeat(2,1fr);gap:12px}#category-host .cause-card{min-height:178px;padding-top:22px}#category-host .cause-card:before{top:48px}}
+@media(hover:none){#category-host .cause-go{height:30px;opacity:1;transform:none}#category-host .cause-go i{background:#e6f4ec}}
+@media(prefers-reduced-motion:reduce){#category-host .cause-card,#category-host .cause-card:before,#category-host .cause-blob:before{transition:none!important;animation:none!important}}

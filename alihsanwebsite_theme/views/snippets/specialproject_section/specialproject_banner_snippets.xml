@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="specialproject_banner_section" name="Special Project Banner Section">
+        <section class="mc-sec s_sp_banner pt16 pb0">
+            <div class="container">
+                <div class="mc-banner mc-fade">
+                    <div class="pj-crumb" role="navigation" aria-label="Breadcrumb"><a href="/"><span>Home</span></a><i>/</i><span>Special Projects</span></div>
+                    <div class="pj-eyebrow"><i></i><span>GIVING IN YOUR NAME</span></div>
+                    <h1>Special Projects</h1>
+                    <p>Build your own project, share one with others, or sponsor someone in need — giving that carries your name.</p>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

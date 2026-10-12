@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="direct_donation_delegate_section" name="Request For A Delegate Section">
+        <section class="dn-sec s_direct_donation_delegate pt0 pb48" data-dn-panel="delegate">
+            <div class="container">
+                <div class="dn-other"><div class="dn-info" data-panel="delegate"><form class="dg-form" novalidate="">
+<h3>Personal Information</h3>
+<div class="dg-grid"><label class="dg-f"><input name="first" type="text" placeholder=" " required=""/><span>Full Name*</span></label><label class="dg-f dg-ph"><input name="mobile" type="tel" inputmode="tel" placeholder="05 **** ****" required=""/><span>Your Mobile Number*</span></label><label class="dg-f"><input name="email" type="email" placeholder=" "/><span>Your Email</span></label></div>
+<h3>Slot Information</h3>
+<div class="dg-grid"><label class="dg-f dg-full"><select name="location" required=""><option value="" hidden=""/><option>Ajman</option><option>Ras Al Khaimah</option><option>Umm Al Quwain</option><option>Sharjah</option></select><span>Location*</span></label>
+<label class="dg-f"><input name="date" type="date" placeholder=" " required=""/><span>Select a Date*</span></label>
+<label class="dg-f"><select name="time" required=""><option value="" hidden=""/><option>09:00 AM</option><option>10:00 AM</option><option>11:00 AM</option><option>12:00 PM</option><option>02:00 PM</option><option>03:00 PM</option><option>04:00 PM</option><option>05:00 PM</option></select><span>Select a Time*</span></label></div>
+<h3>Other Information</h3>
+<label class="dg-f dg-full"><textarea name="note" rows="1" placeholder=" "/><span>Write your text here</span></label>
+<label class="dn-terms dg-terms"><input type="checkbox" name="terms"/><i/><span><span>I agree and accept the</span> <a href="https://alihsan.ae/ar" target="_blank" rel="noopener">Terms &amp; Conditions</a></span></label>
+<p class="dg-err" role="alert" hidden=""/><p class="dg-ok" role="status" hidden=""/>
+<div class="dg-submit"><button type="submit" class="dg-btn"><span>Submit</span></button></div></form></div></div>
+            </div>
+        </section>
+    </template>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="event_snippets" inherit_id="website.snippets" name="Event Snippets">
+        <!--       Group Creation         -->
+        <xpath expr="//snippets[@id='snippet_groups']" position="inside">
+            <t snippet-group="eventgroup" t-snippet="website.s_snippet_group" string="Events"/>
+        </xpath>
+
+        <!--       Adding Snippets Into The Group         -->
+        <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+            <t t-snippet="alihsanwebsite_theme.event_header_section" string="Event Header Section" group="eventgroup"/>
+            <t t-snippet="alihsanwebsite_theme.event_gallery_section" string="Event Gallery Section" group="eventgroup"/>
+        </xpath>
+    </template>
+</odoo>

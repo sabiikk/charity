@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="chairman_snippets" inherit_id="website.snippets" name="Chairman Snippets">
+        <!--       Group Creation         -->
+        <xpath expr="//snippets[@id='snippet_groups']" position="inside">
+            <t snippet-group="chairmangroup" t-snippet="website.s_snippet_group" string="Chairman"/>
+        </xpath>
+
+        <!--       Adding Snippets Into The Group         -->
+        <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+            <t t-snippet="alihsanwebsite_theme.chairman_hero_section" string="Chairman Hero Section" group="chairmangroup"/>
+            <t t-snippet="alihsanwebsite_theme.chairman_message_section" string="Chairman Message Section" group="chairmangroup"/>
+            <t t-snippet="alihsanwebsite_theme.chairman_next_section" string="Chairman Next Section" group="chairmangroup"/>
+        </xpath>
+    </template>
+</odoo>

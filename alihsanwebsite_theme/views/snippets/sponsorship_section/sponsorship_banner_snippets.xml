@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="sponsorship_banner_section" name="Sponsorship Banner Section">
+        <section class="spn-sec s_spn_banner pt16 pb0">
+            <div class="container">
+                <div class="sp-bc" role="navigation" aria-label="Breadcrumb">
+                    <a href="/">Home</a><i>›</i><a href="/special-projects">Special Projects</a><i>›</i><b aria-current="page">Sponsorship Projects</b>
+                </div>
+                <h1 class="sp-title">Sponsorship Projects</h1>
+            </div>
+        </section>
+    </template>
+</odoo>

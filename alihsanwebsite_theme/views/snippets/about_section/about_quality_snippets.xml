@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="about_quality_section" name="About Quality Section">
+        <section class="ab-sec s_ab_quality pt0 pb0">
+            <div class="container">
+                <div class="ab-quality">
+                    <div class="ab-qh">
+                        <span class="ab-eye">OUR QUALITY POLICY</span>
+                        <h2>Quality Policy: <em>ISO 9001:2015</em></h2>
+                        <p class="ab-lead">Ajman seeks to be the pioneer of charitable and humanitarian work in UAE</p>
+                    </div>
+                    <div class="ab-qg">
+                        <div class="ab-qi">
+                            <img src="/alihsanwebsite_theme/static/src/img/media-award.jpg" alt="Award" loading="lazy"/>
+                            <img src="/alihsanwebsite_theme/static/src/img/media-zayed.jpg" alt="Zayed Humanitarian Day" loading="lazy"/>
+                        </div>
+                        <div class="ab-ql">
+                            <div class="ab-box">
+                                <h3>Strategic aims</h3>
+                                <ul>
+                                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg><span>Upgrade the institutional work; activate its mechanisms and qualifying the staff in accordance with the modern institutional work requirements.</span></li>
+                                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg><span>Development of the financial resources to achieve the requirements of the social, charitable and humanitarian works.</span></li>
+                                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg><span>Buildup and manage the endowment and development projects, to achieve the social sustainability.</span></li>
+                                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg><span>Providing social, health and educational care to the needy in order to achieve sustainability and self-sufficiency.</span></li>
+                                </ul>
+                            </div>
+                            <div class="ab-box">
+                                <h3>The Association is committed to</h3>
+                                <ul>
+                                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg><span>The continuous training, development and rehabilitation to raise the efficiency of the employees.</span></li>
+                                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg><span>Taking customer suggestions and complaints into consideration, as well as discussing and analyzing them.</span></li>
+                                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg><span>Review the goals and the quality objectives within the Association periodically.</span></li>
+                                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg><span>Disseminate the quality objectives and policies to all employees.</span></li>
+                                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg><span>The laws and regulations adopted within the Association shall be in accordance with the laws and regulations of the United Arab Emirates.</span></li>
+                                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg><span>Providing services according to quality and excellence standards, in order to satisfy the customer.</span></li>
+                                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg><span>Verification of all necessary precautions and measures to update and follow up of the implementation the standards and specifications of the quality management systems of the Association as an application to the International regulation (ISO 9001-2015).</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="ab-foot">Therefore, Al Ihsan Charity Association is committed to the application and development of quality management system through the management follow-up, and checkup the effectiveness of the system continuously.</p>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

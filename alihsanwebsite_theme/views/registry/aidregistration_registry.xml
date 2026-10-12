@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="aidregistration_snippets" inherit_id="website.snippets" name="Aid Registration Snippets">
+        <!--       Group Creation         -->
+        <xpath expr="//snippets[@id='snippet_groups']" position="inside">
+            <t snippet-group="aidregistrationgroup" t-snippet="website.s_snippet_group" string="Aid Registration"/>
+        </xpath>
+
+        <!--       Adding Snippets Into The Group         -->
+        <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+            <t t-snippet="alihsanwebsite_theme.aidregistration_banner_section" string="Aid Registration Banner Section" group="aidregistrationgroup"/>
+            <t t-snippet="alihsanwebsite_theme.aidregistration_schedule_section" string="Aid Registration Schedule Section" group="aidregistrationgroup"/>
+            <t t-snippet="alihsanwebsite_theme.aidregistration_terms_section" string="Aid Registration Terms Section" group="aidregistrationgroup"/>
+        </xpath>
+    </template>
+</odoo>

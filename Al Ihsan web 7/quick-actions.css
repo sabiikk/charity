@@ -1,0 +1,19 @@
+/* home: floating quick actions on the left, vertically centred (see quick-actions.js) */
+.qa{position:fixed;z-index:71;inset-inline-start:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:16px;transition:opacity .35s,transform .35s,visibility .35s}
+.qa.away{opacity:0;visibility:hidden;transform:translateY(-50%) translateX(-24px)}
+[dir=rtl] .qa.away{transform:translateY(-50%) translateX(24px)}
+.qa-btn{position:relative;display:grid;place-items:center;width:46px;height:46px;border:1px solid #ffffffb3;border-radius:50%;background:#ffffffc7;color:#6a7872;cursor:pointer;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 10px 24px -12px #0b3a2a66,0 0 0 1px #0b3a2a0f;transition:color .25s,background .25s,transform .25s}
+.qa-btn svg{width:22px;height:22px}
+.qa-btn:hover{background:#fff;color:#00705a;transform:translateY(-2px)}
+.qa-donate{display:grid;place-items:center;align-content:center;gap:4px;width:64px;height:64px;border-radius:16px;background:linear-gradient(150deg,#009f50,#00705a);color:#fff;text-decoration:none;box-shadow:0 14px 28px -12px #00705acc;transition:transform .25s,box-shadow .25s;animation:qaPulse 2.8s ease-in-out 1.5s infinite}
+.qa-donate svg{width:24px;height:24px;fill:#fff;stroke:#fff}
+.qa-donate b{font-size:12.5px;font-weight:700;line-height:1}
+.qa-donate:hover{transform:translateY(-3px) scale(1.04)}
+@keyframes qaPulse{0%,100%{box-shadow:0 14px 28px -12px #00705acc,0 0 0 0 #00a14b55}50%{box-shadow:0 14px 28px -12px #00705acc,0 0 0 9px #00a14b00}}
+.qa-tip{position:absolute;top:50%;inset-inline-start:calc(100% + 12px);padding:6px 11px;border-radius:99px;background:#24332d;color:#fff;font-size:12.5px;font-weight:600;white-space:nowrap;pointer-events:none;opacity:0;transform:translate(-6px,-50%);transition:opacity .2s,transform .2s}
+[dir=rtl] .qa-tip{transform:translate(6px,-50%)}
+.qa-btn:hover .qa-tip,.qa-btn:focus-visible .qa-tip{opacity:1;transform:translate(0,-50%)}
+.qa-btn:focus-visible,.qa-donate:focus-visible{outline:2.5px solid #c9960c;outline-offset:3px}
+/* hidden on phones and small tablets */
+@media(max-width:768px){.qa{display:none}}
+@media(prefers-reduced-motion:reduce){.qa,.qa-btn,.qa-donate,.qa-tip{transition:none;animation:none}}

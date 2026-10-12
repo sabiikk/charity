@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="aidregistration_banner_section" name="Aid Registration Banner Section">
+        <section class="ar-sec s_ar_banner pt16 pb0">
+            <div class="container">
+                <div class="ar-banner ar-fade">
+                    <div class="ar-bc" role="navigation" aria-label="Breadcrumb">
+                        <a href="/">Home</a><i>›</i><a href="/e-services">E-Services</a><i>›</i><b aria-current="page">Aid Registration</b>
+                    </div>
+                    <h1>Welcome to the online registration system for aids</h1>
+                    <p>A service that allows customers with limited income who are citizens of the emirates of Ajman and Ras Al Khaimah with permanent residence there to request financial assistance.</p>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

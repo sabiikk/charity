@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="general_manager_next_section" name="General Manager Next Section">
+        <section class="ch-sec s_gm_next pt0 pb40">
+            <div class="container">
+                <div class="chair-next">
+                    <a class="chair-next-card light" href="/chairman">
+                        <span class="chair-next-num" aria-hidden="true">01</span>
+                        <div class="chair-next-top">
+                            <span class="chair-next-kicker"><i></i><span>Continue reading</span></span>
+                            <span class="chair-next-avatars"><img src="/alihsanwebsite_theme/static/src/img/chairman.jpeg" alt=""/></span>
+                        </div>
+                        <div class="chair-next-bottom">
+                            <span><strong>Chairman's message</strong><p>"We measure our work by the lives it touches, not the projects it counts."</p></span>
+                            <span class="chair-next-arrow" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                        </div>
+                    </a>
+                    <a class="chair-next-card dark" href="/#leadership">
+                        <span class="chair-next-num" aria-hidden="true">02</span>
+                        <div class="chair-next-top">
+                            <span class="chair-next-kicker"><i></i><span>Our team</span></span>
+                            <span class="chair-next-avatars"><img src="/alihsanwebsite_theme/static/src/img/general-manager.jpeg" alt=""/><img src="/alihsanwebsite_theme/static/src/img/chairman.jpeg" alt=""/></span>
+                        </div>
+                        <div class="chair-next-bottom">
+                            <span><strong>Meet our leadership</strong><p>The board and executive team who guide Al Ihsan's work.</p></span>
+                            <span class="chair-next-arrow" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

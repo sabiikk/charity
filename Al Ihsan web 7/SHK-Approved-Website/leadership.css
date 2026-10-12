@@ -1,0 +1,35 @@
+.leadership-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:32px}.leader-card{display:grid;grid-template-columns:38% 1fr;border:1px solid #dce6de;border-radius:14px;overflow:hidden;background:#fff;min-width:0}.leader-card>img{width:100%;height:100%;min-height:315px;object-fit:cover;object-position:50% 25%;background:#f0f5ef}.leader-copy{padding:29px 24px;display:flex;flex-direction:column;align-items:start;min-width:0}.leader-role{font-size:10px;letter-spacing:1.5px;font-weight:700;color:#008442;margin-bottom:15px}.leader-copy h3{font-size:20px;line-height:1.4;margin-bottom:15px;letter-spacing:-.4px}.leader-copy p{font-size:14px;line-height:1.8;color:#657467;margin:0 0 23px}.leader-copy a{white-space:normal;font-size:13px;line-height:1.8;margin-top:auto;color:#007b3b}.leader-card:nth-child(2) .leader-role,.leader-card:nth-child(2) .leader-copy a{color:#247283}.leader-copy a:hover{color:#2b519b}.leadership .eyebrow{color:#008442}.leadership{scroll-margin-top:100px}@media(max-width:1100px){.leader-card{grid-template-columns:1fr}.leader-card>img{height:260px;min-height:0;object-fit:contain}.leader-copy{padding:25px}.leader-copy h3{font-size:22px}}@media(max-width:760px){.leadership-grid{grid-template-columns:1fr;gap:22px}.leader-card>img{height:300px}.leader-copy h3{font-size:23px}.leader-copy p{font-size:16px}.leader-copy a{font-size:14px}}
+.leadership-grid .leader-card{opacity:0;transform:translateY(22px);transition:opacity .72s cubic-bezier(.2,.7,.2,1),transform .72s cubic-bezier(.2,.7,.2,1),box-shadow .3s}.leadership.is-visible .leader-card{opacity:1;transform:translateY(0)}.leadership.is-visible .leader-card:nth-child(2){transition-delay:.14s}.leader-card:hover{box-shadow:0 16px 34px #183d3214;transform:translateY(-4px)}.leadership-grid .leader-card>img{transform:scale(1.035);transition:transform .85s cubic-bezier(.2,.7,.2,1)}.leadership.is-visible .leader-card>img{transform:scale(1)}.leader-card:hover>img{transform:scale(1.045)}.leader-copy .underlink{position:relative;transition:color .25s,letter-spacing .25s}.leader-copy .underlink:hover{letter-spacing:.15px}@media(prefers-reduced-motion:reduce){.leadership-grid .leader-card,.leadership-grid .leader-card>img,.leader-copy .underlink{opacity:1;transform:none;transition:none;animation:none}}
+/* Donation method cards: calm staggered arrival, clear focus and tactile hover. */
+.donation-methods.motion-ready .method{opacity:0;transform:translateY(24px) scale(.985);transition:opacity .65s ease,transform .7s cubic-bezier(.2,.75,.2,1),box-shadow .35s ease,filter .35s ease}
+.donation-methods.motion-ready.is-visible .method{opacity:1;transform:translateY(0) scale(1)}
+.donation-methods.motion-ready.is-visible .method:nth-child(2){transition-delay:.07s}
+.donation-methods.motion-ready.is-visible .method:nth-child(3){transition-delay:.14s}
+.donation-methods.motion-ready.is-visible .method:nth-child(4){transition-delay:.21s}
+.donation-methods.motion-ready.is-visible .method:nth-child(5){transition-delay:.28s}
+.donation-methods.motion-ready.is-visible .method:nth-child(6){transition-delay:.35s}
+.donation-methods.motion-ready.is-visible .method:nth-child(7){transition-delay:.42s}
+.donation-methods .method{overflow:hidden;isolation:isolate;will-change:transform}
+.donation-methods .method:before{content:'';position:absolute;z-index:-1;inset:-45% auto -45% -65%;width:38%;transform:skewX(-18deg);background:linear-gradient(90deg,transparent,#ffffff20,transparent);transition:left .65s ease}
+.donation-methods .method:hover:before,.donation-methods .method:focus-visible:before{left:130%}
+.donation-methods .method:hover,.donation-methods .method:focus-visible{transform:translateY(-6px) scale(1.012);filter:saturate(1.08);box-shadow:0 18px 32px #0d553329}
+.donation-methods .method-icon{transition:transform .45s cubic-bezier(.2,.75,.2,1),background .35s}
+.donation-methods .method:hover .method-icon,.donation-methods .method:focus-visible .method-icon{transform:translateY(-3px) rotate(-5deg) scale(1.08);background:#ffffff2a}
+@media(prefers-reduced-motion:reduce){.donation-methods.motion-ready .method,.donation-methods .method,.donation-methods .method:before,.donation-methods .method-icon{transition:none!important;animation:none!important;transform:none!important;opacity:1!important}}
+/* Animate the details panel when Personal, Sponsorships or Shared projects changes. */
+.latest .filters button{transition:background .3s ease,color .3s ease,border-color .3s ease,transform .3s ease,box-shadow .3s ease}
+.latest .filters button:hover{transform:translateY(-2px);box-shadow:0 6px 16px #0c59331a}
+.latest .filters button.selected{box-shadow:0 5px 16px #078d4b26}
+#latest-host .recent-grid.projects-enter{animation:latest-panel-in .52s cubic-bezier(.2,.75,.2,1) both}
+#latest-host .projects-enter .empty-project{animation:latest-card-in .6s cubic-bezier(.2,.75,.2,1) .06s both}
+#latest-host .projects-enter .empty-project>svg{animation:latest-icon-in .7s cubic-bezier(.2,.75,.2,1) .12s both}
+#latest-host .projects-enter .empty-project h3{animation:latest-card-in .48s ease .12s both}
+#latest-host .projects-enter .empty-project p{animation:latest-card-in .48s ease .2s both}
+#latest-host .projects-enter .empty-project .btn{animation:latest-card-in .48s ease .25s both}
+#latest-host .projects-enter .saved-project{animation:latest-card-in .55s cubic-bezier(.2,.75,.2,1) both}
+#latest-host .projects-enter .saved-project:nth-child(2){animation-delay:.08s}
+#latest-host .projects-enter .saved-project:nth-child(3){animation-delay:.16s}
+@keyframes latest-panel-in{from{opacity:0;transform:translateY(14px);filter:blur(3px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+@keyframes latest-card-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes latest-icon-in{0%{opacity:0;transform:scale(.72) rotate(-15deg)}70%{opacity:1;transform:scale(1.12) rotate(5deg)}100%{transform:scale(1) rotate(0)}}
+@media(prefers-reduced-motion:reduce){.latest .filters button,#latest-host .recent-grid,#latest-host .empty-project,#latest-host .saved-project,#latest-host .empty-project>*{animation:none!important;transition:none!important;transform:none!important;filter:none!important;opacity:1!important}}

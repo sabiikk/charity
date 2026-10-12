@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="image_snippets" inherit_id="website.snippets" name="Image Snippets">
+        <!--       Group Creation         -->
+        <xpath expr="//snippets[@id='snippet_groups']" position="inside">
+            <t snippet-group="imagegroup" t-snippet="website.s_snippet_group" string="Images"/>
+        </xpath>
+
+        <!--       Adding Snippets Into The Group         -->
+        <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+            <t t-snippet="alihsanwebsite_theme.image_header_section" string="Image Header Section" group="imagegroup"/>
+            <t t-snippet="alihsanwebsite_theme.image_gallery_section" string="Image Gallery Section" group="imagegroup"/>
+        </xpath>
+    </template>
+</odoo>

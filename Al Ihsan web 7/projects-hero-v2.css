@@ -1,0 +1,57 @@
+/* Projects & Campaigns hero: simple and minimal */
+.pj-hero{display:block;min-height:0;padding:36px 4px 8px;border-radius:0;background:none;box-shadow:none;overflow:visible;text-align:start}
+.pj-hero:before,.pj-hero:after{display:none}
+.pj-hero-copy{padding:0;max-width:720px;margin:0;align-items:flex-start}
+.pj-crumb{margin-bottom:20px;font-size:14px}
+.pj-hero .pj-eyebrow,.pj-feats{display:none}
+.pj-hero h1{margin:0 0 14px;font-size:clamp(34px,4.6vw,54px);font-weight:700;letter-spacing:-1px;line-height:1.1;color:#10201a}
+.pj-hero h1 em{background:none;-webkit-background-clip:initial;background-clip:initial;color:#10201a}
+.pj-hero p{margin:0 0 26px;max-width:520px;font-size:17px;line-height:1.7;color:#5b6a64}
+.pj-hero-actions{gap:12px}
+.pj-hero-btn,.pj-hero-ghost{height:48px;padding:0 24px;border-radius:10px;font-size:15px;box-shadow:none}
+.pj-hero-btn{background:#00705a;color:#fff}
+.pj-hero-btn:hover{background:#005c49;transform:none}
+.pj-hero-ghost{background:#fff;border:1px solid #cfdad5;color:#10201a}
+.pj-hero-ghost:hover{background:#f3f7f5;color:#10201a;border-color:#cfdad5}
+@media(max-width:700px){.pj-hero{padding-top:24px}.pj-hero-actions{width:100%}.pj-hero-btn,.pj-hero-ghost{flex:1;justify-content:center;padding:0 16px}}
+
+/* hero text: more attractive, still minimal */
+.pj-hero{padding-top:44px}
+.pj-hero .pj-crumb{padding:7px 14px;border-radius:999px;background:#f1f6f3;margin-bottom:28px;font-size:13.5px}
+.pj-hero h1{position:relative;margin:0 0 26px;padding-bottom:22px;font-size:clamp(44px,6.4vw,84px);font-weight:800;letter-spacing:-2.5px;line-height:1;background:linear-gradient(100deg,#06281d 0%,#00705a 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pj-hero h1 em{background:inherit;-webkit-background-clip:text;background-clip:text;color:transparent;font-style:normal}
+.pj-hero h1:after{content:'';position:absolute;inset-inline-start:2px;bottom:0;width:72px;height:5px;border-radius:5px;background:linear-gradient(90deg,#d9b564,#f3dc9a)}
+.pj-hero p{max-width:540px;margin-bottom:32px;font-size:19px;line-height:1.75;color:#4a5a53;font-weight:400}
+.pj-hero-btn,.pj-hero-ghost{font-weight:700;transition:transform .3s cubic-bezier(.22,.7,.2,1),box-shadow .3s,background .3s,border-color .3s,color .3s}
+.pj-hero-btn:hover{transform:translateY(-3px);box-shadow:0 14px 24px -12px #00705acc}
+.pj-hero-ghost:hover{transform:translateY(-3px);border-color:#00705a;color:#00705a}
+/* gentle entrance */
+.pj-hero .pj-crumb,.pj-hero h1,.pj-hero p,.pj-hero-actions{animation:pjUp .8s cubic-bezier(.22,.7,.2,1) both}
+.pj-hero h1{animation-delay:.08s}.pj-hero p{animation-delay:.18s}.pj-hero-actions{animation-delay:.28s}
+@keyframes pjUp{from{opacity:0;transform:translateY(18px)}}
+@media(max-width:700px){.pj-hero h1{font-size:clamp(38px,11vw,52px);letter-spacing:-1.5px}.pj-hero p{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.pj-hero .pj-crumb,.pj-hero h1,.pj-hero p,.pj-hero-actions{animation:none}}
+
+/* half-round shapes on the right edge */
+.pj-hero{position:relative;isolation:isolate;overflow:hidden;min-height:420px;border-radius:28px}
+.pj-hero-copy{position:relative;z-index:2}
+/* large faded half circle + thin gold half ring around it */
+.pj-hero:before{display:block;content:'';position:absolute;z-index:-1;left:auto;bottom:auto;inset-inline-start:auto;inset-inline-end:-230px;top:50%;width:460px;height:460px;margin-top:-230px;border-radius:50%;background:radial-gradient(circle at 30% 40%,#cdeadb 0%,#e3f4eb 55%,#f3faf6 100%);box-shadow:0 0 0 38px #fff,0 0 0 39.5px #d9b56466,0 0 0 78px #fff,0 0 0 79.5px #d9b56436;animation:pjHalfA 10s ease-in-out infinite}
+/* small solid half circles */
+.pj-hero:after{display:block;content:'';position:absolute;z-index:-1;inset:0;pointer-events:none;background:
+  radial-gradient(circle at 100% 14%,#00705a 0 44px,transparent 45px),
+  radial-gradient(circle at 100% 88%,#d9b564 0 30px,transparent 31px);animation:pjHalfB 8s ease-in-out infinite}
+[dir=rtl] .pj-hero:before{inset-inline-end:auto}
+@keyframes pjHalfA{50%{transform:translateX(-14px)}}
+@keyframes pjHalfB{50%{transform:translateX(-8px)}}
+@media(max-width:900px){.pj-hero{min-height:0}.pj-hero:before{width:260px;height:260px;margin-top:-130px;inset-inline-end:-150px;box-shadow:0 0 0 22px #fff,0 0 0 23.5px #d9b56455}.pj-hero:after{opacity:.55}}
+@media(prefers-reduced-motion:reduce){.pj-hero:before,.pj-hero:after{animation:none}}
+
+/* concentric half-circle bands */
+.pj-hero:before{inset:0;width:auto;height:auto;margin:0;border-radius:0;box-shadow:none;transform:none;background:radial-gradient(circle at 100% 52%,#00705a 0 70px,#168a6c 70px 130px,#5fbb98 130px 190px,#a9dbc3 190px 250px,#d5eee0 250px 310px,#eef8f2 310px 370px,transparent 371px);animation:pjBands 9s ease-in-out infinite}
+.pj-hero:after{background:radial-gradient(circle at 100% 0,#d9b564 0 62px,transparent 63px),radial-gradient(circle at 100% 100%,#bfe2cf 0 40px,transparent 41px);animation:none}
+@keyframes pjBands{50%{transform:translateX(-12px)}}
+[dir=rtl] .pj-hero:before{background:radial-gradient(circle at 0 52%,#00705a 0 70px,#168a6c 70px 130px,#5fbb98 130px 190px,#a9dbc3 190px 250px,#d5eee0 250px 310px,#eef8f2 310px 370px,transparent 371px)}
+[dir=rtl] .pj-hero:after{background:radial-gradient(circle at 0 0,#d9b564 0 62px,transparent 63px),radial-gradient(circle at 0 100%,#bfe2cf 0 40px,transparent 41px)}
+@media(max-width:900px){.pj-hero:before{opacity:.6;background:radial-gradient(circle at 100% 52%,#00705a 0 40px,#168a6c 40px 80px,#5fbb98 80px 120px,#a9dbc3 120px 160px,#d5eee0 160px 200px,transparent 201px)}.pj-hero:after{opacity:.5}}
+@media(prefers-reduced-motion:reduce){.pj-hero:before{animation:none}}

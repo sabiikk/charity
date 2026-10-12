@@ -1,0 +1,65 @@
+.leadership-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:32px}.leader-card{position:relative;isolation:isolate;display:flex;align-items:flex-end;border-radius:20px;overflow:hidden;background:#0e2e25;min-width:0;min-height:480px}.leader-card>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%;z-index:-2}.leader-card:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,36,29,0) 28%,rgba(6,36,29,.58) 60%,rgba(6,36,29,.96) 100%)}.leader-copy{position:relative;width:100%;padding:36px 30px;display:flex;flex-direction:column;align-items:start;min-width:0;color:#fff}.leader-copy:before{content:'\201C';position:absolute;top:-30px;inset-inline-start:30px;font-family:Georgia,'Times New Roman',serif;font-size:72px;line-height:1;color:#edc76b;opacity:.9;pointer-events:none}.leader-role{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:1.5px;font-weight:700;color:#edc76b;background:#1a3b31;border:1px solid #ffffff38;padding:7px 14px 7px 12px;border-radius:999px;margin-bottom:17px}.leader-role:before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0}.leader-copy h3{font-size:22px;line-height:1.35;margin-bottom:14px;letter-spacing:-.4px;color:#fff}.leader-copy p{font-size:14.5px;line-height:1.8;color:#dce8e1;opacity:.92;margin:0 0 24px;max-width:380px}.leader-copy a{white-space:normal;font-size:13px;font-weight:700;line-height:1.4;margin-top:auto;color:#fff;display:inline-flex;align-items:center;gap:9px;background:#ffffff17;border:1px solid #ffffff45;padding:12px 19px;border-radius:999px;text-decoration:none!important;transition:background .25s ease,color .25s ease,transform .25s ease}.leader-copy a:after{content:'→';font-size:15px;transition:transform .25s ease}.leader-card:nth-child(2) .leader-role{color:#8fd2e0}.leader-copy a:hover{background:#fff;color:#0e2e25;transform:translateY(-2px)}.leader-copy a:hover:after{transform:translateX(3px)}.leadership .eyebrow{color:#008442}.leadership{scroll-margin-top:100px}@media(max-width:1100px){.leader-card{min-height:440px}.leader-copy{padding:28px 25px}.leader-copy h3{font-size:22px}}@media(max-width:760px){.leadership-grid{grid-template-columns:1fr;gap:22px}.leader-card{min-height:420px}.leader-copy h3{font-size:23px}.leader-copy p{font-size:15.5px;max-width:none}.leader-copy a{font-size:14px}}
+.leadership .section-heading{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}.leadership.is-visible .section-heading{opacity:1;transform:translateY(0)}.leadership-grid .leader-card{opacity:0;transform:translateY(26px);transition:opacity .72s cubic-bezier(.2,.7,.2,1),transform .72s cubic-bezier(.2,.7,.2,1),box-shadow .3s}.leadership.is-visible .leader-card{opacity:1;transform:translateY(0)}.leadership.is-visible .leader-card:nth-child(2){transition-delay:.16s}.leader-card:hover{box-shadow:0 16px 34px #183d3214;transform:translateY(-4px)}.leadership-grid .leader-card>img{transform:scale(1.08);transition:transform 1s cubic-bezier(.2,.7,.2,1)}.leadership.is-visible .leader-card>img{transform:scale(1)}.leader-card:hover>img{transform:scale(1.045)}.leader-copy .underlink{position:relative;transition:color .25s,letter-spacing .25s}.leader-copy .underlink:hover{letter-spacing:.15px}@media(prefers-reduced-motion:reduce){.leadership .section-heading,.leadership-grid .leader-card,.leadership-grid .leader-card>img,.leader-copy .underlink{opacity:1;transform:none;filter:none;transition:none;animation:none}}
+/* Donation method cards: calm staggered arrival, clear focus and tactile hover. */
+.donation-methods.motion-ready .method{opacity:0;transform:translateY(24px) scale(.985);transition:opacity .65s ease,transform .7s cubic-bezier(.2,.75,.2,1),box-shadow .35s ease,filter .35s ease}
+.donation-methods.motion-ready.is-visible .method{opacity:1;transform:translateY(0) scale(1)}
+.donation-methods.motion-ready.is-visible .method:nth-child(2){transition-delay:.07s}
+.donation-methods.motion-ready.is-visible .method:nth-child(3){transition-delay:.14s}
+.donation-methods.motion-ready.is-visible .method:nth-child(4){transition-delay:.21s}
+.donation-methods.motion-ready.is-visible .method:nth-child(5){transition-delay:.28s}
+.donation-methods.motion-ready.is-visible .method:nth-child(6){transition-delay:.35s}
+.donation-methods.motion-ready.is-visible .method:nth-child(7){transition-delay:.42s}
+.donation-methods .method{overflow:hidden;isolation:isolate;will-change:transform}
+.donation-methods .method:before{content:'';position:absolute;z-index:-1;inset:-45% auto -45% -65%;width:38%;transform:skewX(-18deg);background:linear-gradient(90deg,transparent,#ffffff20,transparent);transition:left .65s ease}
+.donation-methods .method:hover:before,.donation-methods .method:focus-visible:before{left:130%}
+.donation-methods .method:hover,.donation-methods .method:focus-visible{transform:translateY(-6px) scale(1.012);filter:saturate(1.08);box-shadow:0 18px 32px #0d553329}
+.donation-methods .method-icon{transition:transform .45s cubic-bezier(.2,.75,.2,1),background .35s}
+.donation-methods .method:hover .method-icon,.donation-methods .method:focus-visible .method-icon{transform:translateY(-3px) rotate(-5deg) scale(1.08);background:#ffffff2a}
+@media(prefers-reduced-motion:reduce){.donation-methods.motion-ready .method,.donation-methods .method,.donation-methods .method:before,.donation-methods .method-icon{transition:none!important;animation:none!important;transform:none!important;opacity:1!important}}
+/* Animate the details panel when Personal, Sponsorships or Shared projects changes. */
+.latest .filters button{transition:background .3s ease,color .3s ease,border-color .3s ease,transform .3s ease,box-shadow .3s ease}
+.latest .filters button:hover{transform:translateY(-2px);box-shadow:0 6px 16px #0c59331a}
+.latest .filters button.selected{box-shadow:0 5px 16px #078d4b26}
+#latest-host .recent-grid.projects-enter{animation:latest-panel-in .52s cubic-bezier(.2,.75,.2,1) both}
+#latest-host .projects-enter .empty-project{animation:latest-card-in .6s cubic-bezier(.2,.75,.2,1) .06s both}
+#latest-host .projects-enter .empty-project>svg{animation:latest-icon-in .7s cubic-bezier(.2,.75,.2,1) .12s both}
+#latest-host .projects-enter .empty-project h3{animation:latest-card-in .48s ease .12s both}
+#latest-host .projects-enter .empty-project p{animation:latest-card-in .48s ease .2s both}
+#latest-host .projects-enter .empty-project .btn{animation:latest-card-in .48s ease .25s both}
+#latest-host .projects-enter .saved-project{animation:latest-card-in .55s cubic-bezier(.2,.75,.2,1) both}
+#latest-host .projects-enter .saved-project:nth-child(2){animation-delay:.08s}
+#latest-host .projects-enter .saved-project:nth-child(3){animation-delay:.16s}
+@keyframes latest-panel-in{from{opacity:0;transform:translateY(14px);filter:blur(3px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+@keyframes latest-card-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes latest-icon-in{0%{opacity:0;transform:scale(.72) rotate(-15deg)}70%{opacity:1;transform:scale(1.12) rotate(5deg)}100%{transform:scale(1) rotate(0)}}
+@media(prefers-reduced-motion:reduce){.latest .filters button,#latest-host .recent-grid,#latest-host .empty-project,#latest-host .saved-project,#latest-host .empty-project>*{animation:none!important;transition:none!important;transform:none!important;filter:none!important;opacity:1!important}}
+/* ===== leadership flip cards ===== */
+.lflip{position:relative;min-width:0;min-height:440px;perspective:1400px;border-radius:20px;outline:none;cursor:pointer}
+.lflip-inner{position:relative;width:100%;height:100%;min-height:440px;transform-style:preserve-3d;transition:transform .85s cubic-bezier(.2,.7,.2,1)}
+.lflip:hover .lflip-inner,.lflip:focus-visible .lflip-inner,.lflip.is-flipped .lflip-inner{transform:rotateY(180deg)}
+.lflip:focus-visible{box-shadow:0 0 0 3px #00a251}
+.lflip-face{position:absolute;inset:0;border-radius:20px;overflow:hidden;background:#0e2e25;-webkit-backface-visibility:hidden;backface-visibility:hidden;box-shadow:0 18px 40px #0e2e2533}
+.lflip-front>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.lflip-front:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,36,29,0) 40%,rgba(6,36,29,.9) 100%)}
+.lflip-cap{position:absolute;inset-inline:0;bottom:0;z-index:1;padding:28px 26px;display:flex;flex-direction:column;align-items:flex-start;color:#fff}
+.lflip-cap h3{margin:0 0 12px;font-size:23px;line-height:1.35;letter-spacing:-.4px;color:#fff}
+.lflip-hint{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:#d7eadf;opacity:.9}
+.lflip-hint:before{content:'\21BB';font-size:16px;color:#edc76b}
+.lflip-back{transform:rotateY(180deg);display:flex;align-items:center;background:linear-gradient(160deg,#0f3b30,#06241d)}
+.lflip-back:before{content:'';position:absolute;width:260px;height:260px;border-radius:50%;background:#ffffff0d;top:-90px;inset-inline-end:-80px}
+.lflip-back .leader-copy{padding:44px 30px 30px}
+.lflip-back .leader-copy:before{top:-8px}
+.lflip-back .leader-copy p{max-width:none}
+.lflip-back .leader-copy a{margin-top:6px}
+.lflip:nth-child(2) .leader-role{color:#8fd2e0}
+@media(max-width:700px){.lflip,.lflip-inner{min-height:460px}.lflip-back .leader-copy{padding:40px 22px 24px}}
+@media(prefers-reduced-motion:reduce){.lflip-inner{transition:none}}
+/* only the visible face receives clicks (the hidden front was swallowing the link) */
+.lflip:hover .lflip-front,.lflip:focus-within .lflip-front,.lflip.is-flipped .lflip-front{pointer-events:none}
+.lflip:not(:hover):not(:focus-within):not(.is-flipped) .lflip-back{pointer-events:none}
+
+/* leadership flip back: Donate-now green gradient */
+.lflip-back{background:linear-gradient(135deg,#00a251,#00793f)}
+.lflip-back:before{background:#ffffff1a}
+.lflip-back .leader-copy a{background:#ffffff26;border-color:#ffffff59}
+.lflip-back .leader-copy a:hover{background:#fff;color:#00793f}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="aidregistration_schedule_section" name="Aid Registration Schedule Section">
+        <section class="ar-sec s_ar_schedule pt40 pb0">
+            <div class="container">
+                <div class="ar-notice ar-fade">
+                    <span class="ar-ni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 17V11a6 6 0 0 1 12 0v6l2 2H4zM10 21h4"/></svg></span>
+                    <p>Aid Registration Opens For UAE Citizens in Ajman and Ras Al Khaimah: Tuesday, 13/10/2026 – 5:00 PM. For Residents of Ajman: Wednesday, 14/10/2026 – 5:00 PM. For Residents of Ras Al Khaimah: Thursday, 15/10/2026 – 5:00 PM.</p>
+                </div>
+                <div class="ar-steps">
+                    <div class="ar-step ar-fade" style="--d:0s">
+                        <span class="ar-n">1</span>
+                        <h3>Citizens</h3>
+                        <div class="ar-when"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><b>Tuesday, 13/10/2026</b></div>
+                        <div class="ar-when"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>5:00 PM</span></div>
+                        <p>UAE citizens in Ajman and Ras Al Khaimah</p>
+                    </div>
+                    <div class="ar-step ar-fade" style="--d:0.12s">
+                        <span class="ar-n">2</span>
+                        <h3>Residents of Ajman</h3>
+                        <div class="ar-when"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><b>Wednesday, 14/10/2026</b></div>
+                        <div class="ar-when"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>5:00 PM</span></div>
+                        <p>Registration day for Ajman</p>
+                    </div>
+                    <div class="ar-step ar-fade" style="--d:0.24s">
+                        <span class="ar-n">3</span>
+                        <h3>Residents of Ras Al Khaimah</h3>
+                        <div class="ar-when"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><b>Thursday, 15/10/2026</b></div>
+                        <div class="ar-when"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>5:00 PM</span></div>
+                        <p>Registration day for Ras Al Khaimah</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

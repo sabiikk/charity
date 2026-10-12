@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="video_gallery_section" name="Video Gallery Section">
+        <!-- data-fallback-url: where "Watch on the official site" points when a video has no data-src yet -->
+        <section class="gl-sec s_vd_gallery pt40 pb40" id="videos" data-fallback-url="https://alihsan.ae/ar">
+            <div class="container">
+                <h2 class="gl-title gl-fade">All Videos</h2>
+                <div class="gl-grid">
+                    <article class="gl-card vd-card gl-fade" data-src="">
+                        <button class="gl-img" type="button" aria-label="Play video: General Manager word"><img src="/alihsanwebsite_theme/static/src/img/general-manager.jpeg" alt="General Manager word" loading="lazy"/><span class="vd-play"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/></svg></span></button>
+                        <div class="gl-meta">
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><span>Held on:</span> <time datetime="2024-03-25">Mar 25, 2024</time></span>
+                        </div>
+                        <h3>General Manager word</h3>
+                    </article>
+                    <article class="gl-card vd-card gl-fade" data-src="">
+                        <button class="gl-img" type="button" aria-label="Play video: “Bel Afya Alekom” initiative"><img src="/alihsanwebsite_theme/static/src/img/food.jpg" alt="“Bel Afya Alekom” initiative" loading="lazy"/><span class="vd-play"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/></svg></span></button>
+                        <div class="gl-meta">
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><span>Held on:</span> <time datetime="2023-02-01">Feb 1, 2023</time></span>
+                        </div>
+                        <h3>“Bel Afya Alekom” initiative</h3>
+                    </article>
+                    <article class="gl-card vd-card gl-fade" data-src="">
+                        <button class="gl-img" type="button" aria-label="Play video: Summer Campaign Project"><img src="/alihsanwebsite_theme/static/src/img/media-community.jpg" alt="Summer Campaign Project" loading="lazy"/><span class="vd-play"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/></svg></span></button>
+                        <div class="gl-meta">
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><span>Held on:</span> <time datetime="2022-02-01">Feb 1, 2022</time></span>
+                        </div>
+                        <h3>Summer Campaign Project</h3>
+                    </article>
+                    <article class="gl-card vd-card gl-fade" data-src="">
+                        <button class="gl-img" type="button" aria-label="Play video: Ramadan’s Meer"><img src="/alihsanwebsite_theme/static/src/img/care.jpg" alt="Ramadan’s Meer" loading="lazy"/><span class="vd-play"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/></svg></span></button>
+                        <div class="gl-meta">
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><span>Held on:</span> <time datetime="2021-02-01">Feb 1, 2021</time></span>
+                        </div>
+                        <h3>Ramadan’s Meer</h3>
+                    </article>
+                    <article class="gl-card vd-card gl-fade" data-src="">
+                        <button class="gl-img" type="button" aria-label="Play video: Collaboration with Almaktoum Foundation"><img src="/alihsanwebsite_theme/static/src/img/media-food.jpg" alt="Collaboration with Almaktoum Foundation" loading="lazy"/><span class="vd-play"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/></svg></span></button>
+                        <div class="gl-meta">
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><span>Held on:</span> <time datetime="2020-02-01">Feb 1, 2020</time></span>
+                        </div>
+                        <h3>Collaboration with Almaktoum Foundation</h3>
+                    </article>
+                    <article class="gl-card vd-card gl-fade" data-src="">
+                        <button class="gl-img" type="button" aria-label="Play video: Ramadan Aman"><img src="/alihsanwebsite_theme/static/src/img/banner-1771406909.jpg" alt="Ramadan Aman" loading="lazy"/><span class="vd-play"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/></svg></span></button>
+                        <div class="gl-meta">
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><span>Held on:</span> <time datetime="2019-02-01">Feb 1, 2019</time></span>
+                        </div>
+                        <h3>Ramadan Aman</h3>
+                    </article>
+                    <article class="gl-card vd-card gl-fade" data-src="">
+                        <button class="gl-img" type="button" aria-label="Play video: Chairman word"><img src="/alihsanwebsite_theme/static/src/img/chairman.jpeg" alt="Chairman word" loading="lazy"/><span class="vd-play"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/></svg></span></button>
+                        <div class="gl-meta">
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><span>Held on:</span> <time datetime="2018-02-01">Feb 1, 2018</time></span>
+                        </div>
+                        <h3>Chairman word</h3>
+                    </article>
+                    <article class="gl-card vd-card gl-fade" data-src="">
+                        <button class="gl-img" type="button" aria-label="Play video: Zayed Humanitarian Day"><img src="/alihsanwebsite_theme/static/src/img/media-zayed.jpg" alt="Zayed Humanitarian Day" loading="lazy"/><span class="vd-play"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/></svg></span></button>
+                        <div class="gl-meta">
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><span>Held on:</span> <time datetime="2017-02-01">Feb 1, 2017</time></span>
+                        </div>
+                        <h3>Zayed Humanitarian Day</h3>
+                    </article>
+                    <article class="gl-card vd-card gl-fade" data-src="">
+                        <button class="gl-img" type="button" aria-label="Play video: Clean water wells"><img src="/alihsanwebsite_theme/static/src/img/water.jpg" alt="Clean water wells" loading="lazy"/><span class="vd-play"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/></svg></span></button>
+                        <div class="gl-meta">
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><span>Held on:</span> <time datetime="2016-02-01">Feb 1, 2016</time></span>
+                        </div>
+                        <h3>Clean water wells</h3>
+                    </article>
+                </div>
+                <p class="nw-empty gl-empty d-none">No matching videos.</p>
+                <nav class="gl-pager" aria-label="Pagination"></nav>
+            </div>
+        </section>
+    </template>
+</odoo>

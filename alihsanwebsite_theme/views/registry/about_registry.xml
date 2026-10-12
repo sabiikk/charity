@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="about_snippets" inherit_id="website.snippets" name="About Snippets">
+        <!--       Group Creation         -->
+        <xpath expr="//snippets[@id='snippet_groups']" position="inside">
+            <t snippet-group="aboutrup" t-snippet="website.s_snippet_group" string="About"/>
+        </xpath>
+
+        <!--       Adding Snippets Into The Group         -->
+        <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+            <t t-snippet="alihsanwebsite_theme.about_banner_section" string="About Banner Section" group="aboutrup"/>
+            <t t-snippet="alihsanwebsite_theme.about_history_section" string="About History Section" group="aboutrup"/>
+            <t t-snippet="alihsanwebsite_theme.about_story_section" string="About Story Section" group="aboutrup"/>
+            <t t-snippet="alihsanwebsite_theme.about_vision_mission_section" string="About Vision Mission Section" group="aboutrup"/>
+            <t t-snippet="alihsanwebsite_theme.about_quality_section" string="About Quality Section" group="aboutrup"/>
+            <t t-snippet="alihsanwebsite_theme.about_cta_section" string="About CTA Section" group="aboutrup"/>
+        </xpath>
+    </template>
+</odoo>

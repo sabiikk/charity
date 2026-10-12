@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="donations_banner_section" name="Donations Banner Section">
+        <section class="mc-sec s_dn_banner pt16 pb0">
+            <div class="container">
+                <div class="mc-banner mc-fade">
+                    <div class="pj-crumb" role="navigation" aria-label="Breadcrumb"><a href="/"><span>Home</span></a><i>/</i><span>Donations</span></div>
+                    <div class="pj-eyebrow"><i></i><span>WAYS TO GIVE</span></div>
+                    <h1>Donations</h1>
+                    <p>Online, by SMS, bank transfer or through a representative — choose the way that is easiest for you.</p>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

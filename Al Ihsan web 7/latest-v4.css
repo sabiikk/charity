@@ -1,0 +1,133 @@
+/* "Projects with a personal story": simple flat layout, no photo */
+#latest.latest{position:relative;overflow:visible;min-height:0;padding:56px 45px 52px;background:#f6f6f1;border:1px solid #e4e7de;border-radius:24px;color:var(--ink)}
+#latest-host{display:block}
+#latest .section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
+#latest .eyebrow{color:#009746}
+#latest h2{color:#283b34;font-size:clamp(30px,3.6vw,42px);letter-spacing:-1px;max-width:none}
+#latest .underlink{margin:0;padding:0 0 4px;border:0;border-radius:0;color:#283b34;text-decoration:none;border-bottom:1.5px solid #283b34;font-weight:700;font-size:14px;background:none}
+#latest .underlink:hover{background:none;color:#009746;border-bottom-color:#009746}
+/* no photo */
+#latest .latest-layout{display:block;margin-top:26px}
+#latest .latest-visual{display:none}
+#latest .latest-panel{background:none;border:0;box-shadow:none;padding:0;border-radius:0}
+/* pill tabs */
+#latest .latest-tabs{display:flex;flex-wrap:wrap;gap:10px;width:auto;margin:0;padding:0;background:none;border:0;border-radius:0}
+#latest .latest-tabs button{flex:none;display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border:1px solid #e1e5dc;border-radius:999px;background:#fff;color:#5c6a56;font-size:13px;font-weight:600;box-shadow:none;margin:0;transition:background .25s,color .25s,box-shadow .25s,transform .25s}
+#latest .latest-tabs button svg{display:none}
+#latest .latest-tabs button:hover{background:#fff;color:#009746;border-color:#009746;transform:translateY(-2px);box-shadow:none}
+#latest .latest-tabs button.selected{background:#009746;border-color:#009746;color:#fff;box-shadow:0 8px 18px -6px #00974699}
+#latest .latest-panel .recent-grid{margin-top:26px}
+/* dashed empty-state row */
+#latest-host .empty-project{display:grid;grid-template-columns:auto 1fr auto;grid-template-rows:auto auto;column-gap:22px;row-gap:6px;align-items:center;text-align:start;min-height:0;padding:36px 38px;background:none;border:1px dashed #b7c1b2;border-radius:16px;box-shadow:none;backdrop-filter:none}
+#latest-host .empty-icon{grid-column:1;grid-row:1/span 2;width:44px;height:44px;border-radius:0;background:none;box-shadow:none;color:#9c7e3b}
+#latest-host .empty-icon svg{width:40px;height:40px;stroke-width:1.5}
+#latest-host .empty-project h3{grid-column:2;grid-row:1;align-self:end;margin:0;font-size:23px;font-weight:500;letter-spacing:-.3px;color:#283b34}
+#latest-host .empty-project p{grid-column:2;grid-row:2;align-self:start;max-width:none;margin:0;font-size:14.5px;color:#6c7670}
+#latest-host .empty-project .btn{grid-column:3;grid-row:1/span 2;margin:0;border-radius:6px;background:#009746;color:#fff;padding:16px 26px;font-weight:700;font-size:14px;box-shadow:none}
+#latest-host .empty-project .btn:hover{background:#007a38;color:#fff}
+@media(max-width:700px){
+  #latest.latest{padding:36px 20px}
+  #latest .section-heading{align-items:flex-start;flex-direction:column;gap:14px}
+  #latest-host .empty-project{grid-template-columns:auto 1fr;padding:26px 20px}
+  #latest-host .empty-project .btn{grid-column:1/-1;grid-row:3;margin-top:14px;text-align:center;justify-content:center}
+}
+
+/* personal projects tab: three project cards in the Personalised Projects page style (shown until the visitor saves their own) */
+#latest .pp-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+#latest .pp-card{display:flex;flex-direction:column;overflow:hidden;border:1px solid #e3e8e4;border-radius:20px;background:#fff;transition:transform .35s cubic-bezier(.22,.7,.2,1),box-shadow .3s}
+#latest .pp-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px #0926151f}
+#latest .pp-photo{aspect-ratio:4/3;background:#d8dbdd;overflow:hidden}
+#latest .pp-photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+#latest .pp-card:hover .pp-photo img{transform:scale(1.05)}
+#latest .pp-body{position:relative;display:flex;flex-direction:column;flex:1;margin-top:-24px;padding:22px 22px 20px;border-radius:20px 20px 0 0;background:#fff}
+#latest .pp-body h3{margin:0 0 12px;font-size:20px;font-weight:500;line-height:1.35;color:#10201a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#latest .pp-body ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:14px;color:#6a7872}
+#latest .pp-body li{display:flex;align-items:center;gap:8px}
+#latest .pp-body li svg{flex:none;width:19px;height:19px;color:#00705a}
+#latest .pp-body li b{font-weight:500;color:#10201a}
+#latest .pp-act{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:20px}
+#latest .pp-terms{display:flex;align-items:center;gap:6px;font-size:12.5px;color:#b8860b;text-decoration:none;white-space:nowrap}
+#latest .pp-terms svg{flex:none;width:16px;height:16px}
+#latest .pp-terms:hover{text-decoration:underline}
+#latest .pp-sel{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 18px;border-radius:8px;background:#00705a;color:#fff;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap;transition:background .2s,transform .2s}
+#latest .pp-sel svg{width:16px;height:16px;transition:transform .25s}
+#latest .pp-sel:hover{background:#005c49}
+#latest .pp-sel:hover svg{transform:translate(2px,-2px)}
+[dir=rtl] #latest .pp-sel svg{transform:scaleX(-1)}
+@media(max-width:1180px) and (min-width:901px){#latest .pp-act{flex-wrap:wrap}#latest .pp-sel{flex:1;justify-content:center}}
+@media(max-width:900px){#latest .pp-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){#latest .pp-cards{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:-4px;padding:4px 4px 10px;scrollbar-width:none}#latest .pp-cards::-webkit-scrollbar{display:none}#latest .pp-card{flex:0 0 82%;scroll-snap-align:start}}
+#latest .pp-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:22px}
+#latest .pp-create{flex:0 0 auto}
+@media(max-width:560px){#latest .pp-foot{flex-direction:column-reverse;align-items:stretch;text-align:center}#latest .pp-all{align-self:center}}
+
+/* sponsorships tab: three sponsorship cards (same design as sponsorship.html) */
+#latest .sp-card{display:flex;flex-direction:column;overflow:hidden;border:1px solid #e1ece5;border-radius:18px;background:#fff;transition:transform .3s,box-shadow .3s}
+#latest .sp-card:hover{transform:translateY(-6px);box-shadow:0 18px 32px -16px #0e3a2a40}
+#latest .sp-img{display:block;aspect-ratio:16/10;overflow:hidden;background:#eef2ec}
+#latest .sp-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+#latest .sp-card:hover .sp-img img{transform:scale(1.05)}
+#latest .sp-body{display:flex;flex-direction:column;flex:1;gap:14px;padding:22px 22px 20px}
+#latest .sp-body h3{margin:0;font-size:21px;font-weight:600;letter-spacing:-.3px;color:#101a17;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#latest .sp-amt{display:flex;align-items:center;gap:8px;margin:0;font-size:14px;color:#6a7872}
+#latest .sp-amt svg{flex:none;width:18px;height:18px;color:#00793f}
+#latest .sp-amt b{color:#101a17;font-weight:600}
+#latest .sp-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:6px}
+#latest .sp-terms{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:#c9960c;text-decoration:none;white-space:nowrap}
+#latest .sp-terms svg{flex:none;width:15px;height:15px}
+#latest .sp-terms:hover{text-decoration:underline}
+#latest .sp-sub{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:140px;height:42px;padding:0 18px;border-radius:10px;background:linear-gradient(135deg,#00a251,#00793f);color:#fff;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap;box-shadow:0 8px 16px -8px #00793f99;transition:transform .2s,box-shadow .2s}
+#latest .sp-sub:hover{transform:translateY(-2px);box-shadow:0 12px 20px -8px #00793fbb}
+#latest .sp-sub svg{width:16px;height:16px}
+[dir=rtl] #latest .sp-sub svg{transform:scaleX(-1)}
+@media(max-width:1180px) and (min-width:901px){#latest .sp-foot{flex-wrap:wrap}#latest .sp-sub{flex:1}}
+@media(max-width:560px){#latest .sp-card{flex:0 0 82%;scroll-snap-align:start}}
+
+/* personal-story section: a little smaller overall (photos keep their shape) */
+#latest.latest{padding:38px 45px 34px;border-radius:22px}
+#latest .eyebrow{margin-bottom:8px;font-size:11px}
+#latest h2{font-size:clamp(26px,2.9vw,34px);letter-spacing:-.8px}
+#latest .underlink{font-size:13.5px}
+#latest .latest-layout{margin-top:18px}
+#latest .latest-tabs{gap:8px}
+#latest .latest-tabs button{padding:9px 15px;font-size:12.5px}
+#latest .latest-panel .recent-grid{margin-top:18px}
+#latest .pp-cards{gap:18px}
+#latest .pp-body{padding:18px 18px 16px}
+#latest .pp-body h3{margin-bottom:10px;font-size:18px}
+#latest .pp-body ul{gap:6px;font-size:13.5px}
+#latest .pp-act{padding-top:14px}
+#latest .sp-body{gap:10px;padding:18px 18px 16px}
+#latest .sp-body h3{font-size:19px}
+#latest .pp-foot{margin-top:18px}
+#latest .pp-create{padding-block:12px}
+@media(max-width:620px){#latest.latest{padding:28px 18px 24px}}
+/* …and one step smaller */
+#latest.latest{padding:32px 45px 28px}
+#latest h2{font-size:clamp(24px,2.6vw,30px)}
+#latest .latest-layout,#latest .latest-panel .recent-grid{margin-top:14px}
+#latest .pp-photo{aspect-ratio:16/11}
+#latest .pp-photo img{object-position:50% 45%}
+#latest .pp-body{margin-top:-20px;padding:16px 16px 14px}
+#latest .pp-body h3{margin-bottom:8px;font-size:17px}
+#latest .pp-body ul{gap:5px;font-size:13px}
+#latest .pp-body li svg{width:17px;height:17px}
+#latest .pp-act{padding-top:12px}
+#latest .pp-sel{height:38px;font-size:13.5px}
+#latest .pp-foot{margin-top:14px}
+#latest .pp-create{padding-block:10px}
+/* personal project cards: smaller */
+#latest .pp-cards{gap:16px}
+#latest .pp-card{border-radius:16px}
+#latest .pp-photo{aspect-ratio:16/10}
+#latest .pp-photo img{object-position:50% 55%}
+#latest .pp-body{margin-top:-16px;padding:14px 14px 12px;border-radius:16px 16px 0 0}
+#latest .pp-body h3{margin-bottom:6px;font-size:15.5px}
+#latest .pp-body ul{gap:3px;font-size:12.5px}
+#latest .pp-body li{gap:6px}
+#latest .pp-body li svg{width:15px;height:15px}
+#latest .pp-act{padding-top:10px}
+#latest .pp-terms{font-size:11.5px}
+#latest .pp-terms svg{width:14px;height:14px}
+#latest .pp-sel{height:34px;padding:0 14px;font-size:13px;border-radius:8px}
+#latest .pp-sel svg{width:14px;height:14px}

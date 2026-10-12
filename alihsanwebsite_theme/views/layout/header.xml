@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!--
+        Al Ihsan header (converted from "Al Ihsan web 7/index.html").
+        - Menus come from Website > Configuration > Menus (3 levels are not used by
+          this design: top-level items with sub-menus open a mega panel, others are links).
+        - "Header Description" on a menu fills the panel heading / the grey line under a link.
+        - Keeps <header t-if="not no_header" id="top"> and priority 99 so other views
+          that xpath into //header (survey, core header styles) still find it.
+    -->
+    <template id="alihsan_header" inherit_id="website.layout" name="Al Ihsan Header" priority="99">
+        <xpath expr="//header" position="replace">
+            <t t-set="ih_donate_url" t-value="'/shop'"/>
+
+            <!-- Top line -->
+            <div t-if="not no_header" id="ih-topline" class="topline">
+                <span>Al Ihsan Charity Association · United Arab Emirates</span>
+                <a href="https://alihsan.ae/ar" target="_blank" rel="noopener">Visit official website</a>
+            </div>
+
+            <header t-if="not no_header" id="top" data-anchor="true" data-name="Header" class="ih-header">
+
+                <!-- Logo (sticky-header swaps to the white logo once scrolled) -->
+                <a href="/" aria-label="Al Ihsan home">
+                    <img class="logo" src="/alihsanwebsite_theme/static/src/img/logo.svg"
+                         data-logo-scrolled="/alihsanwebsite_theme/static/src/img/logo-white.svg"
+                         alt="Al Ihsan Charity Association"/>
+                </a>
+
+                <!-- ===================== NAVIGATION (dynamic Odoo menus) ===================== -->
+                <nav id="navigation" aria-label="Main navigation">
+                    <t t-foreach="website.menu_id.child_id.filtered('is_visible')" t-as="menu">
+                        <t t-set="submenus" t-value="menu.child_id.filtered('is_visible')"/>
+
+                        <!-- With sub-menus: mega panel -->
+                        <div t-if="submenus" class="ih-nav-item has-mega">
+                            <button t-attf-class="ih-nav-link #{'active' if menu._is_active() else ''}" type="button"
+                                    aria-expanded="false" aria-haspopup="true">
+                                <span t-esc="menu.name"/>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                            </button>
+                            <div class="mega-panel">
+                                <div class="mega-wrap mg4">
+                                    <div class="m4-head">
+                                        <span class="m4-eye" t-esc="menu.name.upper()"/>
+                                        <h3 t-if="menu.ih_description" t-esc="menu.ih_description"/>
+                                    </div>
+                                    <div class="m4-links">
+                                        <t t-foreach="submenus" t-as="submenu">
+                                            <a class="mega-card" t-att-href="submenu._clean_url()"
+                                               t-att-target="'_blank' if submenu.new_window else None"
+                                               t-att-rel="'noopener' if submenu.new_window else None"
+                                               t-attf-style="--mi:#{submenu_index}">
+                                                <b t-esc="submenu.name"/>
+                                                <small t-if="submenu.ih_description" t-esc="submenu.ih_description"/>
+                                            </a>
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Without sub-menus: plain link -->
+                        <div t-else="" class="ih-nav-item">
+                            <a t-attf-class="ih-nav-link #{'active' if menu._is_active() else ''}"
+                               t-att-href="menu._clean_url()"
+                               t-att-target="'_blank' if menu.new_window else None"
+                               t-att-rel="'noopener' if menu.new_window else None"
+                               t-esc="menu.name"/>
+                        </div>
+                    </t>
+
+                    <!-- Mobile drawer only: Donate now at the bottom -->
+                    <a class="mnav-donate" t-att-href="ih_donate_url">
+                        <span class="mnav-ic" aria-hidden="true"/>
+                        <span class="mnav-t">Donate now</span>
+                    </a>
+                </nav>
+                <!-- =================== END NAVIGATION =================== -->
+
+                <!-- ===================== HEADER ACTIONS ===================== -->
+                <div class="header-actions">
+
+                    <!-- Language switch: the website's languages (EN / عربي) -->
+                    <t t-set="ih_langs" t-value="sorted(frontend_languages.values(), key=lambda lg: lg.code.startswith('ar'))"/>
+                    <div t-if="len(ih_langs) &gt; 1" class="ha-lang" role="group" aria-label="Language"
+                         t-att-data-l="'ar' if lang.startswith('ar') else 'en'">
+                        <span class="ha-thumb"/>
+                        <t t-foreach="ih_langs" t-as="lg">
+                            <a t-attf-class="ha-l js_change_lang #{'on' if lg.code == lang else ''}"
+                               t-att-href="url_localized(lang_code=lg.code, prefetch_langs=True, force_default_lang=True)"
+                               t-att-data-url_code="lg.url_code"
+                               t-att-data-l="'ar' if lg.code.startswith('ar') else 'en'"
+                               t-att-lang="lg.iso_code"
+                               t-att-aria-pressed="'true' if lg.code == lang else 'false'"
+                               t-esc="'عربي' if lg.code.startswith('ar') else lg.url_code.split('_')[0].upper()"/>
+                        </t>
+                    </div>
+
+                    <!-- Log in / My account -->
+                    <t t-set="ih_user_icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></t>
+                    <a t-if="request.env.user._is_public()" class="login-toggle" href="/web/login" aria-label="Log in">
+                        <t t-out="ih_user_icon"/><span>Log in</span>
+                    </a>
+                    <a t-else="" class="login-toggle" href="/my" aria-label="My account">
+                        <t t-out="ih_user_icon"/><span t-esc="(request.env.user.name or '').split(' ')[0]"/>
+                    </a>
+
+                    <!-- Donation basket = eCommerce cart (count is kept live by website_sale via .my_cart_quantity) -->
+                    <t t-set="website_sale_cart_quantity" t-value="request.session.get('website_sale_cart_quantity', request.cart.cart_quantity) or 0"/>
+                    <a href="/shop/cart" class="ha-cart-btn" aria-label="Donation basket">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg>
+                        <span class="ha-badge my_cart_quantity" t-out="website_sale_cart_quantity"/>
+                    </a>
+
+                    <!-- Donate now -->
+                    <a class="ih-btn ih-small ha-donate" t-att-href="ih_donate_url">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.7-7.5-10.5A4.3 4.3 0 0 1 12 8a4.3 4.3 0 0 1 7.5 2.5C19.5 16.3 12 21 12 21z"/></svg>
+                        <span>Donate now</span>
+                    </a>
+
+                    <!-- Mobile menu toggle -->
+                    <button class="menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navigation">☰</button>
+                </div>
+                <!-- =================== END HEADER ACTIONS =================== -->
+
+                <!-- Odoo's auto-hide-menu script (website/js/content/auto_hide_menu.js) expects
+                     header#top .top_menu and throws on every page without it. An empty one makes
+                     it stop early; our own menu is untouched. -->
+                <ul class="top_menu d-none" aria-hidden="true"/>
+            </header>
+        </xpath>
+    </template>
+
+    <!-- "Header Description" on Website > Configuration > Menus -->
+    <record id="website_menus_form_view_ih" model="ir.ui.view">
+        <field name="name">website.menu.form.alihsan</field>
+        <field name="model">website.menu</field>
+        <field name="inherit_id" ref="website.website_menus_form_view"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="ih_description"/>
+            </field>
+        </field>
+    </record>
+    <record id="menu_tree_ih" model="ir.ui.view">
+        <field name="name">website.menu.list.alihsan</field>
+        <field name="model">website.menu</field>
+        <field name="inherit_id" ref="website.menu_tree"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="ih_description" optional="show"/>
+            </field>
+        </field>
+    </record>
+</odoo>

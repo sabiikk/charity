@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="news_list_section" name="News List Section">
+        <section class="nw-sec s_nw_list pt64 pb40" id="latest-news">
+            <div class="container">
+                <div class="nw-head nw-fade">
+                    <div>
+                        <div class="pj-eyebrow"><i></i><span>LATEST NEWS</span></div>
+                        <h2 class="dn-title">Latest news</h2>
+                    </div>
+                </div>
+                <div class="nw-list">
+                    <article class="nw-feat nw-fade">
+                        <a class="nw-fimg" href="#"><img src="/alihsanwebsite_theme/static/src/img/media-food.jpg" alt="New partnership agreement signed to support our programmes"/></a>
+                        <div class="nw-fbody">
+                            <span class="nw-tag">Campaigns</span>
+                            <h3><a href="#">New partnership agreement signed to support our programmes</a></h3>
+                            <p>Al Ihsan signed a new partnership agreement with a corporate partner to expand support for families in need.</p>
+                            <div class="nw-meta"><time datetime="2026-09-18">18 Sep 2026</time><a class="nw-more" href="#"><span>Read more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+                        </div>
+                    </article>
+                    <div class="nw-grid">
+                        <article class="nw-card nw-fade" style="--d:0s">
+                            <a class="nw-img" href="#"><img src="/alihsanwebsite_theme/static/src/img/media-award.jpg" alt="Al Ihsan honoured for charitable excellence" loading="lazy"/><span class="nw-tag">Awards</span></a>
+                            <div class="nw-body">
+                                <time datetime="2026-09-02">2 Sep 2026</time>
+                                <h3><a href="#">Al Ihsan honoured for charitable excellence</a></h3>
+                                <p>The association received an award recognising its transparent and effective charitable work.</p>
+                                <a class="nw-more" href="#"><span>Read more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                            </div>
+                        </article>
+                        <article class="nw-card nw-fade" style="--d:0.1s">
+                            <a class="nw-img" href="#"><img src="/alihsanwebsite_theme/static/src/img/media-community.jpg" alt="Udhiyah project: tender announced" loading="lazy"/><span class="nw-tag">Community</span></a>
+                            <div class="nw-body">
+                                <time datetime="2026-08-21">21 Aug 2026</time>
+                                <h3><a href="#">Udhiyah project: tender announced</a></h3>
+                                <p>Al Ihsan announced a tender for the supply of sacrificial meat for its Udhiyah project.</p>
+                                <a class="nw-more" href="#"><span>Read more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                            </div>
+                        </article>
+                        <article class="nw-card nw-fade" style="--d:0.2s">
+                            <a class="nw-img" href="#"><img src="/alihsanwebsite_theme/static/src/img/media-zayed.jpg" alt="Children and volunteers celebrate Zayed Humanitarian Day" loading="lazy"/><span class="nw-tag">Events</span></a>
+                            <div class="nw-body">
+                                <time datetime="2026-08-05">5 Aug 2026</time>
+                                <h3><a href="#">Children and volunteers celebrate Zayed Humanitarian Day</a></h3>
+                                <p>Al Ihsan marked the day with activities that celebrate the spirit of giving.</p>
+                                <a class="nw-more" href="#"><span>Read more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                            </div>
+                        </article>
+                        <article class="nw-card nw-fade" style="--d:0s">
+                            <a class="nw-img" href="#"><img src="/alihsanwebsite_theme/static/src/img/gaza.jpg" alt="Emergency relief campaign continues" loading="lazy"/><span class="nw-tag">Campaigns</span></a>
+                            <div class="nw-body">
+                                <time datetime="2026-07-19">19 Jul 2026</time>
+                                <h3><a href="#">Emergency relief campaign continues</a></h3>
+                                <p>Donations continue to fund shelter, food and medical aid for affected families.</p>
+                                <a class="nw-more" href="#"><span>Read more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                            </div>
+                        </article>
+                        <article class="nw-card nw-fade" style="--d:0.1s">
+                            <a class="nw-img" href="#"><img src="/alihsanwebsite_theme/static/src/img/volunteers.jpg" alt="New volunteer programme opens registration" loading="lazy"/><span class="nw-tag">Community</span></a>
+                            <div class="nw-body">
+                                <time datetime="2026-07-02">2 Jul 2026</time>
+                                <h3><a href="#">New volunteer programme opens registration</a></h3>
+                                <p>Registration is now open for a new programme that matches volunteers with field projects.</p>
+                                <a class="nw-more" href="#"><span>Read more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                            </div>
+                        </article>
+                        <article class="nw-card nw-fade" style="--d:0.2s">
+                            <a class="nw-img" href="#"><img src="/alihsanwebsite_theme/static/src/img/news.jpg" alt="Partners meet to plan the year ahead" loading="lazy"/><span class="nw-tag">Events</span></a>
+                            <div class="nw-body">
+                                <time datetime="2026-06-14">14 Jun 2026</time>
+                                <h3><a href="#">Partners meet to plan the year ahead</a></h3>
+                                <p>Partners and board members gathered to review achievements and set priorities.</p>
+                                <a class="nw-more" href="#"><span>Read more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                            </div>
+                        </article>
+                    </div>
+                    <p class="nw-empty d-none">No matching news.</p>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

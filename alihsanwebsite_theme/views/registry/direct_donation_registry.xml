@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="direct_donation_snippets" inherit_id="website.snippets" name="Direct Donation Snippets">
+        <!--       Group Creation         -->
+        <xpath expr="//snippets[@id='snippet_groups']" position="inside">
+            <t snippet-group="directdonationgroup" t-snippet="website.s_snippet_group" string="Direct Donation"/>
+        </xpath>
+
+        <!--       Adding Snippets Into The Group         -->
+        <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+            <t t-snippet="alihsanwebsite_theme.direct_donation_banner_section" string="Direct Donation Banner Section" group="directdonationgroup"/>
+            <t t-snippet="alihsanwebsite_theme.direct_donation_tabs_section" string="Direct Donation Tabs Section" group="directdonationgroup"/>
+            <t t-snippet="alihsanwebsite_theme.direct_donation_direct_section" string="Direct Donation Form Section" group="directdonationgroup"/>
+            <t t-snippet="alihsanwebsite_theme.direct_donation_sms_section" string="SMS Donation Section" group="directdonationgroup"/>
+            <t t-snippet="alihsanwebsite_theme.direct_donation_bank_section" string="Bank Donation Section" group="directdonationgroup"/>
+            <t t-snippet="alihsanwebsite_theme.direct_donation_rep_section" string="Site Representative Section" group="directdonationgroup"/>
+            <t t-snippet="alihsanwebsite_theme.direct_donation_delegate_section" string="Request For A Delegate Section" group="directdonationgroup"/>
+            <t t-snippet="alihsanwebsite_theme.direct_donation_gifts_section" string="Gifts Section" group="directdonationgroup"/>
+            <t t-snippet="alihsanwebsite_theme.direct_donation_subs_section" string="Subscriptions Section" group="directdonationgroup"/>
+        </xpath>
+    </template>
+</odoo>

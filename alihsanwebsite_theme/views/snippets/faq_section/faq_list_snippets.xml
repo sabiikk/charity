@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Accordion: one question open at a time. Duplicate an .fq-item to add a question. -->
+    <template id="faq_list_section" name="FAQ List Section">
+        <section class="fq-sec s_fq_list pt40 pb0">
+            <div class="container">
+                <div class="fq-list">
+                    <p class="fq-count">8 questions</p>
+                    <div class="fq-item open" data-cat="spons">
+                        <button type="button" class="fq-q" aria-expanded="true"><span class="fq-n">01</span><span class="fq-t">How much is the “Orphan Sponsorship” fee?</span><span class="fq-pm"/></button>
+                        <div class="fq-a"><div><p>Orphan sponsorship within the country (300 dirhams). Orphan sponsorship outside the country (150 dirhams).</p></div></div>
+                    </div>
+                    <div class="fq-item" data-cat="assist">
+                        <button type="button" class="fq-q" aria-expanded="false"><span class="fq-n">02</span><span class="fq-t">What papers are required to submit a request for assistance application?</span><span class="fq-pm"/></button>
+                        <div class="fq-a"><div><p>Please contact us on 800 16 or send us your question using the form and our team will reply.</p></div></div>
+                    </div>
+                    <div class="fq-item" data-cat="med">
+                        <button type="button" class="fq-q" aria-expanded="false"><span class="fq-n">03</span><span class="fq-t">Can I benefit from the services of the Medical Complex?</span><span class="fq-pm"/></button>
+                        <div class="fq-a"><div><p>Please contact us on 800 16 or send us your question using the form and our team will reply.</p></div></div>
+                    </div>
+                    <div class="fq-item" data-cat="med">
+                        <button type="button" class="fq-q" aria-expanded="false"><span class="fq-n">04</span><span class="fq-t">What clinics are located in Al Ihsan Medical Complex?</span><span class="fq-pm"/></button>
+                        <div class="fq-a"><div><p>Please contact us on 800 16 or send us your question using the form and our team will reply.</p></div></div>
+                    </div>
+                    <div class="fq-item" data-cat="assist">
+                        <button type="button" class="fq-q" aria-expanded="false"><span class="fq-n">05</span><span class="fq-t">When will the study assistance begin?</span><span class="fq-pm"/></button>
+                        <div class="fq-a"><div><p>Al Ihsan Charity Association announces when it will receive the requests for assistance application periodically through the Association’s website and through its official accounts on social media.</p></div></div>
+                    </div>
+                    <div class="fq-item" data-cat="assist">
+                        <button type="button" class="fq-q" aria-expanded="false"><span class="fq-n">06</span><span class="fq-t">I would like to receive assistance but I’m living in Abu Dhabi?</span><span class="fq-pm"/></button>
+                        <div class="fq-a"><div><p>Please contact us on 800 16 or send us your question using the form and our team will reply.</p></div></div>
+                    </div>
+                    <div class="fq-item" data-cat="give">
+                        <button type="button" class="fq-q" aria-expanded="false"><span class="fq-n">07</span><span class="fq-t">Do you receive Zakat at the present time?</span><span class="fq-pm"/></button>
+                        <div class="fq-a"><div><p>Please contact us on 800 16 or send us your question using the form and our team will reply.</p></div></div>
+                    </div>
+                    <div class="fq-item" data-cat="vol">
+                        <button type="button" class="fq-q" aria-expanded="false"><span class="fq-n">08</span><span class="fq-t">I want to be a volunteer, what are the required procedures?</span><span class="fq-pm"/></button>
+                        <div class="fq-a"><div><p>Please contact us on 800 16 or send us your question using the form and our team will reply.</p></div></div>
+                    </div>
+                    <div class="fq-empty d-none">
+                        <b>No questions found</b>
+                        <span>Try another word, or send us your question below.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

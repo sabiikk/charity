@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="faq_snippets" inherit_id="website.snippets" name="FAQ Snippets">
+        <!--       Group Creation         -->
+        <xpath expr="//snippets[@id='snippet_groups']" position="inside">
+            <t snippet-group="faqgroup" t-snippet="website.s_snippet_group" string="FAQ"/>
+        </xpath>
+
+        <!--       Adding Snippets Into The Group         -->
+        <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+            <t t-snippet="alihsanwebsite_theme.faq_banner_section" string="FAQ Banner Section" group="faqgroup"/>
+            <t t-snippet="alihsanwebsite_theme.faq_list_section" string="FAQ List Section" group="faqgroup"/>
+            <t t-snippet="alihsanwebsite_theme.faq_ask_section" string="FAQ Ask Section" group="faqgroup"/>
+        </xpath>
+    </template>
+</odoo>

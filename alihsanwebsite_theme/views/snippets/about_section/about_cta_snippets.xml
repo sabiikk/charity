@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="about_cta_section" name="About CTA Section">
+        <section class="ab-sec s_ab_cta pt64 pb40">
+            <div class="container">
+                <div class="ab-cta">
+                    <h2>Be part of the good</h2>
+                    <p>Join us today in supporting families in need.</p>
+                    <a href="/shop">Donate now</a>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

@@ -1,0 +1,108 @@
+/* Login / Create account popup */
+.au2{--au-ink:#0f2a20;--au-accent:#00793f;--au-accent-2:#00632f;--au-cream:#fffcf5;--au-line:#dcd6cc;
+  width:min(1060px,calc(100vw - 32px));height:min(680px,calc(100vh - 32px));max-width:none;max-height:none;margin:auto;padding:0;border:0;border-radius:28px;overflow:hidden;
+  display:grid;grid-template-columns:1fr 1.05fr;background:var(--au-cream);color:var(--au-ink);box-shadow:0 40px 90px -30px #0009}
+.au2:not([open]){display:none}
+.au2::backdrop{background:#04381fb3;backdrop-filter:blur(6px)}
+.au2[open]{animation:au2In .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes au2In{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}
+.au2-x{position:absolute;top:18px;inset-inline-end:18px;z-index:3;width:40px;height:40px;border:1px solid #e3ddd2;border-radius:50%;background:#fff;color:var(--au-ink);font-size:22px;line-height:1;cursor:pointer;transition:background .2s,transform .2s}
+.au2-x:hover{background:#f3ede4;transform:rotate(90deg)}
+/* photo side */
+.au2-media{position:relative;margin:0;min-height:0;overflow:hidden}
+.au2-media>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 30%}
+.au2-media:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#0000 35%,#04381fcc 80%,#04381f 100%)}
+.au2-media figcaption{position:absolute;inset:auto 0 0;z-index:1;padding:40px 40px 44px;color:#fff}
+.au2-logo{display:block;width:150px;height:auto;margin-bottom:18px;padding:8px 12px;border-radius:12px;background:#fffffff0}
+.au2-media p{margin:0;font-size:clamp(26px,2.6vw,36px);font-weight:700;line-height:1.18;letter-spacing:-.6px;max-width:420px}
+/* form side */
+.au2-body{display:flex;align-items:center;justify-content:center;overflow-y:auto;padding:56px 48px 40px}
+.au2-in{width:100%;max-width:420px}
+.au2-tabs{position:relative;display:grid;grid-template-columns:1fr 1fr;padding:5px;border-radius:99px;background:#f2ece2;margin-bottom:30px}
+.au2-thumb{position:absolute;top:5px;bottom:5px;inset-inline-start:5px;width:calc(50% - 5px);border-radius:99px;background:var(--au-cream);box-shadow:0 2px 8px #0000001a;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.au2[data-tab=signup] .au2-thumb{transform:translateX(100%)}
+[dir=rtl] .au2[data-tab=signup] .au2-thumb{transform:translateX(-100%)}
+.au2-tabs button{position:relative;z-index:1;height:44px;border:0;background:none;border-radius:99px;font:inherit;font-size:14.5px;font-weight:600;color:#3b4a57;cursor:pointer}
+.au2-tabs button[aria-selected=true]{color:var(--au-accent)}
+.au2-pane h2{margin:0 0 22px;font-size:clamp(30px,3.2vw,40px);font-weight:700;letter-spacing:-.8px;line-height:1.1;color:var(--au-ink)}
+.au2-f{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.au2-l{font-size:14px;font-weight:600;color:var(--au-ink)}
+.au2-f input{height:54px;padding:0 16px;border:1px solid var(--au-line);border-radius:14px;background:#fff;font:inherit;font-size:15.5px;color:var(--au-ink);outline:none;transition:border-color .2s,box-shadow .2s}
+.au2-f input:focus{border-color:var(--au-accent);box-shadow:0 0 0 4px #00a25122}
+.au2-f.bad input{border-color:#d64545;box-shadow:0 0 0 4px #d6454518}
+.au2-forgot{display:block;width:fit-content;margin:-4px 0 4px auto;font-size:13px;font-weight:600;color:var(--au-accent)}
+[dir=rtl] .au2-forgot{margin:-4px auto 4px 0}
+.au2-forgot:hover{text-decoration:underline;text-underline-offset:3px}
+.au2-btn{width:100%;height:56px;margin-top:6px;border:0;border-radius:99px;background:linear-gradient(135deg,#00a251,#00793f);box-shadow:0 10px 20px -10px #00793f99;color:#fff;font:inherit;font-size:16px;font-weight:700;cursor:pointer;transition:background .25s,transform .25s,box-shadow .25s}
+.au2-btn:hover{background:linear-gradient(135deg,#00b35a,#008a47);transform:translateY(-1px);box-shadow:0 14px 24px -10px #00793fbb}
+.au2-or{display:flex;align-items:center;gap:14px;margin:20px 0;font-size:13px;color:#7b8590}
+.au2-or:before,.au2-or:after{content:'';flex:1;height:1px;background:#e2ddd4}
+.au2-uae{width:100%;height:56px;border:1.5px solid var(--au-accent);border-radius:99px;background:transparent;color:var(--au-accent);font:inherit;font-size:15.5px;font-weight:600;cursor:pointer;transition:background .2s}
+.au2-uae:hover{background:#00a25112}
+.au2-err{margin:0 0 6px;padding:10px 14px;border-radius:12px;background:#fdecec;color:#b13a3a;font-size:13.5px}
+.au2-ok{margin:14px 0 0;padding:10px 14px;border-radius:12px;background:#e6f4ec;color:var(--au-accent-2);font-size:13.5px;text-align:center}
+.au2 [hidden]{display:none!important}
+[dir=rtl] .au2-pane h2,[dir=rtl] .au2-media p{letter-spacing:0}
+@media(max-width:860px){
+  .au2{grid-template-columns:1fr;grid-template-rows:170px minmax(0,1fr);height:min(760px,calc(100vh - 24px));width:calc(100vw - 24px);border-radius:24px}
+  .au2-media figcaption{padding:20px 22px}
+  .au2-logo{display:none}
+  .au2-media p{font-size:20px;max-width:none}
+  .au2-body{align-items:flex-start;padding:26px 22px 28px}
+  .au2-x{top:12px;inset-inline-end:12px;background:#ffffffe6}
+}
+@media(prefers-reduced-motion:reduce){.au2[open]{animation:none}.au2-thumb{transition:none}}
+html.sf-on .au2 .sf,html.sf-on .au2 .sf:not(.sf-in){opacity:1!important;transform:none!important;animation:none!important}
+.au2-x:focus-visible,.au2-tabs button:focus-visible{outline:none;box-shadow:0 0 0 3px #00a25166}
+.au2 .au2-media figcaption{position:absolute;inset:auto 0 0;bottom:0;transform:none}
+.au2 .au2-media figcaption p{color:#fff;line-height:1.18;font-size:clamp(26px,2.6vw,36px);font-weight:700}
+@media(max-width:860px){.au2 .au2-media figcaption p{font-size:20px}}
+/* fit the form without a visible scrollbar + tighter vertical rhythm */
+.au2-body{padding:clamp(28px,6vh,56px) clamp(28px,4vw,52px) clamp(24px,4vh,40px);scrollbar-width:none;-ms-overflow-style:none}
+.au2-body::-webkit-scrollbar{display:none}
+.au2-in{margin-block:auto}
+.au2-tabs{margin-bottom:clamp(16px,3vh,28px)}
+.au2-pane h2{margin-bottom:clamp(12px,2.2vh,20px);font-size:clamp(28px,4.2vh,38px)}
+.au2-f{gap:6px;margin-bottom:clamp(10px,1.8vh,14px)}
+.au2-f input{height:clamp(46px,6.4vh,52px)}
+.au2-btn,.au2-uae{height:clamp(48px,6.6vh,54px)}
+.au2-or{margin:clamp(12px,2.2vh,18px) 0}
+.au2-forgot{margin-top:-2px;margin-bottom:6px}
+@media(max-height:720px) and (min-width:861px){
+  .au2-body{padding-top:24px;padding-bottom:20px}
+  .au2-tabs{margin-bottom:14px}.au2-tabs button{height:40px}
+  .au2-pane h2{font-size:26px;margin-bottom:10px}
+  .au2-f{margin-bottom:9px}.au2-f input{height:44px}
+  .au2-btn,.au2-uae{height:46px}.au2-or{margin:10px 0}
+  .au2-media figcaption{padding:28px 32px 30px}.au2-logo{width:130px;margin-bottom:12px}
+}
+/* standard close button */
+.au2 .au2-x{display:grid;place-items:center;top:16px;inset-inline-end:16px;width:36px;height:36px;padding:0;border:0;border-radius:50%;background:#0f2a200d;color:#3d4f47;font-size:0;transition:background .2s,color .2s}
+.au2 .au2-x svg{width:18px;height:18px}
+.au2 .au2-x:hover{background:#0f2a201a;color:#0f2a20;transform:none}
+@media(max-width:860px){.au2 .au2-x{top:10px;inset-inline-end:10px;background:#ffffffd9;color:#0f2a20}}
+
+/* UAE PASS button: white card with the fingerprint mark beside the label */
+.au2-uae{display:flex;align-items:center;justify-content:center;gap:12px;border:1px solid #dcdcdc;border-radius:12px;background:#fff;color:#1d1d1b;font-weight:700;box-shadow:0 1px 2px #0000000a;transition:background .2s,border-color .2s,box-shadow .2s}
+.au2-uae:hover{background:#fff;border-color:#c4c4c4;box-shadow:0 6px 16px -8px #00000033}
+.au2-uae-mark{flex:0 0 auto;width:26px!important;height:auto!important;transition:transform .25s}
+.au2-uae:hover .au2-uae-mark{transform:scale(1.08)}
+
+/* login / sign-up tabs: selected tab is solid green with white text */
+.au2-thumb{background:linear-gradient(90deg,#009f50,#00914a);box-shadow:0 6px 14px -6px #00974699}
+.au2-tabs button[aria-selected=true]{color:#fff}
+
+/* UAE PASS button: dark style with a white fingerprint */
+.au2-uae{background:#232528;border-color:#232528;border-radius:8px;color:#fff;font-weight:700;box-shadow:0 6px 14px -8px #00000066}
+.au2-uae:hover{background:#000;border-color:#000;box-shadow:0 10px 20px -10px #000000aa}
+.au2-uae-mark{filter:brightness(0) invert(1)}
+.au2-uae:focus-visible{outline:none;box-shadow:0 0 0 3px #00a25166}
+
+/* desktop: size the popup to the form (no empty bands above/below it) */
+@media(min-width:861px){
+ .au2{height:fit-content;max-height:calc(100vh - 32px);width:min(960px,calc(100vw - 32px))}
+ .au2-body{padding:64px 52px 52px}
+ .au2-media{min-height:480px}
+}
+@media(max-width:860px){.au2{height:fit-content;max-height:calc(100dvh - 24px);grid-template-rows:170px auto}.au2-in{margin-block:0}}
+@media(max-height:720px) and (min-width:861px){.au2-tabs{margin-bottom:20px}.au2-pane h2{margin-bottom:14px}}

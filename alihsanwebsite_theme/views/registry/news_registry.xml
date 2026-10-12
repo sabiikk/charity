@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="news_snippets" inherit_id="website.snippets" name="News Snippets">
+        <!--       Group Creation         -->
+        <xpath expr="//snippets[@id='snippet_groups']" position="inside">
+            <t snippet-group="newsgroup" t-snippet="website.s_snippet_group" string="News"/>
+        </xpath>
+
+        <!--       Adding Snippets Into The Group         -->
+        <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+            <t t-snippet="alihsanwebsite_theme.news_header_section" string="News Header Section" group="newsgroup"/>
+            <t t-snippet="alihsanwebsite_theme.news_list_section" string="News List Section" group="newsgroup"/>
+        </xpath>
+    </template>
+</odoo>

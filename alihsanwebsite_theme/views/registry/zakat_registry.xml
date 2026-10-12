@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="zakat_snippets" inherit_id="website.snippets" name="Zakat Snippets">
+        <!--       Group Creation         -->
+        <xpath expr="//snippets[@id='snippet_groups']" position="inside">
+            <t snippet-group="zakatgroup" t-snippet="website.s_snippet_group" string="Zakat"/>
+        </xpath>
+
+        <!--       Adding Snippets Into The Group         -->
+        <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+            <t t-snippet="alihsanwebsite_theme.zakat_banner_section" string="Zakat Banner Section" group="zakatgroup"/>
+            <t t-snippet="alihsanwebsite_theme.zakat_calculator_section" string="Zakat Calculator Section" group="zakatgroup"/>
+        </xpath>
+    </template>
+</odoo>

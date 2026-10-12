@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="personalised_banner_section" name="Personalised Banner Section">
+        <section class="pp-sec s_pp_banner pt16 pb0">
+            <div class="container">
+                <div class="pp-bc" role="navigation" aria-label="Breadcrumb"><a href="/">Home</a><i>›</i><a href="/special-project">Special Projects</a><i>›</i><b aria-current="page">Personalised Project</b></div>
+                <h2 class="pp-title">Personalised Projects</h2>
+            </div>
+        </section>
+    </template>
+</odoo>

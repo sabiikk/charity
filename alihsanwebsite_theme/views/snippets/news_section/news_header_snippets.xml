@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="news_header_section" name="News Header Section">
+        <section class="nw-sec s_nw_header pt16 pb0">
+            <div class="container">
+                <div class="mc-crumb" role="navigation" aria-label="Breadcrumb">
+                    <ol>
+                        <li><a href="/">Home</a></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><a href="/media-center">Media Center</a></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><span aria-current="page">News</span></li>
+                    </ol>
+                </div>
+                <div class="nw-head mc-head nw-fade">
+                    <div>
+                        <div class="pj-eyebrow"><i></i><span>MEDIA CENTER</span></div>
+                        <h2 class="dn-title">Media Center</h2>
+                        <p class="pj-sub">Explore all the news, photos, videos &amp; events here.</p>
+                    </div>
+                </div>
+                <div class="mc-bar nw-fade">
+                    <div class="nw-chips mc-pills">
+                        <a class="nw-chip selected" href="/news" aria-current="page">News</a>
+                        <a class="nw-chip" href="/images">Images</a>
+                        <a class="nw-chip" href="/videos">Videos</a>
+                        <a class="nw-chip" href="/events">Events</a>
+                    </div>
+                    <div class="mc-search">
+                        <label class="pj-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input class="nw-q" type="search" placeholder="Search news…" aria-label="Search news"/></label>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

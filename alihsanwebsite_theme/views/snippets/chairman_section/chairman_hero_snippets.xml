@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="chairman_hero_section" name="Chairman Hero Section">
+        <section class="ch-sec s_chair_hero pt16 pb0">
+            <div class="container">
+                <div class="chair-hero">
+                    <div class="chair-hero-copy">
+                        <div class="chair-kicker"><i></i><span>Chairman's message</span></div>
+                        <div>
+                            <span class="chair-quote-mark" aria-hidden="true">&#8220;</span>
+                            <blockquote class="chair-headline">We measure our work by the lives it touches, not the projects it counts.</blockquote>
+                        </div>
+                        <div>
+                            <div class="chair-signature"><i></i><div><b>Chairman of the Board</b><span>Al Ihsan Charity Association</span></div></div>
+                            <div class="chair-hero-actions">
+                                <a class="chair-btn-primary" href="#chair-msg"><span>Read the message</span><span class="circle-ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+                                <a class="chair-btn-ghost" href="/#leadership">Meet our leadership</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chair-hero-portrait">
+                        <img src="/alihsanwebsite_theme/static/src/img/chairman.jpeg" alt="Sheikh Mohammed bin Ali bin Rashid Al Nuaimi"/>
+                        <div class="chair-board-tab">Board of Directors</div>
+                        <div class="chair-hero-card"><span><small>Board of Directors</small><b>Chairman of the Board</b></span><em aria-hidden="true">&#8221;</em></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

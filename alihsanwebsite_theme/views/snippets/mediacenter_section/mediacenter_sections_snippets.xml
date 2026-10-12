@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="mediacenter_sections_section" name="Media Center Sections Section">
+        <section class="mc-sec s_mc_sections pt64 pb88">
+            <div class="container">
+                <div class="mc-sec-head mc-fade">
+                    <h2>Explore the Media Center</h2>
+                    <p>Choose a section to jump in.</p>
+                </div>
+                <div class="mc-grid">
+                    <a class="mc-card mc-fade" href="/news" style="--d:0s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>News</h3>
+                        <p>Stay up to date with the latest announcements, partnerships, awards and community stories from Al Ihsan.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+                    <a class="mc-card mc-fade" href="/images" style="--d:0.08s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>Images</h3>
+                        <p>Browse photo galleries from our campaigns, field visits, distributions and charitable initiatives.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+                    <a class="mc-card mc-fade" href="/videos" style="--d:0.16s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>Videos</h3>
+                        <p>Watch stories, campaign films and highlights that show the impact of your giving on the ground.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+                    <a class="mc-card mc-fade" href="/events" style="--d:0.24s">
+                        <i class="mc-bar-line" aria-hidden="true"></i>
+                        <h3>Events</h3>
+                        <p>Discover upcoming and past events, community gatherings and volunteering opportunities near you.</p>
+                        <span class="mc-more"><span>Learn more</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

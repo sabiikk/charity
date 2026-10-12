@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="video_snippets" inherit_id="website.snippets" name="Video Snippets">
+        <!--       Group Creation         -->
+        <xpath expr="//snippets[@id='snippet_groups']" position="inside">
+            <t snippet-group="videogroup" t-snippet="website.s_snippet_group" string="Videos"/>
+        </xpath>
+
+        <!--       Adding Snippets Into The Group         -->
+        <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+            <t t-snippet="alihsanwebsite_theme.video_header_section" string="Video Header Section" group="videogroup"/>
+            <t t-snippet="alihsanwebsite_theme.video_gallery_section" string="Video Gallery Section" group="videogroup"/>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="eservices_snippets" inherit_id="website.snippets" name="E-Services Snippets">
+        <!--       Group Creation         -->
+        <xpath expr="//snippets[@id='snippet_groups']" position="inside">
+            <t snippet-group="eservicesgroup" t-snippet="website.s_snippet_group" string="E-Services"/>
+        </xpath>
+
+        <!--       Adding Snippets Into The Group         -->
+        <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+            <t t-snippet="alihsanwebsite_theme.eservices_banner_section" string="E-Services Banner Section" group="eservicesgroup"/>
+            <t t-snippet="alihsanwebsite_theme.eservices_services_section" string="E-Services Services Section" group="eservicesgroup"/>
+        </xpath>
+    </template>
+</odoo>

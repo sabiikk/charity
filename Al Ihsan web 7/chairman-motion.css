@@ -1,0 +1,30 @@
+/* chairman page: staggered fade-ins + smooth image hover */
+.cm-on [data-cm]{opacity:0;transition:opacity .9s cubic-bezier(.22,.7,.2,1) var(--cm-d,0s),transform 1s cubic-bezier(.22,.7,.2,1) var(--cm-d,0s)}
+.cm-on [data-cm=up]{transform:translateY(34px)}
+.cm-on [data-cm=left]{transform:translateX(-44px)}
+.cm-on [data-cm=right]{transform:translateX(52px) scale(.97)}
+.cm-on [data-cm=zoom]{transform:scale(.93) translateY(18px)}
+.cm-on [data-cm].cm-in{opacity:1;transform:none}
+/* images */
+.cm-frame{display:block;overflow:hidden;border-radius:18px}
+.chair-aside-card .cm-frame img{display:block;border-radius:0;transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .6s}
+.chair-aside-card:hover .cm-frame img{transform:scale(1.08) translateY(-2%);filter:saturate(1.08)}
+.chair-aside-card{transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s}
+.chair-aside-card:hover{transform:translateY(-5px);box-shadow:0 22px 40px -22px #0b3f2a66}
+/* hero portrait: slow zoom + gentle follow-the-cursor drift */
+.chair-hero-portrait{--mx:0;--my:0}
+.chair-hero-portrait img{transform:scale(1.04) translate(calc(var(--mx)*-10px),calc(var(--my)*-8px));transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.chair-hero-portrait:hover img{transform:scale(1.09) translate(calc(var(--mx)*-14px),calc(var(--my)*-10px));transition:transform .35s ease-out}
+.chair-hero-card{transition:transform .6s cubic-bezier(.2,.7,.2,1),background .4s}
+.chair-hero-portrait:hover .chair-hero-card{transform:translateY(-6px);background:rgba(255,253,248,.22)}
+.chair-hero-card em{transition:transform .5s cubic-bezier(.3,1.5,.5,1)}
+.chair-hero-portrait:hover .chair-hero-card em{transform:rotate(-12deg) scale(1.12)}
+/* avatars */
+.chair-next-avatars img{transition:transform .5s cubic-bezier(.3,1.5,.5,1)}
+.chair-next-card:hover .chair-next-avatars img{transform:translateY(-4px) scale(1.1)}
+.chair-next-card:hover .chair-next-avatars img+img{transform:translateY(-4px) scale(1.1) translateX(4px)}
+.chair-next-num{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.chair-next-card:hover .chair-next-num{transform:translate(-10px,8px) scale(1.05)}
+.chair-pullquote{transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s}
+.chair-pullquote:hover{transform:translateY(-4px);box-shadow:0 24px 44px -22px #06472ecc}
+@media(prefers-reduced-motion:reduce){.cm-on [data-cm]{opacity:1!important;transform:none!important;transition:none!important}.chair-hero-portrait img,.chair-aside-card,.chair-aside-card .cm-frame img{transition:none!important}}
