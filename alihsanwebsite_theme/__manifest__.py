@@ -13,6 +13,7 @@
 
 
 
+"views/snippets/common_section/connect_snippets.xml",
 "views/snippets/about_section/about_banner_snippets.xml",
 "views/snippets/about_section/about_history_snippets.xml",
 "views/snippets/about_section/about_story_snippets.xml",
@@ -82,8 +83,23 @@
 "views/snippets/direct_donation_section/direct_donation_gifts_snippets.xml",
 "views/snippets/direct_donation_section/direct_donation_subs_snippets.xml",
 "views/registry/direct_donation_registry.xml",
+"views/snippets/home_section/home_hero_snippets.xml",
+"views/snippets/home_section/home_categories_snippets.xml",
+"views/snippets/home_section/home_featured_snippets.xml",
+"views/snippets/home_section/home_ways_snippets.xml",
+"views/snippets/home_section/home_create_snippets.xml",
+"views/snippets/home_section/home_latest_snippets.xml",
+"views/snippets/home_section/home_story_snippets.xml",
+"views/snippets/home_section/home_leadership_snippets.xml",
+"views/snippets/home_section/home_media_snippets.xml",
+"views/snippets/home_section/home_community_snippets.xml",
+"views/snippets/home_section/home_services_snippets.xml",
+"views/snippets/home_section/home_partners_snippets.xml",
+"views/snippets/home_section/home_closing_snippets.xml",
+"views/registry/home_registry.xml",
 "views/layout/fonts.xml",
 "views/layout/header.xml",
+"views/layout/footer.xml",
 
 # 'views/header.xml',
 
@@ -116,6 +132,12 @@
             "alihsanwebsite_theme/static/src/js/personalisedprojects.js",
             "alihsanwebsite_theme/static/src/css/direct_donation.css",
             "alihsanwebsite_theme/static/src/js/direct_donation.js",
+            "alihsanwebsite_theme/static/src/css/home.css",
+            "alihsanwebsite_theme/static/src/js/home.js",
+            "alihsanwebsite_theme/static/src/css/connect.css",
+            "alihsanwebsite_theme/static/src/js/connect.js",
+            "alihsanwebsite_theme/static/src/css/footer.css",
+            "alihsanwebsite_theme/static/src/js/footer.js",
 
             # 'custom_website_snippets/static/src/css/styleme.css',
 

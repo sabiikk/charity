@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="home_leadership_section" name="Home Leadership">
+        <section id="leadership" class="hm-sec s_hm_leadership section leadership">
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">A VISION THAT GUIDES OUR GIVING</div>
+                    <h2>A word from our leadership.</h2>
+                </div>
+            </div>
+            <div class="leadership-grid">
+                <article class="lflip hv-skip" tabindex="0">
+                    <div class="lflip-inner">
+                        <div class="lflip-face lflip-front">
+                            <img src="/alihsanwebsite_theme/static/src/img/chairman.jpeg" alt="Sheikh Mohammed bin Ali bin Rashid Al Nuaimi" loading="lazy"/>
+                            <div class="lflip-cap">
+                                <span class="leader-role">CHAIRMAN</span>
+                                <h3>Sheikh Mohammed bin Ali bin Rashid Al Nuaimi</h3>
+                                <span class="lflip-hint">Hover or tap to read</span>
+                            </div>
+                        </div>
+                        <div class="lflip-face lflip-back">
+                            <div class="leader-copy">
+                                <span class="leader-role">CHAIRMAN</span>
+                                <h3>Sheikh Mohammed bin Ali bin Rashid Al Nuaimi</h3>
+                                <p>A vision to grow the Association’s programmes, reach more people, and honour the trust of its supporters.</p>
+                                <a class="underlink" href="/chairman">Read the Chairman’s message</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="lflip hv-skip" tabindex="0">
+                    <div class="lflip-inner">
+                        <div class="lflip-face lflip-front">
+                            <img src="/alihsanwebsite_theme/static/src/img/general-manager.jpeg" alt="Rashed bin Mohammed bin Ali Al Nuaimi" loading="lazy"/>
+                            <div class="lflip-cap">
+                                <span class="leader-role">GENERAL MANAGER</span>
+                                <h3>Rashed bin Mohammed bin Ali Al Nuaimi</h3>
+                                <span class="lflip-hint">Hover or tap to read</span>
+                            </div>
+                        </div>
+                        <div class="lflip-face lflip-back">
+                            <div class="leader-copy">
+                                <span class="leader-role">GENERAL MANAGER</span>
+                                <h3>Rashed bin Mohammed bin Ali Al Nuaimi</h3>
+                                <p>Goodness, giving, and charity guide a shared commitment to ease hardship and make humanitarian care a lasting part of society.</p>
+                                <a class="underlink" href="/general-manager-s-message">Read the General Manager’s message</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </template>
+</odoo>

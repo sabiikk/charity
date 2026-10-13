@@ -11,6 +11,7 @@
             <t t-snippet="alihsanwebsite_theme.chairman_hero_section" string="Chairman Hero Section" group="chairmangroup"/>
             <t t-snippet="alihsanwebsite_theme.chairman_message_section" string="Chairman Message Section" group="chairmangroup"/>
             <t t-snippet="alihsanwebsite_theme.chairman_next_section" string="Chairman Next Section" group="chairmangroup"/>
+            <t t-snippet="alihsanwebsite_theme.connect_section" string="Social &amp; Feedback CTA" group="chairmangroup"/>
         </xpath>
     </template>
 </odoo>

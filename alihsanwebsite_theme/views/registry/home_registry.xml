@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="home_snippets" inherit_id="website.snippets" name="Home Snippets">
+        <!--       Group Creation         -->
+        <xpath expr="//snippets[@id='snippet_groups']" position="inside">
+            <t snippet-group="homegroup" t-snippet="website.s_snippet_group" string="Home"/>
+        </xpath>
+
+        <!--       Adding Snippets Into The Group         -->
+        <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+            <t t-snippet="alihsanwebsite_theme.home_hero_section" string="Home Campaign Hero" group="homegroup"/>
+            <t t-snippet="alihsanwebsite_theme.home_categories_section" string="Home Project Categories" group="homegroup"/>
+            <t t-snippet="alihsanwebsite_theme.home_featured_section" string="Home Featured Projects" group="homegroup"/>
+            <t t-snippet="alihsanwebsite_theme.home_ways_section" string="Home Ways To Give" group="homegroup"/>
+            <t t-snippet="alihsanwebsite_theme.home_create_section" string="Home Create Project" group="homegroup"/>
+            <t t-snippet="alihsanwebsite_theme.home_latest_section" string="Home Personal Projects" group="homegroup"/>
+            <t t-snippet="alihsanwebsite_theme.home_story_section" string="Home Spirit Of Al Ihsan" group="homegroup"/>
+            <t t-snippet="alihsanwebsite_theme.home_leadership_section" string="Home Leadership" group="homegroup"/>
+            <t t-snippet="alihsanwebsite_theme.home_media_section" string="Home Media Centre" group="homegroup"/>
+            <t t-snippet="alihsanwebsite_theme.home_community_section" string="Home Community" group="homegroup"/>
+            <t t-snippet="alihsanwebsite_theme.home_services_section" string="Home Services" group="homegroup"/>
+            <t t-snippet="alihsanwebsite_theme.home_partners_section" string="Home Partners" group="homegroup"/>
+            <t t-snippet="alihsanwebsite_theme.home_closing_section" string="Home Closing CTA" group="homegroup"/>
+            <t t-snippet="alihsanwebsite_theme.connect_section" string="Social &amp; Feedback CTA" group="homegroup"/>
+        </xpath>
+    </template>
+</odoo>

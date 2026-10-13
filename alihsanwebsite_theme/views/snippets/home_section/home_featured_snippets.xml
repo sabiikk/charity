@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="home_featured_section" name="Home Featured Projects">
+        <section id="causes" class="hm-sec s_hm_featured causes section reveal">
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">A CAUSE CLOSE TO YOUR HEART</div>
+                    <h2>Our featured projects.</h2>
+                </div>
+                <a class="underlink" href="/projects-campaigns">Explore all projects</a>
+            </div>
+            <div id="featured-host">
+                <div class="project-tools">
+                    <div class="filters">
+                        <button data-project-filter="all" class="selected" aria-pressed="true">All projects</button>
+                        <button data-project-filter="food" aria-pressed="false">Food &amp; essentials</button>
+                        <button data-project-filter="health" aria-pressed="false">Healthcare</button>
+                        <button data-project-filter="water" aria-pressed="false">Water</button>
+                        <button data-project-filter="faith" aria-pressed="false">Quran</button>
+                        <button data-project-filter="relief" aria-pressed="false">Relief</button>
+                    </div>
+                    <span class="flip-instruction">Hover to turn a little kindness into action</span>
+                </div>
+                <div class="cards flip-grid">
+                    <article class="hm-card flip-card" data-project="food" data-category="food" style="--accent:#1aabad" aria-label="A meal that means more.">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="front-top">
+                                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13h18a9 9 0 0 1-18 0ZM5 9h14M8 3v3m4-3v3m4-3v3"/></svg></span>
+                                    <small>Food &amp; essentials</small>
+                                    <span class="card-number">01</span>
+                                </div>
+                                <h3>A meal that means more.</h3>
+                                <div class="front-photo"><img src="/alihsanwebsite_theme/static/src/img/food.jpg" alt="A meal that means more." loading="lazy"/></div>
+                                <button type="button" class="flip-trigger" aria-expanded="false">Donate now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg><span class="turn-symbol">⟳</span></button>
+                                <p>Support the Bal Afiyah Alaykum food initiative.</p>
+                                <span class="front-hint">Hover or tap to explore</span>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-top">
+                                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13h18a9 9 0 0 1-18 0ZM5 9h14M8 3v3m4-3v3m4-3v3"/></svg></span>
+                                    <button type="button" class="flip-close" aria-label="Show project front">×</button>
+                                </div>
+                                <small>A LITTLE KINDNESS STARTS HERE</small>
+                                <h3>A meal that means more.</h3>
+                                <p>Support the Bal Afiyah Alaykum food initiative.</p>
+                                <div class="back-message">Every contribution makes room for more good.</div>
+                                <label class="amount-label">Choose your amount (AED)</label>
+                                <div class="amount-slider-wrap"><input type="range" class="amount-range" min="10" max="1000" step="5" value="50" style="--fill:4.4%" aria-label="Donation amount"/></div>
+                                <div class="amount-readout">
+                                    <strong class="amount-value">50</strong>
+                                    <span>AED</span>
+                                    <a class="add-basket" href="/shop" data-add="food" aria-label="Add to donation basket">+</a>
+                                </div>
+                                <div class="card-amounts">
+                                    <button type="button" data-preset="10" aria-pressed="false"><b>10</b><small>AED</small></button>
+                                    <button type="button" data-preset="25" aria-pressed="false"><b>25</b><small>AED</small></button>
+                                    <button type="button" data-preset="50" class="selected" aria-pressed="true"><b>50</b><small>AED</small></button>
+                                    <button type="button" data-preset="100" aria-pressed="false"><b>100</b><small>AED</small></button>
+                                    <button type="button" data-preset="200" aria-pressed="false"><b>200</b><small>AED</small></button>
+                                    <button type="button" data-preset="500" aria-pressed="false"><b>500</b><small>AED</small></button>
+                                    <button type="button" data-preset="1000" aria-pressed="false"><b>1000</b><small>AED</small></button>
+                                </div>
+                                <div class="card-buttons">
+                                    <a href="/sms-donation" class="outline-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4M10 5h4"/></svg>SMS</a>
+                                    <a class="hm-btn" href="/directdonation" data-donate="food">Donate now</a>
+                                </div>
+                                <span class="demo-note">Preview only · no payment is processed</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="hm-card flip-card" data-project="care" data-category="health" style="--accent:#817038" aria-label="Give care. Restore hope.">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="front-top">
+                                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6Z"/></svg></span>
+                                    <small>Healthcare</small>
+                                    <span class="card-number">02</span>
+                                </div>
+                                <h3>Give care. Restore hope.</h3>
+                                <div class="front-photo"><img src="/alihsanwebsite_theme/static/src/img/care.jpg" alt="Give care. Restore hope." loading="lazy"/></div>
+                                <button type="button" class="flip-trigger" aria-expanded="false">Donate now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg><span class="turn-symbol">⟳</span></button>
+                                <p>Help make dialysis care available to patients in need.</p>
+                                <span class="front-hint">Hover or tap to explore</span>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-top">
+                                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6Z"/></svg></span>
+                                    <button type="button" class="flip-close" aria-label="Show project front">×</button>
+                                </div>
+                                <small>A LITTLE KINDNESS STARTS HERE</small>
+                                <h3>Give care. Restore hope.</h3>
+                                <p>Help make dialysis care available to patients in need.</p>
+                                <div class="progress-label">
+                                    <strong>201,176 AED</strong>
+                                    <span>of 230,000 AED</span>
+                                </div>
+                                <div class="fund-progress">
+                                    <i style="--progress:87.47%"></i>
+                                </div>
+                                <small class="data-note">Reference snapshot · 87.47% funded</small>
+                                <label class="amount-label">Choose your amount (AED)</label>
+                                <div class="amount-slider-wrap"><input type="range" class="amount-range" min="10" max="1000" step="5" value="50" style="--fill:4.4%" aria-label="Donation amount"/></div>
+                                <div class="amount-readout">
+                                    <strong class="amount-value">50</strong>
+                                    <span>AED</span>
+                                    <a class="add-basket" href="/shop" data-add="care" aria-label="Add to donation basket">+</a>
+                                </div>
+                                <div class="card-amounts">
+                                    <button type="button" data-preset="10" aria-pressed="false"><b>10</b><small>AED</small></button>
+                                    <button type="button" data-preset="25" aria-pressed="false"><b>25</b><small>AED</small></button>
+                                    <button type="button" data-preset="50" class="selected" aria-pressed="true"><b>50</b><small>AED</small></button>
+                                    <button type="button" data-preset="100" aria-pressed="false"><b>100</b><small>AED</small></button>
+                                    <button type="button" data-preset="200" aria-pressed="false"><b>200</b><small>AED</small></button>
+                                    <button type="button" data-preset="500" aria-pressed="false"><b>500</b><small>AED</small></button>
+                                    <button type="button" data-preset="1000" aria-pressed="false"><b>1000</b><small>AED</small></button>
+                                </div>
+                                <div class="card-buttons">
+                                    <a href="/sms-donation" class="outline-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4M10 5h4"/></svg>SMS</a>
+                                    <a class="hm-btn" href="/directdonation" data-donate="care">Donate now</a>
+                                </div>
+                                <span class="demo-note">Preview only · no payment is processed</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="hm-card flip-card" data-project="water" data-category="water" style="--accent:#2b519b" aria-label="Share the gift of water.">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="front-top">
+                                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2S5 10 5 15a7 7 0 0 0 14 0c0-5-7-13-7-13Z"/><path d="M9 16a3 3 0 0 0 3 3"/></svg></span>
+                                    <small>Water</small>
+                                    <span class="card-number">03</span>
+                                </div>
+                                <h3>Share the gift of water.</h3>
+                                <div class="front-photo"><img src="/alihsanwebsite_theme/static/src/img/water.jpg" alt="Share the gift of water." loading="lazy"/></div>
+                                <button type="button" class="flip-trigger" aria-expanded="false">Donate now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg><span class="turn-symbol">⟳</span></button>
+                                <p>Bring an essential gift to someone’s everyday life.</p>
+                                <span class="front-hint">Hover or tap to explore</span>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-top">
+                                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2S5 10 5 15a7 7 0 0 0 14 0c0-5-7-13-7-13Z"/><path d="M9 16a3 3 0 0 0 3 3"/></svg></span>
+                                    <button type="button" class="flip-close" aria-label="Show project front">×</button>
+                                </div>
+                                <small>A LITTLE KINDNESS STARTS HERE</small>
+                                <h3>Share the gift of water.</h3>
+                                <p>Bring an essential gift to someone’s everyday life.</p>
+                                <div class="back-message">Every contribution makes room for more good.</div>
+                                <label class="amount-label">Choose your amount (AED)</label>
+                                <div class="amount-slider-wrap"><input type="range" class="amount-range" min="10" max="1000" step="5" value="50" style="--fill:4.4%" aria-label="Donation amount"/></div>
+                                <div class="amount-readout">
+                                    <strong class="amount-value">50</strong>
+                                    <span>AED</span>
+                                    <a class="add-basket" href="/shop" data-add="water" aria-label="Add to donation basket">+</a>
+                                </div>
+                                <div class="card-amounts">
+                                    <button type="button" data-preset="10" aria-pressed="false"><b>10</b><small>AED</small></button>
+                                    <button type="button" data-preset="25" aria-pressed="false"><b>25</b><small>AED</small></button>
+                                    <button type="button" data-preset="50" class="selected" aria-pressed="true"><b>50</b><small>AED</small></button>
+                                    <button type="button" data-preset="100" aria-pressed="false"><b>100</b><small>AED</small></button>
+                                    <button type="button" data-preset="200" aria-pressed="false"><b>200</b><small>AED</small></button>
+                                    <button type="button" data-preset="500" aria-pressed="false"><b>500</b><small>AED</small></button>
+                                    <button type="button" data-preset="1000" aria-pressed="false"><b>1000</b><small>AED</small></button>
+                                </div>
+                                <div class="card-buttons">
+                                    <a href="/sms-donation" class="outline-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4M10 5h4"/></svg>SMS</a>
+                                    <a class="hm-btn" href="/directdonation" data-donate="water">Donate now</a>
+                                </div>
+                                <span class="demo-note">Preview only · no payment is processed</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="hm-card flip-card" data-project="quran" data-category="faith" style="--accent:#059650" aria-label="A gift of knowledge.">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="front-top">
+                                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v16M3 3c4 0 6 0 9 2 3-2 5-2 9-2v16c-4 0-6 0-9 2-3-2-5-2-9-2Z"/></svg></span>
+                                    <small>Quran</small>
+                                    <span class="card-number">04</span>
+                                </div>
+                                <h3>A gift of knowledge.</h3>
+                                <div class="front-photo"><img src="/alihsanwebsite_theme/static/src/img/quran.jpg" alt="A gift of knowledge." loading="lazy"/></div>
+                                <button type="button" class="flip-trigger" aria-expanded="false">Donate now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg><span class="turn-symbol">⟳</span></button>
+                                <p>Contribute to the Holy Quran printing project.</p>
+                                <span class="front-hint">Hover or tap to explore</span>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-top">
+                                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v16M3 3c4 0 6 0 9 2 3-2 5-2 9-2v16c-4 0-6 0-9 2-3-2-5-2-9-2Z"/></svg></span>
+                                    <button type="button" class="flip-close" aria-label="Show project front">×</button>
+                                </div>
+                                <small>A LITTLE KINDNESS STARTS HERE</small>
+                                <h3>A gift of knowledge.</h3>
+                                <p>Contribute to the Holy Quran printing project.</p>
+                                <div class="back-message">Every contribution makes room for more good.</div>
+                                <label class="amount-label">Choose your amount (AED)</label>
+                                <div class="amount-slider-wrap"><input type="range" class="amount-range" min="10" max="1000" step="5" value="50" style="--fill:4.4%" aria-label="Donation amount"/></div>
+                                <div class="amount-readout">
+                                    <strong class="amount-value">50</strong>
+                                    <span>AED</span>
+                                    <a class="add-basket" href="/shop" data-add="quran" aria-label="Add to donation basket">+</a>
+                                </div>
+                                <div class="card-amounts">
+                                    <button type="button" data-preset="10" aria-pressed="false"><b>10</b><small>AED</small></button>
+                                    <button type="button" data-preset="25" aria-pressed="false"><b>25</b><small>AED</small></button>
+                                    <button type="button" data-preset="50" class="selected" aria-pressed="true"><b>50</b><small>AED</small></button>
+                                    <button type="button" data-preset="100" aria-pressed="false"><b>100</b><small>AED</small></button>
+                                    <button type="button" data-preset="200" aria-pressed="false"><b>200</b><small>AED</small></button>
+                                    <button type="button" data-preset="500" aria-pressed="false"><b>500</b><small>AED</small></button>
+                                    <button type="button" data-preset="1000" aria-pressed="false"><b>1000</b><small>AED</small></button>
+                                </div>
+                                <div class="card-buttons">
+                                    <a href="/sms-donation" class="outline-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4M10 5h4"/></svg>SMS</a>
+                                    <a class="hm-btn" href="/directdonation" data-donate="quran">Donate now</a>
+                                </div>
+                                <span class="demo-note">Preview only · no payment is processed</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="hm-card flip-card" data-project="hospital" data-category="health" style="--accent:#33276c" aria-label="Healthcare within reach.">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="front-top">
+                                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6Z"/></svg></span>
+                                    <small>Healthcare</small>
+                                    <span class="card-number">05</span>
+                                </div>
+                                <h3>Healthcare within reach.</h3>
+                                <div class="front-photo"><img src="/alihsanwebsite_theme/static/src/img/hospital.jpg" alt="Healthcare within reach." loading="lazy"/></div>
+                                <button type="button" class="flip-trigger" aria-expanded="false">Donate now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg><span class="turn-symbol">⟳</span></button>
+                                <p>Support Al Safia Charity Hospital.</p>
+                                <span class="front-hint">Hover or tap to explore</span>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-top">
+                                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6Z"/></svg></span>
+                                    <button type="button" class="flip-close" aria-label="Show project front">×</button>
+                                </div>
+                                <small>A LITTLE KINDNESS STARTS HERE</small>
+                                <h3>Healthcare within reach.</h3>
+                                <p>Support Al Safia Charity Hospital.</p>
+                                <div class="back-message">Every contribution makes room for more good.</div>
+                                <label class="amount-label">Choose your amount (AED)</label>
+                                <div class="amount-slider-wrap"><input type="range" class="amount-range" min="10" max="1000" step="5" value="50" style="--fill:4.4%" aria-label="Donation amount"/></div>
+                                <div class="amount-readout">
+                                    <strong class="amount-value">50</strong>
+                                    <span>AED</span>
+                                    <a class="add-basket" href="/shop" data-add="hospital" aria-label="Add to donation basket">+</a>
+                                </div>
+                                <div class="card-amounts">
+                                    <button type="button" data-preset="10" aria-pressed="false"><b>10</b><small>AED</small></button>
+                                    <button type="button" data-preset="25" aria-pressed="false"><b>25</b><small>AED</small></button>
+                                    <button type="button" data-preset="50" class="selected" aria-pressed="true"><b>50</b><small>AED</small></button>
+                                    <button type="button" data-preset="100" aria-pressed="false"><b>100</b><small>AED</small></button>
+                                    <button type="button" data-preset="200" aria-pressed="false"><b>200</b><small>AED</small></button>
+                                    <button type="button" data-preset="500" aria-pressed="false"><b>500</b><small>AED</small></button>
+                                    <button type="button" data-preset="1000" aria-pressed="false"><b>1000</b><small>AED</small></button>
+                                </div>
+                                <div class="card-buttons">
+                                    <a href="/sms-donation" class="outline-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4M10 5h4"/></svg>SMS</a>
+                                    <a class="hm-btn" href="/directdonation" data-donate="hospital">Donate now</a>
+                                </div>
+                                <span class="demo-note">Preview only · no payment is processed</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="hm-card flip-card" data-project="gaza" data-category="relief" style="--accent:#23a4ca" aria-label="Stand together in compassion.">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="front-top">
+                                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg></span>
+                                    <small>Relief</small>
+                                    <span class="card-number">06</span>
+                                </div>
+                                <h3>Stand together in compassion.</h3>
+                                <div class="front-photo"><img src="/alihsanwebsite_theme/static/src/img/gaza.jpg" alt="Stand together in compassion." loading="lazy"/></div>
+                                <button type="button" class="flip-trigger" aria-expanded="false">Donate now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg><span class="turn-symbol">⟳</span></button>
+                                <p>Explore Al Ihsan’s Gaza relief campaign.</p>
+                                <span class="front-hint">Hover or tap to explore</span>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-top">
+                                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg></span>
+                                    <button type="button" class="flip-close" aria-label="Show project front">×</button>
+                                </div>
+                                <small>A LITTLE KINDNESS STARTS HERE</small>
+                                <h3>Stand together in compassion.</h3>
+                                <p>Explore Al Ihsan’s Gaza relief campaign.</p>
+                                <div class="back-message">Every contribution makes room for more good.</div>
+                                <label class="amount-label">Choose your amount (AED)</label>
+                                <div class="amount-slider-wrap"><input type="range" class="amount-range" min="10" max="1000" step="5" value="50" style="--fill:4.4%" aria-label="Donation amount"/></div>
+                                <div class="amount-readout">
+                                    <strong class="amount-value">50</strong>
+                                    <span>AED</span>
+                                    <a class="add-basket" href="/shop" data-add="gaza" aria-label="Add to donation basket">+</a>
+                                </div>
+                                <div class="card-amounts">
+                                    <button type="button" data-preset="10" aria-pressed="false"><b>10</b><small>AED</small></button>
+                                    <button type="button" data-preset="25" aria-pressed="false"><b>25</b><small>AED</small></button>
+                                    <button type="button" data-preset="50" class="selected" aria-pressed="true"><b>50</b><small>AED</small></button>
+                                    <button type="button" data-preset="100" aria-pressed="false"><b>100</b><small>AED</small></button>
+                                    <button type="button" data-preset="200" aria-pressed="false"><b>200</b><small>AED</small></button>
+                                    <button type="button" data-preset="500" aria-pressed="false"><b>500</b><small>AED</small></button>
+                                    <button type="button" data-preset="1000" aria-pressed="false"><b>1000</b><small>AED</small></button>
+                                </div>
+                                <div class="card-buttons">
+                                    <a href="/sms-donation" class="outline-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4M10 5h4"/></svg>SMS</a>
+                                    <a class="hm-btn" href="/directdonation" data-donate="gaza">Donate now</a>
+                                </div>
+                                <span class="demo-note">Preview only · no payment is processed</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

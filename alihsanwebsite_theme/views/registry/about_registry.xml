@@ -14,6 +14,7 @@
             <t t-snippet="alihsanwebsite_theme.about_vision_mission_section" string="About Vision Mission Section" group="aboutrup"/>
             <t t-snippet="alihsanwebsite_theme.about_quality_section" string="About Quality Section" group="aboutrup"/>
             <t t-snippet="alihsanwebsite_theme.about_cta_section" string="About CTA Section" group="aboutrup"/>
+            <t t-snippet="alihsanwebsite_theme.connect_section" string="Social &amp; Feedback CTA" group="aboutrup"/>
         </xpath>
     </template>
 </odoo>

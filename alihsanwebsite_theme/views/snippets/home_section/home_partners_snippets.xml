@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="home_partners_section" name="Home Partners">
+        <section class="hm-sec s_hm_partners partners section" id="partners" aria-labelledby="pt-title">
+            <div class="section-heading pt-head">
+                <div>
+                    <div class="eyebrow">TRUSTED BY GOOD</div>
+                    <h2 id="pt-title"><span>Our</span> <em>partners</em></h2>
+                </div>
+                <p class="pt-sub">Organisations we are proud to serve our community with.</p>
+            </div>
+            <div class="pt-marquee">
+                <div class="pt-row pt-a">
+                    <ul class="pt-track" data-marquee="">
+                        <li class="pt-tile" style="--bc:#0b5fa5"><img src="/alihsanwebsite_theme/static/src/img/partner-abu-dhabi-media.png" alt="Abu Dhabi Media" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#c7961a"><img src="/alihsanwebsite_theme/static/src/img/partner-zakat-fund.png" alt="Zakat Fund" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#2e9b57"><img src="/alihsanwebsite_theme/static/src/img/partner-dewa.png" alt="Dubai Electricity &amp; Water Authority (DEWA)" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#0d2a57"><img src="/alihsanwebsite_theme/static/src/img/partner-al-naboodah.png" alt="Al Naboodah" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#0b5fa5"><img src="/alihsanwebsite_theme/static/src/img/partner-abu-dhabi-media.png" alt="Abu Dhabi Media" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#c7961a"><img src="/alihsanwebsite_theme/static/src/img/partner-zakat-fund.png" alt="Zakat Fund" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#2e9b57"><img src="/alihsanwebsite_theme/static/src/img/partner-dewa.png" alt="Dubai Electricity &amp; Water Authority (DEWA)" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#0d2a57"><img src="/alihsanwebsite_theme/static/src/img/partner-al-naboodah.png" alt="Al Naboodah" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#0b5fa5" aria-hidden="true"><img src="/alihsanwebsite_theme/static/src/img/partner-abu-dhabi-media.png" alt="Abu Dhabi Media" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#c7961a" aria-hidden="true"><img src="/alihsanwebsite_theme/static/src/img/partner-zakat-fund.png" alt="Zakat Fund" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#2e9b57" aria-hidden="true"><img src="/alihsanwebsite_theme/static/src/img/partner-dewa.png" alt="Dubai Electricity &amp; Water Authority (DEWA)" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#0d2a57" aria-hidden="true"><img src="/alihsanwebsite_theme/static/src/img/partner-al-naboodah.png" alt="Al Naboodah" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#0b5fa5" aria-hidden="true"><img src="/alihsanwebsite_theme/static/src/img/partner-abu-dhabi-media.png" alt="Abu Dhabi Media" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#c7961a" aria-hidden="true"><img src="/alihsanwebsite_theme/static/src/img/partner-zakat-fund.png" alt="Zakat Fund" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#2e9b57" aria-hidden="true"><img src="/alihsanwebsite_theme/static/src/img/partner-dewa.png" alt="Dubai Electricity &amp; Water Authority (DEWA)" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#0d2a57" aria-hidden="true"><img src="/alihsanwebsite_theme/static/src/img/partner-al-naboodah.png" alt="Al Naboodah" loading="lazy"/></li>
+                    </ul>
+                </div>
+                <div class="pt-row pt-b">
+                    <ul class="pt-track" data-marquee="">
+                        <li class="pt-tile" style="--bc:#0d2a57"><img src="/alihsanwebsite_theme/static/src/img/partner-al-naboodah.png" alt="Al Naboodah" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#2e9b57"><img src="/alihsanwebsite_theme/static/src/img/partner-dewa.png" alt="Dubai Electricity &amp; Water Authority (DEWA)" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#c7961a"><img src="/alihsanwebsite_theme/static/src/img/partner-zakat-fund.png" alt="Zakat Fund" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#0b5fa5"><img src="/alihsanwebsite_theme/static/src/img/partner-abu-dhabi-media.png" alt="Abu Dhabi Media" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#0d2a57"><img src="/alihsanwebsite_theme/static/src/img/partner-al-naboodah.png" alt="Al Naboodah" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#2e9b57"><img src="/alihsanwebsite_theme/static/src/img/partner-dewa.png" alt="Dubai Electricity &amp; Water Authority (DEWA)" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#c7961a"><img src="/alihsanwebsite_theme/static/src/img/partner-zakat-fund.png" alt="Zakat Fund" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#0b5fa5"><img src="/alihsanwebsite_theme/static/src/img/partner-abu-dhabi-media.png" alt="Abu Dhabi Media" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#0d2a57" aria-hidden="true"><img src="/alihsanwebsite_theme/static/src/img/partner-al-naboodah.png" alt="Al Naboodah" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#2e9b57" aria-hidden="true"><img src="/alihsanwebsite_theme/static/src/img/partner-dewa.png" alt="Dubai Electricity &amp; Water Authority (DEWA)" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#c7961a" aria-hidden="true"><img src="/alihsanwebsite_theme/static/src/img/partner-zakat-fund.png" alt="Zakat Fund" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#0b5fa5" aria-hidden="true"><img src="/alihsanwebsite_theme/static/src/img/partner-abu-dhabi-media.png" alt="Abu Dhabi Media" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#0d2a57" aria-hidden="true"><img src="/alihsanwebsite_theme/static/src/img/partner-al-naboodah.png" alt="Al Naboodah" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#2e9b57" aria-hidden="true"><img src="/alihsanwebsite_theme/static/src/img/partner-dewa.png" alt="Dubai Electricity &amp; Water Authority (DEWA)" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#c7961a" aria-hidden="true"><img src="/alihsanwebsite_theme/static/src/img/partner-zakat-fund.png" alt="Zakat Fund" loading="lazy"/></li>
+                        <li class="pt-tile" style="--bc:#0b5fa5" aria-hidden="true"><img src="/alihsanwebsite_theme/static/src/img/partner-abu-dhabi-media.png" alt="Abu Dhabi Media" loading="lazy"/></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

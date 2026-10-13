@@ -923,3 +923,67 @@
   43% { translate: 12px; opacity: 0; }
   100% { translate: 0px; opacity: 1; }
 }
+
+/* ---------- phones: the ways-to-give bar stays one scrolling row with arrows, but compact so two
+   pills show at a time (each pill = half the strip, labels may wrap to two lines, the row snaps
+   pill by pill). Selectors carry .dn-tabswrap so they outrank the desktop rules above. ---------- */
+@media (max-width: 560px){
+.dn-sec .dn-tabswrap{gap:8px}
+.dn-sec .dn-tabswrap .pj-arrow{width:34px;height:34px}
+.dn-sec .dn-tabswrap .pj-arrow svg{width:16px;height:16px}
+.dn-sec .dn-tabswrap .pj-tabs{gap:8px;padding:4px 2px;scroll-snap-type:x mandatory;mask-image:none;-webkit-mask-image:none}
+.dn-sec .dn-tabswrap .pj-tabs::after{display:none}
+.dn-sec .dn-tabswrap .pj-tab{flex:0 0 calc(50% - 4px);min-width:0;min-height:46px;gap:6px;padding:6px 8px 6px 6px;border-radius:14px;font-size:12.5px;white-space:normal;scroll-snap-align:start}
+.dn-sec .dn-tabswrap .pj-tab .ti{flex:0 0 24px;width:24px;height:24px}
+.dn-sec .dn-tabswrap .pj-tab .ti svg{width:14px;height:14px}
+.dn-sec .dn-tabswrap .dn-pill > span:not(.ti){white-space:normal;line-height:1.2;text-align:start}
+.dn-sec .dn-tabswrap .pj-tab:hover{transform:none}
+}
+
+/* ---------- phones: donation wizard bottom bar in two rows. One row could not hold the summary,
+   the back arrow and "Donate now · <amount> AED" (the button does not shrink, so the summary
+   collapsed under the back arrow). Row 1: project name + amount across the full width;
+   row 2: back arrow + the main button stretched to the rest. ---------- */
+@media (max-width: 640px){
+.dn-sec .dw .dw-nav{flex-wrap:wrap;align-content:flex-start;row-gap:8px}
+.dn-sec .dw .dw-mini{flex:1 1 100%;display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.dn-sec .dw .dw-mini b{flex:0 0 auto;white-space:nowrap}
+.dn-sec .dw .dw-next{flex:1 1 0%;min-width:0;justify-content:space-between;gap:8px;margin-inline-start:0;padding-inline-start:16px;font-size:14px;white-space:nowrap}
+.dn-sec .dw .dw-next i{flex:0 0 32px;width:32px;height:32px}
+}
+@media (max-width: 640px){
+.dn-sec .dw .dw-next-t{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;text-align:center}
+}
+@media (max-width: 360px){
+.dn-sec .dw .dw-nav{column-gap:8px}
+.dn-sec .dw .dw-back{height:42px;padding:0 11px}
+.dn-sec .dw .dw-next{font-size:12px;gap:6px;padding-inline-start:12px}
+.dn-sec .dw .dw-next i{flex-basis:28px;width:28px;height:28px}
+}
+@media (max-width: 340px){
+.dn-sec .dw .dw-next{white-space:normal;line-height:1.15}
+.dn-sec .dw .dw-next-t{overflow:visible;text-overflow:clip}
+}
+
+/* ---------- gifts: once the layout stacks into one column, show the card preview first
+   (above the form) instead of after it ---------- */
+@media (max-width: 1000px){
+.dn-sec .gf-main > .gf-card{order:-1}
+}
+
+/* ---------- gifts, phones: tab bar on top, then the card preview, then the selected tab's options.
+   .gf-left (the box holding tabs + panes) is dissolved with display:contents so the three can be
+   reordered inside .gf-main; tabs and panes each get the box look .gf-left had. The five tabs are
+   sized to fit the width, so there is no sideways scrollbar. ---------- */
+@media (max-width: 560px){
+.dn-sec .gf-main{row-gap:18px}
+.dn-sec .gf-main > .gf-left{display:contents}
+.dn-sec .gf-main .gf-tabs{order:-2;padding:10px;gap:6px;overflow:visible;border:1px solid rgb(217, 224, 220);border-radius:18px;background:rgb(250, 250, 250)}
+.dn-sec .gf-main .gf-tab{min-width:0;padding:10px 2px;gap:6px;font-size:11.5px}
+.dn-sec .gf-main .gf-tab svg{width:22px;height:22px}
+.dn-sec .gf-main .gf-panes{order:0;border:1px solid rgb(217, 224, 220);border-radius:22px;background:rgb(255, 255, 255);padding:24px 18px 22px}
+}
+@media (max-width: 360px){
+.dn-sec .gf-main .gf-tabs{padding:8px;gap:5px}
+.dn-sec .gf-main .gf-tab{font-size:10.5px}
+}

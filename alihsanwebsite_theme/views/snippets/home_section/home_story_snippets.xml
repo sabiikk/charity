@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="home_story_section" name="Home Spirit Of Al Ihsan">
+        <section id="about" class="hm-sec s_hm_story story section reveal">
+            <div class="story-title">
+                <div class="eyebrow">THE SPIRIT OF AL IHSAN</div>
+                <h2>Compassion is a belief.<br/><em>Giving brings it to life.</em></h2>
+            </div>
+            <div class="story-text"><p>From food and water to essential healthcare, Al Ihsan connects the desire to help with meaningful ways to give. Choose what matters to you, and become part of a community of care.</p><a class="underlink" href="/about-us">Our story and values</a></div>
+            <div class="values">
+                <div>
+                    <span>01</span>
+                    <h3>People at the heart</h3>
+                    <p>Dignity at the centre of every act of care.</p>
+                </div>
+                <div>
+                    <span>02</span>
+                    <h3>Giving, your way</h3>
+                    <p>Find a cause that feels personal to you.</p>
+                </div>
+                <div>
+                    <span>03</span>
+                    <h3>Stronger together</h3>
+                    <p>A shared commitment to a kinder community.</p>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

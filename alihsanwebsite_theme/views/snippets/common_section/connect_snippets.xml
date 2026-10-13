@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="connect_section" name="Social &amp; Feedback CTA">
+        <section class="cn-sec s_connect connect reveal" aria-label="Social links and feedback">
+            <div class="connect-social">
+                <span class="connect-label">Also visit us on:</span>
+                <div class="connect-icons">
+                    <a href="#" target="_blank" rel="noopener" aria-label="X (Twitter)"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></span><em>Twitter</em></a>
+                    <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><span class="glyph">in</span><em>Linkedin</em></a>
+                    <a href="#" target="_blank" rel="noopener" aria-label="Facebook"><span class="glyph">f</span><em>Facebook</em></a>
+                    <a href="#" target="_blank" rel="noopener" aria-label="Snapchat"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3.2c2.7 0 4.6 2 4.6 4.8 0 .9.1 1.6.3 2.1.3.6.8.9 1.4 1.1.3.1.4.4.3.7-.2.6-.9.8-1.5 1-.2 0-.3.2-.3.4 0 .3.1.6.2.9.3.5.9.7 1.6.8.3.1.4.4.3.7-.3.7-1.3 1-2.1 1.1-.3 0-.5.2-.6.5-.2.5-.6.9-1.2.9-.9 0-1.5.8-3.5.8s-2.6-.8-3.5-.8c-.6 0-1-.4-1.2-.9-.1-.3-.3-.5-.6-.5-.8-.1-1.8-.4-2.1-1.1-.1-.3.1-.6.3-.7.7-.1 1.3-.3 1.6-.8.1-.3.2-.6.2-.9 0-.2-.1-.4-.3-.4-.6-.2-1.3-.4-1.5-1-.1-.3.1-.6.3-.7.6-.2 1.1-.5 1.4-1.1.2-.5.3-1.2.3-2.1 0-2.8 1.9-4.8 4.6-4.8Z"/></svg></span><em>Snapchat</em></a>
+                    <a href="#" target="_blank" rel="noopener" aria-label="Instagram"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r=".8" fill="currentColor" stroke="none"/></svg></span><em>Instagram</em></a>
+                </div>
+            </div>
+            <div class="connect-feedback">
+                <span class="connect-label">Give us your feedback:</span>
+                <div class="feedback-scale" role="radiogroup" aria-label="Rate your experience">
+                    <button type="button" data-mood="1" aria-label="Very unhappy" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="10" r="1" fill="currentColor" stroke="none"/><path d="M8 16c1.3-1.8 2.8-1.8 4-1.8s2.7 0 4 1.8" stroke-linecap="round"/></svg></button>
+                    <button type="button" data-mood="2" aria-label="Unhappy" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="10" r="1" fill="currentColor" stroke="none"/><path d="M8.5 15.4c1.1-1 2.3-1 3.5-1s2.4 0 3.5 1" stroke-linecap="round"/></svg></button>
+                    <button type="button" data-mood="3" aria-label="Neutral" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="10" r="1" fill="currentColor" stroke="none"/><path d="M8 14.5h8" stroke-linecap="round"/></svg></button>
+                    <button type="button" data-mood="4" aria-label="Happy" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="10" r="1" fill="currentColor" stroke="none"/><path d="M8.5 13.6c1.1 1 2.3 1 3.5 1s2.4 0 3.5-1" stroke-linecap="round"/></svg></button>
+                    <button type="button" data-mood="5" aria-label="Very happy" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="10" r="1" fill="currentColor" stroke="none"/><path d="M8 13c1.3 2 2.8 2 4 2s2.7 0 4-2" stroke-linecap="round"/></svg></button>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

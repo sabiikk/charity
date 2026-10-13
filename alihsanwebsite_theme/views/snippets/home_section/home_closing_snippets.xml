@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="home_closing_section" name="Home Closing CTA">
+        <section class="hm-sec s_hm_closing closing reveal">
+            <img class="closing-photo" src="/alihsanwebsite_theme/static/src/img/community.jpg" alt="" aria-hidden="true"/>
+            <span class="closing-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg></span>
+            <div class="eyebrow light">THERE’S A PART FOR ALL OF US</div>
+            <h2>Make kindness part of your everyday.</h2>
+            <p class="closing-sub">Whether it’s a donation, a shared project, or a moment of your time — every bit of kindness adds up.</p>
+            <div class="closing-proof">
+                <span class="proof-avatars"><img src="/alihsanwebsite_theme/static/src/img/chairman.jpeg" alt=""/><img src="/alihsanwebsite_theme/static/src/img/general-manager.jpeg" alt=""/><img src="/alihsanwebsite_theme/static/src/img/community.jpg" alt=""/></span>
+                <span>Donors and volunteers like you join in every month.</span>
+            </div>
+            <a class="hm-btn gold closing-cta" href="/directdonation"><span>Start with a little kindness</span><em aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></em></a>
+        </section>
+    </template>
+</odoo>

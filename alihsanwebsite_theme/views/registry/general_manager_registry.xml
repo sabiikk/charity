@@ -11,6 +11,7 @@
             <t t-snippet="alihsanwebsite_theme.general_manager_hero_section" string="General Manager Hero Section" group="gmgroup"/>
             <t t-snippet="alihsanwebsite_theme.general_manager_message_section" string="General Manager Message Section" group="gmgroup"/>
             <t t-snippet="alihsanwebsite_theme.general_manager_next_section" string="General Manager Next Section" group="gmgroup"/>
+            <t t-snippet="alihsanwebsite_theme.connect_section" string="Social &amp; Feedback CTA" group="gmgroup"/>
         </xpath>
     </template>
 </odoo>

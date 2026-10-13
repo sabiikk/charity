@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="home_media_section" name="Home Media Centre">
+        <section id="media-highlights" class="hm-sec s_hm_media media-timeline section" data-gallery-style="green" aria-labelledby="media-timeline-title" style="scroll-margin-top: 96px">
+            <div class="timeline-top">
+                <div>
+                    <div class="eyebrow">FROM THE AL IHSAN ARCHIVE</div>
+                    <h2 id="media-timeline-title"><span>Media</span> <em>Centre</em></h2>
+                </div>
+                <a class="timeline-explore" href="/media-center"><span>Explore all</span> ↗</a>
+            </div>
+            <div class="timeline-stage">
+                <div class="timeline-cards" aria-live="polite">
+                    <a class="timeline-card timeline-card-1" href="https://alihsan.ae/ar/media/media-center-detail/74" target="_blank" rel="noopener" style="--card-order:0" aria-label="Zayed Humanitarian Day · 2024" data-year="2024"><div class="timeline-image">
+                            <img src="/alihsanwebsite_theme/static/src/img/media-zayed.jpg" alt="Zayed Humanitarian Day" loading="lazy"/>
+                            <span class="timeline-type">Images</span>
+                            <span class="timeline-open" aria-hidden="true">↗</span>
+                        </div><div class="timeline-card-copy">
+                            <small>2024 · FROM THE ARCHIVE</small>
+                            <h3>Zayed Humanitarian Day</h3>
+                        </div></a>
+                    <a class="timeline-card timeline-card-2" href="https://alihsan.ae/ar/media/media-center-detail/74" target="_blank" rel="noopener" style="--card-order:1" aria-label="Al Ihsan recognised in Ajman’s summer programme · 2024" data-year="2024"><div class="timeline-image">
+                            <img src="/alihsanwebsite_theme/static/src/img/media-award.jpg" alt="Al Ihsan recognised in Ajman’s summer programme" loading="lazy"/>
+                            <span class="timeline-type">News</span>
+                            <span class="timeline-open" aria-hidden="true">↗</span>
+                        </div><div class="timeline-card-copy">
+                            <small>2024 · FROM THE ARCHIVE</small>
+                            <h3>Al Ihsan recognised in Ajman’s summer programme</h3>
+                        </div></a>
+                    <a class="timeline-card timeline-card-3" href="https://alihsan.ae/ar/media/media-center-detail/74" target="_blank" rel="noopener" style="--card-order:2" aria-label="Ramadan Aman: nine years of shared care · 2024" data-year="2024"><div class="timeline-image">
+                            <img src="/alihsanwebsite_theme/static/src/img/food.jpg" alt="Ramadan Aman: nine years of shared care" loading="lazy"/>
+                            <span class="timeline-type">Community</span>
+                            <span class="timeline-open" aria-hidden="true">↗</span>
+                        </div><div class="timeline-card-copy">
+                            <small>2024 · FROM THE ARCHIVE</small>
+                            <h3>Ramadan Aman: nine years of shared care</h3>
+                        </div></a>
+                    <a class="timeline-card timeline-card-1" href="https://alihsan.ae/ar/media/media-center-detail/58" target="_blank" rel="noopener" style="--card-order:0" aria-label="A collaboration with Hyundai · 2023" data-year="2023"><div class="timeline-image">
+                            <img src="/alihsanwebsite_theme/static/src/img/media-food.jpg" alt="A collaboration with Hyundai" loading="lazy"/>
+                            <span class="timeline-type">Partnership</span>
+                            <span class="timeline-open" aria-hidden="true">↗</span>
+                        </div><div class="timeline-card-copy">
+                            <small>2023 · FROM THE ARCHIVE</small>
+                            <h3>A collaboration with Hyundai</h3>
+                        </div></a>
+                    <a class="timeline-card timeline-card-2" href="https://alihsan.ae/ar/media/media-center-detail/58" target="_blank" rel="noopener" style="--card-order:1" aria-label="Meeting the next generation of volunteers · 2023" data-year="2023"><div class="timeline-image">
+                            <img src="/alihsanwebsite_theme/static/src/img/volunteers.jpg" alt="Meeting the next generation of volunteers" loading="lazy"/>
+                            <span class="timeline-type">Volunteering</span>
+                            <span class="timeline-open" aria-hidden="true">↗</span>
+                        </div><div class="timeline-card-copy">
+                            <small>2023 · FROM THE ARCHIVE</small>
+                            <h3>Meeting the next generation of volunteers</h3>
+                        </div></a>
+                    <a class="timeline-card timeline-card-3" href="https://alihsan.ae/ar/media/media-center-detail/60" target="_blank" rel="noopener" style="--card-order:2" aria-label="Bridges of good for families in need · 2023" data-year="2023"><div class="timeline-image">
+                            <img src="/alihsanwebsite_theme/static/src/img/gaza.jpg" alt="Bridges of good for families in need" loading="lazy"/>
+                            <span class="timeline-type">Community</span>
+                            <span class="timeline-open" aria-hidden="true">↗</span>
+                        </div><div class="timeline-card-copy">
+                            <small>2023 · FROM THE ARCHIVE</small>
+                            <h3>Bridges of good for families in need</h3>
+                        </div></a>
+                    <a class="timeline-card timeline-card-1" href="/media-center" style="--card-order:0" aria-label="A commitment to quality and care · 2022" data-year="2022"><div class="timeline-image">
+                            <img src="/alihsanwebsite_theme/static/src/img/news.jpg" alt="A commitment to quality and care" loading="lazy"/>
+                            <span class="timeline-type">Recognition</span>
+                            <span class="timeline-open" aria-hidden="true">↗</span>
+                        </div><div class="timeline-card-copy">
+                            <small>2022 · FROM THE ARCHIVE</small>
+                            <h3>A commitment to quality and care</h3>
+                        </div></a>
+                    <a class="timeline-card timeline-card-2" href="/media-center" style="--card-order:1" aria-label="Summer support, made possible together · 2022" data-year="2022"><div class="timeline-image">
+                            <img src="/alihsanwebsite_theme/static/src/img/care.jpg" alt="Summer support, made possible together" loading="lazy"/>
+                            <span class="timeline-type">Campaign</span>
+                            <span class="timeline-open" aria-hidden="true">↗</span>
+                        </div><div class="timeline-card-copy">
+                            <small>2022 · FROM THE ARCHIVE</small>
+                            <h3>Summer support, made possible together</h3>
+                        </div></a>
+                    <a class="timeline-card timeline-card-3" href="/media-center" style="--card-order:2" aria-label="Essential care for more families · 2022" data-year="2022"><div class="timeline-image">
+                            <img src="/alihsanwebsite_theme/static/src/img/community.jpg" alt="Essential care for more families" loading="lazy"/>
+                            <span class="timeline-type">Community</span>
+                            <span class="timeline-open" aria-hidden="true">↗</span>
+                        </div><div class="timeline-card-copy">
+                            <small>2022 · FROM THE ARCHIVE</small>
+                            <h3>Essential care for more families</h3>
+                        </div></a>
+                    <a class="timeline-card timeline-card-1" href="/media-center" style="--card-order:0" aria-label="25,000 people reached through Adahi · 2021" data-year="2021"><div class="timeline-image">
+                            <img src="/alihsanwebsite_theme/static/src/img/food.jpg" alt="25,000 people reached through Adahi" loading="lazy"/>
+                            <span class="timeline-type">Giving</span>
+                            <span class="timeline-open" aria-hidden="true">↗</span>
+                        </div><div class="timeline-card-copy">
+                            <small>2021 · FROM THE ARCHIVE</small>
+                            <h3>25,000 people reached through Adahi</h3>
+                        </div></a>
+                    <a class="timeline-card timeline-card-2" href="/media-center" style="--card-order:1" aria-label="Ramadan’s Meer: a season of generosity · 2021" data-year="2021"><div class="timeline-image">
+                            <img src="/alihsanwebsite_theme/static/src/img/volunteers.jpg" alt="Ramadan’s Meer: a season of generosity" loading="lazy"/>
+                            <span class="timeline-type">Video</span>
+                            <span class="timeline-open" aria-hidden="true">↗</span>
+                        </div><div class="timeline-card-copy">
+                            <small>2021 · FROM THE ARCHIVE</small>
+                            <h3>Ramadan’s Meer: a season of generosity</h3>
+                        </div></a>
+                    <a class="timeline-card timeline-card-3" href="/media-center" style="--card-order:2" aria-label="Small acts with a lasting impact · 2021" data-year="2021"><div class="timeline-image">
+                            <img src="/alihsanwebsite_theme/static/src/img/community.jpg" alt="Small acts with a lasting impact" loading="lazy"/>
+                            <span class="timeline-type">Community</span>
+                            <span class="timeline-open" aria-hidden="true">↗</span>
+                        </div><div class="timeline-card-copy">
+                            <small>2021 · FROM THE ARCHIVE</small>
+                            <h3>Small acts with a lasting impact</h3>
+                        </div></a>
+                    <a class="timeline-card timeline-card-1" href="/media-center" style="--card-order:0" aria-label="More than 2,000 meals shared with families · 2020" data-year="2020"><div class="timeline-image">
+                            <img src="/alihsanwebsite_theme/static/src/img/food.jpg" alt="More than 2,000 meals shared with families" loading="lazy"/>
+                            <span class="timeline-type">Food support</span>
+                            <span class="timeline-open" aria-hidden="true">↗</span>
+                        </div><div class="timeline-card-copy">
+                            <small>2020 · FROM THE ARCHIVE</small>
+                            <h3>More than 2,000 meals shared with families</h3>
+                        </div></a>
+                    <a class="timeline-card timeline-card-2" href="/media-center" style="--card-order:1" aria-label="Working together with Al Maktoum Foundation · 2020" data-year="2020"><div class="timeline-image">
+                            <img src="/alihsanwebsite_theme/static/src/img/media-community.jpg" alt="Working together with Al Maktoum Foundation" loading="lazy"/>
+                            <span class="timeline-type">Partnership</span>
+                            <span class="timeline-open" aria-hidden="true">↗</span>
+                        </div><div class="timeline-card-copy">
+                            <small>2020 · FROM THE ARCHIVE</small>
+                            <h3>Working together with Al Maktoum Foundation</h3>
+                        </div></a>
+                    <a class="timeline-card timeline-card-3" href="/media-center" style="--card-order:2" aria-label="Care that brings neighbours together · 2020" data-year="2020"><div class="timeline-image">
+                            <img src="/alihsanwebsite_theme/static/src/img/care.jpg" alt="Care that brings neighbours together" loading="lazy"/>
+                            <span class="timeline-type">Community</span>
+                            <span class="timeline-open" aria-hidden="true">↗</span>
+                        </div><div class="timeline-card-copy">
+                            <small>2020 · FROM THE ARCHIVE</small>
+                            <h3>Care that brings neighbours together</h3>
+                        </div></a>
+                    <a class="timeline-card timeline-card-1" href="/media-center" style="--card-order:0" aria-label="School bags for a brighter start · 2019" data-year="2019"><div class="timeline-image">
+                            <img src="/alihsanwebsite_theme/static/src/img/quran.jpg" alt="School bags for a brighter start" loading="lazy"/>
+                            <span class="timeline-type">Education</span>
+                            <span class="timeline-open" aria-hidden="true">↗</span>
+                        </div><div class="timeline-card-copy">
+                            <small>2019 · FROM THE ARCHIVE</small>
+                            <h3>School bags for a brighter start</h3>
+                        </div></a>
+                    <a class="timeline-card timeline-card-2" href="/media-center" style="--card-order:1" aria-label="Ramadan Aman, shared across the community · 2019" data-year="2019"><div class="timeline-image">
+                            <img src="/alihsanwebsite_theme/static/src/img/volunteers.jpg" alt="Ramadan Aman, shared across the community" loading="lazy"/>
+                            <span class="timeline-type">Campaign</span>
+                            <span class="timeline-open" aria-hidden="true">↗</span>
+                        </div><div class="timeline-card-copy">
+                            <small>2019 · FROM THE ARCHIVE</small>
+                            <h3>Ramadan Aman, shared across the community</h3>
+                        </div></a>
+                    <a class="timeline-card timeline-card-3" href="/media-center" style="--card-order:2" aria-label="A year of kindness in action · 2019" data-year="2019"><div class="timeline-image">
+                            <img src="/alihsanwebsite_theme/static/src/img/community.jpg" alt="A year of kindness in action" loading="lazy"/>
+                            <span class="timeline-type">Community</span>
+                            <span class="timeline-open" aria-hidden="true">↗</span>
+                        </div><div class="timeline-card-copy">
+                            <small>2019 · FROM THE ARCHIVE</small>
+                            <h3>A year of kindness in action</h3>
+                        </div></a>
+                    <a class="timeline-card timeline-card-1" href="/media-center" style="--card-order:0" aria-label="Food baskets for 100 families · 2018" data-year="2018"><div class="timeline-image">
+                            <img src="/alihsanwebsite_theme/static/src/img/food.jpg" alt="Food baskets for 100 families" loading="lazy"/>
+                            <span class="timeline-type">Food support</span>
+                            <span class="timeline-open" aria-hidden="true">↗</span>
+                        </div><div class="timeline-card-copy">
+                            <small>2018 · FROM THE ARCHIVE</small>
+                            <h3>Food baskets for 100 families</h3>
+                        </div></a>
+                    <a class="timeline-card timeline-card-2" href="/media-center" style="--card-order:1" aria-label="Giving for families · 2018" data-year="2018"><div class="timeline-image">
+                            <img src="/alihsanwebsite_theme/static/src/img/volunteers.jpg" alt="Giving for families" loading="lazy"/>
+                            <span class="timeline-type">Video</span>
+                            <span class="timeline-open" aria-hidden="true">↗</span>
+                        </div><div class="timeline-card-copy">
+                            <small>2018 · FROM THE ARCHIVE</small>
+                            <h3>Giving for families</h3>
+                        </div></a>
+                    <a class="timeline-card timeline-card-3" href="/media-center" style="--card-order:2" aria-label="A community moved by compassion · 2018" data-year="2018"><div class="timeline-image">
+                            <img src="/alihsanwebsite_theme/static/src/img/community.jpg" alt="A community moved by compassion" loading="lazy"/>
+                            <span class="timeline-type">Community</span>
+                            <span class="timeline-open" aria-hidden="true">↗</span>
+                        </div><div class="timeline-card-copy">
+                            <small>2018 · FROM THE ARCHIVE</small>
+                            <h3>A community moved by compassion</h3>
+                        </div></a>
+                </div>
+                <div class="timeline-year-readout">
+                    <span>HIGHLIGHTS FROM</span>
+                    <strong>2024</strong>
+                </div>
+            </div>
+            <div class="year-rail" role="group" aria-label="Choose an archive year">
+                <div class="year-rail-line"></div>
+                <div class="year-buttons">
+                    <button type="button" data-year-index="0" aria-pressed="true" aria-label="2024" class="is-active"><span>2024</span><i></i></button>
+                    <button type="button" data-year-index="1" aria-pressed="false" aria-label="2023"><span>2023</span><i></i></button>
+                    <button type="button" data-year-index="2" aria-pressed="false" aria-label="2022"><span>2022</span><i></i></button>
+                    <button type="button" data-year-index="3" aria-pressed="false" aria-label="2021"><span>2021</span><i></i></button>
+                    <button type="button" data-year-index="4" aria-pressed="false" aria-label="2020"><span>2020</span><i></i></button>
+                    <button type="button" data-year-index="5" aria-pressed="false" aria-label="2019"><span>2019</span><i></i></button>
+                    <button type="button" data-year-index="6" aria-pressed="false" aria-label="2018"><span>2018</span><i></i></button>
+                </div>
+                <button type="button" class="year-next" aria-label="Next year">→</button>
+            </div>
+        </section>
+    </template>
+</odoo>

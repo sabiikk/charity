@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="home_create_section" name="Home Create Project">
+        <section id="create" class="hm-sec s_hm_create project-creator section">
+            <div id="creator-intro">
+                <div class="eyebrow">YOUR GENEROSITY. YOUR STORY.</div>
+                <h2>Give your kindness<br/>a <em>name.</em></h2>
+                <p>Turn a meaningful moment into lasting good. Create a personal charity project, dedicate it to someone special, and bring your community together.</p>
+                <div class="creator-benefits">
+                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18v5H3zM5 14v8h14v-8M12 9v13"/><path d="M12 9C3 9 6 0 10 4l2 5Zm0 0c9 0 6-9 2-5l-2 5Z"/></svg>A personal dedication</span>
+                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>A cause you believe in</span>
+                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M4 22v-3a8 8 0 0 1 16 0v3"/></svg>A shared act of kindness</span>
+                </div>
+                <p class="preview-note">Interactive preview · Projects are saved on this device only.</p>
+            </div>
+            <div id="wizard" class="wizard">
+                <div class="wizard-heading">
+                    <span>Create your project</span>
+                    <span>01 / 04</span>
+                </div>
+                <ol class="steps">
+                    <li class="done" aria-current="step"><span>1</span><small>Choose</small></li>
+                    <li><span>2</span><small>Select</small></li>
+                    <li><span>3</span><small>Personalise</small></li>
+                    <li><span>4</span><small>Review</small></li>
+                </ol>
+                <form id="project-form" action="/personalised-project" method="get">
+                    <div class="wizard-body">
+                        <div class="eyebrow">STEP 01 / THE FOUNDATION</div>
+                        <h3>Where will your kindness begin?</h3>
+                        <p>Choose a cause and a destination to explore sample projects.</p>
+                        <label>Project category<select id="w-category" name="cat"><option value="all">All categories</option><option value="Mosque">Mosque projects</option><option value="Wells">Water wells</option></select></label>
+                        <label>Destination<select id="w-country" name="country"><option value="all">All countries</option><option value="BENIN">Benin</option><option value="TAJIKISTAN">Tajikistan</option><option value="MAURITANIA">Mauritania</option></select></label>
+                    </div>
+                    <div class="wizard-buttons">
+                        <button class="hm-btn" type="submit">Continue</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </template>
+</odoo>

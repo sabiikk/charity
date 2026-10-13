@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="home_ways_section" name="Home Ways To Give">
+        <section id="ways" class="hm-sec s_hm_ways section">
+            <div id="ways-host">
+                <div class="section-heading ways-heading">
+                    <div><div class="eyebrow">GIVING, ON YOUR TERMS</div><h2>One intention. Many ways to give.</h2></div>
+                    <p>Choose what works for you.</p>
+                </div>
+                <div class="donation-methods">
+                    <a class="method primary-method" href="/directdonation"><span class="method-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg></span><div><h3>Direct donation</h3><p>Give to the cause closest to your heart.</p><span class="method-badge"><i></i>Most popular</span></div><span class="method-number">01</span><span class="method-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
+                    <a class="method" href="/sms-donation"><span class="method-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4M10 5h4"/></svg></span><div>
+                            <h3>SMS donation</h3>
+                            <p>A simple message. A meaningful gift.</p>
+                        </div><span class="method-number">02</span><span class="method-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
+                    <a class="method" href="/bank-donation"><span class="method-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 9-5 9 5H3Zm2 3v7m7-7v7m7-7v7M3 21h18"/></svg></span><div>
+                            <h3>Bank transfer</h3>
+                            <p>Find official accounts and transfer details.</p>
+                        </div><span class="method-number">03</span><span class="method-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
+                    <a class="method" href="/subscriptions"><span class="method-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7H7a4 4 0 0 0-4 4m17-4-4-4m4 4-4 4M4 17h13a4 4 0 0 0 4-4M4 17l4-4m-4 4 4 4"/></svg></span><div>
+                            <h3>Subscriptions</h3>
+                            <p>Make regular giving part of your routine.</p>
+                        </div><span class="method-number">04</span><span class="method-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
+                    <a class="method" href="/site-representative"><span class="method-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M4 22v-3a8 8 0 0 1 16 0v3"/></svg></span><div>
+                            <h3>Site representatives</h3>
+                            <p>Find a representative to assist you.</p>
+                        </div><span class="method-number">05</span><span class="method-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
+                    <a class="method" href="/gifts"><span class="method-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18v5H3zM5 14v8h14v-8M12 9v13"/><path d="M12 9C3 9 6 0 10 4l2 5Zm0 0c9 0 6-9 2-5l-2 5Z"/></svg></span><div>
+                            <h3>Gift a donation</h3>
+                            <p>A thoughtful gift in someone’s honour.</p>
+                        </div><span class="method-number">06</span><span class="method-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
+                    <a class="method" href="/request-for-a-delegate"><span class="method-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M4 22v-3a8 8 0 0 1 16 0v3"/></svg></span><div>
+                            <h3>Request a representative</h3>
+                            <p>Explore assistance with your donation.</p>
+                        </div><span class="method-number">07</span><span class="method-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

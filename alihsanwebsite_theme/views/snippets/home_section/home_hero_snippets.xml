@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="home_hero_section" name="Home Campaign Hero">
+        <section class="hm-sec s_hm_hero campaign-hero" aria-label="Featured campaigns">
+            <div class="campaign-slides" aria-live="polite">
+                <a class="campaign-slide is-active" href="https://alihsan.ae/ar/projects-campaigns/poor-housing" target="_blank" rel="noopener"><img src="/alihsanwebsite_theme/static/src/img/bannerhero.jpg" alt="Al Ihsan campaign banner" fetchpriority="high"/></a>
+                <a class="campaign-slide" href="/projects-campaigns"><img src="/alihsanwebsite_theme/static/src/img/community.jpg" alt="Community care and support from Al Ihsan" loading="lazy"/></a>
+                <a class="campaign-slide" href="/projects-campaigns"><img src="/alihsanwebsite_theme/static/src/img/food.jpg" alt="Food support for families" loading="lazy"/></a>
+                <a class="campaign-slide" href="/projects-campaigns"><img src="/alihsanwebsite_theme/static/src/img/water.jpg" alt="Clean water for communities" loading="lazy"/></a>
+                <a class="campaign-slide" href="/projects-campaigns"><img src="/alihsanwebsite_theme/static/src/img/hospital.jpg" alt="Healthcare support and essential treatment" loading="lazy"/></a>
+            </div>
+            <a class="campaign-hero-btn" href="https://alihsan.ae/ar/projects-campaigns/poor-housing" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.500-4.700-7.500-10.500A4.300 4.300 0 0 1 12 8a4.300 4.300 0 0 1 7.500 2.500C19.500 16.300 12 21 12 21z"/></svg><span>Donate now</span></a>
+            <div class="campaign-caption">
+                <span>CHARITABLE ENDOWMENT · GOOD THAT LIVES ON</span>
+                <a href="https://alihsan.ae/ar/projects-campaigns/poor-housing" target="_blank" rel="noopener">Explore the campaign</a>
+                <div class="campaign-controls" aria-label="Campaign slides">
+                    <button type="button" class="campaign-dot is-active" aria-label="Show campaign 1" aria-pressed="true"></button>
+                    <button type="button" class="campaign-dot" aria-label="Show campaign 2" aria-pressed="false"></button>
+                    <button type="button" class="campaign-dot" aria-label="Show campaign 3" aria-pressed="false"></button>
+                    <button type="button" class="campaign-dot" aria-label="Show campaign 4" aria-pressed="false"></button>
+                    <button type="button" class="campaign-dot" aria-label="Show campaign 5" aria-pressed="false"></button>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

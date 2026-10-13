@@ -17,6 +17,7 @@
             <t t-snippet="alihsanwebsite_theme.direct_donation_delegate_section" string="Request For A Delegate Section" group="directdonationgroup"/>
             <t t-snippet="alihsanwebsite_theme.direct_donation_gifts_section" string="Gifts Section" group="directdonationgroup"/>
             <t t-snippet="alihsanwebsite_theme.direct_donation_subs_section" string="Subscriptions Section" group="directdonationgroup"/>
+            <t t-snippet="alihsanwebsite_theme.connect_section" string="Social &amp; Feedback CTA" group="directdonationgroup"/>
         </xpath>
     </template>
 </odoo>

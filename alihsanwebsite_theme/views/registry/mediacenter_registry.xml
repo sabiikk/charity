@@ -10,6 +10,7 @@
         <xpath expr="//snippets[@id='snippet_structure']" position="inside">
             <t t-snippet="alihsanwebsite_theme.mediacenter_banner_section" string="Media Center Banner Section" group="mediacentergroup"/>
             <t t-snippet="alihsanwebsite_theme.mediacenter_sections_section" string="Media Center Sections Section" group="mediacentergroup"/>
+            <t t-snippet="alihsanwebsite_theme.connect_section" string="Social &amp; Feedback CTA" group="mediacentergroup"/>
         </xpath>
     </template>
 </odoo>

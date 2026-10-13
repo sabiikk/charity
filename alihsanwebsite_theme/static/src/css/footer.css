@@ -1,0 +1,216 @@
+/* ==========================================================
+   Al Ihsan footer — converted from footer.js / footer.css of "Al Ihsan web 7"
+   (footer / style / responsive / fonts / concept .css, in their load order,
+   only the rules that style the footer).
+   Every selector is scoped to footer.ih-footer (it replaces Odoo's
+   footer#bottom), so the original cascade is unchanged. The column fade-in
+   only hides while the runtime class .ft-js is set (footer.js), so the
+   editor always shows everything. rtlcss is off: the design has its own RTL.
+   ========================================================== */
+
+/* base: undo Bootstrap / Odoo element styles inside the footer (lowest specificity) */
+.ih-footer{line-height:normal;font-weight:400;letter-spacing:normal;text-align:start;text-transform:none}
+.ih-footer :where(a,b,em,h3,i,img,li,p,span,strong,ul){all:revert}
+
+/*rtl:begin:ignore*/
+.ih-footer{--green:#123f35;--deep:#0e3029;--gold:#edc76b;--ink:#173b32;--muted:#61716b;--line:#dfe6e1}
+.ih-footer *,.ih-footer{box-sizing:border-box}
+.ih-footer{color:var(--ink);font-family:"DM Sans", "Noto Sans Arabic", sans-serif;font-size:16px}
+.ih-footer a{color:inherit;text-decoration:none}
+.ih-footer a{touch-action:manipulation}
+.ih-footer a:focus-visible{outline:rgb(186, 134, 20) solid 3px;outline-offset:5px}
+.ih-footer h3{font-family:Manrope, "Noto Sans Arabic", sans-serif}
+.ih-footer h3{font-weight:600;font-size:19px;letter-spacing:-0.5px;margin:0px 0px 12px}
+.ih-footer footer,footer.ih-footer{display:flex;align-items:center;justify-content:space-between;padding:28px 5.5%;gap:20px}
+.ih-footer footer img,footer.ih-footer img{width:165px;height:60px}
+.ih-footer footer a:where(:not(.ft-connect *)),footer.ih-footer a:where(:not(.ft-connect *)){font-size:11px;color:var(--muted)}
+html[dir="rtl"] .ih-footer h3{letter-spacing:0px}
+@media (max-width: 1100px){
+.ih-footer h3{font-size:17px}
+}
+@media (max-width: 760px){
+.ih-footer footer,footer.ih-footer{flex-wrap:wrap;justify-content:center;text-align:center;padding:25px 6%}
+}
+@media (prefers-reduced-motion: reduce){
+.ih-footer *,.ih-footer{animation:auto ease 0s 1 normal none running none !important;transition:none !important;scroll-behavior:auto !important}
+}
+.ih-footer svg{width:24px;height:24px;flex-shrink:0}
+.ih-footer{--green:#009746;--deep:#06472e;--ink:#283b34;--gold:#d9b564;--muted:#6c7670;--line:#e2e8e2}
+.ih-footer{color:var(--ink)}
+.ih-footer footer.ft,footer.ih-footer.ft{display:block;padding:0px;margin:70px calc(50% - 50vw) 0px;width:100vw;max-width:none;background:rgb(231, 240, 234);color:rgb(16, 32, 26);text-align:start}
+.ih-footer footer.ft img,footer.ih-footer.ft img{width:auto;height:auto}
+.ih-footer footer.ft a:where(:not(.ft-connect *)),footer.ih-footer.ft a:where(:not(.ft-connect *)){font-size:inherit;color:inherit}
+.ih-footer .ft *,.ih-footer.ft *{box-sizing:border-box}
+.ih-footer .ft-in{max-width:1240px;margin:0px auto;padding:0px 20px}
+.ih-footer .ft-grid{display:grid;grid-template-columns:230px 1fr 1fr 1.9fr;gap:40px;padding:38px 0px 34px;align-items:start}
+.ih-footer .ft-logo{display:inline-block;margin-bottom:12px}
+.ih-footer .ft-logo img{max-height:72px;object-fit:contain;width:200px !important;height:auto !important}
+.ih-footer .ft-contacts{display:grid;gap:12px}
+.ih-footer .ft-c{display:flex;align-items:center;gap:12px;height:36px;padding:0px 14px;border-radius:9px;background:rgb(255, 255, 255);font-size:13px;color:rgb(0, 112, 90);transition:transform 0.25s, box-shadow 0.25s}
+.ih-footer .ft-c:hover{transform:translateX(4px);box-shadow:rgba(9, 38, 21, 0.1) 0px 6px 14px}
+html[dir="rtl"] .ih-footer .ft-c:hover{transform:translateX(-4px)}
+.ih-footer .ft-c svg{width:20px;height:20px;flex:0 0 auto}
+.ih-footer .ft-c i{width:1px;height:18px;background:rgb(0, 112, 90);flex:0 0 auto}
+.ih-footer .ft-pay{display:flex;align-items:center;gap:26px;margin-top:14px;padding-inline-start:6px;font-weight:800}
+.ih-footer .ft-mc{display:inline-flex}
+.ih-footer .ft-mc i{width:20px;height:20px;border-radius:50%;background:rgb(235, 0, 27)}
+.ih-footer .ft-mc i+i{background:rgb(247, 158, 27);margin-inline-start:-8px;opacity:0.9}
+.ih-footer .ft-ap{font-size:17px;color:rgb(17, 17, 17)}
+.ih-footer .ft-vi{font-style:italic;color:rgb(20, 52, 203);font-size:17px}
+.ih-footer .ft h3,.ih-footer.ft h3{margin:0px 0px 14px;font-size:16px;font-weight:500;color:rgb(16, 32, 26)}
+.ih-footer .ft ul,.ih-footer.ft ul{list-style:none;margin:0px;padding:0px}
+.ih-footer .ft li a,.ih-footer.ft li a{display:flex;align-items:center;gap:10px;padding:8px 0px;font-size:15px;color:rgb(0, 112, 90);transition:transform 0.2s, color 0.2s}
+.ih-footer .ft li a::before,.ih-footer.ft li a::before{content:"";border:5px solid transparent;border-inline-start:7px solid rgb(0, 112, 90);border-inline-end:0px;flex:0 0 auto}
+.ih-footer .ft li a:hover,.ih-footer.ft li a:hover{transform:translateX(5px);color:rgb(0, 79, 62)}
+html[dir="rtl"] .ih-footer .ft li a:hover,html[dir="rtl"] .ih-footer.ft li a:hover{transform:translateX(-5px)}
+.ih-footer .ft-promos{display:grid;gap:22px}
+.ih-footer .ft-promo{position:relative;overflow:hidden;isolation:isolate;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:104px;padding:20px 22px 20px 18px;border-radius:18px;border:1.5px solid rgb(233, 205, 92);background:linear-gradient(115deg, rgb(251, 228, 128) 0%, rgb(255, 243, 176) 30%, rgb(248, 220, 106) 55%, rgb(251, 229, 130) 100%);box-shadow:rgba(201, 162, 52, 0.133) 0px 6px 16px}
+.ih-footer .ft-promo::before{content:"";position:absolute;z-index:-1;top:-30%;inset-inline-start:30%;width:12%;height:170%;background:linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);transform:skewX(-22deg);animation:6s ease-in-out 0s infinite normal none running ft-ftShine}
+.ih-footer .ft-pt{display:flex;flex-direction:column;gap:8px;padding-inline-start:18px}
+.ih-footer .ft-pt span{font-size:17px;color:rgb(16, 32, 26)}
+.ih-footer .ft-pt strong{font-size:19px;font-weight:700;color:rgb(16, 32, 26)}
+.ih-footer .ft-pt strong.g{color:rgb(0, 112, 90)}
+.ih-footer .ft-stores{display:flex;gap:20px}
+.ih-footer .ft-store{display:inline-flex;align-items:center;gap:8px;height:42px;min-width:108px;padding:0px 14px;border-radius:9px;background:rgb(27, 27, 27);font-size:11.5px;font-weight:700;justify-content:center;transition:transform 0.25s, box-shadow 0.25s;color:rgb(255, 255, 255) !important}
+.ih-footer .ft-store svg{width:20px;height:20px;flex:0 0 auto}
+.ih-footer .ft-store:hover{transform:translateY(-3px);box-shadow:rgba(0, 0, 0, 0.267) 0px 10px 18px}
+.ih-footer .ft-sms{display:inline-flex;align-items:center;gap:10px;height:42px;padding:0px 24px;border-radius:9px;background:rgb(0, 112, 90);font-size:15px;transition:transform 0.25s, background 0.25s;color:rgb(255, 255, 255) !important}
+.ih-footer .ft-sms svg{width:22px;height:22px}
+.ih-footer .ft-sms:hover{background:rgb(0, 92, 73);transform:translateY(-3px)}
+.ih-footer .ft-bar{border-top:1px solid rgb(107, 122, 115)}
+.ih-footer .ft-bar .ft-in{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:16px 18px;font-size:12.5px;color:rgb(51, 67, 61)}
+.ih-footer .ft-legal{display:flex;align-items:center;gap:14px}
+.ih-footer .ft-legal a:hover{text-decoration:underline}
+.ih-footer .ft-legal i{width:1px;height:16px;background:rgb(107, 122, 115)}
+.ih-footer.ft-js .ft .ftf,.ih-footer.ft-js.ft .ftf{opacity:0;transform:translateY(26px);transition-behavior:normal, normal;transition-duration:0.8s, 0.8s;transition-timing-function:ease, ease;transition-property:opacity, transform;transition-delay:var(--d,0s)}
+.ih-footer.ft-js .ft .ftf.on,.ih-footer.ft-js.ft .ftf.on{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+.ih-footer.ft-js .ft .ftf,.ih-footer.ft-js.ft .ftf{opacity:1;transform:none;transition:none}
+.ih-footer .ft-promo::before{animation:auto ease 0s 1 normal none running none}
+}
+@media (max-width: 1100px){
+.ih-footer .ft-grid{grid-template-columns:1fr 1fr;gap:30px}
+.ih-footer .ft-promos{grid-column:1 / -1}
+}
+@media (max-width: 620px){
+.ih-footer .ft-grid{grid-template-columns:1fr}
+.ih-footer .ft-promo{flex-direction:column;align-items:flex-start}
+.ih-footer .ft-stores{flex-wrap:wrap;gap:10px}
+.ih-footer .ft-bar .ft-in{justify-content:center;text-align:center}
+}
+.ih-footer .ft-grid{grid-template-columns:230px 200px 220px minmax(0px, 1fr)}
+.ih-footer .ft-store,.ih-footer .ft-pt span,.ih-footer .ft-pt strong,.ih-footer .ft-sms{white-space:nowrap}
+.ih-footer .ft-stores{gap:12px}
+.ih-footer .ft-store{min-width:0px;padding:0px 12px}
+.ih-footer .ft-promo{padding-inline:14px}
+.ih-footer .ft-pt{padding-inline-start:10px}
+.ih-footer .ft-c span{color:rgb(0, 112, 90)}
+@media (max-width: 1100px){
+.ih-footer .ft-grid{grid-template-columns:1fr 1fr}
+.ih-footer .ft-promos{grid-column:1 / -1}
+}
+@media (max-width: 620px){
+.ih-footer .ft-grid{grid-template-columns:1fr}
+}
+.ih-footer .ft-grid{grid-template-columns:210px 170px 200px minmax(0px, 1fr);gap:32px}
+.ih-footer .ft-promo:first-child .ft-pt strong{font-size:17px}
+.ih-footer .ft-promo{overflow:hidden}
+.ih-footer .ft-store{height:40px;font-size:11px;gap:6px;padding:0px 10px}
+@media (max-width: 1250px){
+.ih-footer .ft-promo:first-child{flex-wrap:wrap}
+}
+.ih-footer footer.ft,footer.ih-footer.ft{background:linear-gradient(160deg, rgb(10, 90, 58) 0%, rgb(6, 71, 46) 60%, rgb(4, 56, 31) 100%);color:rgb(230, 240, 234)}
+.ih-footer .ft h3,.ih-footer.ft h3{color:rgb(237, 199, 107);font-size:15px;font-weight:700;letter-spacing:0.4px;text-transform:uppercase;margin-bottom:16px}
+.ih-footer .ft li a,.ih-footer.ft li a{color:rgb(216, 233, 223)}
+.ih-footer .ft li a::before,.ih-footer.ft li a::before{border-inline-start-color:rgb(237, 199, 107)}
+.ih-footer .ft li a:hover,.ih-footer.ft li a:hover{color:rgb(255, 255, 255)}
+.ih-footer .ft-logo{padding:10px 14px;border-radius:14px;background:rgb(255, 255, 255)}
+.ih-footer .ft-logo img{width:170px !important}
+.ih-footer .ft-c{background:rgba(255, 255, 255, 0.08);border:1px solid rgba(255, 255, 255, 0.12);color:rgb(255, 255, 255)}
+.ih-footer .ft-c span{color:rgb(255, 255, 255)}
+.ih-footer .ft-c svg{color:rgb(237, 199, 107)}
+.ih-footer .ft-c i{background:rgba(255, 255, 255, 0.25)}
+.ih-footer .ft-c:hover{background:rgba(255, 255, 255, 0.14);box-shadow:none}
+.ih-footer .ft-pay{padding:10px 16px;margin-top:14px;border-radius:12px;background:rgb(255, 255, 255);width:fit-content}
+.ih-footer .ft-promo{border:1px solid rgba(255, 255, 255, 0.15);background:linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04));box-shadow:none;backdrop-filter:blur(4px)}
+.ih-footer .ft-promo::before{background:linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.133), transparent)}
+.ih-footer .ft-pt span{color:rgb(188, 214, 200);font-size:14px}
+.ih-footer .ft-pt strong{color:rgb(255, 255, 255)}
+.ih-footer .ft-pt strong.g{color:rgb(237, 199, 107)}
+.ih-footer .ft-store{background:rgb(255, 255, 255);color:rgb(17, 17, 17) !important}
+.ih-footer .ft-sms{background:linear-gradient(135deg, rgb(0, 162, 81), rgb(0, 121, 63));box-shadow:rgb(0, 162, 81) 0px 8px 16px -8px}
+.ih-footer .ft-sms:hover{background:linear-gradient(135deg, rgb(0, 179, 90), rgb(0, 138, 71))}
+.ih-footer .ft-bar{border-top:1px solid rgba(255, 255, 255, 0.133);background:rgb(4, 56, 31)}
+.ih-footer .ft-bar .ft-in{color:rgb(169, 205, 187)}
+.ih-footer .ft-legal a:hover{color:rgb(255, 255, 255)}
+.ih-footer .ft-legal i{background:rgba(255, 255, 255, 0.2)}
+.ih-footer .ft-store svg[fill="#fff"]{fill:rgb(17, 17, 17)}
+.ih-footer footer.ft,footer.ih-footer.ft{background:linear-gradient(135deg, rgb(0, 124, 62) 0%, rgb(0, 90, 45) 100%)}
+.ih-footer .ft-bar{background:rgb(0, 69, 31);border-top-color:rgba(255, 255, 255, 0.18)}
+.ih-footer .ft li a,.ih-footer.ft li a{color:rgb(255, 255, 255)}
+.ih-footer .ft-bar .ft-in,.ih-footer .ft-pt span{color:rgb(227, 244, 234)}
+.ih-footer .ft-promo{border-color:rgba(255, 255, 255, 0.25);background:linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.07))}
+.ih-footer .ft-sms{background:rgb(255, 255, 255);box-shadow:rgba(0, 0, 0, 0.4) 0px 8px 16px -8px;color:rgb(0, 90, 45) !important}
+.ih-footer .ft-sms:hover{background:rgb(241, 251, 245)}
+.ih-footer .ft-c{background:rgba(255, 255, 255, 0.12);border-color:rgba(255, 255, 255, 0.2)}
+.ih-footer{--hh:84px}
+.ih-footer img,.ih-footer svg{max-width:100%}
+@media (max-width: 1100px){
+.ih-footer .ft-grid{grid-template-columns:1fr 1fr !important}
+.ih-footer .ft-promos{grid-column:1 / -1}
+}
+@media (max-width: 620px){
+.ih-footer .ft-grid{grid-template-columns:minmax(0px, 1fr) !important;gap:26px !important}
+.ih-footer .ft-promos,.ih-footer .ft-promo{min-width:0px}
+.ih-footer .ft-promo{flex-direction:column;gap:14px;align-items:stretch !important}
+.ih-footer .ft-pt span,.ih-footer .ft-pt strong,.ih-footer .ft-store,.ih-footer .ft-sms{white-space:normal}
+.ih-footer .ft-stores{flex-wrap:wrap}
+.ih-footer .ft-store{flex:1 1 130px}
+.ih-footer .ft-bar .ft-in{justify-content:center;text-align:center}
+.ih-footer .ft-legal{flex-wrap:wrap;justify-content:center}
+.ih-footer .ft-grid{padding:30px 0px 26px;grid-template-columns:repeat(2, minmax(0px, 1fr)) !important;gap:28px 18px !important}
+.ih-footer .ft-grid>.ftf:first-child,.ih-footer .ft-promos{grid-column:1 / -1}
+.ih-footer .ft-grid>.ftf:first-child{display:flex;flex-direction:column;align-items:flex-start;text-align:start;padding-bottom:24px;border-bottom:1px solid rgba(255, 255, 255, 0.15)}
+.ih-footer .ft-logo{margin-bottom:14px}
+.ih-footer .ft-contacts{width:100%;max-width:300px;grid-template-columns:1fr;gap:10px}
+.ih-footer .ft-c{height:40px;justify-content:flex-start}
+.ih-footer .ft-c:hover{transform:none}
+.ih-footer .ft-pay{margin-inline:0px;margin-top:14px}
+.ih-footer .ft h3,.ih-footer.ft h3{font-size:13px;letter-spacing:0.8px;margin-bottom:10px;padding-bottom:8px;position:relative}
+.ih-footer .ft h3::after,.ih-footer.ft h3::after{content:"";position:absolute;inset-inline-start:0px;bottom:0px;width:26px;height:2px;border-radius:2px;background:rgb(237, 199, 107)}
+.ih-footer .ft li a,.ih-footer.ft li a{font-size:13.5px;padding:7px 0px;gap:8px;line-height:1.3;min-height:36px}
+.ih-footer .ft li a::before,.ih-footer.ft li a::before{border-width:4px;border-inline-start-width:6px}
+.ih-footer .ft li a:hover,.ih-footer.ft li a:hover{transform:none}
+.ih-footer .ft-promos{gap:14px;padding-top:6px}
+.ih-footer .ft-promo{border-radius:16px;min-height:0px;text-align:center;padding:18px 16px !important;align-items:center !important}
+.ih-footer .ft-pt{padding-inline-start:0px;align-items:center;gap:4px}
+.ih-footer .ft-stores{width:100%;justify-content:center}
+.ih-footer .ft-store{max-width:170px;height:44px}
+.ih-footer .ft-sms{width:100%;max-width:340px;justify-content:center;height:44px}
+.ih-footer .ft-bar .ft-in{flex-direction:column;gap:8px;padding-block:14px 16px;font-size:12px}
+}
+@media (max-width: 340px){
+.ih-footer .ft-grid{grid-template-columns:minmax(0px, 1fr) !important}
+}
+.ih-footer{--ff:'Plus Jakarta Sans','IBM Plex Sans Arabic','Noto Sans Arabic',system-ui,-apple-system,'Segoe UI',sans-serif}
+html:lang(ar) .ih-footer{--ff:'IBM Plex Sans Arabic','Plus Jakarta Sans','Noto Sans Arabic',system-ui,sans-serif}
+.ih-footer,.ih-footer :not(em):not(i):not(svg):not(svg *):not(code):not(.ft-vi),.ih-footer:not(em):not(i):not(svg):not(svg *):not(code):not(.ft-vi){font-family:var(--ff)}
+.ih-footer{font-feature-settings:"ss01" 0;-webkit-font-smoothing:antialiased;text-rendering:optimizelegibility}
+.ih-footer h3{letter-spacing:-0.02em}
+html[dir="rtl"] .ih-footer h3{letter-spacing:0px}
+
+/* keyframes */
+@keyframes ft-ftShine {0%, 60% { transform: translateX(-300%) skewX(-22deg); }100% { transform: translateX(900%) skewX(-22deg); }}
+
+/* Odoo: the static site stretched the footer to 100vw out of a centred body; here it is already full width */
+footer.ih-footer.ft{margin:0;width:auto}
+
+/* social + feedback bar attached to the footer: it straddles the top edge, top half over the page
+   (white), bottom half over the green; side gaps come from the wrapper instead of the bar's margins; the generic footer link
+   rules (footer a / footer.ft a) skip it via :where(:not(.ft-connect *)) so its labels keep their size */
+/* 48px white gap above the bar (like the static site); the white band ends at the bar's middle:
+   gap + half the bar = 50% of the wrapper + half the gap */
+.ih-footer .ft-connect{padding:48px 20px 0;background:linear-gradient(#fff,#fff) top/100% calc(50% + 24px) no-repeat}
+.ih-footer .ft-connect .cn-sec.connect{margin:0 auto}
+@media (max-width: 620px){.ih-footer .ft-connect{padding:32px 16px 0;background-size:100% calc(50% + 16px)}}
+/*rtl:end:ignore*/

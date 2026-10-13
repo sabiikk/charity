@@ -1,0 +1,141 @@
+/* ==========================================================
+   Social + feedback CTA bar ("Also visit us on" / "Give us your feedback")
+   — converted from the .connect bar that footer.js of "Al Ihsan web 7" puts
+   above the footer (footer / concept / style / responsive / fonts .css, in
+   their load order, only the rules that style the bar).
+   Every selector is scoped to the snippet root .cn-sec (the original
+   <section class="connect">), so the original cascade is unchanged.
+   html.js became the runtime root class .cn-js (added by connect.js, never
+   saved). The design ships its own [dir=rtl] rules, so rtlcss is off here.
+   ========================================================== */
+
+/* base: undo Bootstrap / Odoo element styles inside the bar (lowest specificity) */
+.cn-sec{line-height:normal;font-weight:400;letter-spacing:normal;text-align:start;text-transform:none}
+.cn-sec :where(a,b,button,em,i,img,span,strong,p,h3){all:revert}
+
+/*rtl:begin:ignore*/
+.cn-sec{--green:#123f35;--deep:#0e3029;--gold:#edc76b;--ink:#173b32;--muted:#61716b;--line:#dfe6e1}
+.cn-sec *,.cn-sec{box-sizing:border-box}
+.cn-sec{color:var(--ink);font-family:"DM Sans", "Noto Sans Arabic", sans-serif;font-size:16px}
+.cn-sec button{font:inherit}
+.cn-sec a{color:inherit;text-decoration:none}
+.cn-sec button,.cn-sec a{touch-action:manipulation}
+.cn-sec button{cursor:pointer}
+.cn-sec button:focus-visible,.cn-sec a:focus-visible{outline:rgb(186, 134, 20) solid 3px;outline-offset:5px}
+.cn-sec em{font-family:Georgia, "Noto Sans Arabic", serif;font-weight:400;color:var(--gold)}
+.cn-sec .reveal,.cn-sec.reveal{animation:0.8s ease 0s 1 normal both running cn-appear}
+.cn-sec.cn-js .reveal,.cn-sec.cn-js.reveal{opacity:0;transform:translateY(24px);animation:auto ease 0s 1 normal none running none;transition:opacity 0.7s, transform 0.7s}
+.cn-sec.cn-js .reveal.visible,.cn-sec.cn-js.reveal.visible{opacity:1;transform:translateY(0px)}
+@media (prefers-reduced-motion: reduce){
+.cn-sec *,.cn-sec{animation:auto ease 0s 1 normal none running none !important;transition:none !important;scroll-behavior:auto !important}
+.cn-sec.cn-js .reveal,.cn-sec.cn-js.reveal{opacity:1;transform:none}
+}
+.cn-sec svg{width:24px;height:24px;flex-shrink:0}
+.cn-sec{--green:#009746;--deep:#06472e;--ink:#283b34;--gold:#d9b564;--muted:#6c7670;--line:#e2e8e2}
+.cn-sec{color:var(--ink)}
+.cn-sec .connect,.cn-sec.connect{position:relative;z-index:3;display:grid;grid-template-columns:1.15fr 1fr;max-width:1180px;margin:-36px auto 0px;background:var(--deep);border-radius:22px;overflow:hidden;box-shadow:rgba(11, 36, 29, 0.19) 0px 22px 50px}
+.cn-sec .connect-social,.cn-sec .connect-feedback{padding:30px clamp(22px, 3.4vw, 42px);display:flex;flex-direction:column;gap:18px;color:rgb(255, 255, 255);min-width:0px}
+.cn-sec .connect-social{border-inline-end:1px solid rgba(255, 255, 255, 0.133)}
+.cn-sec .connect-label{font-size:13px;font-weight:700;color:rgb(217, 233, 225)}
+.cn-sec .connect-icons{display:flex;flex-wrap:wrap;gap:18px 20px}
+.cn-sec .connect-icons a{display:flex;align-items:center;gap:10px;color:rgb(255, 255, 255);font-size:13px;font-weight:600;white-space:nowrap}
+.cn-sec .connect-icons a em{font-style:normal}
+.cn-sec .connect-icons a span,.cn-sec .connect-icons a .glyph{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:rgb(255, 255, 255);color:var(--deep);flex-shrink:0;transition:transform 0.25s, background 0.25s}
+.cn-sec .connect-icons a .glyph{font-size:15px;font-weight:800;font-style:normal}
+.cn-sec .connect-icons a:hover span,.cn-sec .connect-icons a:hover .glyph{transform:translateY(-3px);background:var(--gold)}
+.cn-sec .connect-icons svg{width:17px;height:17px}
+.cn-sec .feedback-scale{display:flex;align-items:center;justify-content:space-between;gap:4px;border:1.5px solid rgba(255, 255, 255, 0.22);border-radius:999px;padding:6px 10px;max-width:320px}
+.cn-sec .feedback-scale button{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;border:0px;background:none;color:rgb(255, 255, 255);opacity:0.68;transition:opacity 0.2s, transform 0.2s, background 0.2s}
+.cn-sec .feedback-scale button svg{width:24px;height:24px}
+.cn-sec .feedback-scale button:hover{opacity:1;transform:translateY(-2px)}
+.cn-sec .feedback-scale button.selected{opacity:1;background:rgba(255, 255, 255, 0.133);transform:scale(1.08)}
+.cn-sec.cn-js .connect .connect-social,.cn-sec.cn-js.connect .connect-social,.cn-sec.cn-js .connect .connect-feedback,.cn-sec.cn-js.connect .connect-feedback{opacity:0;transform:translateY(20px);transition:opacity 0.6s, transform 0.6s}
+.cn-sec.cn-js .connect.visible .connect-social,.cn-sec.cn-js.connect.visible .connect-social,.cn-sec.cn-js .connect.visible .connect-feedback,.cn-sec.cn-js.connect.visible .connect-feedback{opacity:1;transform:translateY(0px)}
+.cn-sec.cn-js .connect.visible .connect-feedback,.cn-sec.cn-js.connect.visible .connect-feedback{transition-delay:0.1s}
+@media (max-width: 900px){
+.cn-sec .connect,.cn-sec.connect{grid-template-columns:1fr;margin-inline:20px}
+.cn-sec .connect-social{border-inline-end:0px;border-bottom:1px solid rgba(255, 255, 255, 0.133)}
+}
+@media (max-width: 620px){
+.cn-sec .connect,.cn-sec.connect{margin-inline:16px}
+.cn-sec .feedback-scale{max-width:none}
+}
+@media (prefers-reduced-motion: reduce){
+.cn-sec .connect-icons a span,.cn-sec .connect-icons a .glyph,.cn-sec .feedback-scale button,.cn-sec.cn-js .connect .connect-social,.cn-sec.cn-js.connect .connect-social,.cn-sec.cn-js .connect .connect-feedback,.cn-sec.cn-js.connect .connect-feedback{transition:none !important;opacity:1 !important;transform:none !important}
+}
+.cn-sec .connect,.cn-sec.connect{max-width:860px;margin:48px auto -64px;grid-template-columns:1.3fr 1fr;background:rgb(0, 112, 90);border-radius:18px;box-shadow:rgba(0, 112, 90, 0.4) 0px 18px 40px -12px;position:relative;z-index:5}
+.cn-sec .connect-social,.cn-sec .connect-feedback{padding:22px 34px 24px;gap:14px;justify-content:center}
+.cn-sec .connect-social{border-inline-end:1px solid rgba(255, 255, 255, 0.25)}
+.cn-sec .connect-label{font-size:17px;font-weight:500;color:rgb(255, 255, 255)}
+.cn-sec .connect-icons{flex-wrap:nowrap;gap:12px}
+.cn-sec .connect-icons a{gap:7px;font-size:11.5px;font-weight:500}
+.cn-sec .connect-icons a span,.cn-sec .connect-icons a .glyph{width:30px;height:30px;color:rgb(0, 112, 90)}
+.cn-sec .connect-icons a .glyph{font-size:13px}
+.cn-sec .connect-icons svg{width:15px;height:15px}
+.cn-sec .feedback-scale{max-width:none;justify-content:space-between;gap:2px;border:2px solid rgba(255, 255, 255, 0.7);border-radius:12px;padding:5px 8px}
+.cn-sec .feedback-scale button{width:40px;height:40px;opacity:0.95}
+.cn-sec .feedback-scale button svg{width:34px;height:34px;stroke-width:1.5}
+.cn-sec .feedback-scale button:hover{opacity:1;transform:translateY(-3px) scale(1.08)}
+@media (max-width: 900px){
+.cn-sec .connect,.cn-sec.connect{max-width:none;margin-inline:16px;grid-template-columns:1fr}
+.cn-sec .connect-social{border-inline-end:0px;border-bottom:1px solid rgba(255, 255, 255, 0.25)}
+.cn-sec .connect-icons{flex-wrap:wrap}
+}
+.cn-sec .connect-icons a em,.cn-sec .connect-icons a{color:rgb(255, 255, 255)}
+.cn-sec .connect,.cn-sec.connect{max-width:960px;background:radial-gradient(circle at 12% 0%, rgb(11, 122, 95) 0%, transparent 55%), linear-gradient(135deg, rgb(6, 79, 58), rgb(6, 71, 46) 60%, rgb(4, 54, 31));border-radius:24px;overflow:hidden;grid-template-columns:1.35fr 1fr;box-shadow:rgba(4, 54, 31, 0.6) 0px 26px 50px -18px}
+.cn-sec .connect::before,.cn-sec.connect::before{content:"";position:absolute;inset:0px 0px auto;height:4px;background:linear-gradient(90deg, rgb(217, 181, 100), rgb(243, 220, 154), rgb(217, 181, 100));z-index:2}
+.cn-sec .connect::after,.cn-sec.connect::after{content:"";position:absolute;inset-inline-end:-60px;bottom:-80px;width:220px;height:220px;border-radius:50%;border:1.5px solid rgba(217, 181, 100, 0.25);box-shadow:rgba(217, 181, 100, 0.063) 0px 0px 0px 26px, rgba(217, 181, 96, 0.04) 0px 0px 0px 52px;pointer-events:none}
+.cn-sec .connect-social,.cn-sec .connect-feedback{padding:30px 34px 28px;gap:18px;justify-content:flex-start}
+.cn-sec .connect-social{border-inline-end:1.5px dashed rgba(255, 255, 255, 0.19)}
+.cn-sec .connect-label{font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgb(217, 181, 100);display:flex;align-items:center;gap:10px}
+.cn-sec .connect-label::before{content:"";width:22px;height:2px;background:rgb(217, 181, 100);border-radius:2px}
+.cn-sec .connect-icons{gap:12px;flex-wrap:nowrap}
+.cn-sec .connect-icons a{flex-direction:column;gap:8px;font-size:11.5px;font-weight:500;color:rgba(255, 255, 255, 0.85);transition:color 0.25s}
+.cn-sec .connect-icons a span,.cn-sec .connect-icons a .glyph{width:54px;height:54px;border-radius:16px;background:rgba(255, 255, 255, 0.11);color:rgb(255, 255, 255);border:1px solid rgba(255, 255, 255, 0.18);transition:transform 0.35s cubic-bezier(0.3, 1.5, 0.5, 1), background 0.25s, color 0.25s, box-shadow 0.25s}
+.cn-sec .connect-icons svg{width:22px;height:22px}
+.cn-sec .connect-icons a .glyph{font-size:17px}
+.cn-sec .connect-icons a em{color:inherit}
+.cn-sec .connect-icons a:hover{color:rgb(217, 181, 100)}
+.cn-sec .connect-icons a:hover span,.cn-sec .connect-icons a:hover .glyph{background:rgb(217, 181, 100);color:rgb(6, 71, 46);border-color:rgb(217, 181, 100);transform:translateY(-5px) rotate(-4deg);box-shadow:rgba(217, 181, 100, 0.667) 0px 12px 20px -8px}
+.cn-sec .feedback-scale{max-width:none;border:1px solid rgba(255, 255, 255, 0.18);background:rgba(255, 255, 255, 0.08);border-radius:18px;padding:10px 12px;gap:4px}
+.cn-sec .feedback-scale button{width:46px;height:46px;opacity:1;color:rgb(255, 255, 255);transition:transform 0.35s cubic-bezier(0.3, 1.5, 0.5, 1), background 0.25s, color 0.25s, box-shadow 0.25s}
+.cn-sec .feedback-scale button svg{width:30px;height:30px;stroke-width:1.5}
+.cn-sec .feedback-scale button:hover{background:rgba(217, 181, 100, 0.15);color:rgb(243, 220, 154);transform:translateY(-4px) scale(1.12)}
+.cn-sec .feedback-scale button.selected{background:rgb(217, 181, 100);color:rgb(6, 71, 46);transform:scale(1.12);box-shadow:rgba(217, 181, 100, 0.667) 0px 10px 18px -6px}
+@media (max-width: 900px){
+.cn-sec .connect,.cn-sec.connect{max-width:none;grid-template-columns:1fr}
+.cn-sec .connect-social{border-inline-end:0px;border-bottom:1.5px dashed rgba(255, 255, 255, 0.19)}
+.cn-sec .connect-icons{flex-wrap:wrap}
+.cn-sec .connect-social,.cn-sec .connect-feedback{padding:26px 22px}
+}
+@media (prefers-reduced-motion: reduce){
+.cn-sec .connect-icons a span,.cn-sec .connect-icons a .glyph,.cn-sec .feedback-scale button{transition:none !important}
+}
+@media (max-width: 600px){
+.cn-sec .connect-icons{display:grid;grid-template-columns:repeat(5, minmax(0px, 1fr));gap:8px;flex-wrap:nowrap}
+.cn-sec .connect-icons a{align-items:center;min-width:0px;font-size:10.5px}
+.cn-sec .connect-icons a span,.cn-sec .connect-icons a .glyph{width:100%;max-width:52px;height:auto;aspect-ratio:1 / 1}
+}
+.cn-sec .connect-icons a[aria-label="X (Twitter)"]{--brand:#000;--brand-ink:#fff;--brand-label:#fff}
+.cn-sec .connect-icons a[aria-label="LinkedIn"]{--brand:#0a66c2;--brand-ink:#fff;--brand-label:#5aa7f0}
+.cn-sec .connect-icons a[aria-label="Facebook"]{--brand:#1877f2;--brand-ink:#fff;--brand-label:#6aa8ff}
+.cn-sec .connect-icons a[aria-label="Snapchat"]{--brand:#fffc00;--brand-ink:#000;--brand-label:#fffc00}
+.cn-sec .connect-icons a[aria-label="Instagram"]{--brand:#e1306c;--brand-ink:#fff;--brand-label:#ff7aa8;--brand-bg:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285aeb 90%)}
+.cn-sec .connect-icons a[aria-label]:hover{color:var(--brand-label,#d9b564)}
+.cn-sec .connect-icons a[aria-label]:hover span,.cn-sec .connect-icons a[aria-label]:hover .glyph{background:var(--brand-bg,var(--brand,#d9b564));color:var(--brand-ink,#06472e);border-color:var(--brand,#d9b564);box-shadow:0 12px 20px -8px color-mix(in srgb,var(--brand,#d9b564) 70%,transparent)}
+.cn-sec{--hh:84px}
+.cn-sec svg{max-width:100%}
+.cn-sec .connect,.cn-sec.connect{max-width:1020px}
+.cn-sec{--ff:'Plus Jakarta Sans','IBM Plex Sans Arabic','Noto Sans Arabic',system-ui,-apple-system,'Segoe UI',sans-serif}
+html:lang(ar) .cn-sec{--ff:'IBM Plex Sans Arabic','Plus Jakarta Sans','Noto Sans Arabic',system-ui,sans-serif}
+.cn-sec,.cn-sec button,.cn-sec :not(em):not(i):not(svg):not(svg *):not(code):not(.ft-vi),.cn-sec:not(em):not(i):not(svg):not(svg *):not(code):not(.ft-vi){font-family:var(--ff)}
+.cn-sec{font-feature-settings:"ss01" 0;-webkit-font-smoothing:antialiased;text-rendering:optimizelegibility}
+
+/* keyframes */
+@keyframes cn-appear {0% { opacity: 0; transform: translateY(22px); }100% { opacity: 1; transform: translateY(0px); }}
+/* snippet use: the static site pulled the footer up under the bar (-64px); as a snippet it
+   can sit anywhere on a page, so it keeps a normal gap below instead of overlapping */
+.cn-sec.connect{margin-bottom:48px}
+/* icon labels are <em>: keep them in the site font (the static site fell back from Georgia) */
+.cn-sec .connect-icons a em{font-family:var(--ff)}
+/*rtl:end:ignore*/

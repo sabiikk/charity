@@ -11,6 +11,7 @@
             <t t-snippet="alihsanwebsite_theme.aidregistration_banner_section" string="Aid Registration Banner Section" group="aidregistrationgroup"/>
             <t t-snippet="alihsanwebsite_theme.aidregistration_schedule_section" string="Aid Registration Schedule Section" group="aidregistrationgroup"/>
             <t t-snippet="alihsanwebsite_theme.aidregistration_terms_section" string="Aid Registration Terms Section" group="aidregistrationgroup"/>
+            <t t-snippet="alihsanwebsite_theme.connect_section" string="Social &amp; Feedback CTA" group="aidregistrationgroup"/>
         </xpath>
     </template>
 </odoo>

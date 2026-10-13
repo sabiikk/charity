@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="home_community_section" name="Home Community">
+        <section id="community" class="hm-sec s_hm_community community section reveal">
+            <div class="news-image cm-photo">
+                <span class="cm-img"><img src="/alihsanwebsite_theme/static/src/img/news.jpg" alt="Al Ihsan receives recognition for its summer initiative" loading="lazy"/></span>
+                <span class="cm-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.500l6.1-.9z"/></svg><span><b>Best initiative award</b><small>Our Summer is Happiness</small></span></span>
+            </div>
+            <div class="cm-copy"><div class="cm-eyebrow">FROM OUR COMMUNITY</div><h2>Good things happen<br/>when we come together.</h2><p>Al Ihsan’s summer initiative was recognised in Ajman’s “Our Summer is Happiness” programme. A celebration of the people who put care into action.</p><ul class="cm-facts">
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.500l6.1-.9z"/></svg><span>Officially recognised</span></li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.500"/></svg><span>Ajman programme</span></li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg><span>Summer initiative</span></li>
+                </ul><div class="cm-actions">
+                    <a class="cm-btn" href="/news"><span>Explore Al Ihsan’s news</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+                    <a class="cm-link" href="/news">All news</a>
+                </div></div>
+        </section>
+    </template>
+</odoo>
