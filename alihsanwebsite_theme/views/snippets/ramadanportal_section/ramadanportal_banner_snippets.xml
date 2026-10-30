@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Breadcrumb + hero + impact ribbon. The thin bar at the top tracks the page scroll. -->
+    <template id="ramadanportal_banner_section" name="Ramadan Portal Banner Section">
+        <section class="rm rm-sec s_rm_banner pt0 pb0">
+            <div class="rm-scroll-progress" aria-hidden="true"/>
+            <div class="rm-crumb" role="navigation" aria-label="Breadcrumb">
+                <a href="/">Home</a><i>/</i><span aria-current="page">Ramadan Aman Portal</span>
+            </div>
+            <div class="rm-hero">
+                <div class="rm-hero-copy">
+                    <span class="rm-kicker"><i/><span>RAMADAN AMAN · CAMPAIGN 12</span></span>
+                    <h1>A safer iftar.<br/><em>A kinder road.</em></h1>
+                    <p>A meal shared at the right moment can do more than nourish. Ramadan Aman brings volunteers together to support safer roads and deliver iftar meals to people on the move.</p>
+                    <div class="rm-hero-actions">
+                        <a class="rm-button-primary" href="/volunteer"><span>Become a volunteer</span><i>↗</i></a>
+                        <a class="rm-button-text" href="#mission"><span>Discover the initiative</span><b>↓</b></a>
+                    </div>
+                    <div class="rm-hero-proof"><span class="rm-proof-mark">✳</span><span>Small acts. Safer journeys. Shared goodness.</span></div>
+                </div>
+                <div class="rm-hero-visual">
+                    <img src="/alihsanwebsite_theme/static/src/img/ramadan-road.svg" alt="Illustration of Ramadan Aman volunteers sharing meal boxes beside a safe road at sunset"/>
+                    <div class="rm-visual-stamp"><span>قبل أذان المغرب</span><b>Care<br/>in motion</b><i>✳</i></div>
+                    <div class="rm-visual-caption"><span class="rm-pulse"/><span>Community care, right where it matters.</span></div>
+                </div>
+                <div class="rm-hero-side-note">UAE · PEOPLE · SAFETY</div>
+            </div>
+            <div class="rm-impact-ribbon">
+                <div class="rm-ribbon-item"><span class="rm-ribbon-icon">◉</span><div><b>Road safety</b><small>A calmer journey before iftar</small></div></div>
+                <div class="rm-ribbon-item"><span class="rm-ribbon-icon">♡</span><div><b>Iftar meal sharing</b><small>A thoughtful meal, shared on the road</small></div></div>
+                <div class="rm-ribbon-item"><span class="rm-ribbon-icon">✳</span><div><b>Volunteer action</b><small>Communities helping communities</small></div></div>
+                <div class="rm-ribbon-partners"><span>In partnership with</span><b>Ministry of Interior · Traffic &amp; Police Departments</b></div>
+            </div>
+        </section>
+    </template>
+</odoo>

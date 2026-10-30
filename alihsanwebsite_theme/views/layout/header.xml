@@ -102,16 +102,34 @@
                     <a t-if="request.env.user._is_public()" class="login-toggle" href="/web/login" aria-label="Log in">
                         <t t-out="ih_user_icon"/><span>Log in</span>
                     </a>
-                    <a t-else="" class="login-toggle" href="/my" aria-label="My account">
-                        <t t-out="ih_user_icon"/><span t-esc="(request.env.user.name or '').split(' ')[0]"/>
-                    </a>
+                    <div t-else="" class="ih-user">
+                        <button type="button" class="login-toggle is-user" aria-haspopup="true" aria-expanded="false"
+                                t-att-title="request.env.user.name" t-att-aria-label="request.env.user.name">
+                            <t t-out="ih_user_icon"/><span t-esc="request.env.user.name"/>
+                        </button>
+                        <div class="ih-user-menu d-none" role="menu">
+                            <div class="ih-user-head">
+                                <b t-esc="request.env.user.name"/>
+                                <small t-if="request.env.user.email" t-esc="request.env.user.email"/>
+                            </div>
+                            <a role="menuitem" href="/my">My account</a>
+                            <a t-if="request.env.user.has_group('sales_team.group_sale_salesman')" role="menuitem" href="/alihsan/dashboard">Dashboard</a>
+                            <a t-if="request.env.user._is_internal()" role="menuitem" href="/odoo">Back office</a>
+                            <a role="menuitem" class="ih-user-out" href="/web/session/logout?redirect=/">Log out</a>
+                        </div>
+                    </div>
 
                     <!-- Donation basket = eCommerce cart (count is kept live by website_sale via .my_cart_quantity) -->
                     <t t-set="website_sale_cart_quantity" t-value="request.session.get('website_sale_cart_quantity', request.cart.cart_quantity) or 0"/>
-                    <a href="/shop/cart" class="ha-cart-btn" aria-label="Donation basket">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg>
-                        <span class="ha-badge my_cart_quantity" t-out="website_sale_cart_quantity"/>
-                    </a>
+                    <!-- website_sale's CartService._updateCartIcon() requires an li.o_wsale_my_cart wrapper -->
+                    <ul class="list-unstyled m-0 p-0 d-flex">
+                        <li class="o_wsale_my_cart d-flex">
+                            <a href="/shop/cart" class="ha-cart-btn" aria-label="Donation basket">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg>
+                                <span class="ha-badge my_cart_quantity" t-out="website_sale_cart_quantity"/>
+                            </a>
+                        </li>
+                    </ul>
 
                     <!-- Donate now -->
                     <a class="ih-btn ih-small ha-donate" t-att-href="ih_donate_url">

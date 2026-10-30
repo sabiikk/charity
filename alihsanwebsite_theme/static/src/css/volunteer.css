@@ -1,0 +1,127 @@
+/* ==========================================================
+   Volunteer snippets — converted from "Al-Ihsan-web-8/Volunteer.html"
+   (volunteer.css). The sections also carry .ar-sec, so the base styles, the
+   banner and the .ar-fade reveal come from aidregistration.css.
+   ========================================================== */
+
+/* ---------- Odoo / Bootstrap resets ---------- */
+.vl-page .vl-sec legend{float:none}
+.vl-page .vl-f>label{display:block;margin:0}
+.vl-page .vl-terms label{margin:0}
+.vl-page .vl-terms a,.vl-page .vl-help a{color:#00705a}
+.vl-page .vl-why p{margin:0}
+
+.vl-wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:28px;align-items:start;max-width:1170px;margin:34px auto 0}
+.vl-card{padding:32px;border:1px solid #e3ebe6;border-radius:26px;background:#fff;box-shadow:0 24px 50px -30px #0926154d}
+.vl-top{display:flex;align-items:center;gap:14px;padding-bottom:20px;margin-bottom:6px;border-bottom:1.5px dashed #dde5e1}
+.vl-hi{flex:none;width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#00705a,#009746);color:#fff;display:grid;place-items:center}
+.vl-hi svg{width:24px;height:24px}
+.vl-top h2{margin:0;font-size:24px;font-weight:700;letter-spacing:-.3px;color:#101a17}
+.vl-top p{margin:4px 0 0;font-size:14px;color:#6a7872}
+.vl-sec{margin:26px 0 0;padding:0;border:0;min-width:0}
+.vl-sec legend{display:flex;align-items:center;gap:10px;width:100%;padding:0;margin-bottom:16px;font-size:13px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#00705a}
+.vl-sec legend:after{content:'';flex:1;height:1px;background:#e3ebe6}
+[dir=rtl] .vl-sec legend{letter-spacing:0}
+.vl-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 18px}
+.vl-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.vl-f{display:flex;flex-direction:column;gap:7px;min-width:0}
+.vl-f.span2{grid-column:span 2}
+.vl-f>label,.vl-f>.vl-lab{font-size:14px;font-weight:600;color:#33433d}
+.vl-f>label b,.vl-f>.vl-lab b{color:#d4372c;font-weight:700}
+.vl-f small.vl-note{font-size:12px;font-weight:500;color:#b8860b}
+.vl-f input,.vl-f select{width:100%;height:50px;padding:0 16px;border:1.5px solid #dfe8e4;border-radius:14px;background:#fff;font:inherit;font-size:15px;color:#10201a;outline:0;transition:border-color .2s,box-shadow .2s,background .2s}
+.vl-f select{appearance:none;-webkit-appearance:none;padding-inline-end:42px;background:#f6faf8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300705a' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 16px center/16px;cursor:pointer}
+[dir=rtl] .vl-f select{background-position:left 16px center}
+.vl-f input:hover,.vl-f select:hover{border-color:#bcd6cb}
+.vl-f input:focus,.vl-f select:focus{border-color:#00a251;box-shadow:0 0 0 4px #00a2511f;background-color:#fff}
+.vl-f [aria-invalid=true],.vl-f [aria-invalid=true]:hover{border-color:#d4372c;background-color:#fff8f7}
+.vl-err{min-height:0;font-size:12.5px;color:#d4372c}
+.vl-err:empty{display:none}
+.vl-phone{display:grid;grid-template-columns:138px minmax(0,1fr);gap:8px}
+.vl-phone select{padding-inline-start:14px;padding-inline-end:34px;background-position:right 12px center}
+[dir=rtl] .vl-phone{direction:ltr}
+.vl-pass{position:relative}
+.vl-pass input{padding-inline-end:50px}
+.vl-eye{position:absolute;top:50%;inset-inline-end:8px;width:36px;height:36px;margin-top:-18px;border:0;border-radius:10px;background:none;color:#6a7872;display:grid;place-items:center;cursor:pointer}
+.vl-eye:hover{background:#eef5f1;color:#00705a}
+.vl-eye svg{width:20px;height:20px}
+.vl-eye[aria-pressed=true] .o,.vl-eye:not([aria-pressed=true]) .c{display:none}
+.vl-terms{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:26px;font-size:14.5px;color:#33433d}
+.vl-terms input{width:20px;height:20px;margin:0;accent-color:#00705a;cursor:pointer}
+.vl-terms a{color:#00705a;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.vl-terms .vl-err{flex-basis:100%}
+.vl-submit{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;height:56px;margin-top:22px;border:0;border-radius:16px;background:linear-gradient(135deg,#00a251,#00793f);color:#fff;font:inherit;font-size:16.5px;font-weight:700;cursor:pointer;box-shadow:0 14px 26px -12px #00793fbb;transition:transform .2s,box-shadow .2s}
+.vl-submit:hover{transform:translateY(-2px);box-shadow:0 18px 30px -12px #00793fdd}
+.vl-submit svg{width:20px;height:20px}
+.vl-req{margin:14px 0 0;font-size:12.5px;color:#8a9690;text-align:center}
+.vl-req b{color:#d4372c}
+/* side panel */
+.vl-side{position:sticky;top:120px;display:grid;gap:16px}
+.vl-why{padding:26px;border-radius:24px;background:linear-gradient(160deg,#0a5a3a,#06472e 60%,#04381f);color:#e6f0ea;overflow:hidden;position:relative}
+.vl-why:after{content:'';position:absolute;inset-inline-end:-50px;bottom:-60px;width:170px;height:170px;border-radius:50%;border:1.5px solid #d9b56440;box-shadow:0 0 0 22px #d9b56410;pointer-events:none}
+.vl-why h3{margin:0 0 16px;font-size:20px;color:#fff}
+.vl-why ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.vl-why li{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;line-height:1.55}
+.vl-why li span{flex:none;width:30px;height:30px;border-radius:10px;background:#ffffff1f;color:#f3dc9a;display:grid;place-items:center}
+.vl-why li svg{width:17px;height:17px}
+.vl-help{padding:22px 24px;border:1px solid #e3ebe6;border-radius:22px;background:#f7faf8;font-size:14px;color:#4f5f58;line-height:1.6}
+.vl-help h3{margin:0 0 6px;font-size:16px;color:#10201a}
+.vl-help a{display:inline-flex;align-items:center;gap:8px;margin-top:10px;color:#00705a;font-weight:700}
+.vl-help a svg{width:18px;height:18px}
+/* thank-you message */
+.vl-done{padding:46px 30px;text-align:center}
+.vl-done[hidden]{display:none}
+.vl-done .vl-ok{width:74px;height:74px;margin:0 auto 18px;border-radius:50%;background:#e6f4ec;color:#00a251;display:grid;place-items:center}
+.vl-done .vl-ok svg{width:38px;height:38px}
+.vl-done h2{margin:0 0 10px;font-size:26px}
+.vl-done p{max-width:440px;margin:0 auto 22px;color:#5b6a64;line-height:1.7}
+.vl-done button{height:48px;padding:0 24px;border:1.5px solid #00705a;border-radius:14px;background:#fff;color:#00705a;font:inherit;font-weight:700;cursor:pointer}
+.vl-done button:hover{background:#00705a;color:#fff}
+.vl-page form[hidden]{display:none}
+@media(max-width:1000px){.vl-wrap{grid-template-columns:1fr}.vl-side{position:static;grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.vl-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){
+  .vl-wrap{margin-top:22px;gap:18px}
+  .vl-card{padding:20px 16px;border-radius:20px}
+  .vl-top{gap:12px;padding-bottom:16px}
+  .vl-hi{width:40px;height:40px;border-radius:12px}
+  .vl-top h2{font-size:20px}
+  .vl-sec{margin-top:22px}
+  .vl-grid,.vl-grid.two{grid-template-columns:1fr;gap:14px}
+  .vl-f.span2{grid-column:auto}
+  .vl-f input,.vl-f select{height:48px;font-size:16px}
+  .vl-phone{grid-template-columns:132px minmax(0,1fr)}
+  .vl-side{grid-template-columns:1fr}
+  .vl-why{padding:22px 20px}
+}
+
+/* volunteers login: banner button, side card, dialog */
+.vl-loginbtn{display:inline-flex;align-items:center;gap:10px;margin-top:16px;height:46px;padding:0 20px;border:1.5px solid #00705a;border-radius:999px;background:#fff;color:#00705a;font:inherit;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,color .2s}
+.vl-loginbtn:hover{background:#00705a;color:#fff}
+.vl-loginbtn svg,.vl-havebtn svg{width:19px;height:19px}
+.vl-have{padding:22px 24px;border:1.5px solid #cfe5da;border-radius:22px;background:#f0f8f4}
+.vl-have h3{margin:0 0 6px;font-size:17px;color:#10201a}
+.vl-have p{margin:0 0 14px;font-size:14px;line-height:1.55;color:#4f5f58}
+.vl-havebtn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;height:48px;border:0;border-radius:14px;background:#00705a;color:#fff;font:inherit;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s}
+.vl-havebtn:hover{background:#005c49}
+.vl-dlg{width:min(520px,calc(100% - 24px));max-height:calc(100vh - 24px);padding:0;border:0;border-radius:24px;background:#fff;color:#10201a;box-shadow:0 30px 80px -20px #0926158c;overflow:auto}
+@supports(height:100dvh){.vl-dlg{max-height:calc(100dvh - 24px)}}
+.vl-dlg::backdrop{background:#092e26b3;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.vl-dlg[open]{animation:vlIn .25s ease-out}
+@keyframes vlIn{from{opacity:0;transform:translateY(12px) scale(.98)}}
+.vl-lform{display:grid;gap:16px;padding:26px 28px 24px}
+.vl-lhead{display:flex;align-items:center;gap:12px;padding-bottom:16px;border-bottom:1.5px dashed #dde5e1}
+.vl-lhead h2{flex:1;margin:0;font-size:21px;font-weight:700}
+.vl-x{flex:none;width:38px;height:38px;border:0;border-radius:50%;background:#f1f5f3;color:#10201a;font-size:24px;line-height:1;cursor:pointer}
+.vl-x:hover{background:#e3ece8}
+.vl-lform .vl-submit{margin-top:4px}
+.vl-lrow{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.vl-remember{display:inline-flex;align-items:center;gap:10px;font-size:14.5px;font-weight:600;color:#33433d;cursor:pointer}
+.vl-remember input{width:20px;height:20px;margin:0;accent-color:#00705a;cursor:pointer}
+.vl-forgot{padding:0;border:0;background:none;font:inherit;font-size:14.5px;font-weight:700;color:#00705a;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.vl-lmsg{margin:0;padding:12px 14px;border-radius:12px;background:#fdf1ef;color:#b3261e;font-size:14px;line-height:1.55}
+.vl-lmsg.ok{background:#eaf5f0;color:#00603f}
+.vl-lmsg[hidden]{display:none}
+.vl-lfoot{margin:0;padding-top:14px;border-top:1px solid #e8eeeb;text-align:center;font-size:14px;color:#6a7872}
+@media(max-width:620px){.vl-lform{padding:20px 18px}.vl-lhead h2{font-size:19px}.vl-loginbtn{height:44px}}
+@media(prefers-reduced-motion:reduce){.vl-dlg[open]{animation:none}}

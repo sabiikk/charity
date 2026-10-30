@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo noupdate="1">
+    <!-- The items of the original static Images / Videos / Events sections -->
+    <record id="media_gallery_1" model="alihsan.media.gallery">
+        <field name="name">Zayed Humanitarian Day</field>
+        <field name="date">2024-02-01</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/media-zayed.jpg"/>
+    </record>
+    <record id="media_gallery_2" model="alihsan.media.gallery">
+        <field name="name">Collaboration with Hyundai</field>
+        <field name="date">2023-02-01</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/media-food.jpg"/>
+    </record>
+    <record id="media_gallery_3" model="alihsan.media.gallery">
+        <field name="name">ISO Certification</field>
+        <field name="date">2022-02-01</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/volunteers.jpg"/>
+    </record>
+    <record id="media_gallery_4" model="alihsan.media.gallery">
+        <field name="name">25,000 recipients of Udhiyah</field>
+        <field name="date">2021-02-01</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/media-community.jpg"/>
+    </record>
+    <record id="media_gallery_5" model="alihsan.media.gallery">
+        <field name="name">Giving away more than 2,000 food parcels</field>
+        <field name="date">2020-02-01</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/food.jpg"/>
+    </record>
+    <record id="media_gallery_6" model="alihsan.media.gallery">
+        <field name="name">Giving school bags</field>
+        <field name="date">2019-02-01</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/community.jpg"/>
+    </record>
+    <record id="media_gallery_7" model="alihsan.media.gallery">
+        <field name="name">Ramadan iftar meals</field>
+        <field name="date">2018-02-01</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/giving.jpg"/>
+    </record>
+    <record id="media_gallery_8" model="alihsan.media.gallery">
+        <field name="name">Clean water wells</field>
+        <field name="date">2017-02-01</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/water.jpg"/>
+    </record>
+    <record id="media_gallery_9" model="alihsan.media.gallery">
+        <field name="name">Quran memorisation centres</field>
+        <field name="date">2016-02-01</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/quran.jpg"/>
+    </record>
+    <record id="media_video_1" model="alihsan.media.video">
+        <field name="name">General Manager word</field>
+        <field name="date">2024-03-25</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/general-manager.jpeg"/>
+    </record>
+    <record id="media_video_2" model="alihsan.media.video">
+        <field name="name">“Bel Afya Alekom” initiative</field>
+        <field name="date">2023-02-01</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/food.jpg"/>
+    </record>
+    <record id="media_video_3" model="alihsan.media.video">
+        <field name="name">Summer Campaign Project</field>
+        <field name="date">2022-02-01</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/media-community.jpg"/>
+    </record>
+    <record id="media_video_4" model="alihsan.media.video">
+        <field name="name">Ramadan’s Meer</field>
+        <field name="date">2021-02-01</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/care.jpg"/>
+    </record>
+    <record id="media_video_5" model="alihsan.media.video">
+        <field name="name">Collaboration with Almaktoum Foundation</field>
+        <field name="date">2020-02-01</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/media-food.jpg"/>
+    </record>
+    <record id="media_video_6" model="alihsan.media.video">
+        <field name="name">Ramadan Aman</field>
+        <field name="date">2019-02-01</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/banner-1771406909.jpg"/>
+    </record>
+    <record id="media_video_7" model="alihsan.media.video">
+        <field name="name">Chairman word</field>
+        <field name="date">2018-02-01</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/chairman.jpeg"/>
+    </record>
+    <record id="media_video_8" model="alihsan.media.video">
+        <field name="name">Zayed Humanitarian Day</field>
+        <field name="date">2017-02-01</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/media-zayed.jpg"/>
+    </record>
+    <record id="media_video_9" model="alihsan.media.video">
+        <field name="name">Clean water wells</field>
+        <field name="date">2016-02-01</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/water.jpg"/>
+    </record>
+    <record id="media_event_1" model="alihsan.media.event">
+        <field name="name">Annual Charity Gala Dinner</field>
+        <field name="date">2026-11-14</field>
+        <field name="time">19</field>
+        <field name="location">Venue to be announced</field>
+        <field name="description">An evening bringing supporters, partners and families together to celebrate a year of giving.</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/news.jpg"/>
+    </record>
+    <record id="media_event_2" model="alihsan.media.event">
+        <field name="name">Volunteer Orientation Day</field>
+        <field name="date">2026-10-25</field>
+        <field name="time">9</field>
+        <field name="location">Venue to be announced</field>
+        <field name="description">Meet the team, learn how projects run and choose where you want to help.</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/volunteers.jpg"/>
+    </record>
+    <record id="media_event_3" model="alihsan.media.event">
+        <field name="name">Winter Clothing Drive Launch</field>
+        <field name="date">2026-12-05</field>
+        <field name="time">10</field>
+        <field name="location">Venue to be announced</field>
+        <field name="description">Kick-off of our winter clothing drive, collecting warm clothes for families in need.</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/community.jpg"/>
+    </record>
+    <record id="media_event_4" model="alihsan.media.event">
+        <field name="name">Ramadan Iftar for Workers</field>
+        <field name="date">2026-03-10</field>
+        <field name="time">17.5</field>
+        <field name="location">Community venue</field>
+        <field name="description">Hundreds of workers shared iftar meals prepared and served by our volunteers.</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/food.jpg"/>
+    </record>
+    <record id="media_event_5" model="alihsan.media.event">
+        <field name="name">Children’s Community Day</field>
+        <field name="date">2025-11-02</field>
+        <field name="time">16</field>
+        <field name="location">Community venue</field>
+        <field name="description">Children and volunteers took part in games, learning stations and giving activities.</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/media-zayed.jpg"/>
+    </record>
+    <record id="media_event_6" model="alihsan.media.event">
+        <field name="name">Excellence Award Ceremony</field>
+        <field name="date">2025-08-25</field>
+        <field name="time">11</field>
+        <field name="location">Ceremony hall</field>
+        <field name="description">The association was honoured for transparent and effective charitable work.</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/media-award.jpg"/>
+    </record>
+    <record id="media_event_7" model="alihsan.media.event">
+        <field name="name">Partners Meeting</field>
+        <field name="date">2025-06-14</field>
+        <field name="time">15</field>
+        <field name="location">Meeting room</field>
+        <field name="description">Partners and board members reviewed achievements and set priorities for the year ahead.</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/water.jpg"/>
+    </record>
+</odoo>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Log in / Create account / Reset password pages (/web/login, /web/signup, /web/reset_password):
+         the two-panel card of the "Al Ihsan web 8" login popup, around Odoo's own forms
+         (so passwords, sign-up, password reset, passkeys and OAuth providers keep working). -->
+    <template id="login_layout" inherit_id="website.login_layout" name="Al Ihsan Login Layout" priority="30">
+        <xpath expr="//div[hasclass('oe_website_login_container')]" position="replace">
+            <t t-set="ih_path" t-value="request.httprequest.path"/>
+            <t t-set="ih_page" t-value="'signup' if ih_path.startswith('/web/signup') else ('reset' if ih_path.startswith('/web/reset_password') else 'login')"/>
+            <section t-attf-class="ih-auth ih-auth-{{ ih_page }}">
+                <div class="ih-auth-card">
+                    <a class="ih-auth-x" href="/" title="Back to the website" aria-label="Back to the website">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+                    </a>
+                    <figure class="ih-auth-media">
+                        <img src="/alihsanwebsite_theme/static/src/img/community.jpg" alt="" aria-hidden="true"/>
+                        <figcaption>
+                            <img class="ih-auth-logo" src="/alihsanwebsite_theme/static/src/img/logo.svg" alt="Al Ihsan Charity Association"/>
+                            <p>Donation, sponsorship and giving — all in one place.</p>
+                        </figcaption>
+                    </figure>
+                    <div class="ih-auth-body">
+                        <div class="ih-auth-in oe_website_login_container">
+                            <nav t-if="ih_page != 'reset' and signup_enabled" class="ih-auth-tabs" aria-label="Account">
+                                <a t-attf-href="/web/login?{{ keep_query() }}" t-att-class="'on' if ih_page == 'login' else None"
+                                   t-att-aria-current="'page' if ih_page == 'login' else None">Log in</a>
+                                <a t-attf-href="/web/signup?{{ keep_query() }}" t-att-class="'on' if ih_page == 'signup' else None"
+                                   t-att-aria-current="'page' if ih_page == 'signup' else None">Create account</a>
+                            </nav>
+                            <h1 class="ih-auth-title">
+                                <t t-if="ih_page == 'signup'">Create your account</t>
+                                <t t-elif="ih_page == 'reset'">Reset your password</t>
+                                <t t-else="">Welcome back</t>
+                            </h1>
+                            <t t-out="0"/>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </xpath>
+    </template>
+
+    <!-- Login options under the form (passkey, OAuth providers): an OAuth provider named
+         "UAE PASS" gets the UAE PASS fingerprint mark instead of its icon. -->
+    <template id="login_oauth" inherit_id="web.login_oauth" name="Al Ihsan Login Options">
+        <xpath expr="//em" position="replace">
+            <em class="d-block my-3 small text-center text-muted">or</em>
+        </xpath>
+        <xpath expr="//i[@role='presentation']" position="replace">
+            <img t-if="'uae' in str(p.get('name') or p.get('body') or '').lower()" class="ih-uae-mark"
+                 src="/alihsanwebsite_theme/static/src/img/uaepass-mark-white.png" alt="" width="26" height="27"/>
+            <i t-else="" t-att-class="p['css_class']" role="presentation"/>
+        </xpath>
+    </template>
+</odoo>

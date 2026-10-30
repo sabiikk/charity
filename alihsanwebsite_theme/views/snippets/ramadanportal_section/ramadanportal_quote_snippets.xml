@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="ramadanportal_quote_section" name="Ramadan Portal Quote Section">
+        <section class="rm rm-sec s_rm_quote pt0 pb0">
+            <div class="rm-quote-band">
+                <span class="rm-quote-mark">“</span>
+                <p>A small act of care, at the right time, can make the road safer for us all.</p>
+                <span class="rm-quote-credit">RAMADAN AMAN · SHARED RESPONSIBILITY</span>
+                <div class="rm-quote-decor">✳</div>
+            </div>
+        </section>
+    </template>
+</odoo>

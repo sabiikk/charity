@@ -1,0 +1,90 @@
+/* /shop donation cards: the project cards of "Projects & Campaigns.html" of "Al Ihsan web 8"
+   (projects-cards-v2.css, "pjd" cards: photo + info | Donation Value panel), scoped to .ih-pj-list.
+   The panel itself is styled by donation_product.css (.ih-donation .pd-*), only resized here. */
+.ih-pj-list{display:grid;gap:28px;margin:0 auto 36px}
+.ih-pj-list a{color:inherit;text-decoration:none}
+.ih-pj-list button{font-family:inherit}
+.ih-pj-list .pj-card.pjd{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:28px;align-items:start;padding:22px;border:1px solid #e3ebe7;border-radius:24px;background:#fff;transition:box-shadow .3s}
+.ih-pj-list .pj-card.pjd:hover{box-shadow:0 16px 40px #0926151a}
+.ih-pj-list .pjd .pjd-info{min-width:0}
+.ih-pj-list .pjd .pjd-photo{border-radius:18px;box-shadow:none}
+.ih-pj-list .pjd .pjd-photo:after{border-radius:inherit}
+.ih-pj-list .pjd .pj-img{display:block;aspect-ratio:16/6.4;background:#e9efec}
+.ih-pj-list .pjd .pj-img img{display:block;width:100%;height:100%;max-height:none;object-fit:cover;transition:transform .6s}
+.ih-pj-list .pj-card.pjd:hover .pj-img img{transform:scale(1.04)}
+.ih-pj-list .pjd .pd-chip{top:12px;inset-inline-start:12px;padding:7px 12px;font-size:12px;pointer-events:none}
+.ih-pj-list .pjd .pj-body h3{margin:18px 0 12px;font-size:clamp(22px,2.4vw,28px);font-weight:600;letter-spacing:-.5px;line-height:1.2;color:#101a17}
+.ih-pj-list .pjd .pj-body h3 a{transition:color .2s}
+.ih-pj-list .pjd .pj-body h3 a:hover{color:#00705a}
+.ih-pj-list .pjd .pd-desc{font-size:14.5px;line-height:1.7;padding-inline-start:14px}
+.ih-pj-list .pjd .pd-desc a{margin-inline-start:6px;color:#00705a;font-weight:600}
+.ih-pj-list .pjd .pd-desc a:hover{text-decoration:underline}
+.ih-pj-list .pjd .pjd-panel{position:relative;top:auto;padding:18px;border-radius:20px}
+.ih-pj-list .pjd .pjd-panel .pd-head{gap:10px;margin-bottom:14px}
+.ih-pj-list .pjd .pjd-panel .pd-hi{width:38px;height:38px;border-radius:11px}
+.ih-pj-list .pjd .pjd-panel .pd-hi svg{width:18px;height:18px}
+.ih-pj-list .pjd .pjd-panel h4{margin:0;font-size:16px;font-weight:700;color:#101a17;font-family:inherit}
+.ih-pj-list .pjd .pjd-panel .pd-head small{font-size:12px}
+.ih-pj-list .pjd .pjd-panel .pd-amount{padding:10px;gap:8px;margin-bottom:16px;border-radius:14px}
+.ih-pj-list .pjd .pjd-panel .pd-step{width:36px;height:36px;font-size:20px}
+.ih-pj-list .pjd .pjd-panel .pd-big input{font-size:28px}
+.ih-pj-list .pjd .pjd-panel .pd-big span{font-size:13px}
+.ih-pj-list .pjd .pjd-panel .pd-slider{margin-bottom:14px}
+.ih-pj-list .pjd .pjd-panel .pd-ticks{margin-top:6px;font-size:11px}
+.ih-pj-list .pjd .pjd-panel .pd-label{margin-bottom:8px;font-size:11px}
+.ih-pj-list .pjd .pjd-panel .pd-chips{gap:6px;margin-bottom:14px}
+.ih-pj-list .pjd .pjd-panel .pd-chips button{padding:7px 0;font-size:12.5px;border-radius:10px}
+.ih-pj-list .pjd .pjd-panel .pd-go{height:44px;font-size:14.5px;border-radius:12px}
+.ih-pj-list .pjd .pjd-panel .pd-go svg{width:18px;height:18px}
+.ih-pj-list .pjd .pjd-panel .pd-sec{gap:8px;margin-top:8px}
+.ih-pj-list .pjd .pjd-panel .pd-sec>*{height:38px;font-size:13px;border-radius:10px}
+.ih-pj-list .pjd .pjd-panel .pd-sec svg{width:16px;height:16px}
+/* tablets: photo, donation panel, then title and text */
+@media(max-width:1000px){
+  .ih-pj-list .pj-card.pjd{grid-template-columns:minmax(0,1fr);gap:20px}
+  .ih-pj-list .pjd .pjd-info{display:contents}
+  .ih-pj-list .pjd .pjd-photo{order:1}
+  .ih-pj-list .pjd .pjd-panel{order:2}
+  .ih-pj-list .pjd .pj-body{order:3}
+  .ih-pj-list .pjd .pj-body h3{margin-top:0}
+}
+/* phones: photo, title, donation panel, then the text, each card kept short */
+@media(max-width:620px){
+  .ih-pj-list{gap:20px}
+  .ih-pj-list .pj-card.pjd{gap:14px;padding:12px;border-radius:20px}
+  .ih-pj-list .pjd .pjd-photo{border-radius:16px}
+  .ih-pj-list .pjd .pj-img{aspect-ratio:16/9}
+  .ih-pj-list .pjd .pd-chip{padding:8px 12px;font-size:13px}
+  .ih-pj-list .pjd .pj-body{display:contents}
+  .ih-pj-list .pjd .pj-body h3{order:2;margin:0;padding:0 4px;font-size:20px;line-height:1.3}
+  .ih-pj-list .pjd .pjd-panel{order:3;padding:14px;border-radius:18px}
+  .ih-pj-list .pjd .pd-desc{order:4;margin:0 4px 4px;font-size:14px;line-height:1.6;padding-inline-start:12px}
+  .ih-pj-list .pjd .pjd-panel .pd-head{margin-bottom:12px}
+  .ih-pj-list .pjd .pjd-panel .pd-amount{margin-bottom:14px;padding:8px}
+  .ih-pj-list .pjd .pjd-panel .pd-step{width:42px;height:42px}
+  .ih-pj-list .pjd .pjd-panel .pd-big input{font-size:34px}
+  .ih-pj-list .pjd .pjd-panel .pd-slider{margin:0 4px 12px}
+  .ih-pj-list .pjd .pjd-panel .pd-label{margin-bottom:6px}
+  .ih-pj-list .pjd .pjd-panel .pd-chips{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin-bottom:12px}
+  .ih-pj-list .pjd .pjd-panel .pd-chips button{min-height:40px;padding:0;font-size:13px}
+  .ih-pj-list .pjd .pjd-panel .pd-go{height:50px;font-size:15px}
+  .ih-pj-list .pjd .pjd-panel .pd-sec>*{height:44px}
+}
+@media(max-width:360px){.ih-pj-list .pjd .pjd-panel .pd-sec{grid-template-columns:1fr}}
+
+/* /shop header: "Our Projects" banner (projects.css .pj-head, inside the News header base .nw-sec)
+   and the category tabs (Direct Donation tabs, .dn-sec) */
+.ih-shop-head .pj-head{position:relative;overflow:hidden;margin:18px 0 22px;padding:30px 34px 30px 52px;border-radius:24px;background:linear-gradient(110deg,#eaf5ef,#f7fbf9 70%)}
+.ih-shop-head .pj-head:before{content:'';position:absolute;right:-60px;top:-150px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,#00a25126 0 30%,#00a2511a 30% 55%,#00a25110 55% 100%);pointer-events:none}
+.ih-shop-head .pj-head>*{position:relative;z-index:1}
+.ih-shop-head .pj-head-row{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.ih-shop-head .pj-title{position:relative;margin:0;font-size:clamp(30px,4vw,46px);font-weight:800;letter-spacing:-1px;line-height:1.1;color:#0b2a21}
+.ih-shop-head .pj-title:before{content:'';position:absolute;inset-inline-start:-18px;top:6px;bottom:6px;width:6px;border-radius:6px;background:linear-gradient(180deg,#00a251,#d9b564)}
+.ih-shop-head .pj-sub{margin-top:8px}
+.ih-shop-head .pj-search{background:#fff;border-color:#dbe7e1}
+[dir=rtl] .ih-shop-head .pj-head:before{right:auto;left:-60px}
+[dir=rtl] .ih-shop-head .pj-head{padding:30px 52px 30px 34px}
+@media(max-width:700px){.ih-shop-head .pj-head{padding:24px 20px 24px 38px;border-radius:20px}[dir=rtl] .ih-shop-head .pj-head{padding:24px 38px 24px 20px}}
+.ih-shop-tabs>.container{max-width:1240px;padding-inline:20px}
+.ih-shop-tabs .pj-tab .ti{overflow:hidden}
+.ih-shop-tabs .pj-tab .ti img{width:100%;height:100%;object-fit:cover}

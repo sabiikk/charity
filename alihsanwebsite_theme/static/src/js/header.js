@@ -8,7 +8,8 @@ const isMobile = () => window.matchMedia("(max-width:1000px)").matches;
  * Al Ihsan header (port of mega-menu.js, the mobile drawer and sticky-header.js):
  * - mega panels open on hover (desktop) or click, close on outside click / Esc / backdrop;
  * - the ☰ button opens the mobile drawer, where panels become one-at-a-time accordions;
- * - once the page scrolls the header turns green and swaps to the white logo.
+ * - once the page scrolls the header turns green and swaps to the white logo;
+ * - the signed-in user's name opens a small account menu (My account, Log out...).
  * Public interactions are not started in the website editor, and every change
  * made here is undone in cleanups, so no runtime state is ever saved.
  */
@@ -29,6 +30,29 @@ export class IhsanHeader extends Interaction {
         this.setupMegaMenu();
         this.setupDrawer();
         this.setupSticky();
+        this.setupUserMenu();
+    }
+
+    // ---------------------------------------------------------------- account menu
+    setupUserMenu() {
+        const button = this.el.querySelector(".ih-user > .login-toggle");
+        const menu = this.el.querySelector(".ih-user-menu");
+        if (!button || !menu) {
+            return;
+        }
+        const toggle = (open) => {
+            menu.classList.toggle("d-none", !open);
+            button.setAttribute("aria-expanded", String(open));
+        };
+        this.addListener(button, "click", () => toggle(menu.classList.contains("d-none")));
+        this.addListener(document, "click", (ev) => !button.parentElement.contains(ev.target) && toggle(false));
+        this.addListener(document, "keydown", (ev) => {
+            if (ev.key === "Escape" && !menu.classList.contains("d-none")) {
+                toggle(false);
+                button.focus();
+            }
+        });
+        this.registerCleanup(() => toggle(false));
     }
 
     // ---------------------------------------------------------------- mega menu

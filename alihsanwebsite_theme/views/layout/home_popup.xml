@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--
+        Home page "Featured project" popup (converted from #project-modal of index.html /
+        script.js of "Al Ihsan web 8"). Everything comes from Website settings (or the
+        dashboard's Website > Popup tab): image, texts, amounts and the donation product
+        whose goal / amount raised fill the progress bar. home_popup.js opens it after
+        the delay and adds the selected amount to the cart.
+    -->
+    <template id="alihsan_home_popup" inherit_id="website.layout" name="Al Ihsan Home Popup">
+        <xpath expr="//div[@id='wrapwrap']" position="inside">
+            <t t-set="ih_popup" t-value="website._ih_is_home_request() and website._ih_get_popup()"/>
+            <dialog t-if="ih_popup" class="ih-popup" aria-labelledby="ih-popup-title"
+                    t-att-data-delay="website.ih_popup_delay"
+                    t-att-data-frequency="website.ih_popup_frequency"
+                    t-att-data-key="'%s-%s' % (website.id, int(website.write_date.timestamp()))"
+                    t-att-data-product-template-id="ih_popup['product'].id"
+                    t-att-data-product-id="ih_popup['variant'].id">
+                <button type="button" class="ip-close" aria-label="Close"/>
+                <figure class="ip-media"><img t-att-src="ih_popup['image']" t-att-alt="ih_popup['title']" loading="lazy"/></figure>
+                <div class="ip-body">
+                    <span t-if="ih_popup['eyebrow']" class="ip-eyebrow" t-out="ih_popup['eyebrow']"/>
+                    <h2 id="ih-popup-title" t-out="ih_popup['title']"/>
+                    <div t-if="ih_popup['goal'] &gt; 0" class="ip-progress">
+                        <div class="ip-labels">
+                            <span><small>Current</small><strong><t t-out="'{:,.0f}'.format(ih_popup['raised'])"/> <em t-out="ih_popup['currency']"/></strong></span>
+                            <span class="ip-goal"><small>Goal</small><strong><t t-out="'{:,.0f}'.format(ih_popup['goal'])"/> <em t-out="ih_popup['currency']"/></strong></span>
+                        </div>
+                        <div class="ip-bar" role="progressbar" aria-label="Funding progress" aria-valuemin="0" aria-valuemax="100"
+                             t-att-aria-valuenow="'%.2f' % ih_popup['progress']"><i t-attf-style="width: {{ '%.2f' % ih_popup['progress'] }}%"/></div>
+                        <span class="ip-pct"><t t-out="'%.2f' % ih_popup['progress']"/>%</span>
+                    </div>
+                    <p t-if="ih_popup['description']" t-out="ih_popup['description']"/>
+                    <div t-if="ih_popup['amounts']" class="ip-amounts" role="group" aria-label="Donation amount">
+                        <t t-foreach="ih_popup['amounts']" t-as="ip_amount">
+                            <button type="button" t-attf-class="ip-chip#{' selected' if ip_amount == ih_popup['default'] else ''}"
+                                    t-att-data-amount="ip_amount" t-att-aria-pressed="'true' if ip_amount == ih_popup['default'] else 'false'">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg><t t-out="'{:,}'.format(ip_amount)"/> <em t-out="ih_popup['currency']"/>
+                            </button>
+                        </t>
+                    </div>
+                    <div class="ip-actions">
+                        <a class="ip-explore" t-att-href="ih_popup['explore_url']">Explore More<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                        <a class="ip-donate" t-att-href="ih_popup['product'].website_url"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg><span>Donate now</span></a>
+                    </div>
+                </div>
+            </dialog>
+        </xpath>
+    </template>
+</odoo>

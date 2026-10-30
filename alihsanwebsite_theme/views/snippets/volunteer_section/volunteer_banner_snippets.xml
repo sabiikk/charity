@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Reuses the Aid Registration banner styles. "Volunteers login" opens the
+         login dialog of the Volunteer Register section on the same page. -->
+    <template id="volunteer_banner_section" name="Volunteer Banner Section">
+        <section class="ar-sec vl-page s_vl_banner pt16 pb0">
+            <div class="container">
+                <div class="ar-banner ar-fade">
+                    <div class="ar-bc" role="navigation" aria-label="Breadcrumb">
+                        <a href="/">Home</a><i>›</i><a href="/e-services">E-Services</a><i>›</i><b aria-current="page">Volunteer</b>
+                    </div>
+                    <h1>Register now as a volunteer</h1>
+                    <p>Join Al Ihsan’s volunteer teams and be part of giving in your community.</p>
+                    <button type="button" class="vl-loginbtn" data-vl-login=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5M15 12H3"/></svg><span>Volunteers login</span></button>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

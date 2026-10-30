@@ -1,0 +1,143 @@
+// Home Hero Slides: gallery cards and the slide form
+
+.o_kanban_renderer.o_ih_hero_kanban,
+.o_ih_hero_kanban .o_kanban_renderer {
+    --KanbanRecord-width: 360px;
+}
+
+.o_ih_hero_kanban .o_kanban_record {
+    border-radius: 12px;
+    transition: box-shadow 0.2s, transform 0.2s;
+
+    &:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+        transform: translateY(-2px);
+    }
+}
+
+.o_ih_slide_media {
+    aspect-ratio: 16 / 7.5;
+    background: var(--gray-200, #e9ecef);
+    cursor: grab;
+
+    .o_field_image, .o_field_image > div {
+        width: 100%;
+        height: 100%;
+    }
+
+    .o_ih_slide_img {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: none !important;
+        max-height: none !important;
+        object-fit: cover;
+    }
+}
+
+.o_ih_slide_pos {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    backdrop-filter: blur(2px);
+}
+
+.o_ih_hero_form {
+    .o_ih_step {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding-bottom: 8px;
+        margin-bottom: 12px;
+        border-bottom: 1px solid var(--border-color, #dee2e6);
+
+        span {
+            display: inline-grid;
+            place-items: center;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: #00a251;
+            color: #fff;
+            font-size: 13px;
+        }
+    }
+
+    .o_ih_drop {
+        border: 2px dashed var(--border-color, #ced4da);
+        border-radius: 12px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--gray-100, #f8f9fa);
+
+        .o_field_image, .o_field_image > div {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .o_ih_preview_img {
+            width: 100% !important;
+            height: 100% !important;
+            max-width: none !important;
+            max-height: none !important;
+            object-fit: contain;
+        }
+    }
+
+    .o_ih_drop_wide {
+        aspect-ratio: 16 / 7.5;
+    }
+
+    .o_ih_drop_tall {
+        aspect-ratio: 9 / 16;
+        max-height: 360px;
+        margin-inline: auto;
+    }
+}
+
+// Home Categories: the same round icon as the website card
+
+.o_ih_cat_ic {
+    // the field widget itself is the circle; its inner wrappers (readonly html viewer) are flattened
+    display: grid !important;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgb(228, 238, 235);
+    color: rgb(0, 112, 90);
+
+    :not(svg, svg *, img) {
+        display: contents;
+    }
+
+    svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+}
+
+.o_ih_cat_form_block .o_ih_cat_ic {
+    width: 100px;
+    height: 100px;
+
+    svg {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+.o_ih_cat_kanban .o_kanban_group:first-child {
+    --KanbanGroup-background: rgba(0, 162, 81, 0.06);
+}

@@ -47,12 +47,23 @@ html[lang^=ar] .ab-sec{--ab-ff:'IBM Plex Sans Arabic','Plus Jakarta Sans','Noto 
 .ab-sec .ab-b2{background:#fff;border:1.5px solid #cfe0d7;color:#10201a}
 .ab-sec .ab-b2:hover{background:#f0f7f3;border-color:#00a14b}
 @media(max-width:900px){
-  .ab-banner{grid-template-columns:1fr;min-height:0;padding:12px}
-  .ab-banner>img{grid-column:1;grid-row:1;min-height:0;height:auto;aspect-ratio:16/10}
-  .ab-bin{grid-column:1;grid-row:2;padding:26px 14px 18px}
-  .ab-badge{inset-inline-end:28px;bottom:auto;top:calc(12px + 100vw*.6*.1);font-size:14px;padding:10px 16px}
+  .ab-banner{grid-template-columns:1fr;gap:0;min-height:0;padding:12px;border-radius:28px;background:linear-gradient(180deg,#fff,#f0f7f3)}
+  .ab-banner>img{grid-column:1;grid-row:1;min-height:0;height:auto;aspect-ratio:16/10;border-radius:22px;clip-path:inset(0 round 22px)}
+  /* the badge sits in the photo's own grid cell, pinned to its bottom-start corner */
+  .ab-badge{position:relative;grid-column:1;grid-row:1;align-self:end;justify-self:start;inset:auto;margin:0 0 14px 12px;font-size:14px;padding:9px 16px;border-radius:14px}
+  [dir=rtl] .ab-badge{margin:0 12px 14px 0}
+  .ab-bin{grid-column:1;grid-row:2;padding:30px 14px 18px}
 }
-@media(max-width:700px){.ab-banner p{font-size:15px}.ab-bbtn a{height:48px;padding:0 24px}}
+@media(max-width:700px){
+  .ab-banner .pj-crumb{margin-bottom:28px;font-size:14px}
+  .ab-banner h1{margin:16px 0 18px;font-size:clamp(30px,8.6vw,40px);letter-spacing:-1.2px;line-height:1.08}
+  .ab-banner p{font-size:15px;line-height:1.75}
+  .ab-bbtn a{height:48px;padding:0 24px}
+}
+@media(max-width:400px){
+  .ab-sec>.container{padding-inline:12px}
+  .ab-bbtn a{flex:1;justify-content:center;padding:0 16px}
+}
 @media(hover:none){.ab-banner>img:hover{transform:none;filter:none}}
 @media(prefers-reduced-motion:reduce){.ab-badge{animation:none}.ab-banner>img{transition:none}.ab-banner>img:hover{transform:none}}
 

@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Kufi+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body { margin: 0; background: #EDF1EF; font-family: 'Inter', -apple-system, system-ui, sans-serif; }
+  .scroll { -ms-overflow-style: none; scrollbar-width: none; }
+  .scroll::-webkit-scrollbar { display: none; }
+  @keyframes blobMorph {
+    0%,100% { border-radius: 62% 38% 46% 54% / 55% 48% 52% 45%; }
+    33% { border-radius: 44% 56% 62% 38% / 42% 62% 38% 58%; }
+    66% { border-radius: 55% 45% 38% 62% / 60% 40% 60% 40%; }
+  }
+  @keyframes floatY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+  @keyframes riseIn { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform:none; } }
+  @keyframes barGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes softPulse { 0%,100% { opacity:.45; } 50% { opacity:1; } }
+  @keyframes shimmer { 0% { background-position:-220% 0; } 100% { background-position:220% 0; } }
+  @keyframes ringOut { 0% { transform: scale(.9); opacity:.5; } 100% { transform: scale(1.7); opacity:0; } }
+  @keyframes checkPop { 0% { transform: scale(0); } 60% { transform: scale(1.14); } 100% { transform: scale(1); } }
+</style>
+</helmet>
+
+<div style="width:100%;min-height:100vh;display:flex;justify-content:center;background:#EDF1EF;">
+<div dir="{{ dir }}" style="position:relative;width:100%;max-width:430px;min-height:100vh;background:{{ c.bg }};color:{{ c.ink }};overflow:hidden;font-family:{{ font }};transition:background .4s ease,color .4s ease;">
+
+  <!-- ============ LOGIN ============ -->
+  <div class="scroll" style="position:absolute;inset:0;z-index:58;display:{{ s.login }};overflow-y:auto;background:{{ c.bg }};">
+    <div style="position:relative;padding:64px 30px 0;">
+      <div style="position:absolute;top:-90px;right:-70px;width:250px;height:250px;background:rgba(0,164,131,.14);animation:blobMorph 15s ease-in-out infinite;pointer-events:none;"></div>
+      <div style="position:absolute;top:180px;left:-100px;width:210px;height:210px;background:rgba(201,162,39,.12);animation:blobMorph 18s ease-in-out infinite reverse;pointer-events:none;"></div>
+
+      <div style="position:relative;display:flex;flex-direction:column;align-items:center;">
+        <div style="width:78px;height:78px;background:rgba(0,164,131,.16);display:flex;align-items:center;justify-content:center;animation:blobMorph 13s ease-in-out infinite;"><i class="fa-solid fa-hand-holding-heart" style="color:#00715D;font-size:32px;"></i></div>
+        <div style="font:700 28px 'Inter','Noto Kufi Arabic';letter-spacing:-1px;margin-top:22px;">{{ lg.title }}</div>
+        <div style="font:400 13px 'Inter','Noto Kufi Arabic';color:{{ c.ink2 }};margin-top:8px;text-align:center;line-height:1.6;max-width:280px;">{{ lg.sub }}</div>
+      </div>
+
+      <div style="position:relative;display:flex;background:{{ c.grey }};border-radius:18px;padding:4px;margin-top:30px;">
+        <sc-for list="{{ lgTabs }}" as="a" hint-placeholder-count="2">
+          <button onClick="{{ a.pick }}" style="flex:1;background:{{ a.bg }};color:{{ a.fg }};border:none;border-radius:15px;padding:12px 4px;font:600 12.5px 'Inter','Noto Kufi Arabic';cursor:pointer;box-shadow:{{ a.shadow }};transition:all .25s;">{{ a.l }}</button>
+        </sc-for>
+      </div>
+
+      <div style="position:relative;display:flex;flex-direction:column;gap:14px;margin-top:22px;">
+        <sc-for list="{{ lgFields }}" as="f" hint-placeholder-count="2">
+          <div>
+            <div style="font:500 11.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink2 }};margin-bottom:8px;">{{ f.l }}</div>
+            <div style="display:flex;align-items:center;gap:12px;background:{{ c.card }};border-radius:18px;padding:16px 17px;box-shadow:0 8px 20px rgba(0,60,46,.05);">
+              <i class="{{ f.icon }}" style="color:#00A483;font-size:14px;"></i>
+              <input type="{{ f.type }}" placeholder="{{ f.ph }}" style="border:none;background:none;outline:none;font:400 13.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink }};width:100%;">
+            </div>
+          </div>
+        </sc-for>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:2px;">
+          <div onClick="{{ lg.toggleRemember }}" style="display:flex;align-items:center;gap:9px;font:500 12px 'Inter','Noto Kufi Arabic';color:{{ c.ink2 }};cursor:pointer;">
+            <span style="width:20px;height:20px;border-radius:7px;background:{{ lg.rememberBg }};border:1.5px solid {{ lg.rememberBd }};display:inline-flex;align-items:center;justify-content:center;"><i class="fa-solid fa-check" style="color:#fff;font-size:9px;opacity:{{ lg.rememberOp }};"></i></span>{{ lg.remember }}
+          </div>
+          <span onClick="{{ lg.forgot }}" style="font:500 12px 'Inter','Noto Kufi Arabic';color:#00A483;cursor:pointer;">{{ lg.forgotL }}</span>
+        </div>
+      </div>
+
+      <button onClick="{{ go.app }}" style="position:relative;width:100%;margin-top:24px;background:{{ c.btn }};color:#fff;border:none;border-radius:20px;padding:17px;font:600 15px 'Inter','Noto Kufi Arabic';cursor:pointer;box-shadow:0 14px 30px rgba(0,113,93,.26);">{{ lg.cta }}</button>
+
+      <div style="position:relative;display:flex;align-items:center;gap:14px;margin:24px 0;">
+        <div style="flex:1;height:1px;background:{{ c.line }};"></div>
+        <span style="font:500 11px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};">{{ lg.or }}</span>
+        <div style="flex:1;height:1px;background:{{ c.line }};"></div>
+      </div>
+
+      <div style="position:relative;display:flex;gap:12px;">
+        <button onClick="{{ go.app }}" style="flex:1;display:flex;align-items:center;justify-content:center;gap:9px;background:{{ c.card }};border:none;border-radius:18px;padding:15px;font:600 13px 'Inter';color:{{ c.ink }};cursor:pointer;box-shadow:0 8px 20px rgba(0,60,46,.05);"><i class="fa-brands fa-google" style="color:#4285F4;font-size:15px;"></i>Google</button>
+        <button onClick="{{ go.app }}" style="flex:1;display:flex;align-items:center;justify-content:center;gap:9px;background:{{ c.card }};border:none;border-radius:18px;padding:15px;font:600 13px 'Inter';color:{{ c.ink }};cursor:pointer;box-shadow:0 8px 20px rgba(0,60,46,.05);"><i class="fa-brands fa-apple" style="font-size:16px;"></i>Apple</button>
+        <button onClick="{{ go.app }}" style="width:58px;display:flex;align-items:center;justify-content:center;background:{{ c.card }};border:none;border-radius:18px;cursor:pointer;color:#00A483;box-shadow:0 8px 20px rgba(0,60,46,.05);"><i class="fa-solid fa-fingerprint" style="font-size:20px;"></i></button>
+      </div>
+
+      <button onClick="{{ go.app }}" style="position:relative;width:100%;margin-top:16px;background:none;border:none;color:{{ c.ink3 }};font:500 12.5px 'Inter','Noto Kufi Arabic';cursor:pointer;padding:10px;">{{ lg.guest }}</button>
+      <div style="height:40px;"></div>
+    </div>
+  </div>
+
+  <!-- ============ ONBOARDING ============ -->
+  <div style="position:absolute;inset:0;z-index:60;display:{{ s.onboard }};flex-direction:column;background:{{ c.bg }};">
+    <div class="scroll" style="position:relative;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 34px;overflow-y:auto;">
+      <div style="position:absolute;top:-90px;left:-70px;width:260px;height:260px;background:{{ ob.blob1 }};animation:blobMorph 14s ease-in-out infinite;filter:blur(2px);"></div>
+      <div style="position:absolute;bottom:-70px;right:-60px;width:220px;height:220px;background:{{ ob.blob2 }};animation:blobMorph 17s ease-in-out infinite reverse;filter:blur(2px);"></div>
+
+      <div style="position:relative;flex:0 0 auto;width:min(250px,38vh);height:min(250px,38vh);display:flex;align-items:center;justify-content:center;animation:floatY 6s ease-in-out infinite;">
+        <div style="position:absolute;inset:0;background:{{ ob.tint }};animation:blobMorph 12s ease-in-out infinite;"></div>
+        <div style="position:absolute;inset:14%;background:{{ ob.tint2 }};animation:blobMorph 15s ease-in-out infinite reverse;"></div>
+        <i class="{{ ob.icon }}" style="position:relative;color:{{ ob.color }};font-size:min(82px,13vh);"></i>
+      </div>
+
+      <div style="position:relative;flex:0 0 auto;font:700 clamp(23px,4.6vh,30px) 'Inter','Noto Kufi Arabic';text-align:center;margin-top:clamp(24px,5vh,52px);line-height:1.22;letter-spacing:-1px;max-width:290px;">{{ ob.title }}</div>
+      <div style="position:relative;flex:0 0 auto;font:400 clamp(13px,1.9vh,14.5px) 'Inter','Noto Kufi Arabic';color:{{ c.ink2 }};text-align:center;margin-top:clamp(10px,1.8vh,16px);line-height:1.65;max-width:300px;text-wrap:pretty;">{{ ob.body }}</div>
+    </div>
+
+    <div style="flex:0 0 auto;padding:0 34px clamp(24px,4vh,48px);">
+      <div style="display:flex;gap:7px;justify-content:center;margin-bottom:clamp(18px,3vh,30px);">
+        <sc-for list="{{ obDots }}" as="d" hint-placeholder-count="3">
+          <span style="width:{{ d.w }};height:7px;border-radius:99px;background:{{ d.bg }};transition:all .35s cubic-bezier(.2,.8,.2,1);"></span>
+        </sc-for>
+      </div>
+      <button onClick="{{ ob.next }}" style="width:100%;background:{{ c.btn }};color:#fff;border:none;border-radius:24px;padding:19px;font:600 15.5px 'Inter','Noto Kufi Arabic';cursor:pointer;box-shadow:0 16px 34px rgba(0,113,93,.26);letter-spacing:-.1px;">{{ ob.cta }}</button>
+      <button onClick="{{ go.app }}" style="width:100%;margin-top:14px;background:none;border:none;color:{{ c.ink3 }};font:500 13.5px 'Inter','Noto Kufi Arabic';cursor:pointer;padding:8px;">{{ T.skip }}</button>
+    </div>
+  </div>
+
+  <!-- ============ APP ============ -->
+  <div style="position:absolute;inset:0;display:{{ s.app }};flex-direction:column;background:{{ c.bg }};">
+    <div class="scroll" style="flex:1;overflow-y:auto;">
+
+      <!-- ===== HOME ===== -->
+      <div style="display:{{ s.home }};position:relative;">
+        <div style="position:absolute;top:-110px;right:-90px;width:280px;height:280px;background:{{ c.blobA }};animation:blobMorph 16s ease-in-out infinite;pointer-events:none;"></div>
+        <div style="position:absolute;top:220px;left:-120px;width:230px;height:230px;background:{{ c.blobB }};animation:blobMorph 19s ease-in-out infinite reverse;pointer-events:none;"></div>
+
+        <!-- greeting -->
+        <div style="position:relative;padding:56px 24px 0;display:flex;align-items:center;gap:13px;">
+          <div onClick="{{ nav.profile }}" style="width:48px;height:48px;flex:0 0 auto;border-radius:18px;overflow:hidden;box-shadow:0 8px 20px rgba(0,60,46,.12);cursor:pointer;"><image-slot id="soft-avatar" shape="rounded" radius="18" placeholder=" "></image-slot></div>
+          <div style="flex:1;min-width:0;">
+            <div style="font:400 12.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};">{{ T.greeting }}</div>
+            <div style="font:700 18px 'Inter','Noto Kufi Arabic';letter-spacing:-.4px;margin-top:2px;">{{ T.userName }}</div>
+          </div>
+          <div onClick="{{ act.lang }}" style="height:38px;padding:0 13px;border-radius:14px;background:{{ c.card }};display:flex;align-items:center;gap:6px;cursor:pointer;font:600 11.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink2 }};box-shadow:0 6px 16px rgba(0,60,46,.07);"><i class="fa-solid fa-globe" style="font-size:12px;color:#00715D;"></i>{{ langLabel }}</div>
+          <div onClick="{{ act.theme }}" style="width:38px;height:38px;flex:0 0 auto;border-radius:14px;background:{{ c.card }};display:flex;align-items:center;justify-content:center;cursor:pointer;color:{{ c.ink2 }};box-shadow:0 6px 16px rgba(0,60,46,.07);"><i class="{{ themeIcon }}" style="font-size:14px;"></i></div>
+          <div onClick="{{ act.notifs }}" style="position:relative;width:38px;height:38px;flex:0 0 auto;border-radius:14px;background:{{ c.card }};display:flex;align-items:center;justify-content:center;cursor:pointer;color:{{ c.ink2 }};box-shadow:0 6px 16px rgba(0,60,46,.07);"><i class="fa-regular fa-bell" style="font-size:14px;"></i><span style="position:absolute;top:8px;right:9px;width:7px;height:7px;background:#F0A830;border-radius:50%;border:1.5px solid {{ c.card }};"></span></div>
+        </div>
+
+        <!-- search + AI -->
+        <div style="position:relative;padding:20px 24px 0;display:flex;gap:11px;">
+          <div onClick="{{ act.search }}" style="flex:1;display:flex;align-items:center;gap:11px;background:{{ c.card }};border-radius:20px;padding:15px 17px;cursor:pointer;box-shadow:0 8px 22px rgba(0,60,46,.07);">
+            <i class="fa-solid fa-magnifying-glass" style="color:{{ c.ink3 }};font-size:14px;"></i>
+            <span style="font:400 13.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};">{{ T.searchPh }}</span>
+          </div>
+          <div onClick="{{ act.ai }}" style="width:52px;flex:0 0 auto;border-radius:20px;background:linear-gradient(140deg,#00A483,#00715D);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 24px rgba(0,113,93,.28);"><i class="fa-solid fa-wand-magic-sparkles" style="color:#fff;font-size:16px;"></i></div>
+        </div>
+
+        <!-- hero carousel -->
+        <div class="scroll" style="position:relative;display:flex;gap:14px;overflow-x:auto;padding:22px 24px 0;scroll-snap-type:x mandatory;">
+          <sc-for list="{{ banners }}" as="b" hint-placeholder-count="3">
+            <div onClick="{{ b.go }}" style="flex:0 0 292px;scroll-snap-align:center;height:172px;border-radius:28px;position:relative;overflow:hidden;background:{{ b.grad }};box-shadow:0 16px 34px rgba(0,60,46,.13);cursor:pointer;">
+              <div style="position:absolute;top:-40px;right:-30px;width:160px;height:160px;background:rgba(255,255,255,.30);animation:blobMorph 13s ease-in-out infinite;"></div>
+              <i class="{{ b.icon }}" style="position:absolute;bottom:16px;right:22px;color:{{ b.iconCol }};font-size:64px;"></i>
+              <div style="position:absolute;inset:0;padding:24px;display:flex;flex-direction:column;justify-content:center;">
+                <span style="align-self:flex-start;background:{{ b.tagBg }};color:{{ b.tagFg }};font:600 9.5px 'Inter','Noto Kufi Arabic';padding:6px 12px;border-radius:999px;letter-spacing:.7px;">{{ b.tag }}</span>
+                <div style="font:700 21px 'Inter','Noto Kufi Arabic';color:{{ b.titleCol }};margin-top:12px;line-height:1.22;max-width:70%;letter-spacing:-.5px;">{{ b.title }}</div>
+                <button style="align-self:flex-start;margin-top:16px;background:{{ b.btnBg }};color:{{ b.btnFg }};border:none;font:600 12px 'Inter','Noto Kufi Arabic';padding:11px 20px;border-radius:999px;cursor:pointer;">{{ T.donateNow }}</button>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;gap:6px;justify-content:center;margin-top:15px;">
+          <span style="width:22px;height:6px;border-radius:99px;background:#00715D;"></span>
+          <span style="width:6px;height:6px;border-radius:99px;background:{{ c.line }};"></span>
+          <span style="width:6px;height:6px;border-radius:99px;background:{{ c.line }};"></span>
+        </div>
+
+        <!-- categories -->
+        <div style="position:relative;padding:28px 24px 0;display:flex;align-items:center;justify-content:space-between;">
+          <div style="font:700 18px 'Inter','Noto Kufi Arabic';letter-spacing:-.5px;">{{ T.categories }}</div>
+          <div onClick="{{ nav.projects }}" style="font:500 12.5px 'Inter','Noto Kufi Arabic';color:#00A483;cursor:pointer;">{{ T.viewAll }}</div>
+        </div>
+        <div class="scroll" style="position:relative;display:flex;gap:12px;overflow-x:auto;padding:16px 24px 4px;scroll-snap-type:x mandatory;">
+          <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="7">
+            <div onClick="{{ cat.go }}" style="flex:0 0 84px;scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;gap:9px;cursor:pointer;">
+              <div style="width:84px;height:84px;border-radius:24px;background:{{ cat.tint }};display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,60,46,.06);"><i class="{{ cat.icon }}" style="color:{{ cat.color }};font-size:25px;"></i></div>
+              <div style="font:500 11px 'Inter','Noto Kufi Arabic';color:{{ c.ink2 }};text-align:center;">{{ cat.l }}</div>
+            </div>
+          </sc-for>
+        </div>
+
+        <!-- featured campaign -->
+        <div onClick="{{ act.featured }}" style="position:relative;padding:28px 24px 0;font:700 18px 'Inter','Noto Kufi Arabic';letter-spacing:-.5px;cursor:pointer;">{{ T.featured }}</div>
+        <div onClick="{{ act.featured }}" style="position:relative;margin:16px 24px 0;background:{{ c.card }};border-radius:28px;overflow:hidden;box-shadow:0 16px 36px rgba(0,60,46,.09);cursor:pointer;">
+          <div style="position:relative;height:170px;overflow:hidden;">
+            <img src="uploads/cta-bg.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.18) 0%,rgba(0,0,0,0) 45%,rgba(0,0,0,.30) 100%);pointer-events:none;"></div>
+            <span onClick="{{ act.favFeatured }}" style="position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;cursor:pointer;"><i class="{{ featHeart }}" style="color:{{ featHeartCol }};font-size:14px;"></i></span>
+            <span style="position:absolute;bottom:14px;left:16px;background:rgba(255,255,255,.94);color:#00715D;font:600 10px 'Inter','Noto Kufi Arabic';padding:6px 13px;border-radius:999px;">{{ T.foodAid }}</span>
+          </div>
+          <div style="padding:20px;">
+            <div style="font:700 18px 'Inter','Noto Kufi Arabic';letter-spacing:-.4px;line-height:1.28;">{{ T.featTitle }}</div>
+            <div style="font:400 12.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink2 }};margin-top:7px;line-height:1.6;">{{ T.featBody }}</div>
+            <div style="height:8px;border-radius:99px;background:{{ c.grey }};overflow:hidden;margin-top:17px;"><div style="height:100%;width:72%;background:linear-gradient(90deg,#00A483,#5FD3B0);border-radius:99px;transform-origin:left;animation:barGrow 1.1s ease both;"></div></div>
+            <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-top:13px;">
+              <div><div style="font:700 19px 'Inter';color:#00715D;letter-spacing:-.5px;">AED 361K</div><div style="font:400 10.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};margin-top:2px;">{{ T.of }} AED 500K</div></div>
+              <div style="text-align:right;"><div style="font:700 14px 'Inter';color:{{ c.ink }};">1,284</div><div style="font:400 10.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};margin-top:2px;">{{ T.donors }}</div></div>
+              <button onClick="{{ nav.donate }}" style="background:{{ c.btn }};color:#fff;border:none;border-radius:18px;padding:13px 24px;font:600 13px 'Inter','Noto Kufi Arabic';cursor:pointer;box-shadow:0 10px 24px rgba(0,113,93,.24);">{{ T.donate }}</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- volunteer events -->
+        <div onClick="{{ nav.programs }}" style="position:relative;padding:30px 24px 0;display:flex;align-items:center;justify-content:space-between;cursor:pointer;">
+          <div style="font:700 18px 'Inter','Noto Kufi Arabic';letter-spacing:-.5px;">{{ T.events }}</div>
+          <div style="font:500 12.5px 'Inter','Noto Kufi Arabic';color:#00A483;">{{ T.viewAll }}</div>
+        </div>
+        <div class="scroll" style="position:relative;display:flex;gap:13px;overflow-x:auto;padding:16px 24px 4px;">
+          <sc-for list="{{ homeEvents }}" as="e" hint-placeholder-count="3">
+            <div onClick="{{ e.go }}" style="flex:0 0 244px;background:{{ c.card }};border-radius:24px;padding:17px;box-shadow:0 12px 28px rgba(0,60,46,.07);cursor:pointer;">
+              <div style="display:flex;align-items:center;gap:12px;">
+                <div style="width:50px;height:50px;flex:0 0 auto;border-radius:18px;background:{{ e.tint }};display:flex;flex-direction:column;align-items:center;justify-content:center;"><div style="font:700 16px 'Inter';color:{{ e.color }};line-height:1;letter-spacing:-.5px;">{{ e.day }}</div><div style="font:600 8px 'Inter';color:{{ e.color }};letter-spacing:.8px;margin-top:2px;">{{ e.mon }}</div></div>
+                <div style="min-width:0;flex:1;"><div style="font:600 13.5px 'Inter','Noto Kufi Arabic';line-height:1.25;letter-spacing:-.2px;">{{ e.title }}</div><div style="font:400 10.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};margin-top:4px;">{{ e.place }}</div></div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-top:15px;padding-top:13px;border-top:1px solid {{ c.line }};">
+                <span style="font:500 10.5px 'Inter','Noto Kufi Arabic';color:#E0736A;display:flex;align-items:center;gap:5px;"><i class="fa-regular fa-clock" style="font-size:10px;"></i>{{ e.cd }}</span>
+                <span style="font:600 10.5px 'Inter','Noto Kufi Arabic';color:#00A483;">{{ e.slots }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <!-- in memory of -->
+        <div style="position:relative;margin:30px 24px 0;background:{{ c.memBg }};border-radius:28px;padding:22px;overflow:hidden;">
+          <div style="position:absolute;top:-50px;right:-40px;width:150px;height:150px;background:{{ c.memBlob }};animation:blobMorph 15s ease-in-out infinite;"></div>
+          <div style="position:relative;display:flex;align-items:center;gap:10px;"><i class="fa-solid fa-dove" style="color:#C9A227;font-size:16px;"></i><div><div style="font:700 16.5px 'Inter','Noto Kufi Arabic';letter-spacing:-.4px;">{{ T.memory }}</div><div style="font:400 11.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink2 }};margin-top:3px;">{{ T.memorySub }}</div></div></div>
+          <div class="scroll" style="position:relative;display:flex;gap:12px;overflow-x:auto;margin-top:17px;">
+            <sc-for list="{{ memorial }}" as="m" hint-placeholder-count="3">
+              <div onClick="{{ m.go }}" style="flex:0 0 168px;background:{{ c.card }};border-radius:22px;padding:17px;text-align:center;box-shadow:0 10px 24px rgba(0,60,46,.07);cursor:pointer;">
+                <div style="width:58px;height:58px;margin:0 auto;background:{{ m.tint }};display:flex;align-items:center;justify-content:center;animation:blobMorph 13s ease-in-out infinite;"><i class="fa-solid fa-hands-praying" style="color:{{ m.color }};font-size:22px;"></i></div>
+                <div style="font:600 13px 'Inter','Noto Kufi Arabic';margin-top:12px;letter-spacing:-.2px;">{{ m.name }}</div>
+                <div style="font:400 10px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};margin-top:3px;">{{ m.years }}</div>
+                <button style="width:100%;margin-top:13px;background:{{ c.softBtn }};color:#00715D;border:none;border-radius:14px;padding:10px;font:600 11px 'Inter','Noto Kufi Arabic';cursor:pointer;">{{ T.donateMemory }}</button>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <!-- partners -->
+        <div onClick="{{ act.partners }}" style="position:relative;padding:30px 24px 0;font:700 18px 'Inter','Noto Kufi Arabic';letter-spacing:-.5px;cursor:pointer;">{{ T.partners }}</div>
+        <div style="overflow:hidden;padding:16px 0 0;">
+          <div style="display:flex;gap:12px;width:max-content;animation:marquee 26s linear infinite;">
+            <sc-for list="{{ partners }}" as="p" hint-placeholder-count="12">
+              <div onClick="{{ p.go }}" style="flex:0 0 auto;background:{{ c.card }};border-radius:20px;padding:15px 22px;display:flex;align-items:center;gap:10px;box-shadow:0 8px 20px rgba(0,60,46,.06);cursor:pointer;">
+                <i class="{{ p.icon }}" style="color:#00A483;font-size:15px;"></i>
+                <span style="font:600 12px 'Inter','Noto Kufi Arabic';color:{{ c.ink2 }};white-space:nowrap;">{{ p.n }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <!-- recent activity -->
+        <div onClick="{{ act.activity }}" style="position:relative;padding:30px 24px 0;font:700 18px 'Inter','Noto Kufi Arabic';letter-spacing:-.5px;cursor:pointer;">{{ T.activity }}</div>
+        <div style="position:relative;padding:16px 24px 0;display:flex;flex-direction:column;gap:11px;">
+          <sc-for list="{{ activity }}" as="a" hint-placeholder-count="4">
+            <div onClick="{{ a.go }}" style="display:flex;align-items:center;gap:14px;background:{{ c.card }};border-radius:22px;padding:15px 17px;box-shadow:0 8px 20px rgba(0,60,46,.05);cursor:pointer;">
+              <div style="width:42px;height:42px;flex:0 0 auto;background:{{ a.tint }};display:flex;align-items:center;justify-content:center;animation:blobMorph 16s ease-in-out infinite;"><i class="{{ a.icon }}" style="color:{{ a.color }};font-size:15px;"></i></div>
+              <div style="flex:1;min-width:0;"><div style="font:500 12.5px 'Inter','Noto Kufi Arabic';line-height:1.4;">{{ a.text }}</div><div style="font:400 10px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};margin-top:4px;">{{ a.time }}</div></div>
+              <div style="font:700 12.5px 'Inter';color:{{ a.amtColor }};flex:0 0 auto;">{{ a.amt }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="height:150px;"></div>
+      </div>
+
+      <!-- ===== PROJECTS ===== -->
+      <div style="display:{{ s.projects }};position:relative;">
+        <div style="position:absolute;top:-100px;left:-80px;width:250px;height:250px;background:{{ c.blobA }};animation:blobMorph 17s ease-in-out infinite;pointer-events:none;"></div>
+        <div style="position:relative;padding:56px 24px 0;">
+          <div style="font:700 30px 'Inter','Noto Kufi Arabic';letter-spacing:-1px;">{{ T.projects }}</div>
+          <div style="font:400 13.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink2 }};margin-top:6px;">{{ T.projectsSub }}</div>
+          <div style="display:flex;gap:11px;margin-top:20px;">
+            <div onClick="{{ act.search }}" style="flex:1;display:flex;align-items:center;gap:11px;background:{{ c.card }};border-radius:20px;padding:15px 17px;cursor:pointer;box-shadow:0 8px 22px rgba(0,60,46,.07);">
+              <i class="fa-solid fa-magnifying-glass" style="color:{{ c.ink3 }};font-size:14px;"></i>
+              <span style="font:400 13px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};">{{ T.searchProjects }}</span>
+            </div>
+            <div onClick="{{ act.ai }}" style="width:52px;flex:0 0 auto;border-radius:20px;background:linear-gradient(140deg,#00A483,#00715D);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 24px rgba(0,113,93,.28);"><i class="fa-solid fa-wand-magic-sparkles" style="color:#fff;font-size:16px;"></i></div>
+          </div>
+          <div class="scroll" style="display:flex;gap:9px;overflow-x:auto;margin-top:18px;">
+            <sc-for list="{{ filters }}" as="f" hint-placeholder-count="6">
+              <span onClick="{{ f.pick }}" style="flex:0 0 auto;background:{{ f.bg }};color:{{ f.fg }};font:500 12px 'Inter','Noto Kufi Arabic';padding:10px 18px;border-radius:999px;cursor:pointer;box-shadow:{{ f.shadow }};transition:all .25s;">{{ f.l }}</span>
+            </sc-for>
+          </div>
+        </div>
+        <div style="position:relative;padding:20px 20px 0;column-count:2;column-gap:14px;">
+          <sc-for list="{{ projectList }}" as="p" hint-placeholder-count="6">
+            <div onClick="{{ p.go }}" style="break-inside:avoid;margin-bottom:14px;background:{{ c.card }};border-radius:26px;overflow:hidden;box-shadow:0 12px 28px rgba(0,60,46,.08);cursor:pointer;">
+              <div style="position:relative;height:{{ p.h }};background:{{ p.tint }};display:flex;align-items:center;justify-content:center;overflow:hidden;">
+                <div style="position:absolute;top:-20px;left:-16px;width:90px;height:90px;background:rgba(255,255,255,.34);animation:blobMorph 14s ease-in-out infinite;"></div>
+                <i class="{{ p.icon }}" style="position:relative;color:{{ p.color }};font-size:30px;"></i>
+                <span onClick="{{ p.fav }}" style="position:absolute;top:10px;right:10px;width:29px;height:29px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;cursor:pointer;"><i class="{{ p.heartIcon }}" style="color:{{ p.heartColor }};font-size:11px;"></i></span>
+              </div>
+              <div style="padding:15px;">
+                <span style="background:{{ p.tint }};color:{{ p.color }};font:600 9px 'Inter','Noto Kufi Arabic';padding:4px 10px;border-radius:999px;">{{ p.cat }}</span>
+                <div style="font:600 13.5px 'Inter','Noto Kufi Arabic';line-height:1.3;margin-top:9px;letter-spacing:-.2px;">{{ p.title }}</div>
+                <div style="height:6px;border-radius:99px;background:{{ c.grey }};overflow:hidden;margin-top:12px;"><div style="height:100%;width:{{ p.pct }};background:linear-gradient(90deg,#00A483,#5FD3B0);border-radius:99px;transform-origin:left;animation:barGrow 1s ease both;"></div></div>
+                <div style="display:flex;align-items:baseline;justify-content:space-between;margin-top:9px;"><span style="font:700 13px 'Inter';color:#00715D;">{{ p.raised }}</span><span style="font:400 9.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};">{{ p.pct }}</span></div>
+                <button onClick="{{ p.donate }}" style="width:100%;margin-top:13px;background:{{ c.softBtn }};color:#00715D;border:none;border-radius:15px;padding:11px;font:600 11.5px 'Inter','Noto Kufi Arabic';cursor:pointer;">{{ T.donate }}</button>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="height:150px;"></div>
+      </div>
+
+      <!-- ===== DONATE ===== -->
+      <div style="display:{{ s.donate }};position:relative;">
+        <div style="position:absolute;top:-100px;right:-80px;width:250px;height:250px;background:{{ c.blobA }};animation:blobMorph 16s ease-in-out infinite;pointer-events:none;"></div>
+
+        <div style="display:{{ s.donateForm }};flex-direction:column;position:relative;padding:56px 24px 0;">
+          <div style="font:700 30px 'Inter','Noto Kufi Arabic';letter-spacing:-1px;">{{ T.donateTitle }}</div>
+          <div style="font:400 13.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink2 }};margin-top:6px;">{{ T.donateSub }}</div>
+
+          <div style="background:{{ c.card }};border-radius:28px;padding:22px;margin-top:22px;box-shadow:0 16px 34px rgba(0,60,46,.08);">
+            <div style="font:500 12px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};">{{ T.selectCause }}</div>
+            <div class="scroll" style="display:flex;gap:10px;overflow-x:auto;margin-top:13px;">
+              <sc-for list="{{ causes }}" as="cz" hint-placeholder-count="5">
+                <div onClick="{{ cz.pick }}" style="flex:0 0 auto;display:flex;align-items:center;gap:9px;background:{{ cz.bg }};border-radius:16px;padding:11px 16px;cursor:pointer;transition:all .25s;">
+                  <i class="{{ cz.icon }}" style="color:{{ cz.fg }};font-size:13px;"></i>
+                  <span style="font:600 12px 'Inter','Noto Kufi Arabic';color:{{ cz.fg }};">{{ cz.l }}</span>
+                </div>
+              </sc-for>
+            </div>
+
+            <div style="font:500 12px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};margin-top:24px;">{{ T.selectAmount }}</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin-top:13px;">
+              <sc-for list="{{ presets }}" as="p" hint-placeholder-count="6">
+                <button onClick="{{ p.pick }}" style="background:{{ p.bg }};color:{{ p.fg }};border:none;border-radius:18px;padding:17px 0;font:700 15px 'Inter';cursor:pointer;transition:all .22s;letter-spacing:-.3px;">{{ p.l }}</button>
+              </sc-for>
+            </div>
+
+            <div style="font:500 12px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};margin-top:24px;">{{ T.frequency }}</div>
+            <div style="display:flex;gap:11px;margin-top:13px;">
+              <sc-for list="{{ freqs }}" as="fq" hint-placeholder-count="2">
+                <button onClick="{{ fq.pick }}" style="flex:1;background:{{ fq.bg }};color:{{ fq.fg }};border:none;border-radius:16px;padding:14px;font:600 12.5px 'Inter','Noto Kufi Arabic';cursor:pointer;">{{ fq.l }}</button>
+              </sc-for>
+            </div>
+
+            <div style="font:500 12px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};margin-top:24px;">{{ T.payment }}</div>
+            <div style="display:flex;flex-direction:column;gap:11px;margin-top:13px;">
+              <sc-for list="{{ payments }}" as="pm" hint-placeholder-count="3">
+                <div onClick="{{ pm.pick }}" style="display:flex;align-items:center;gap:13px;background:{{ pm.bg }};border-radius:18px;padding:14px 16px;cursor:pointer;transition:all .22s;">
+                  <div style="width:40px;height:40px;flex:0 0 auto;border-radius:14px;background:{{ pm.tint }};display:flex;align-items:center;justify-content:center;"><i class="{{ pm.icon }}" style="color:{{ pm.color }};font-size:16px;"></i></div>
+                  <div style="flex:1;min-width:0;"><div style="font:600 12.5px 'Inter','Noto Kufi Arabic';">{{ pm.l }}</div><div style="font:400 10px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};margin-top:3px;">{{ pm.s }}</div></div>
+                  <span style="width:21px;height:21px;border-radius:50%;border:2px solid {{ pm.radioBd }};background:{{ pm.radioBg }};display:flex;align-items:center;justify-content:center;flex:0 0 auto;"><i class="fa-solid fa-check" style="color:#fff;font-size:8px;opacity:{{ pm.checkOp }};"></i></span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="background:{{ c.card }};border-radius:24px;padding:19px;margin-top:15px;box-shadow:0 12px 28px rgba(0,60,46,.07);">
+            <div style="display:flex;align-items:center;justify-content:space-between;"><span style="font:400 12.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink2 }};">{{ T.total }}</span><span style="font:700 24px 'Inter';color:#00715D;letter-spacing:-.8px;">AED {{ amount }}</span></div>
+            <button onClick="{{ act.pay }}" style="width:100%;margin-top:16px;background:{{ c.btn }};color:#fff;border:none;border-radius:22px;padding:18px;font:600 15px 'Inter','Noto Kufi Arabic';cursor:pointer;box-shadow:0 14px 32px rgba(0,113,93,.26);display:flex;align-items:center;justify-content:center;gap:9px;"><i class="fa-solid fa-lock" style="font-size:12px;"></i>{{ T.donateSecure }}</button>
+            <div style="display:flex;align-items:center;justify-content:center;gap:7px;margin-top:13px;font:400 10.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};"><i class="fa-solid fa-shield-halved" style="font-size:10px;color:#00A483;"></i>{{ T.secureNote }}</div>
+          </div>
+        </div>
+
+        <div style="display:{{ s.donateDone }};flex-direction:column;align-items:center;position:relative;padding:70px 32px 0;">
+          <div style="position:relative;width:130px;height:130px;background:{{ c.softBtn }};display:flex;align-items:center;justify-content:center;animation:blobMorph 12s ease-in-out infinite, checkPop .65s cubic-bezier(.2,.8,.2,1) both;">
+            <span style="position:absolute;inset:0;border-radius:50%;border:2px solid #00A483;animation:ringOut 2s ease-out infinite;"></span>
+            <i class="fa-solid fa-check" style="color:#00715D;font-size:50px;"></i>
+          </div>
+          <div style="font:700 27px 'Inter','Noto Kufi Arabic';margin-top:34px;text-align:center;letter-spacing:-.9px;">{{ T.jazak }}</div>
+          <div style="font:400 14px 'Inter','Noto Kufi Arabic';color:{{ c.ink2 }};margin-top:12px;text-align:center;line-height:1.65;">{{ T.successBody }}</div>
+          <div style="width:100%;background:{{ c.card }};border-radius:24px;padding:20px;margin-top:30px;box-shadow:0 12px 28px rgba(0,60,46,.07);">
+            <sc-for list="{{ receipt }}" as="r" hint-placeholder-count="4">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 0;"><span style="font:400 12px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};">{{ r.l }}</span><span style="font:600 12.5px 'Inter','Noto Kufi Arabic';">{{ r.v }}</span></div>
+            </sc-for>
+          </div>
+          <button onClick="{{ act.share }}" style="width:100%;margin-top:18px;background:{{ c.softBtn }};color:#00715D;border:none;border-radius:20px;padding:16px;font:600 13.5px 'Inter','Noto Kufi Arabic';cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;"><i class="fa-solid fa-share-nodes" style="font-size:13px;"></i>{{ T.shareGood }}</button>
+          <button onClick="{{ act.resetPay }}" style="width:100%;margin-top:12px;background:{{ c.btn }};color:#fff;border:none;border-radius:20px;padding:16px;font:600 13.5px 'Inter','Noto Kufi Arabic';cursor:pointer;box-shadow:0 12px 28px rgba(0,113,93,.24);">{{ T.done }}</button>
+        </div>
+        <div style="height:150px;"></div>
+      </div>
+
+      <!-- ===== PROGRAMS / VOLUNTEER ===== -->
+      <div style="display:{{ s.programs }};position:relative;">
+        <div style="position:absolute;top:-100px;right:-80px;width:250px;height:250px;background:{{ c.blobB }};animation:blobMorph 18s ease-in-out infinite;pointer-events:none;"></div>
+        <div style="position:relative;padding:56px 24px 0;">
+          <div style="font:700 30px 'Inter','Noto Kufi Arabic';letter-spacing:-1px;">{{ T.volunteer }}</div>
+          <div style="font:400 13.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink2 }};margin-top:6px;">{{ T.volunteerSub }}</div>
+          <div style="display:flex;gap:11px;margin-top:20px;">
+            <sc-for list="{{ volStats }}" as="v" hint-placeholder-count="3">
+              <div style="flex:1;background:{{ c.card }};border-radius:22px;padding:16px 8px;text-align:center;box-shadow:0 10px 24px rgba(0,60,46,.06);">
+                <div style="font:700 19px 'Inter';color:#00715D;letter-spacing:-.5px;">{{ v.v }}</div>
+                <div style="font:400 9.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};margin-top:3px;">{{ v.l }}</div>
+              </div>
+            </sc-for>
+          </div>
+          <div class="scroll" style="display:flex;gap:9px;overflow-x:auto;margin-top:20px;">
+            <sc-for list="{{ volTabs }}" as="v" hint-placeholder-count="5">
+              <span onClick="{{ v.pick }}" style="flex:0 0 auto;background:{{ v.bg }};color:{{ v.fg }};font:500 12px 'Inter','Noto Kufi Arabic';padding:10px 18px;border-radius:999px;cursor:pointer;box-shadow:{{ v.shadow }};transition:all .25s;">{{ v.l }}</span>
+            </sc-for>
+          </div>
+        </div>
+
+        <!-- upcoming events -->
+        <div style="display:{{ s.volEvents }};position:relative;padding:20px 24px 0;flex-direction:column;gap:14px;">
+          <sc-for list="{{ volEvents }}" as="e" hint-placeholder-count="3">
+            <div style="background:{{ c.card }};border-radius:28px;overflow:hidden;box-shadow:0 14px 32px rgba(0,60,46,.08);">
+              <div style="position:relative;height:112px;background:{{ e.tint }};display:flex;align-items:center;justify-content:center;overflow:hidden;">
+                <div style="position:absolute;top:-24px;left:-20px;width:110px;height:110px;background:rgba(255,255,255,.36);animation:blobMorph 15s ease-in-out infinite;"></div>
+                <i class="{{ e.icon }}" style="position:relative;color:{{ e.color }};font-size:36px;"></i>
+                <span style="position:absolute;top:13px;left:13px;background:rgba(255,255,255,.94);color:{{ e.color }};font:600 10px 'Inter','Noto Kufi Arabic';padding:6px 13px;border-radius:999px;">{{ e.date }}</span>
+                <span style="position:absolute;top:13px;right:13px;background:rgba(255,255,255,.94);color:#E0736A;font:600 10px 'Inter';padding:6px 13px;border-radius:999px;display:flex;align-items:center;gap:5px;"><i class="fa-regular fa-clock" style="font-size:9px;"></i>{{ e.cd }}</span>
+              </div>
+              <div style="padding:18px;">
+                <div style="font:700 16px 'Inter','Noto Kufi Arabic';letter-spacing:-.4px;">{{ e.title }}</div>
+                <div style="display:flex;align-items:center;gap:16px;margin-top:9px;">
+                  <span style="font:400 11.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink2 }};display:flex;align-items:center;gap:6px;"><i class="fa-solid fa-location-dot" style="font-size:10px;color:{{ c.ink3 }};"></i>{{ e.place }}</span>
+                  <span style="font:400 11.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink2 }};display:flex;align-items:center;gap:6px;"><i class="fa-regular fa-clock" style="font-size:10px;color:{{ c.ink3 }};"></i>{{ e.time }}</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:11px;margin-top:14px;">
+                  <div style="flex:1;height:7px;border-radius:99px;background:{{ c.grey }};overflow:hidden;"><div style="height:100%;width:{{ e.slotPct }};background:linear-gradient(90deg,#00A483,#5FD3B0);border-radius:99px;"></div></div>
+                  <span style="font:500 10.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink2 }};flex:0 0 auto;">{{ e.slots }}</span>
+                </div>
+                <div style="display:flex;gap:10px;margin-top:16px;">
+                  <button onClick="{{ e.register }}" style="flex:1;background:{{ e.regBg }};color:{{ e.regFg }};border:none;border-radius:18px;padding:14px;font:600 13px 'Inter','Noto Kufi Arabic';cursor:pointer;">{{ e.regLabel }}</button>
+                  <button onClick="{{ e.interest }}" style="width:50px;background:{{ c.grey }};border:none;border-radius:18px;color:{{ e.starColor }};cursor:pointer;"><i class="{{ e.starIcon }}" style="font-size:15px;"></i></button>
+                </div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <!-- completed -->
+        <div style="display:{{ s.volDone }};position:relative;padding:20px 24px 0;flex-direction:column;gap:13px;">
+          <sc-for list="{{ volCompleted }}" as="m" hint-placeholder-count="3">
+            <div style="display:flex;gap:14px;background:{{ c.card }};border-radius:24px;padding:16px;box-shadow:0 12px 28px rgba(0,60,46,.07);">
+              <div style="width:78px;height:78px;flex:0 0 auto;background:{{ m.tint }};display:flex;align-items:center;justify-content:center;animation:blobMorph 14s ease-in-out infinite;"><i class="{{ m.icon }}" style="color:{{ m.color }};font-size:27px;"></i></div>
+              <div style="flex:1;min-width:0;">
+                <div style="display:flex;align-items:center;gap:8px;"><span style="background:{{ m.stBg }};color:{{ m.stFg }};font:600 9px 'Inter','Noto Kufi Arabic';padding:4px 10px;border-radius:999px;">{{ m.status }}</span><span style="font:400 10px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};">{{ m.date }}</span></div>
+                <div style="font:600 14px 'Inter','Noto Kufi Arabic';margin-top:8px;line-height:1.25;letter-spacing:-.2px;">{{ m.title }}</div>
+                <div style="font:400 10.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};margin-top:5px;">{{ m.hours }}</div>
+                <button onClick="{{ m.action }}" style="display:{{ m.certShow }};align-items:center;gap:8px;margin-top:11px;background:{{ c.softBtn }};color:#00715D;border:none;border-radius:14px;padding:9px 15px;font:600 11px 'Inter','Noto Kufi Arabic';cursor:pointer;"><i class="fa-solid fa-download" style="font-size:10px;"></i>{{ T.certificate }}</button>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <!-- requests -->
+        <div style="display:{{ s.volReq }};position:relative;padding:20px 24px 0;flex-direction:column;gap:12px;">
+          <sc-for list="{{ volReqs }}" as="r" hint-placeholder-count="3">
+            <div style="display:flex;align-items:center;gap:14px;background:{{ c.card }};border-radius:22px;padding:16px 17px;box-shadow:0 10px 24px rgba(0,60,46,.06);">
+              <div style="width:44px;height:44px;flex:0 0 auto;background:{{ r.stBg }};display:flex;align-items:center;justify-content:center;animation:blobMorph 15s ease-in-out infinite;"><i class="{{ r.icon }}" style="color:{{ r.stFg }};font-size:16px;"></i></div>
+              <div style="flex:1;min-width:0;"><div style="font:600 13px 'Inter','Noto Kufi Arabic';letter-spacing:-.2px;">{{ r.title }}</div><div style="font:400 10px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};margin-top:4px;">{{ r.date }}</div></div>
+              <span style="background:{{ r.stBg }};color:{{ r.stFg }};font:600 10px 'Inter','Noto Kufi Arabic';padding:6px 12px;border-radius:999px;flex:0 0 auto;">{{ r.status }}</span>
+            </div>
+          </sc-for>
+        </div>
+
+        <!-- become volunteer -->
+        <div style="display:{{ s.volApply }};position:relative;padding:20px 24px 0;flex-direction:column;">
+          <div style="background:{{ c.card }};border-radius:28px;padding:24px;box-shadow:0 16px 34px rgba(0,60,46,.08);">
+            <div style="width:64px;height:64px;background:{{ c.softBtn }};display:flex;align-items:center;justify-content:center;animation:blobMorph 13s ease-in-out infinite;"><i class="fa-solid fa-hand-holding-heart" style="color:#00715D;font-size:26px;"></i></div>
+            <div style="font:700 20px 'Inter','Noto Kufi Arabic';letter-spacing:-.6px;margin-top:18px;">{{ T.becomeVol }}</div>
+            <div style="font:400 12.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink2 }};margin-top:8px;line-height:1.6;">{{ T.becomeVolSub }}</div>
+            <div style="display:flex;flex-direction:column;gap:13px;margin-top:22px;">
+              <sc-for list="{{ applyFields }}" as="f" hint-placeholder-count="4">
+                <div>
+                  <div style="font:500 11px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};margin-bottom:7px;">{{ f.l }}</div>
+                  <div style="display:flex;align-items:center;gap:11px;background:{{ c.grey }};border-radius:17px;padding:15px 16px;">
+                    <i class="{{ f.icon }}" style="color:#00A483;font-size:13px;"></i>
+                    <input placeholder="{{ f.ph }}" style="border:none;background:none;outline:none;font:400 13px 'Inter','Noto Kufi Arabic';color:{{ c.ink }};width:100%;">
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+            <button onClick="{{ act.apply }}" style="width:100%;margin-top:22px;background:{{ c.btn }};color:#fff;border:none;border-radius:20px;padding:17px;font:600 14px 'Inter','Noto Kufi Arabic';cursor:pointer;box-shadow:0 14px 30px rgba(0,113,93,.26);">{{ T.submitApp }}</button>
+          </div>
+        </div>
+        <div style="height:150px;"></div>
+      </div>
+
+      <!-- ===== PROFILE ===== -->
+      <div style="display:{{ s.profile }};position:relative;">
+        <div style="position:absolute;top:-100px;left:-80px;width:250px;height:250px;background:{{ c.blobA }};animation:blobMorph 17s ease-in-out infinite;pointer-events:none;"></div>
+        <div style="position:relative;padding:56px 24px 0;display:flex;flex-direction:column;align-items:center;">
+          <div onClick="{{ act.editProfile }}" style="width:96px;height:96px;overflow:hidden;cursor:pointer;box-shadow:0 16px 34px rgba(0,60,46,.16);animation:blobMorph 14s ease-in-out infinite;"><image-slot id="soft-avatar2" shape="rect" placeholder=" "></image-slot></div>
+          <div style="font:700 23px 'Inter','Noto Kufi Arabic';margin-top:18px;letter-spacing:-.7px;">{{ T.userName }}</div>
+          <div style="font:400 12.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};margin-top:4px;">{{ T.memberSince }}</div>
+          <span style="display:inline-flex;align-items:center;gap:7px;margin-top:12px;background:{{ c.goldSoft }};color:#8A6B10;font:600 11px 'Inter','Noto Kufi Arabic';padding:8px 16px;border-radius:999px;"><i class="fa-solid fa-award" style="font-size:11px;"></i>{{ T.goldDonor }}</span>
+        </div>
+
+        <div style="position:relative;margin:26px 24px 0;background:{{ c.card }};border-radius:26px;padding:20px 10px;box-shadow:0 14px 32px rgba(0,60,46,.08);display:flex;">
+          <sc-for list="{{ accStats }}" as="a" hint-placeholder-count="3">
+            <div onClick="{{ a.go }}" style="flex:1;text-align:center;cursor:pointer;">
+              <div style="font:700 17px 'Inter';color:#00715D;letter-spacing:-.5px;">{{ a.v }}</div>
+              <div style="font:400 9.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};margin-top:4px;">{{ a.l }}</div>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="position:relative;padding:24px 24px 0;font:700 18px 'Inter','Noto Kufi Arabic';letter-spacing:-.5px;">{{ T.timeline }}</div>
+        <div style="position:relative;padding:16px 24px 0;">
+          <sc-for list="{{ timeline }}" as="t" hint-placeholder-count="3">
+            <div style="display:flex;gap:15px;">
+              <div style="display:flex;flex-direction:column;align-items:center;flex:0 0 auto;">
+                <div style="width:38px;height:38px;background:{{ t.tint }};display:flex;align-items:center;justify-content:center;animation:blobMorph 16s ease-in-out infinite;"><i class="{{ t.icon }}" style="color:{{ t.color }};font-size:14px;"></i></div>
+                <div style="flex:1;width:2px;background:{{ c.line }};margin:5px 0;min-height:{{ t.lineH }};"></div>
+              </div>
+              <div style="flex:1;padding-bottom:18px;">
+                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;"><div style="font:600 13.5px 'Inter','Noto Kufi Arabic';line-height:1.3;letter-spacing:-.2px;">{{ t.title }}</div><div style="font:700 13.5px 'Inter';color:#00715D;flex:0 0 auto;">{{ t.amt }}</div></div>
+                <div style="font:400 10.5px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};margin-top:5px;">{{ t.date }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="position:relative;padding:8px 24px 0;display:flex;flex-direction:column;gap:11px;">
+          <sc-for list="{{ accMenu }}" as="m" hint-placeholder-count="7">
+            <div onClick="{{ m.go }}" style="display:flex;align-items:center;gap:14px;background:{{ c.card }};border-radius:20px;padding:16px 17px;box-shadow:0 8px 20px rgba(0,60,46,.05);cursor:pointer;">
+              <div style="width:40px;height:40px;flex:0 0 auto;background:{{ m.tint }};display:flex;align-items:center;justify-content:center;animation:blobMorph 15s ease-in-out infinite;"><i class="{{ m.icon }}" style="color:{{ m.color }};font-size:14px;"></i></div>
+              <div style="flex:1;min-width:0;font:500 13.5px 'Inter','Noto Kufi Arabic';">{{ m.l }}</div>
+              <span style="font:400 11px 'Inter','Noto Kufi Arabic';color:{{ c.ink3 }};flex:0 0 auto;">{{ m.hint }}</span>
+              <i class="fa-solid fa-chevron-right" style="color:{{ c.ink3 }};font-size:11px;"></i>
+            </div>
+          </sc-for>
+
+          <div onClick="{{ act.theme }}" style="display:flex;align-items:center;gap:14px;background:{{ c.card }};border-radius:20px;padding:16px 17px;box-shadow:0 8px 20px rgba(0,60,46,.05);cursor:pointer;">
+            <div style="width:40px;height:40px;flex:0 0 auto;background:{{ c.greyTint }};display:flex;align-items:center;justify-content:center;animation:blobMorph 15s ease-in-out infinite;"><i class="{{ themeIcon }}" style="color:#5A6B8A;font-size:14px;"></i></div>
+            <div style="flex:1;font:500 13.5px 'Inter','Noto Kufi Arabic';">{{ T.darkMode }}</div>
+            <div onClick="{{ act.theme }}" style="width:50px;height:28px;border-radius:99px;background:{{ toggleBg }};padding:3px;cursor:pointer;transition:background .3s;"><div style="width:22px;height:22px;border-radius:50%;background:#fff;transform:{{ toggleKnob }};transition:transform .3s cubic-bezier(.2,.8,.2,1);box-shadow:0 2px 6px rgba(0,0,0,.18);"></div></div>
+          </div>
+
+          <button onClick="{{ act.logout }}" style="margin-top:8px;display:flex;align-items:center;justify-content:center;gap:10px;background:{{ c.redSoft }};border:none;color:#D0564C;border-radius:20px;padding:16px;font:600 13.5px 'Inter','Noto Kufi Arabic';cursor:pointer;"><i class="fa-solid fa-right-from-bracket" style="font-size:13px;"></i>{{ T.logout }}</button>
+        </div>
+        <div style="height:150px;"></div>
+      </div>
+
+    </div>
+
+    <!-- floating pill nav -->
+    <div style="position:absolute;bottom:26px;left:20px;right:20px;height:68px;background:{{ c.navBg }};backdrop-filter:blur(26px);border-radius:34px;box-shadow:0 18px 44px rgba(0,60,46,.18);display:flex;align-items:center;padding:0 8px;z-index:30;">
+      <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="5">
+        <div onClick="{{ n.go }}" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;color:{{ n.color }};height:100%;position:relative;">
+          <div style="position:absolute;inset:8px 6px;border-radius:24px;background:{{ n.pillBg }};transition:background .3s;"></div>
+          <i class="{{ n.icon }}" style="position:relative;font-size:{{ n.size }};"></i>
+          <span style="position:relative;font:600 9px 'Inter','Noto Kufi Arabic';display:{{ n.labelShow }};">{{ n.l }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- toast -->
+  <div style="position:absolute;left:50%;bottom:110px;transform:translateX(-50%);background:rgba(8,28,22,.94);color:#fff;font:500 12.5px 'Inter','Noto Kufi Arabic';padding:13px 22px;border-radius:999px;box-shadow:0 14px 32px rgba(0,0,0,.26);opacity:{{ toastOp }};pointer-events:none;transition:opacity .28s ease;z-index:80;white-space:nowrap;">{{ toast }}</div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:430,&quot;height&quot;:932}}">
+class Component extends DCLogic {
+  state = {
+    screen: 'onboard', ob: 0, tab: 'home', dark: false, ar: false,
+    amount: 100, cause: 'food', freq: 'once', pay: 'apple',
+    favs: {}, regs: {}, stars: {}, volTab: 'events', paid: false, featFav: false, filter: 'All', toast: '',
+    lgTab: 'login', remember: true
+  };
+  componentWillUnmount() { clearTimeout(this._t); }
+  ping(m) { clearTimeout(this._t); this.setState({ toast: m }); this._t = setTimeout(() => this.setState({ toast: '' }), 1600); }
+
+  renderVals() {
+    const st = this.state, ar = st.ar, dark = st.dark, A = st.amount;
+    const D = (en, arv) => ar ? arv : en;
+
+    const c = dark ? {
+      bg: '#0B1512', card: '#152420', grey: '#101C18', greyTint: '#1B2C26', line: '#22342E',
+      ink: '#ECF4F1', ink2: '#9CB2AB', ink3: '#6C837C',
+      btn: 'linear-gradient(140deg,#00A483,#00715D)', softBtn: '#16332B', navBg: 'rgba(21,36,32,.94)',
+      memBg: '#132320', memBlob: 'rgba(0,164,131,.12)', blobA: 'rgba(0,164,131,.10)', blobB: 'rgba(201,162,39,.08)',
+      goldSoft: '#2F2712', redSoft: '#2E1A18'
+    } : {
+      bg: '#F7FAF8', card: '#FFFFFF', grey: '#F1F5F3', greyTint: '#EEF2F6', line: '#E7EDEA',
+      ink: '#0E201B', ink2: '#5C6E68', ink3: '#9AA8A2',
+      btn: 'linear-gradient(140deg,#00A483,#00715D)', softBtn: '#E3F4EC', navBg: 'rgba(255,255,255,.95)',
+      memBg: '#EFF6F2', memBlob: 'rgba(0,164,131,.10)', blobA: 'rgba(0,164,131,.10)', blobB: 'rgba(201,162,39,.10)',
+      goldSoft: '#FAF1D8', redSoft: '#FCEBE9'
+    };
+
+    const T = {
+      skip: D('Skip', 'تخطي'),
+      greeting: D('Good morning', 'صباح الخير'), userName: D('Shanavas', 'شنواس'),
+      searchPh: D('Search causes…', 'ابحث عن قضية…'), searchProjects: D('Search projects…', 'ابحث في المشاريع…'),
+      donateNow: D('Donate now', 'تبرّع الآن'), viewAll: D('View all', 'عرض الكل'),
+      categories: D('Categories', 'الفئات'), featured: D('Featured campaign', 'الحملة المميزة'),
+      foodAid: D('Food Aid', 'إطعام'),
+      featTitle: D('Feed 1,000 families this Ramadan', 'أطعم ١٠٠٠ أسرة هذا الشهر'),
+      featBody: D('A month of nutritious food parcels delivered by verified local partners.', 'سلال غذائية لشهر كامل يوزعها شركاء موثوقون.'),
+      of: D('of', 'من'), donors: D('donors', 'متبرع'), donate: D('Donate', 'تبرّع'),
+      events: D('Volunteer events', 'فعاليات التطوّع'),
+      memory: D('In memory of', 'إهداء لروح'), memorySub: D('Ongoing sadaqah for a loved one', 'صدقة جارية عن أحبائك'),
+      donateMemory: D('Donate', 'تبرّع'),
+      partners: D('Our partners', 'شركاؤنا'), activity: D('Recent activity', 'النشاط الأخير'),
+      projects: D('Projects', 'المشاريع'), projectsSub: D('Find a cause close to your heart', 'اعثر على قضية قريبة من قلبك'),
+      donateTitle: D('Donate', 'التبرّع'), donateSub: D('One tap, instant impact', 'ضغطة واحدة، أثر فوري'),
+      selectCause: D('Choose a cause', 'اختر القضية'), selectAmount: D('Choose amount (AED)', 'اختر المبلغ (درهم)'),
+      frequency: D('Frequency', 'التكرار'), payment: D('Payment method', 'طريقة الدفع'),
+      total: D('Total', 'الإجمالي'), donateSecure: D('Donate securely', 'تبرّع بأمان'),
+      secureNote: D('Encrypted & PCI DSS compliant', 'مشفّر ومتوافق مع PCI DSS'),
+      jazak: D('Jazak Allah khayr', 'جزاك الله خيراً'),
+      successBody: D('Your gift is on its way. A receipt has been saved to your account.', 'هديتك في طريقها. تم حفظ الإيصال في حسابك.'),
+      shareGood: D('Share this good deed', 'شارك هذا الخير'), done: D('Done', 'تم'),
+      volunteer: D('Volunteer', 'التطوّع'), volunteerSub: D('Give your time, change a life', 'امنح وقتك، غيّر حياة'),
+      certificate: D('Download certificate', 'تحميل الشهادة'),
+      becomeVol: D('Become a volunteer', 'كن متطوعاً'),
+      becomeVolSub: D('Tell us about yourself and we will match you with events that fit your skills.', 'أخبرنا عن نفسك وسنرشّح لك الفعاليات المناسبة.'),
+      submitApp: D('Submit application', 'إرسال الطلب'),
+      memberSince: D('Member since 2021', 'عضو منذ ٢٠٢١'), goldDonor: D('Gold donor · 2,480 pts', 'متبرع ذهبي · ٢٤٨٠ نقطة'),
+      timeline: D('Donation history', 'سجل التبرعات'), darkMode: D('Dark mode', 'الوضع الليلي'), logout: D('Log out', 'تسجيل الخروج')
+    };
+
+    const obs = [
+      { icon: 'fa-solid fa-seedling', color: '#00715D', tint: 'rgba(0,164,131,.16)', tint2: 'rgba(0,164,131,.14)', blob1: 'rgba(0,164,131,.10)', blob2: 'rgba(201,162,39,.10)', t: D('Better lives, better future', 'حياة أفضل، مستقبل أفضل'), b: D('Every contribution plants a seed that grows into lasting change for families in need.', 'كل مساهمة تزرع بذرة تنمو لتصبح تغييراً دائماً للأسر المحتاجة.') },
+      { icon: 'fa-solid fa-hand-holding-heart', color: '#C9A227', tint: 'rgba(201,162,39,.18)', tint2: 'rgba(201,162,39,.14)', blob1: 'rgba(201,162,39,.12)', blob2: 'rgba(0,164,131,.10)', t: D('Give hope through charity', 'امنح الأمل بالصدقة'), b: D('Transparent giving with photo proof, verified partners and live progress on every project.', 'عطاء شفاف مع إثبات مصوّر وشركاء موثوقين وتقدّم مباشر لكل مشروع.') },
+      { icon: 'fa-solid fa-people-group', color: '#1F8FA8', tint: 'rgba(31,143,168,.16)', tint2: 'rgba(31,143,168,.13)', blob1: 'rgba(31,143,168,.11)', blob2: 'rgba(0,164,131,.10)', t: D('Together we can make a difference', 'معاً نصنع الفرق'), b: D('Join a community of 92,000 givers and volunteers serving across the UAE and beyond.', 'انضم إلى مجتمع من ٩٢ ألف متبرع ومتطوع يخدمون في الإمارات وخارجها.') }
+    ];
+    const cur = obs[st.ob], last = st.ob === obs.length - 1;
+
+    const catData = [
+      { k: 'edu', icon: 'fa-solid fa-graduation-cap', color: '#1F8FA8', tint: '#E2F1F5', l: D('Education', 'تعليم') },
+      { k: 'food', icon: 'fa-solid fa-bowl-food', color: '#00715D', tint: '#E3F4EC', l: D('Food', 'طعام') },
+      { k: 'med', icon: 'fa-solid fa-suitcase-medical', color: '#C9736A', tint: '#FAEAE8', l: D('Medical', 'طبي') },
+      { k: 'zakat', icon: 'fa-solid fa-hand-holding-dollar', color: '#C0921C', tint: '#FBF3DE', l: D('Zakat', 'زكاة') },
+      { k: 'water', icon: 'fa-solid fa-droplet', color: '#1F8FA8', tint: '#E2F1F5', l: D('Water', 'مياه') },
+      { k: 'orph', icon: 'fa-solid fa-child-reaching', color: '#C0921C', tint: '#FAF0D8', l: D('Orphans', 'أيتام') },
+      { k: 'mosq', icon: 'fa-solid fa-mosque', color: '#2E8B63', tint: '#E4F2EA', l: D('Mosques', 'مساجد') }
+    ];
+
+    const projData = [
+      { k: 'orph', cat: D('Orphans', 'أيتام'), en: 'Orphan sponsorship', arn: 'كفالة يتيم', raised: 'AED 32K', pct: '64%', color: '#C0921C', tint: '#FBF3DE', icon: 'fa-solid fa-child-reaching', h: '120px', f: 'Orphans' },
+      { k: 'watr', cat: D('Water', 'مياه'), en: 'Clean water wells', arn: 'آبار مياه نظيفة', raised: 'AED 20K', pct: '41%', color: '#1F8FA8', tint: '#E2F1F5', icon: 'fa-solid fa-droplet', h: '98px', f: 'Water' },
+      { k: 'food', cat: D('Food', 'طعام'), en: 'Ramadan food parcels', arn: 'سلال رمضان', raised: 'AED 82K', pct: '82%', color: '#00715D', tint: '#E3F4EC', icon: 'fa-solid fa-bowl-food', h: '94px', f: 'Food' },
+      { k: 'hlth', cat: D('Medical', 'طبي'), en: 'Mobile medical convoy', arn: 'قافلة طبية متنقلة', raised: 'AED 15K', pct: '30%', color: '#C9736A', tint: '#FAEAE8', h: '122px', icon: 'fa-solid fa-suitcase-medical', f: 'Medical' },
+      { k: 'mosq', cat: D('Mosques', 'مساجد'), en: 'Build a mosque', arn: 'بناء مسجد', raised: 'AED 58K', pct: '58%', color: '#2E8B63', tint: '#E4F2EA', icon: 'fa-solid fa-mosque', h: '100px', f: 'Mosques' },
+      { k: 'educ', cat: D('Education', 'تعليم'), en: 'School rebuild, Yemen', arn: 'إعادة بناء مدرسة', raised: 'AED 11K', pct: '22%', color: '#6B7BA0', tint: '#EBEEF5', icon: 'fa-solid fa-graduation-cap', h: '114px', f: 'Education' }
+    ];
+    const fKeys = ['All', 'Food', 'Water', 'Orphans', 'Medical', 'Education', 'Mosques'];
+    const fLabels = ar ? ['الكل', 'طعام', 'مياه', 'أيتام', 'طبي', 'تعليم', 'مساجد'] : fKeys;
+
+    const evData = [
+      { k: 'ram', icon: 'fa-solid fa-bowl-food', color: '#00715D', tint: '#D9F0E6', en: 'Ramadan Food Distribution', arn: 'توزيع طعام رمضان', date: D('Mar 12', '١٢ مارس'), day: '12', mon: 'MAR', time: D('9:00 AM – 2:00 PM', '٩ ص – ٢ م'), place: D('Dubai · Al Quoz', 'دبي · القوز'), cd: D('4d 12h', '٤ي ١٢س'), slotPct: '72%', slots: D('14 slots left', '١٤ مكاناً') },
+      { k: 'eid', icon: 'fa-solid fa-gift', color: '#C0921C', tint: '#FAF0D8', en: 'Orphan Eid Gift Drive', arn: 'حملة هدايا العيد', date: D('Mar 30', '٣٠ مارس'), day: '30', mon: 'MAR', time: D('4:00 PM – 8:00 PM', '٤ م – ٨ م'), place: D('Sharjah', 'الشارقة'), cd: D('22d 6h', '٢٢ي ٦س'), slotPct: '45%', slots: D('33 slots left', '٣٣ مكاناً') },
+      { k: 'beach', icon: 'fa-solid fa-broom', color: '#1F8FA8', tint: '#DEEFF4', en: 'Community Beach Cleanup', arn: 'تنظيف الشاطئ', date: D('Jul 10', '١٠ يوليو'), day: '10', mon: 'JUL', time: D('7:00 AM – 11:00 AM', '٧ ص – ١١ ص'), place: D('Abu Dhabi', 'أبوظبي'), cd: D('1d 3h', '١ي ٣س'), slotPct: '90%', slots: D('5 slots left', '٥ أماكن') }
+    ];
+
+    const causeDefs = [
+      { k: 'food', icon: 'fa-solid fa-bowl-food', l: D('Food aid', 'إطعام') },
+      { k: 'water', icon: 'fa-solid fa-droplet', l: D('Water', 'مياه') },
+      { k: 'orphan', icon: 'fa-solid fa-child-reaching', l: D('Orphans', 'أيتام') },
+      { k: 'zakat', icon: 'fa-solid fa-hand-holding-dollar', l: D('Zakat', 'زكاة') },
+      { k: 'sadaqah', icon: 'fa-solid fa-heart', l: D('Sadaqah', 'صدقة') }
+    ];
+    const payDefs = [
+      { k: 'apple', icon: 'fa-brands fa-apple', color: '#0E201B', tint: '#EEF1F0', l: 'Apple Pay', s: D('Express checkout', 'دفع سريع') },
+      { k: 'visa', icon: 'fa-brands fa-cc-visa', color: '#1A4C9B', tint: '#E7EDF8', l: 'Visa •••• 4821', s: D('Expires 09/28', 'تنتهي ٠٩/٢٨') },
+      { k: 'gpay', icon: 'fa-brands fa-google-pay', color: '#4285F4', tint: '#E8F0FE', l: 'Google Pay', s: D('Express checkout', 'دفع سريع') }
+    ];
+    const navDefs = [
+      { k: 'home', icon: 'fa-solid fa-house', l: D('Home', 'الرئيسية') },
+      { k: 'projects', icon: 'fa-solid fa-layer-group', l: D('Projects', 'المشاريع') },
+      { k: 'donate', icon: 'fa-solid fa-hand-holding-heart', l: D('Donate', 'تبرّع') },
+      { k: 'programs', icon: 'fa-solid fa-people-group', l: D('Programs', 'البرامج') },
+      { k: 'profile', icon: 'fa-solid fa-user', l: D('Profile', 'حسابي') }
+    ];
+    const volTabDefs = [
+      { k: 'events', l: D('Upcoming', 'القادمة') },
+      { k: 'done', l: D('Completed', 'المكتملة') },
+      { k: 'reqs', l: D('Requests', 'الطلبات') },
+      { k: 'apply', l: D('Become volunteer', 'كن متطوعاً') }
+    ];
+    const money = n => n.toLocaleString('en-US');
+
+    return {
+      dir: ar ? 'rtl' : 'ltr',
+      font: ar ? "'Noto Kufi Arabic','Inter',sans-serif" : "'Inter',-apple-system,sans-serif",
+      c, T,
+      toast: st.toast, toastOp: st.toast ? 1 : 0,
+      langLabel: ar ? 'EN' : 'عربى',
+      themeIcon: dark ? 'fa-solid fa-sun' : 'fa-solid fa-moon',
+      toggleBg: dark ? '#00A483' : '#DDE5E2',
+      toggleKnob: dark ? 'translateX(22px)' : 'translateX(0)',
+      amount: money(A),
+      featHeart: st.featFav ? 'fa-solid fa-heart' : 'fa-regular fa-heart',
+      featHeartCol: st.featFav ? '#EF5A78' : '#8FA79E',
+
+      s: {
+        onboard: st.screen === 'onboard' ? 'flex' : 'none',
+        login: st.screen === 'login' ? 'block' : 'none',
+        app: st.screen === 'app' ? 'flex' : 'none',
+        home: st.tab === 'home' ? 'block' : 'none',
+        projects: st.tab === 'projects' ? 'block' : 'none',
+        donate: st.tab === 'donate' ? 'block' : 'none',
+        programs: st.tab === 'programs' ? 'block' : 'none',
+        profile: st.tab === 'profile' ? 'block' : 'none',
+        donateForm: st.paid ? 'none' : 'flex',
+        donateDone: st.paid ? 'flex' : 'none',
+        volEvents: st.volTab === 'events' ? 'flex' : 'none',
+        volDone: st.volTab === 'done' ? 'flex' : 'none',
+        volReq: st.volTab === 'reqs' ? 'flex' : 'none',
+        volApply: st.volTab === 'apply' ? 'flex' : 'none'
+      },
+
+      go: { app: () => this.setState({ screen: 'app', tab: 'home' }), login: () => this.setState({ screen: 'login' }) },
+      nav: {
+        profile: () => this.setState({ tab: 'profile' }),
+        projects: () => this.setState({ tab: 'projects' }),
+        programs: () => this.setState({ tab: 'programs' }),
+        donate: () => this.setState({ tab: 'donate', paid: false })
+      },
+      act: {
+        lang: () => this.setState(s => ({ ar: !s.ar })),
+        theme: () => this.setState(s => ({ dark: !s.dark })),
+        notifs: () => this.ping(D('Notifications', 'الإشعارات')),
+        search: () => this.ping(D('Search', 'بحث')),
+        ai: () => this.ping(D('AI assistant', 'المساعد الذكي')),
+        featured: () => this.ping(T.featTitle),
+        partners: () => this.ping(D('Our partners', 'شركاؤنا')),
+        activity: () => this.ping(D('Recent activity', 'النشاط الأخير')),
+        favFeatured: e => { if (e && e.stopPropagation) e.stopPropagation(); this.setState(s => ({ featFav: !s.featFav })); },
+        editProfile: () => this.ping(D('Edit profile', 'تعديل الملف')),
+        logout: () => this.setState({ screen: 'login', lgTab: 'login' }),
+        apply: () => this.ping(D('Application submitted', 'تم إرسال الطلب')),
+        pay: () => this.setState({ paid: true }),
+        resetPay: () => this.setState({ paid: false, tab: 'home' }),
+        share: () => this.ping(D('Shared', 'تمت المشاركة'))
+      },
+
+      ob: {
+        icon: cur.icon, color: cur.color, tint: cur.tint, tint2: cur.tint2, blob1: cur.blob1, blob2: cur.blob2,
+        title: cur.t, body: cur.b,
+        cta: last ? D('Get started', 'ابدأ الآن') : D('Continue', 'التالي'),
+        next: () => last ? this.setState({ screen: 'login' }) : this.setState(s => ({ ob: s.ob + 1 }))
+      },
+      lg: {
+        title: st.lgTab === 'register' ? D('Create account', 'إنشاء حساب') : D('Welcome back', 'مرحباً بعودتك'),
+        sub: st.lgTab === 'register' ? D('Join thousands of givers across the UAE', 'انضم إلى آلاف المتبرعين في الإمارات') : D('Sign in to continue your giving journey', 'سجّل الدخول لمواصلة رحلة العطاء'),
+        cta: st.lgTab === 'register' ? D('Create account', 'إنشاء حساب') : D('Sign in', 'تسجيل الدخول'),
+        or: D('or continue with', 'أو تابع عبر'),
+        guest: D('Continue as guest', 'المتابعة كضيف'),
+        remember: D('Remember me', 'تذكرني'),
+        forgotL: D('Forgot password?', 'نسيت كلمة المرور؟'),
+        forgot: () => this.ping(D('Reset link sent', 'تم إرسال رابط الاستعادة')),
+        rememberBg: st.remember ? '#00715D' : 'transparent',
+        rememberBd: st.remember ? '#00715D' : c.line,
+        rememberOp: st.remember ? 1 : 0,
+        toggleRemember: () => this.setState(s => ({ remember: !s.remember }))
+      },
+      lgTabs: [
+        { k: 'login', l: D('Sign in', 'دخول') },
+        { k: 'register', l: D('Register', 'حساب جديد') }
+      ].map(a => {
+        const on = st.lgTab === a.k;
+        return { l: a.l, bg: on ? c.card : 'transparent', fg: on ? '#00715D' : c.ink3, shadow: on ? '0 6px 16px rgba(0,60,46,.10)' : 'none', pick: () => this.setState({ lgTab: a.k }) };
+      }),
+      lgFields: st.lgTab === 'register' ? [
+        { l: D('Full name', 'الاسم الكامل'), ph: D('Your name', 'اسمك'), icon: 'fa-regular fa-user', type: 'text' },
+        { l: D('Email', 'البريد الإلكتروني'), ph: 'you@example.com', icon: 'fa-regular fa-envelope', type: 'text' },
+        { l: D('Mobile', 'رقم الجوال'), ph: '+971 50 000 0000', icon: 'fa-solid fa-mobile-screen', type: 'text' },
+        { l: D('Password', 'كلمة المرور'), ph: '••••••••', icon: 'fa-solid fa-lock', type: 'password' }
+      ] : [
+        { l: D('Email', 'البريد الإلكتروني'), ph: 'you@example.com', icon: 'fa-regular fa-envelope', type: 'text' },
+        { l: D('Password', 'كلمة المرور'), ph: '••••••••', icon: 'fa-solid fa-lock', type: 'password' }
+      ],
+
+      obDots: obs.map((_, i) => ({ w: i === st.ob ? '26px' : '7px', bg: i === st.ob ? '#00715D' : c.line })),
+
+      banners: [
+        { tag: D('RAMADAN 2026', 'رمضان ٢٠٢٦'), title: D('Feed a family this Ramadan', 'أطعم أسرة هذا الشهر'), grad: 'linear-gradient(140deg,#D6F0E6,#A8DFC9)', icon: 'fa-solid fa-bowl-food', iconCol: 'rgba(0,113,93,.22)', tagBg: 'rgba(255,255,255,.72)', tagFg: '#00715D', titleCol: '#0B3A2E', btnBg: '#00715D', btnFg: '#fff' },
+        { tag: D('CLEAN WATER', 'مياه نظيفة'), title: D('Build a well, give life', 'احفر بئراً، امنح حياة'), grad: 'linear-gradient(140deg,#DDEFF5,#AFDDE9)', icon: 'fa-solid fa-droplet', iconCol: 'rgba(20,110,133,.22)', tagBg: 'rgba(255,255,255,.72)', tagFg: '#146E85', titleCol: '#0C3B47', btnBg: '#1F8FA8', btnFg: '#fff' },
+        { tag: D('ORPHAN CARE', 'كفالة الأيتام'), title: D('Sponsor an orphan today', 'اكفل يتيماً اليوم'), grad: 'linear-gradient(140deg,#FAF0D8,#F0DDA6)', icon: 'fa-solid fa-child-reaching', iconCol: 'rgba(138,107,16,.22)', tagBg: 'rgba(255,255,255,.72)', tagFg: '#8A6B10', titleCol: '#453510', btnBg: '#C0921C', btnFg: '#fff' }
+      ].map(b => ({ ...b, go: () => this.ping(b.title) })),
+
+      categories: catData.map(cat => ({ ...cat, go: () => this.setState({ tab: 'projects', filter: cat.k === 'med' ? 'Medical' : cat.k === 'edu' ? 'Education' : cat.k === 'food' ? 'Food' : cat.k === 'water' ? 'Water' : cat.k === 'orph' ? 'Orphans' : cat.k === 'mosq' ? 'Mosques' : 'All' }) })),
+
+      homeEvents: evData.map(e => ({
+        icon: e.icon, color: e.color, tint: e.tint, title: D(e.en, e.arn), place: e.place,
+        day: e.day, mon: e.mon, cd: e.cd, slots: e.slots,
+        go: () => this.setState({ tab: 'programs', volTab: 'events' })
+      })),
+
+      memorial: [
+        { name: D('Fatima Al Rashid', 'فاطمة الراشد'), years: '1948 – 2023', color: '#C0921C', tint: '#FAF0D8' },
+        { name: D('Omar Hassan', 'عمر حسن'), years: '1955 – 2024', color: '#6B7BA0', tint: '#EBEEF5' },
+        { name: D('Aisha Kareem', 'عائشة كريم'), years: '1961 – 2025', color: '#00715D', tint: '#D9F0E6' }
+      ].map(m => ({ ...m, go: () => this.ping(m.name) })),
+
+      partners: [
+        { n: 'Emirates RC', icon: 'fa-solid fa-hand-holding-medical' }, { n: 'UN OCHA', icon: 'fa-solid fa-globe' },
+        { n: 'Islamic Relief', icon: 'fa-solid fa-mosque' }, { n: 'WFP', icon: 'fa-solid fa-wheat-awn' },
+        { n: 'Zakat Fund', icon: 'fa-solid fa-hand-holding-dollar' }, { n: 'Dubai Cares', icon: 'fa-solid fa-graduation-cap' },
+        { n: 'Emirates RC', icon: 'fa-solid fa-hand-holding-medical' }, { n: 'UN OCHA', icon: 'fa-solid fa-globe' },
+        { n: 'Islamic Relief', icon: 'fa-solid fa-mosque' }, { n: 'WFP', icon: 'fa-solid fa-wheat-awn' },
+        { n: 'Zakat Fund', icon: 'fa-solid fa-hand-holding-dollar' }, { n: 'Dubai Cares', icon: 'fa-solid fa-graduation-cap' }
+      ].map(p => ({ ...p, go: () => this.ping(p.n) })),
+
+      activity: [
+        { icon: 'fa-solid fa-circle-check', color: '#2FA36F', tint: '#E3F5EC', text: D('Donation to Ramadan food parcels confirmed', 'تم تأكيد التبرع لسلال رمضان'), time: D('2 min ago', 'قبل دقيقتين'), amt: '+AED 100', amtColor: '#2FA36F' },
+        { icon: 'fa-solid fa-arrow-trend-up', color: '#00715D', tint: '#E3F4EC', text: D('Clean water wells reached 68% of goal', 'وصل مشروع الآبار إلى ٦٨٪'), time: D('1 hour ago', 'قبل ساعة'), amt: '68%', amtColor: '#00715D' },
+        { icon: 'fa-solid fa-certificate', color: '#C0921C', tint: '#FAF0D8', text: D('Your 2025 tax certificate is ready', 'شهادتك الضريبية جاهزة'), time: D('Yesterday', 'أمس'), amt: 'PDF', amtColor: '#C0921C' },
+        { icon: 'fa-solid fa-people-group', color: '#1F8FA8', tint: '#E2F1F5', text: D('Registered for Ramadan Food Distribution', 'سجّلت في توزيع طعام رمضان'), time: D('3 days ago', 'قبل ٣ أيام'), amt: '5h', amtColor: '#1F8FA8' }
+      ].map(a => ({ ...a, go: () => this.ping(a.text) })),
+
+      filters: fKeys.map((k, i) => {
+        const on = st.filter === k;
+        return { l: fLabels[i], bg: on ? '#00715D' : c.card, fg: on ? '#fff' : c.ink2, shadow: on ? '0 8px 20px rgba(0,113,93,.24)' : '0 6px 16px rgba(0,60,46,.05)', pick: () => this.setState({ filter: k }) };
+      }),
+      projectList: projData.filter(p => st.filter === 'All' || p.f === st.filter).map(p => ({
+        ...p, title: D(p.en, p.arn),
+        heartIcon: st.favs[p.k] ? 'fa-solid fa-heart' : 'fa-regular fa-heart',
+        heartColor: st.favs[p.k] ? '#EF5A78' : '#8FA79E',
+        fav: e => { if (e && e.stopPropagation) e.stopPropagation(); this.setState(s => ({ favs: { ...s.favs, [p.k]: !s.favs[p.k] } })); },
+        donate: e => { if (e && e.stopPropagation) e.stopPropagation(); this.setState({ tab: 'donate', paid: false }); },
+        go: () => this.ping(D(p.en, p.arn))
+      })),
+
+      causes: causeDefs.map(cz => {
+        const on = st.cause === cz.k;
+        return { ...cz, bg: on ? c.softBtn : c.grey, fg: on ? '#00715D' : c.ink3, pick: () => this.setState({ cause: cz.k }) };
+      }),
+      presets: [25, 50, 100, 250, 500, 1000].map(v => {
+        const on = A === v;
+        return { l: money(v), bg: on ? '#00715D' : c.grey, fg: on ? '#fff' : c.ink, pick: () => this.setState({ amount: v }) };
+      }),
+      freqs: [{ k: 'once', l: D('One-time', 'مرة واحدة') }, { k: 'month', l: D('Monthly', 'شهري') }].map(f => {
+        const on = st.freq === f.k;
+        return { l: f.l, bg: on ? c.softBtn : c.grey, fg: on ? '#00715D' : c.ink3, pick: () => this.setState({ freq: f.k }) };
+      }),
+      payments: payDefs.map(p => {
+        const on = st.pay === p.k;
+        return { ...p, bg: on ? c.softBtn : c.grey, radioBd: on ? '#00A483' : c.line, radioBg: on ? '#00A483' : 'transparent', checkOp: on ? 1 : 0, pick: () => this.setState({ pay: p.k }) };
+      }),
+      receipt: [
+        { l: D('Amount', 'المبلغ'), v: 'AED ' + money(A) },
+        { l: D('Cause', 'القضية'), v: (causeDefs.find(x => x.k === st.cause) || causeDefs[0]).l },
+        { l: D('Frequency', 'التكرار'), v: st.freq === 'once' ? D('One-time', 'مرة واحدة') : D('Monthly', 'شهري') },
+        { l: D('Reference', 'الرقم المرجعي'), v: 'ALI-2026-84210' }
+      ],
+
+      volStats: [
+        { v: '2,412', l: D('Volunteers', 'متطوعاً') },
+        { v: '86', l: D('Events', 'فعالية') },
+        { v: '19K', l: D('Hours served', 'ساعة خدمة') }
+      ],
+      volTabs: volTabDefs.map(v => {
+        const on = st.volTab === v.k;
+        return { l: v.l, bg: on ? '#00715D' : c.card, fg: on ? '#fff' : c.ink2, shadow: on ? '0 8px 20px rgba(0,113,93,.24)' : '0 6px 16px rgba(0,60,46,.05)', pick: () => this.setState({ volTab: v.k }) };
+      }),
+      volEvents: evData.map(e => {
+        const reg = st.regs[e.k], star = st.stars[e.k];
+        return {
+          icon: e.icon, color: e.color, tint: e.tint, title: D(e.en, e.arn), date: e.date, time: e.time, place: e.place,
+          cd: e.cd, slotPct: e.slotPct, slots: e.slots,
+          regLabel: reg ? D('Registered ✓', 'مسجّل ✓') : D('Register as volunteer', 'سجّل كمتطوع'),
+          regBg: reg ? c.softBtn : c.btn, regFg: reg ? '#00715D' : '#fff',
+          register: () => this.setState(s => ({ regs: { ...s.regs, [e.k]: !s.regs[e.k] } })),
+          starIcon: star ? 'fa-solid fa-star' : 'fa-regular fa-star',
+          starColor: star ? '#C9A227' : c.ink3,
+          interest: () => this.setState(s => ({ stars: { ...s.stars, [e.k]: !s.stars[e.k] } }))
+        };
+      }),
+      volCompleted: [
+        { icon: 'fa-solid fa-gift', color: '#C0921C', tint: '#FAF0D8', title: D('Eid Gift Packing', 'تغليف هدايا العيد'), date: D('Dec 20, 2025', '٢٠ ديسمبر ٢٠٢٥'), hours: D('6 hours served', '٦ ساعات خدمة'), status: D('Completed', 'مكتمل'), stBg: '#E3F5EC', stFg: '#2FA36F', certShow: 'inline-flex' },
+        { icon: 'fa-solid fa-suitcase-medical', color: '#C9736A', tint: '#FAEAE8', title: D('Medical Camp Support', 'دعم المخيم الطبي'), date: D('Oct 04, 2025', '٤ أكتوبر ٢٠٢٥'), hours: D('8 hours served', '٨ ساعات خدمة'), status: D('Completed', 'مكتمل'), stBg: '#E3F5EC', stFg: '#2FA36F', certShow: 'inline-flex' },
+        { icon: 'fa-solid fa-bowl-food', color: '#00715D', tint: '#D9F0E6', title: D('Ramadan Food Distribution', 'توزيع طعام رمضان'), date: D('Mar 12, 2026', '١٢ مارس ٢٠٢٦'), hours: D('Upcoming · 5 hours', 'قادم · ٥ ساعات'), status: D('Upcoming', 'قادم'), stBg: '#E2F1F5', stFg: '#1F8FA8', certShow: 'none' }
+      ].map(m => ({ ...m, action: () => this.ping(D('Certificate downloaded', 'تم تحميل الشهادة')) })),
+      volReqs: [
+        { icon: 'fa-solid fa-hourglass-half', title: D('Beach Cleanup — Abu Dhabi', 'تنظيف الشاطئ — أبوظبي'), date: D('Submitted Jul 20, 2026', 'أُرسل ٢٠ يوليو ٢٠٢٦'), status: D('Pending', 'قيد المراجعة'), stBg: '#FAF0D8', stFg: '#C0921C' },
+        { icon: 'fa-solid fa-circle-check', title: D('Ramadan Food Distribution', 'توزيع طعام رمضان'), date: D('Submitted Feb 28, 2026', 'أُرسل ٢٨ فبراير ٢٠٢٦'), status: D('Approved', 'مقبول'), stBg: '#E3F5EC', stFg: '#2FA36F' },
+        { icon: 'fa-solid fa-circle-xmark', title: D('Winter Relief Convoy', 'قافلة الإغاثة الشتوية'), date: D('Submitted Nov 11, 2025', 'أُرسل ١١ نوفمبر ٢٠٢٥'), status: D('Rejected', 'مرفوض'), stBg: '#FCEBE9', stFg: '#C9736A' }
+      ],
+      applyFields: [
+        { l: D('Full name', 'الاسم الكامل'), ph: D('Your name', 'اسمك'), icon: 'fa-regular fa-user' },
+        { l: D('Mobile', 'رقم الجوال'), ph: '+971 50 000 0000', icon: 'fa-solid fa-mobile-screen' },
+        { l: D('Emirate', 'الإمارة'), ph: D('Dubai', 'دبي'), icon: 'fa-solid fa-location-dot' },
+        { l: D('Skills / interests', 'المهارات والاهتمامات'), ph: D('Logistics, medical, teaching…', 'لوجستيات، طبي، تعليم…'), icon: 'fa-solid fa-star' }
+      ],
+
+      accStats: [
+        { v: 'AED 18,750', l: D('Total donated', 'إجمالي التبرعات') },
+        { v: '28', l: D('Campaigns', 'حملة') },
+        { v: '12', l: D('Certificates', 'شهادة') }
+      ].map(a => ({ ...a, go: () => this.ping(a.l) })),
+      timeline: [
+        { icon: 'fa-solid fa-bowl-food', color: '#00715D', tint: '#D9F0E6', title: D('Ramadan food parcels', 'سلال رمضان الغذائية'), amt: 'AED 100', date: D('Jul 27, 2026 · Apple Pay', '٢٧ يوليو ٢٠٢٦ · Apple Pay'), lineH: '22px' },
+        { icon: 'fa-solid fa-droplet', color: '#1F8FA8', tint: '#DEEFF4', title: D('Clean water wells', 'آبار مياه نظيفة'), amt: 'AED 250', date: D('Jul 12, 2026 · Visa ••4821', '١٢ يوليو ٢٠٢٦ · Visa ••4821'), lineH: '22px' },
+        { icon: 'fa-solid fa-child-reaching', color: '#C0921C', tint: '#FAF0D8', title: D('Orphan sponsorship', 'كفالة يتيم'), amt: 'AED 500', date: D('Jun 30, 2026 · Monthly', '٣٠ يونيو ٢٠٢٦ · شهري'), lineH: '0px' }
+      ],
+      accMenu: [
+        { icon: 'fa-solid fa-clock-rotate-left', color: '#00715D', tint: '#E3F4EC', l: D('Donation history', 'سجل التبرعات'), hint: '28' },
+        { icon: 'fa-solid fa-people-group', color: '#1F8FA8', tint: '#E2F1F5', l: D('Volunteer history', 'سجل التطوّع'), hint: '6' },
+        { icon: 'fa-solid fa-certificate', color: '#C0921C', tint: '#FAF0D8', l: D('Certificates', 'الشهادات'), hint: '12' },
+        { icon: 'fa-solid fa-heart', color: '#EF5A78', tint: '#FCEAEF', l: D('Wishlist', 'المفضلة'), hint: '4' },
+        { icon: 'fa-solid fa-globe', color: '#6B7BA0', tint: '#EBEEF5', l: D('Language', 'اللغة'), hint: ar ? 'العربية' : 'English' },
+        { icon: 'fa-solid fa-circle-question', color: '#00A483', tint: '#E3F4EC', l: D('FAQ & support', 'الأسئلة والدعم'), hint: '' },
+        { icon: 'fa-solid fa-shield-halved', color: '#6B7BA0', tint: '#EBEEF5', l: D('Privacy & terms', 'الخصوصية والشروط'), hint: '' }
+      ].map((m, i) => ({
+        ...m,
+        go: () => {
+          if (i === 0) this.ping(D('Donation history · 28 donations', 'سجل التبرعات · ٢٨ تبرعاً'));
+          else if (i === 1) this.setState({ tab: 'programs', volTab: 'done' });
+          else if (i === 2) this.setState({ tab: 'programs', volTab: 'done' });
+          else if (i === 3) this.setState({ tab: 'projects', filter: 'All' });
+          else if (i === 4) this.setState(s => ({ ar: !s.ar }));
+          else if (i === 5) this.ping(D('FAQ & support', 'الأسئلة والدعم'));
+          else this.ping(D('Privacy & terms', 'الخصوصية والشروط'));
+        }
+      })),
+
+      navItems: navDefs.map(n => {
+        const on = st.tab === n.k;
+        return {
+          icon: n.icon, l: n.l,
+          color: on ? '#fff' : c.ink3,
+          pillBg: on ? '#00715D' : 'transparent',
+          size: on ? '17px' : '18px',
+          labelShow: on ? 'block' : 'none',
+          go: () => this.setState({ tab: n.k })
+        };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

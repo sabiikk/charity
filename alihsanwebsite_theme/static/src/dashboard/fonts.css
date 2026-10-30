@@ -1,0 +1,9 @@
+/* site-wide font family: Plus Jakarta Sans (Latin) + IBM Plex Sans Arabic (Arabic) */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+:root{--ff:'Plus Jakarta Sans','IBM Plex Sans Arabic','Noto Sans Arabic',system-ui,-apple-system,'Segoe UI',sans-serif}
+html:lang(ar){--ff:'IBM Plex Sans Arabic','Plus Jakarta Sans','Noto Sans Arabic',system-ui,sans-serif}
+body,button,input,select,textarea,
+body :not(em):not(i):not(svg):not(svg *):not(code):not(.ft-vi){font-family:var(--ff)}
+body{font-feature-settings:"ss01" 0;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,h4{letter-spacing:-.02em}
+[dir=rtl] h1,[dir=rtl] h2,[dir=rtl] h3,[dir=rtl] h4{letter-spacing:0}

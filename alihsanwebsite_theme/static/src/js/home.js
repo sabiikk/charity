@@ -1,6 +1,7 @@
 import { registry } from "@web/core/registry";
 import { _t } from "@web/core/l10n/translation";
 import { Interaction } from "@web/public/interaction";
+import { rpc } from "@web/core/network/rpc";
 
 /**
  * Home page snippets (port of the home scripts of "Al Ihsan web 7": script.js
@@ -308,27 +309,56 @@ export class HomeSection extends Interaction {
 }
 
 // ---------------------------------------------------------------------------
-// Campaign hero: rotating slides with dots (campaign-rotator.js)
+// Campaign hero: rotating slides with dots (campaign-rotator.js). Slides and
+// slider settings come from the backend (Website > Site > Content > Home Hero
+// Slides, and Website > Configuration > Settings); without any live slide the
+// static slides of the snippet are kept.
 // ---------------------------------------------------------------------------
 
 export class HomeHero extends Interaction {
     static selector = ".s_hm_hero";
 
+    async willStart() {
+        try {
+            this.config = await this.waitFor(rpc("/alihsan/home_hero/slides"));
+        } catch {
+            this.config = null;
+        }
+    }
+
     start() {
         snapshot(this, this.el);
+        const settings = this.config?.settings || {};
+        this.autoplay = settings.autoplay !== false;
+        this.interval = settings.interval || 5000;
+        this.pauseOnHover = settings.pauseOnHover !== false;
+        this.backendSlides = this.config?.slides?.length ? this.config.slides : null;
+        if (this.backendSlides) {
+            this.renderSlides(this.backendSlides);
+        }
         this.slides = [...this.el.querySelectorAll(".campaign-slide")];
         this.dots = [...this.el.querySelectorAll(".campaign-dot")];
-        if (this.slides.length < 2) {
-            return;
+        const controls = this.el.querySelector(".campaign-controls");
+        if (controls && (settings.showDots === false || this.slides.length < 2)) {
+            controls.classList.add("d-none");
+        }
+        if (settings.transition === "slide") {
+            this.el.classList.add("ih-hero-tr-slide");
         }
         this.active = Math.max(0, this.slides.findIndex((s) => s.classList.contains("is-active")));
+        if (this.slides.length < 2) {
+            this.setSlide(this.active);
+            return;
+        }
         this.stopTimer = null;
         this.dots.forEach((dot, i) => this.addListener(dot, "click", () => {
             this.setSlide(i);
             this.restart();
         }));
-        this.addListener(this.el, "mouseenter", this.stop);
-        this.addListener(this.el, "mouseleave", this.restart);
+        if (this.pauseOnHover) {
+            this.addListener(this.el, "mouseenter", this.stop);
+            this.addListener(this.el, "mouseleave", this.restart);
+        }
         this.addListener(this.el, "focusin", this.stop);
         this.addListener(this.el, "focusout", (ev) => !this.el.contains(ev.relatedTarget) && this.restart());
         this.addListener(document, "visibilitychange", this.restart);
@@ -336,16 +366,101 @@ export class HomeHero extends Interaction {
         this.restart();
     }
 
+    /**
+     * Replace the static slides and dots with the backend ones; the original
+     * nodes are put back on cleanup so the editor never saves runtime markup.
+     */
+    renderSlides(slides) {
+        const box = this.el.querySelector(".campaign-slides");
+        const controls = this.el.querySelector(".campaign-controls");
+        const caption = this.el.querySelector(".campaign-caption > span");
+        const explore = this.el.querySelector(".campaign-caption > a");
+        const donate = this.el.querySelector(".campaign-hero-btn");
+        if (!box) {
+            return;
+        }
+        this.links = {
+            caption,
+            captionText: caption?.textContent,
+            anchors: [explore, donate].filter(Boolean),
+        };
+        const oldSlides = [...box.childNodes];
+        const oldDots = controls ? [...controls.childNodes] : [];
+        box.replaceChildren(...slides.map((slide, i) => this.buildSlide(slide, i)));
+        controls?.replaceChildren(...slides.map((slide, i) => {
+            const dot = document.createElement("button");
+            dot.type = "button";
+            dot.className = "campaign-dot";
+            dot.setAttribute("aria-label", _t("Show campaign %s", i + 1));
+            return dot;
+        }));
+        this.registerCleanup(() => {
+            box.replaceChildren(...oldSlides);
+            controls?.replaceChildren(...oldDots);
+        });
+    }
+
+    buildSlide(slide, index) {
+        const el = document.createElement(slide.url ? "a" : "div");
+        el.className = "campaign-slide" + (index === 0 ? " is-active" : "");
+        if (slide.url) {
+            el.href = slide.url;
+            if (slide.newTab) {
+                el.target = "_blank";
+                el.rel = "noopener";
+            }
+        }
+        const picture = document.createElement("picture");
+        if (slide.imageMobile) {
+            const source = document.createElement("source");
+            source.media = "(max-width: 760px)";
+            source.srcset = slide.imageMobile;
+            picture.appendChild(source);
+        }
+        const img = document.createElement("img");
+        img.src = slide.image;
+        img.alt = slide.title || "";
+        if (index === 0) {
+            img.setAttribute("fetchpriority", "high");
+        } else {
+            img.loading = "lazy";
+        }
+        picture.appendChild(img);
+        el.appendChild(picture);
+        return el;
+    }
+
     setSlide(index) {
+        const previous = this.active;
         this.active = (index + this.slides.length) % this.slides.length;
         this.slides.forEach((s, i) => {
             s.classList.toggle("is-active", i === this.active);
+            s.classList.toggle("is-prev", i === previous && i !== this.active);
             s.setAttribute("aria-hidden", i === this.active ? "false" : "true");
         });
         this.dots.forEach((d, i) => {
             d.classList.toggle("is-active", i === this.active);
             d.setAttribute("aria-pressed", i === this.active ? "true" : "false");
         });
+        // caption and "Donate now" / "Explore" links follow the backend slide
+        const slide = this.backendSlides?.[this.active];
+        if (slide) {
+            const { caption, captionText, anchors } = this.links;
+            if (caption) {
+                caption.textContent = slide.tagline || captionText;
+            }
+            if (slide.url) {
+                for (const a of anchors) {
+                    a.href = slide.url;
+                    if (slide.newTab) {
+                        a.target = "_blank";
+                        a.rel = "noopener";
+                    } else {
+                        a.removeAttribute("target");
+                    }
+                }
+            }
+        }
     }
 
     stop() {
@@ -355,8 +470,8 @@ export class HomeHero extends Interaction {
 
     restart() {
         this.stop();
-        if (!reduceMotion() && !document.hidden) {
-            this.stopTimer = every(this, () => this.setSlide(this.active + 1), 5000);
+        if (this.autoplay && !reduceMotion() && !document.hidden) {
+            this.stopTimer = every(this, () => this.setSlide(this.active + 1), this.interval);
         }
     }
 }
@@ -368,9 +483,21 @@ export class HomeHero extends Interaction {
 export class HomeCategories extends Interaction {
     static selector = ".s_hm_categories";
 
+    async willStart() {
+        // eCommerce categories marked "On Home Page" (Website > Site > Content > Home Categories)
+        try {
+            this.categories = await this.waitFor(rpc("/alihsan/home_categories"));
+        } catch {
+            this.categories = null;
+        }
+    }
+
     start() {
         snapshot(this, this.el);
         this.track = this.el.querySelector(".cat-track");
+        if (this.track && this.categories?.length) {
+            this.renderCards(this.categories);
+        }
         this.prev = this.el.querySelector(".cat-nav.prev");
         this.next = this.el.querySelector(".cat-nav.next");
         if (!this.track || !this.prev || !this.next) {
@@ -415,6 +542,28 @@ export class HomeCategories extends Interaction {
         });
         observe(this, [this.el], (entries) => (this.seen = entries[0].isIntersecting));
         this.restart();
+    }
+
+    /**
+     * Replace the static cards with the backend categories (same markup); the
+     * original cards are put back on cleanup so the editor never saves them.
+     */
+    renderCards(categories) {
+        const oldCards = [...this.track.childNodes];
+        this.track.replaceChildren(...categories.map((category) => {
+            const card = document.createElement("a");
+            card.className = "cat-card";
+            card.href = category.url;
+            const icon = document.createElement("span");
+            icon.className = "cat-ic";
+            icon.innerHTML = category.icon; // server-built svg / img markup
+            const title = document.createElement("span");
+            title.className = "cat-t";
+            title.textContent = category.name;
+            card.append(icon, title);
+            return card;
+        }));
+        this.registerCleanup(() => this.track.replaceChildren(...oldCards));
     }
 
     step() {
@@ -731,7 +880,7 @@ export class HomeLatest extends Interaction {
 }
 
 // ---------------------------------------------------------------------------
-// Leadership: heading entrance, tap-to-flip cards on touch screens (leadership-motion.js)
+// Leadership: heading entrance, whole card links to the leader's page (leadership-motion.js)
 // ---------------------------------------------------------------------------
 
 export class HomeLeadership extends Interaction {
@@ -748,12 +897,30 @@ export class HomeLeadership extends Interaction {
         if (!io) {
             this.el.classList.add("is-visible");
         }
-        this.addListener(this.el.querySelectorAll(".lflip"), "click", (ev) => {
-            if (ev.target.closest("a") || window.matchMedia("(hover:hover)").matches) {
-                return;
+        // the whole card opens the leader's page (the link on its back face)
+        for (const card of this.el.querySelectorAll(".lflip")) {
+            const link = card.querySelector(".lflip-back a[href]");
+            if (!link) {
+                continue;
             }
-            ev.currentTarget.classList.toggle("is-flipped");
-        });
+            card.setAttribute("role", "link");
+            card.setAttribute("aria-label", link.textContent.trim());
+            this.addListener(card, "click", (ev) => {
+                if (!ev.target.closest("a")) {
+                    this.openLink(link);
+                }
+            });
+            this.addListener(card, "keydown", (ev) => {
+                if (ev.key === "Enter" && ev.target === card) {
+                    ev.preventDefault();
+                    this.openLink(link);
+                }
+            });
+        }
+    }
+
+    openLink(link) {
+        window.location.href = link.href;
     }
 }
 

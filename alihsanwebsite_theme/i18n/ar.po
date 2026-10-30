@@ -1,0 +1,81 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* alihsanwebsite_theme
+#
+# Arabic for the login / sign-up pages and the header (UAE PASS journey).
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: alihsanwebsite_theme
+#: model_terms:ir.ui.view,arch_db:alihsanwebsite_theme.login_oauth
+msgid "<em class=\"d-block my-3 small text-center text-muted\">or</em>"
+msgstr "<em class=\"d-block my-3 small text-center text-muted\">أو</em>"
+
+#. module: alihsanwebsite_theme
+#: model_terms:ir.ui.view,arch_db:alihsanwebsite_theme.alihsan_header
+msgid "<span>Al Ihsan Charity Association · United Arab Emirates</span>"
+msgstr "<span>جمعية الإحسان الخيرية · الإمارات العربية المتحدة</span>"
+
+#. module: alihsanwebsite_theme
+#: model_terms:ir.ui.view,arch_db:alihsanwebsite_theme.alihsan_footer
+#: model_terms:ir.ui.view,arch_db:alihsanwebsite_theme.alihsan_header
+#: model_terms:ir.ui.view,arch_db:alihsanwebsite_theme.login_layout
+msgid "Al Ihsan Charity Association"
+msgstr "جمعية الإحسان الخيرية"
+
+#. module: alihsanwebsite_theme
+#: model_terms:ir.ui.view,arch_db:alihsanwebsite_theme.login_layout
+msgid "Back to the website"
+msgstr "العودة إلى الموقع"
+
+#. module: alihsanwebsite_theme
+#: model_terms:ir.ui.view,arch_db:alihsanwebsite_theme.login_layout
+msgid "Create account"
+msgstr "إنشاء حساب"
+
+#. module: alihsanwebsite_theme
+#: model_terms:ir.ui.view,arch_db:alihsanwebsite_theme.login_layout
+msgid "Create your account"
+msgstr "أنشئ حسابك"
+
+#. module: alihsanwebsite_theme
+#: model_terms:ir.ui.view,arch_db:alihsanwebsite_theme.login_layout
+msgid "Donation, sponsorship and giving — all in one place."
+msgstr "التبرع والكفالة والعطاء — كل ذلك في مكان واحد."
+
+#. module: alihsanwebsite_theme
+#: model_terms:ir.ui.view,arch_db:alihsanwebsite_theme.alihsan_header
+#: model_terms:ir.ui.view,arch_db:alihsanwebsite_theme.login_layout
+msgid "Log in"
+msgstr "تسجيل الدخول"
+
+#. module: alihsanwebsite_theme
+#: model_terms:ir.ui.view,arch_db:alihsanwebsite_theme.alihsan_header
+msgid "Log out"
+msgstr "تسجيل الخروج"
+
+#. module: alihsanwebsite_theme
+#: model_terms:ir.ui.view,arch_db:alihsanwebsite_theme.alihsan_header
+msgid "My account"
+msgstr "حسابي"
+
+#. module: alihsanwebsite_theme
+#: model_terms:ir.ui.view,arch_db:alihsanwebsite_theme.login_layout
+msgid "Reset your password"
+msgstr "إعادة تعيين كلمة المرور"
+
+#. module: alihsanwebsite_theme
+#: model_terms:ir.ui.view,arch_db:alihsanwebsite_theme.alihsan_header
+msgid "Visit official website"
+msgstr "زيارة الموقع الرسمي"
+
+#. module: alihsanwebsite_theme
+#: model_terms:ir.ui.view,arch_db:alihsanwebsite_theme.login_layout
+msgid "Welcome back"
+msgstr "مرحبًا بعودتك"

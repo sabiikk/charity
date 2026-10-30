@@ -1,0 +1,94 @@
+/* ==========================================================
+   Log in / Create account / Reset password pages — converted from the
+   "Al Ihsan web 8" login popup (auth.css), styled around Odoo's own forms
+   ========================================================== */
+.ih-auth{--au-ink:#0f2a20;--au-accent:#00793f;--au-cream:#fffcf5;--au-line:#dcd6cc;
+  position:relative;display:grid;place-items:center;min-height:calc(100vh - 120px);padding:48px 16px;overflow:hidden;isolation:isolate}
+/* the page behind the card: blurred photo + green veil (like the popup backdrop) */
+.ih-auth:before{content:'';position:absolute;inset:-30px;z-index:-2;background:url(/alihsanwebsite_theme/static/src/img/community.jpg) center/cover;filter:blur(14px);transform:scale(1.05)}
+.ih-auth:after{content:'';position:absolute;inset:0;z-index:-1;background:#04381fb3}
+
+.ih-auth-card{position:relative;display:grid;grid-template-columns:1fr 1.05fr;width:min(960px,100%);border-radius:28px;overflow:hidden;
+  background:var(--au-cream);color:var(--au-ink);box-shadow:0 40px 90px -30px #0009;animation:ihAuthIn .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes ihAuthIn{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}
+.ih-auth-x{position:absolute;top:16px;inset-inline-end:16px;z-index:3;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;
+  background:rgba(15,42,32,0.05);color:#3d4f47;transition:background .2s,color .2s}
+.ih-auth-x svg{width:18px;height:18px}
+.ih-auth-x:hover{background:#0f2a201a;color:var(--au-ink)}
+
+/* photo side */
+.ih-auth-media{position:relative;margin:0;min-height:520px;overflow:hidden}
+.ih-auth-media>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 30%}
+.ih-auth-media:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#0000 35%,#04381fcc 80%,#04381f 100%)}
+.ih-auth-media figcaption{position:absolute;inset:auto 0 0;z-index:1;padding:40px 40px 44px;color:#fff}
+.ih-auth-logo{display:block;width:150px;height:auto;margin-bottom:18px;padding:8px 12px;border-radius:12px;background:rgba(255,255,255,0.94)}
+.ih-auth-media p{margin:0;max-width:420px;color:#fff;font-size:clamp(26px,2.6vw,36px);font-weight:700;line-height:1.18;letter-spacing:-.6px}
+
+/* form side */
+.ih-auth-body{display:flex;align-items:center;justify-content:center;padding:64px 52px 52px}
+.ih-auth-in{width:100%;max-width:420px}
+.ih-auth-tabs{display:grid;grid-template-columns:1fr 1fr;padding:5px;margin-bottom:28px;border-radius:99px;background:#f2ece2}
+.ih-auth-tabs a{display:grid;place-items:center;height:44px;border-radius:99px;font-size:14.5px;font-weight:600;color:#3b4a57;text-decoration:none;transition:background .3s,color .3s,box-shadow .3s}
+.ih-auth-tabs a:hover{color:var(--au-accent)}
+.ih-auth-tabs a.on{background:linear-gradient(90deg,#009f50,#00914a);box-shadow:0 6px 14px -6px #00974699;color:#fff}
+.ih-auth-title{margin:0 0 20px;font-size:clamp(28px,3.2vw,38px);font-weight:700;letter-spacing:-.8px;line-height:1.1;color:var(--au-ink)}
+
+/* Odoo's form fields (Odoo caps the forms at 300px) */
+.ih-auth form,.ih-auth .oe_login_form,.ih-auth .oe_signup_form,.ih-auth .oe_reset_password_form{width:100%;max-width:none!important;margin:0}
+.ih-auth .mb-3,.ih-auth .o_caps_lock_warning{margin-bottom:14px!important}
+.ih-auth .form-label,.ih-auth .col-form-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;padding:0;font-size:14px;font-weight:600;color:var(--au-ink)}
+.ih-auth .form-control{height:52px;padding:0 16px;border:1px solid var(--au-line);border-radius:14px;background:#fff;font-size:15.5px;color:var(--au-ink);box-shadow:none;transition:border-color .2s,box-shadow .2s}
+.ih-auth .form-control:focus{border-color:var(--au-accent);box-shadow:0 0 0 4px #00a25122}
+.ih-auth .form-control[readonly]{background:#f7f4ee}
+.ih-auth .input-group>.form-control{border-start-end-radius:0;border-end-end-radius:0}
+.ih-auth .input-group>.btn{width:52px;border:1px solid var(--au-line)!important;border-inline-start:0!important;border-start-end-radius:14px;border-end-end-radius:14px;background:#fff;color:#6b7a73}
+.ih-auth .input-group:focus-within>.btn{border-color:var(--au-accent)!important}
+/* "Reset Password" beside the Password label → small green link */
+.ih-auth .o_caps_lock_warning .btn-link{padding:0;font-size:13px;font-weight:600;color:var(--au-accent);text-decoration:none}
+.ih-auth .o_caps_lock_warning .btn-link:hover{text-decoration:underline;text-underline-offset:3px}
+.ih-auth .alert{margin:4px 0 10px;padding:10px 14px;border:0;border-radius:12px;font-size:13.5px}
+.ih-auth .alert-danger{background:#fdecec;color:#b13a3a}
+.ih-auth .alert-success{background:#e6f4ec;color:#00632f}
+
+/* buttons */
+.ih-auth .oe_login_buttons{padding-top:8px!important}
+.ih-auth .btn-primary{height:54px;border:0;border-radius:99px;background:linear-gradient(135deg,#00a251,#00793f);box-shadow:0 10px 20px -10px #00793f99;
+  color:#fff;font-size:16px;font-weight:700;transition:background .25s,transform .25s,box-shadow .25s}
+.ih-auth .btn-primary:hover,.ih-auth .btn-primary:focus{background:linear-gradient(135deg,#00b35a,#008a47);transform:translateY(-1px);box-shadow:0 14px 24px -10px #00793fbb;color:#fff}
+.ih-auth .oe_login_buttons>.btn-link,.ih-auth .oe_login_buttons .small a{margin-top:10px;font-size:13.5px;font-weight:600;color:var(--au-accent);text-decoration:none}
+.ih-auth .oe_login_buttons>.btn-link:hover{text-decoration:underline;text-underline-offset:3px}
+/* the tabs already switch between log in and sign up */
+.ih-auth:has(.ih-auth-tabs) .oe_login_buttons>a[href^="/web/signup"],
+.ih-auth:has(.ih-auth-tabs) .oe_login_buttons>a[href^="/web/login"]{display:none}
+
+/* other ways to log in (passkey, UAE PASS / OAuth providers) */
+.ih-auth .o_login_auth>em{display:flex!important;align-items:center;gap:14px;margin:18px 0!important;font-size:13px;font-style:normal;color:#7b8590;text-transform:lowercase}
+.ih-auth .o_login_auth>em:before,.ih-auth .o_login_auth>em:after{content:'';flex:1;height:1px;background:#e2ddd4}
+.ih-auth .o_login_auth .list-group{gap:10px;border-radius:0}
+.ih-auth .o_login_auth .list-group-item{justify-content:center;gap:12px!important;height:54px;border:0!important;border-radius:8px!important;background:#232528;
+  box-shadow:0 6px 14px -8px #00000066;color:#fff;font-size:15.5px;font-weight:700;transition:background .2s,box-shadow .2s}
+.ih-auth .o_login_auth .list-group-item:hover{background:#000;box-shadow:0 10px 20px -10px #000000aa;color:#fff}
+.ih-auth .o_login_auth .list-group-item>span{margin:0!important}
+.ih-auth .o_login_auth .list-group-item>i{font-size:20px}
+/* UAE PASS button: official "Black" style (UAE PASS Buttons Guidelines p.12/48/49):
+   black fill on the light card, white title, logo in its white + green + red variant
+   (uaepass-mark-white.png, never recoloured with CSS filters) */
+.ih-uae-mark{flex:0 0 auto;width:26px;height:auto}
+.ih-auth .o_login_auth .list-group-item:has(.ih-uae-mark){background:#000;color:#fff}
+.ih-auth .o_login_auth .list-group-item:has(.ih-uae-mark):hover{background:#000;color:#fff}
+.ih-auth .o_login_auth .list-group-item:has(.ih-uae-mark):active{background:#2b2b2b;box-shadow:none}
+
+.ih-auth a:focus-visible,.ih-auth .btn:focus-visible{outline:none;box-shadow:0 0 0 3px #00a25166}
+[dir=rtl] .ih-auth-title,[dir=rtl] .ih-auth-media p{letter-spacing:0}
+
+@media(max-width:860px){
+  .ih-auth{padding:20px 12px;min-height:0}
+  .ih-auth-card{grid-template-columns:1fr;border-radius:24px}
+  .ih-auth-media{min-height:170px}
+  .ih-auth-media figcaption{padding:20px 22px}
+  .ih-auth-logo{display:none}
+  .ih-auth-media p{max-width:none;font-size:20px}
+  .ih-auth-body{padding:26px 22px 28px}
+  .ih-auth-x{top:10px;inset-inline-end:10px;background:#ffffffd9;color:var(--au-ink)}
+}
+@media(prefers-reduced-motion:reduce){.ih-auth-card{animation:none}.ih-auth-tabs a{transition:none}}

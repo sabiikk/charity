@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form_home_hero" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.alihsan.home.hero</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="website.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='website_info_settings']" position="after">
+                <block title="Home Hero Slider" id="ih_home_hero_settings" invisible="not website_id">
+                    <setting string="Slides" help="Banner images, links, order and publishing schedule">
+                        <button name="action_open_ih_hero_slides" type="object" string="Manage Slides"
+                                icon="oi-arrow-right" class="btn-link"/>
+                    </setting>
+                    <setting string="Autoplay" help="Move to the next slide automatically">
+                        <field name="ih_hero_autoplay"/>
+                        <div class="content-group mt8" invisible="not ih_hero_autoplay">
+                            <label for="ih_hero_interval" string="Each slide shows for" class="o_light_label me-2"/>
+                            <field name="ih_hero_interval" class="oe_inline" style="width: 4rem;"/>
+                            <span class="ms-1">seconds</span>
+                        </div>
+                    </setting>
+                    <setting string="Pause on Hover" help="Stop the slider while the visitor's mouse is over it"
+                             invisible="not ih_hero_autoplay">
+                        <field name="ih_hero_pause_on_hover"/>
+                    </setting>
+                    <setting string="Navigation Dots" help="Show the dots visitors click to change slide">
+                        <field name="ih_hero_show_dots"/>
+                    </setting>
+                    <setting string="Transition" help="Animation between two slides">
+                        <field name="ih_hero_transition" widget="radio" options="{'horizontal': true}"/>
+                    </setting>
+                </block>
+                <block title="Home Popup" id="ih_home_popup_settings" invisible="not website_id">
+                    <setting string="Featured Project Popup" help="Dialog shown over the home page when it loads">
+                        <field name="ih_popup_active"/>
+                        <div class="content-group mt16" invisible="not ih_popup_active">
+                            <div class="row">
+                                <label for="ih_popup_product_id" string="Project" class="col-lg-4 o_light_label"/>
+                                <field name="ih_popup_product_id" required="ih_popup_active" options="{'no_create': True}"/>
+                            </div>
+                            <div class="row mt8">
+                                <label for="ih_popup_frequency" string="Show" class="col-lg-4 o_light_label"/>
+                                <field name="ih_popup_frequency"/>
+                            </div>
+                            <div class="row mt8">
+                                <label for="ih_popup_delay" string="After" class="col-lg-4 o_light_label"/>
+                                <div class="col"><field name="ih_popup_delay" class="oe_inline" style="width: 4rem;"/><span class="ms-1">seconds</span></div>
+                            </div>
+                        </div>
+                    </setting>
+                    <setting string="Popup Content" help="Empty fields use the project's own image, name, description and page"
+                             invisible="not ih_popup_active">
+                        <div class="content-group">
+                            <div class="row">
+                                <label for="ih_popup_eyebrow" string="Label" class="col-lg-4 o_light_label"/>
+                                <field name="ih_popup_eyebrow"/>
+                            </div>
+                            <div class="row mt8">
+                                <label for="ih_popup_title" string="Title" class="col-lg-4 o_light_label"/>
+                                <field name="ih_popup_title"/>
+                            </div>
+                            <div class="row mt8">
+                                <label for="ih_popup_description" string="Text" class="col-lg-4 o_light_label"/>
+                                <field name="ih_popup_description"/>
+                            </div>
+                            <div class="row mt8">
+                                <label for="ih_popup_explore_url" string="Explore More link" class="col-lg-4 o_light_label"/>
+                                <field name="ih_popup_explore_url"/>
+                            </div>
+                            <div class="row mt8">
+                                <label for="ih_popup_image" string="Image" class="col-lg-4 o_light_label"/>
+                                <field name="ih_popup_image" widget="image" options="{'size': [0, 120]}"/>
+                            </div>
+                        </div>
+                    </setting>
+                    <setting string="Popup Amounts" help="Amount buttons; the selected one is added to the cart by 'Donate now'"
+                             invisible="not ih_popup_active">
+                        <div class="content-group">
+                            <div class="row">
+                                <label for="ih_popup_amounts" string="Amounts" class="col-lg-4 o_light_label"/>
+                                <field name="ih_popup_amounts" placeholder="10,15,25,50,100,200"/>
+                            </div>
+                            <div class="row mt8">
+                                <label for="ih_popup_default_amount" string="Selected" class="col-lg-4 o_light_label"/>
+                                <field name="ih_popup_default_amount" class="oe_inline"/>
+                            </div>
+                            <div class="text-muted mt8">Current and Goal come from the project (Goal and Raised Outside the Website on its product form).</div>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>

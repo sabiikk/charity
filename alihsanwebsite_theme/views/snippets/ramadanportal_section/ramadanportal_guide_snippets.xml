@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="ramadanportal_guide_section" name="Ramadan Portal Guide Section">
+        <section id="guide" class="rm rm-sec s_rm_guide pt0 pb0">
+            <div class="rm-section rm-guide">
+                <div class="rm-section-heading rm-guide-heading">
+                    <div>
+                        <span class="rm-eyebrow">EVERYTHING YOU NEED TO TAKE PART</span>
+                        <h2>A clear guide.<br/><em>A confident first shift.</em></h2>
+                    </div>
+                    <a href="https://ramadanaman.com/faq.php?lang=en" class="rm-text-link" target="_blank" rel="noopener"><span>Open the full volunteer guide</span> ↗</a>
+                </div>
+                <div class="rm-guide-grid">
+                    <div class="rm-guide-note">
+                        <span class="rm-guide-note-mark">i</span>
+                        <div>
+                            <b>Family memberships</b>
+                            <p>The primary member can add volunteers under the family account and manage their participation.</p>
+                        </div>
+                    </div>
+                    <div class="rm-guide-note">
+                        <span class="rm-guide-note-mark">◷</span>
+                        <div>
+                            <b>Schedules and locations</b>
+                            <p>Choose available days, book a volunteer schedule and select a distribution location through your membership.</p>
+                        </div>
+                    </div>
+                    <div class="rm-guide-note">
+                        <span class="rm-guide-note-mark">✳</span>
+                        <div>
+                            <b>Hours and certificates</b>
+                            <p>Record hours accurately for every volunteer. Certificates are issued in each volunteer’s name.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

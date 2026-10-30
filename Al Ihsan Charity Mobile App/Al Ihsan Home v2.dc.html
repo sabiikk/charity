@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Kufi+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body { margin: 0; background: #EEF1F0; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+  :root {
+    --green: #0F8F6B; --green-d: #076B50; --green-l: #1CB98C;
+    --gold: #C9A227; --gold-l: #E8CE74;
+    --ink: #10221C; --ink-2: #5A6B64; --ink-3: #94A19B;
+    --line: #E7ECEA; --grey: #F4F7F6;
+  }
+  .scroll { -ms-overflow-style: none; scrollbar-width: none; }
+  .scroll::-webkit-scrollbar { display: none; }
+  @keyframes barGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes floatUp { from { opacity:0; transform: translateY(14px); } to { opacity:1; transform:none; } }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes softPulse { 0%,100% { opacity:.55; } 50% { opacity:1; } }
+</style>
+</helmet>
+
+<div style="width:100%;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:0;background:#EEF1F0;">
+<div dir="{{ dir }}" style="position:relative;width:100%;max-width:430px;min-height:100vh;background:#F4F7F6;overflow:hidden;font-family:{{ font }};">
+
+  <!-- ======= HOME ======= -->
+  <div class="scroll" style="position:absolute;inset:0;overflow-y:auto;display:{{ homeShow }};">
+
+    <!-- curved green header -->
+    <div style="position:relative;padding:52px 20px 74px;background:linear-gradient(135deg,#0B6E56 0%,#12A07E 52%,#1CB98C 100%);border-radius:0 0 34px 34px;overflow:hidden;">
+      <div style="position:absolute;top:-80px;right:-60px;width:230px;height:230px;border-radius:50%;background:rgba(255,255,255,.10);"></div>
+      <div style="position:absolute;bottom:-70px;left:-50px;width:180px;height:180px;border-radius:50%;background:rgba(201,162,39,.20);filter:blur(6px);"></div>
+      <div style="position:absolute;top:34px;right:96px;width:64px;height:64px;border-radius:50%;border:2px solid rgba(255,255,255,.14);"></div>
+
+      <div style="position:relative;display:flex;align-items:center;gap:12px;">
+        <div onClick="{{ onProfile }}" style="width:44px;height:44px;flex:0 0 auto;border-radius:15px;overflow:hidden;border:2px solid rgba(255,255,255,.38);cursor:pointer;">
+          <image-slot id="v2-avatar" shape="rounded" radius="15" placeholder=" "></image-slot>
+        </div>
+        <div style="flex:1;min-width:0;">
+          <div style="font:500 11.5px 'Plus Jakarta Sans','Noto Kufi Arabic';color:rgba(255,255,255,.82);">{{ greeting }}</div>
+          <div style="font:800 17px 'Plus Jakarta Sans','Noto Kufi Arabic';color:#fff;">{{ userName }}</div>
+        </div>
+        <div style="display:flex;gap:8px;flex:0 0 auto;">
+          <div onClick="{{ onLang }}" style="height:36px;padding:0 12px;border-radius:12px;background:rgba(255,255,255,.16);backdrop-filter:blur(8px);display:flex;align-items:center;gap:6px;color:#fff;cursor:pointer;font:800 11px 'Plus Jakarta Sans','Noto Kufi Arabic';"><i class="fa-solid fa-globe" style="font-size:12px;"></i>{{ langLabel }}</div>
+          <div onClick="{{ onWishlist }}" style="position:relative;width:36px;height:36px;border-radius:12px;background:rgba(255,255,255,.16);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;"><i class="fa-regular fa-heart" style="font-size:14px;"></i></div>
+          <div onClick="{{ onCart }}" style="position:relative;width:36px;height:36px;border-radius:12px;background:rgba(255,255,255,.16);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;"><i class="fa-solid fa-cart-shopping" style="font-size:13px;"></i><span style="position:absolute;top:-4px;right:-4px;min-width:16px;height:16px;padding:0 4px;background:var(--gold);color:#3a2e07;border-radius:99px;font:800 9px 'Plus Jakarta Sans';display:flex;align-items:center;justify-content:center;border:2px solid #0F8563;">2</span></div>
+          <div onClick="{{ onNotifs }}" style="position:relative;width:36px;height:36px;border-radius:12px;background:rgba(255,255,255,.16);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;"><i class="fa-regular fa-bell" style="font-size:14px;"></i><span style="position:absolute;top:6px;right:8px;width:7px;height:7px;background:var(--gold);border-radius:50%;border:1.5px solid #0F8563;"></span></div>
+        </div>
+      </div>
+
+      <div onClick="{{ onSearch }}" style="position:relative;display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.94);border-radius:16px;padding:13px 15px;margin-top:18px;cursor:pointer;box-shadow:0 8px 22px rgba(6,60,44,.18);">
+        <i class="fa-solid fa-magnifying-glass" style="color:var(--green);font-size:14px;"></i>
+        <span style="font:500 13px 'Plus Jakarta Sans','Noto Kufi Arabic';color:var(--ink-3);">{{ searchPh }}</span>
+      </div>
+    </div>
+
+    <!-- glass impact strip -->
+    <div style="margin:-52px 20px 0;position:relative;z-index:3;background:rgba(255,255,255,.78);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.7);border-radius:22px;padding:16px 6px;box-shadow:0 14px 34px rgba(10,60,45,.14);display:flex;">
+      <sc-for list="{{ impact }}" as="s" hint-placeholder-count="3">
+        <div onClick="{{ s.go }}" style="flex:1;text-align:center;cursor:pointer;position:relative;">
+          <div style="font:800 17px 'Plus Jakarta Sans';color:var(--green);letter-spacing:-.3px;">{{ s.v }}</div>
+          <div style="font:600 9.5px 'Plus Jakarta Sans','Noto Kufi Arabic';color:var(--ink-2);margin-top:3px;">{{ s.l }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- banner slider -->
+    <div class="scroll" style="display:flex;gap:14px;overflow-x:auto;padding:20px 20px 0;scroll-snap-type:x mandatory;">
+      <sc-for list="{{ banners }}" as="b" hint-placeholder-count="2">
+        <div onClick="{{ b.go }}" style="flex:0 0 300px;scroll-snap-align:center;height:168px;border-radius:24px;position:relative;overflow:hidden;background:{{ b.grad }};box-shadow:0 14px 30px rgba(10,60,45,.16);cursor:pointer;">
+          <div style="position:absolute;top:-40px;right:-30px;width:150px;height:150px;border-radius:50%;background:rgba(255,255,255,.12);"></div>
+          <div style="position:absolute;bottom:-50px;right:30px;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,.08);"></div>
+          <div style="position:absolute;inset:0;padding:20px;display:flex;flex-direction:column;justify-content:center;">
+            <span style="align-self:flex-start;background:rgba(255,255,255,.20);backdrop-filter:blur(6px);color:#fff;font:800 9.5px 'Plus Jakarta Sans','Noto Kufi Arabic';padding:5px 11px;border-radius:999px;letter-spacing:.5px;">{{ b.tag }}</span>
+            <div style="font:800 21px 'Plus Jakarta Sans','Noto Kufi Arabic';color:#fff;margin-top:10px;line-height:1.22;max-width:74%;">{{ b.title }}</div>
+            <div style="display:flex;gap:9px;margin-top:14px;">
+              <button style="background:var(--gold);color:#3a2e07;border:none;font:800 11.5px 'Plus Jakarta Sans','Noto Kufi Arabic';padding:10px 17px;border-radius:999px;cursor:pointer;">{{ b.cta }}</button>
+              <button style="background:rgba(255,255,255,.18);backdrop-filter:blur(6px);color:#fff;border:1px solid rgba(255,255,255,.3);font:700 11.5px 'Plus Jakarta Sans','Noto Kufi Arabic';padding:10px 15px;border-radius:999px;cursor:pointer;">{{ b.cta2 }}</button>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display:flex;gap:5px;justify-content:center;margin-top:13px;">
+      <span style="width:20px;height:5px;border-radius:99px;background:var(--green);"></span>
+      <span style="width:5px;height:5px;border-radius:99px;background:#CBD6D1;"></span>
+      <span style="width:5px;height:5px;border-radius:99px;background:#CBD6D1;"></span>
+    </div>
+
+    <!-- quick programs row -->
+    <div style="padding:22px 20px 0;display:flex;align-items:center;justify-content:space-between;">
+      <div style="font:800 16.5px 'Plus Jakarta Sans','Noto Kufi Arabic';color:var(--ink);">{{ t.programs }}</div>
+      <div onClick="{{ goPrograms }}" style="display:flex;align-items:center;gap:5px;font:700 12px 'Plus Jakarta Sans','Noto Kufi Arabic';color:var(--green);cursor:pointer;">{{ t.viewAll }} <i class="fa-solid fa-chevron-right" style="font-size:9px;"></i></div>
+    </div>
+    <div class="scroll" style="display:flex;gap:13px;overflow-x:auto;padding:15px 20px 4px;">
+      <sc-for list="{{ programs }}" as="p" hint-placeholder-count="6">
+        <div onClick="{{ p.go }}" style="flex:0 0 auto;width:70px;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;">
+          <div style="width:58px;height:58px;border-radius:20px;background:{{ p.tint }};display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(16,40,34,.06);"><i class="{{ p.icon }}" style="color:{{ p.color }};font-size:21px;"></i></div>
+          <div style="font:700 10px 'Plus Jakarta Sans','Noto Kufi Arabic';color:var(--ink-2);text-align:center;line-height:1.25;">{{ p.l }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- urgent campaigns -->
+    <div style="padding:22px 20px 0;display:flex;align-items:center;justify-content:space-between;">
+      <div style="display:flex;align-items:center;gap:8px;"><span style="width:7px;height:7px;border-radius:50%;background:#E5544B;animation:softPulse 1.4s infinite;"></span><span style="font:800 16.5px 'Plus Jakarta Sans','Noto Kufi Arabic';color:var(--ink);">{{ t.urgent }}</span></div>
+      <div onClick="{{ goProjects }}" style="display:flex;align-items:center;gap:5px;font:700 12px 'Plus Jakarta Sans','Noto Kufi Arabic';color:var(--green);cursor:pointer;">{{ t.viewAll }} <i class="fa-solid fa-chevron-right" style="font-size:9px;"></i></div>
+    </div>
+    <div class="scroll" style="display:flex;align-items:flex-start;gap:14px;overflow-x:auto;padding:15px 20px 4px;scroll-snap-type:x mandatory;">
+      <sc-for list="{{ urgent }}" as="u" hint-placeholder-count="2">
+        <div onClick="{{ u.go }}" style="flex:0 0 274px;scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 12px 28px rgba(16,40,34,.07);cursor:pointer;">
+          <div style="position:relative;height:96px;background:{{ u.tint }};display:flex;align-items:center;justify-content:center;">
+            <i class="{{ u.icon }}" style="color:{{ u.color }};font-size:32px;opacity:.92;"></i>
+            <span style="position:absolute;top:10px;left:10px;background:#E5544B;color:#fff;font:800 9.5px 'Plus Jakarta Sans','Noto Kufi Arabic';padding:5px 11px;border-radius:999px;display:flex;align-items:center;gap:5px;"><i class="fa-solid fa-fire" style="font-size:9px;"></i>{{ u.days }}</span>
+            <span onClick="{{ u.fav }}" style="position:absolute;top:9px;right:9px;width:29px;height:29px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 3px 8px rgba(0,0,0,.09);"><i class="{{ u.heartIcon }}" style="color:{{ u.heartColor }};font-size:12px;"></i></span>
+          </div>
+          <div style="padding:14px;">
+            <div style="font:800 14.5px 'Plus Jakarta Sans','Noto Kufi Arabic';color:var(--ink);line-height:1.25;">{{ u.title }}</div>
+            <div style="height:7px;border-radius:99px;background:var(--grey);overflow:hidden;margin-top:12px;"><div style="height:100%;width:{{ u.pct }};background:linear-gradient(90deg,var(--green),var(--green-l));border-radius:99px;transform-origin:left;animation:barGrow 1s ease both;"></div></div>
+            <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-top:10px;">
+              <div><div style="font:800 14px 'Plus Jakarta Sans';color:var(--green);">{{ u.raised }}</div><div style="font:500 9.5px 'Plus Jakarta Sans','Noto Kufi Arabic';color:var(--ink-3);margin-top:1px;">{{ t.of }} {{ u.goal }}</div></div>
+              <div style="text-align:right;"><div style="font:800 14px 'Plus Jakarta Sans';color:var(--gold);">{{ u.pct }}</div><div style="font:500 9.5px 'Plus Jakarta Sans','Noto Kufi Arabic';color:var(--ink-3);margin-top:1px;">{{ t.funded }}</div></div>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:13px;">
+              <button onClick="{{ u.donate }}" style="flex:1;background:linear-gradient(135deg,var(--green),var(--green-d));color:#fff;border:none;border-radius:13px;padding:11px;font:800 12.5px 'Plus Jakarta Sans','Noto Kufi Arabic';cursor:pointer;box-shadow:0 8px 18px rgba(15,143,107,.28);">{{ t.donate }}</button>
+              <button onClick="{{ u.share }}" style="width:42px;background:var(--grey);border:1px solid var(--line);border-radius:13px;color:var(--ink-2);cursor:pointer;"><i class="fa-solid fa-share-nodes" style="font-size:13px;"></i></button>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- fast donation glass card -->
+    <div style="margin:22px 20px 0;border-radius:26px;padding:20px;position:relative;overflow:hidden;background:linear-gradient(135deg,#0B6E56,#12A07E);box-shadow:0 16px 34px rgba(10,60,45,.22);">
+      <div style="position:absolute;top:-60px;right:-40px;width:170px;height:170px;border-radius:50%;background:rgba(255,255,255,.10);"></div>
+      <div style="position:absolute;bottom:-70px;left:-30px;width:150px;height:150px;border-radius:50%;background:rgba(201,162,39,.18);filter:blur(4px);"></div>
+      <div style="position:relative;">
+        <div style="display:flex;align-items:center;gap:9px;"><div style="width:32px;height:32px;border-radius:11px;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;"><i class="fa-solid fa-bolt" style="color:var(--gold-l);font-size:14px;"></i></div><div><div style="font:800 15.5px 'Plus Jakarta Sans','Noto Kufi Arabic';color:#fff;">{{ t.fastTitle }}</div><div style="font:500 10.5px 'Plus Jakarta Sans','Noto Kufi Arabic';color:rgba(255,255,255,.78);margin-top:1px;">{{ t.fastSub }}</div></div></div>
+        <div style="display:flex;gap:8px;margin-top:15px;flex-wrap:wrap;">
+          <sc-for list="{{ presets }}" as="p" hint-placeholder-count="5">
+            <button onClick="{{ p.pick }}" style="flex:1;min-width:56px;background:{{ p.bg }};color:{{ p.fg }};border:1px solid rgba(255,255,255,.28);border-radius:13px;padding:11px 4px;font:800 12.5px 'Plus Jakarta Sans';cursor:pointer;">{{ p.v }}</button>
+          </sc-for>
+        </div>
+        <button onClick="{{ goFast }}" style="width:100%;margin-top:14px;background:linear-gradient(135deg,var(--gold),#A8841C);color:#3a2e07;border:none;border-radius:15px;padding:14px;font:800 14px 'Plus Jakarta Sans','Noto Kufi Arabic';cursor:pointer;box-shadow:0 10px 22px rgba(201,162,39,.34);display:flex;align-items:center;justify-content:center;gap:9px;">{{ donateLabel }} <i class="fa-solid fa-arrow-right" style="font-size:12px;"></i></button>
+      </div>
+    </div>
+
+    <!-- featured projects -->
+    <div style="padding:24px 20px 0;display:flex;align-items:center;justify-content:space-between;">
+      <div style="font:800 16.5px 'Plus Jakarta Sans','Noto Kufi Arabic';color:var(--ink);">{{ t.featured }}</div>
+      <div onClick="{{ goProjects }}" style="display:flex;align-items:center;gap:5px;font:700 12px 'Plus Jakarta Sans','Noto Kufi Arabic';color:var(--green);cursor:pointer;">{{ t.viewAll }} <i class="fa-solid fa-chevron-right" style="font-size:9px;"></i></div>
+    </div>
+    <div style="padding:15px 20px 0;display:flex;flex-direction:column;gap:13px;">
+      <sc-for list="{{ featured }}" as="f" hint-placeholder-count="3">
+        <div onClick="{{ f.go }}" style="display:flex;gap:13px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:13px;box-shadow:0 10px 24px rgba(16,40,34,.06);cursor:pointer;">
+          <div style="width:82px;height:82px;flex:0 0 auto;border-radius:17px;background:{{ f.tint }};display:flex;align-items:center;justify-content:center;"><i class="{{ f.icon }}" style="color:{{ f.color }};font-size:26px;"></i></div>
+          <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;">
+            <div style="display:flex;align-items:center;gap:7px;"><span style="background:{{ f.tint }};color:{{ f.color }};font:800 8.5px 'Plus Jakarta Sans','Noto Kufi Arabic';padding:3px 9px;border-radius:999px;">{{ f.cat }}</span><span style="font:600 9.5px 'Plus Jakarta Sans','Noto Kufi Arabic';color:var(--ink-3);display:flex;align-items:center;gap:4px;"><i class="fa-solid fa-location-dot" style="font-size:9px;"></i>{{ f.place }}</span></div>
+            <div style="font:800 13.5px 'Plus Jakarta Sans','Noto Kufi Arabic';color:var(--ink);line-height:1.25;margin-top:6px;">{{ f.title }}</div>
+            <div style="height:6px;border-radius:99px;background:var(--grey);overflow:hidden;margin-top:9px;"><div style="height:100%;width:{{ f.pct }};background:linear-gradient(90deg,var(--gold),#A8841C);border-radius:99px;transform-origin:left;animation:barGrow 1s ease both;"></div></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:7px;"><span style="font:800 11.5px 'Plus Jakarta Sans';color:var(--green);">{{ f.raised }}</span><span style="font:600 9.5px 'Plus Jakarta Sans','Noto Kufi Arabic';color:var(--ink-3);">{{ f.pct }} {{ t.funded }}</span></div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- partners marquee -->
+    <div style="padding:24px 20px 0;font:800 16.5px 'Plus Jakarta Sans','Noto Kufi Arabic';color:var(--ink);">{{ t.partners }}</div>
+    <div style="overflow:hidden;padding:14px 0 0;">
+      <div style="display:flex;gap:11px;width:max-content;animation:marquee 22s linear infinite;">
+        <sc-for list="{{ partners }}" as="pt" hint-placeholder-count="10">
+          <div style="flex:0 0 auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 20px;display:flex;align-items:center;gap:9px;box-shadow:0 6px 16px rgba(16,40,34,.05);">
+            <i class="{{ pt.icon }}" style="color:var(--green);font-size:14px;"></i>
+            <span style="font:800 12px 'Plus Jakarta Sans','Noto Kufi Arabic';color:var(--ink-2);white-space:nowrap;">{{ pt.n }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="height:140px;"></div>
+  </div>
+
+  <!-- ======= PLACEHOLDER TAB SCREENS ======= -->
+  <div class="scroll" style="position:absolute;inset:0;overflow-y:auto;background:#F4F7F6;display:{{ stubShow }};z-index:14;">
+    <div style="padding:54px 20px 26px;background:linear-gradient(135deg,#0B6E56,#12A07E);border-radius:0 0 30px 30px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-70px;right:-50px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.10);"></div>
+      <div style="position:relative;font:800 25px 'Plus Jakarta Sans','Noto Kufi Arabic';color:#fff;">{{ stubTitle }}</div>
+      <div style="position:relative;font:500 12.5px 'Plus Jakarta Sans','Noto Kufi Arabic';color:rgba(255,255,255,.84);margin-top:4px;">{{ stubSub }}</div>
+    </div>
+    <div style="padding:20px;display:flex;flex-direction:column;gap:13px;">
+      <sc-for list="{{ stubRows }}" as="r" hint-placeholder-count="5">
+        <div onClick="{{ r.go }}" style="display:flex;align-items:center;gap:13px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:15px;box-shadow:0 8px 20px rgba(16,40,34,.05);cursor:pointer;">
+          <div style="width:42px;height:42px;border-radius:14px;background:{{ r.tint }};display:flex;align-items:center;justify-content:center;"><i class="{{ r.icon }}" style="color:{{ r.color }};font-size:16px;"></i></div>
+          <div style="flex:1;"><div style="font:800 13.5px 'Plus Jakarta Sans','Noto Kufi Arabic';color:var(--ink);">{{ r.l }}</div><div style="font:500 10.5px 'Plus Jakarta Sans','Noto Kufi Arabic';color:var(--ink-3);margin-top:2px;">{{ r.s }}</div></div>
+          <i class="fa-solid fa-chevron-right" style="color:var(--ink-3);font-size:12px;"></i>
+        </div>
+      </sc-for>
+    </div>
+    <div style="height:130px;"></div>
+  </div>
+
+  <!-- ======= BOTTOM NAV ======= -->
+  <div style="position:absolute;bottom:0;left:0;right:0;height:86px;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-top:1px solid var(--line);border-radius:26px 26px 0 0;box-shadow:0 -10px 30px rgba(16,40,34,.08);display:flex;align-items:flex-start;padding:12px 10px 0;z-index:30;">
+    <sc-for list="{{ nav }}" as="n" hint-placeholder-count="5">
+      <div onClick="{{ n.go }}" style="display:{{ n.disp }};flex:1;flex-direction:column;align-items:center;gap:5px;cursor:pointer;color:{{ n.color }};">
+        <i class="{{ n.icon }}" style="font-size:18px;"></i>
+        <span style="font:700 9.5px 'Plus Jakarta Sans','Noto Kufi Arabic';">{{ n.l }}</span>
+        <span style="width:5px;height:5px;border-radius:50%;background:{{ n.dot }};"></span>
+      </div>
+    </sc-for>
+  </div>
+  <div onClick="{{ goFast }}" style="position:absolute;bottom:46px;left:50%;transform:translateX(-50%);width:62px;height:62px;border-radius:50%;background:linear-gradient(140deg,var(--gold),#A8841C);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(201,162,39,.48);cursor:pointer;z-index:32;border:4px solid #fff;">
+    <i class="fa-solid fa-hand-holding-heart" style="color:#fff;font-size:22px;"></i>
+  </div>
+
+  <!-- toast -->
+  <div style="position:absolute;left:50%;bottom:104px;transform:translateX(-50%);background:rgba(12,32,25,.94);color:#fff;font:700 12px 'Plus Jakarta Sans','Noto Kufi Arabic';padding:11px 19px;border-radius:999px;box-shadow:0 10px 26px rgba(0,0,0,.28);opacity:{{ toastOp }};pointer-events:none;transition:opacity .25s ease;z-index:60;white-space:nowrap;">{{ toast }}</div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:430,&quot;height&quot;:932}}">
+class Component extends DCLogic {
+  state = { ar: false, tab: 'home', amount: 100, favs: {}, toast: '' };
+
+  ping(m) { clearTimeout(this._t); this.setState({ toast: m }); this._t = setTimeout(() => this.setState({ toast: '' }), 1500); }
+
+  renderVals() {
+    const ar = this.state.ar;
+    const tab = this.state.tab;
+    const A = this.state.amount;
+
+    const t = ar ? {
+      programs: 'برامجنا', urgent: 'حالات عاجلة', featured: 'مشاريع مميزة', partners: 'شركاء الإحسان',
+      viewAll: 'عرض الكل', donate: 'تبرّع', of: 'من', funded: 'مموّل',
+      fastTitle: 'تبرع سريع', fastSub: 'تبرّع خلال ثوانٍ'
+    } : {
+      programs: 'Our programs', urgent: 'Urgent campaigns', featured: 'Featured projects', partners: 'Ihsan partners',
+      viewAll: 'View all', donate: 'Donate', of: 'of', funded: 'funded',
+      fastTitle: 'Fast donation', fastSub: 'Give in seconds'
+    };
+
+    const progData = [
+      { k: 'edu', icon: 'fa-solid fa-book-open-reader', color: '#5A6B8A', tint: '#EAEDF3', en: 'Education', arn: 'تعليم' },
+      { k: 'food', icon: 'fa-solid fa-bowl-food', color: '#0F8F6B', tint: '#E2F3EE', en: 'Food Aid', arn: 'إطعام' },
+      { k: 'water', icon: 'fa-solid fa-droplet', color: '#1F7D9C', tint: '#E5F1F6', en: 'Water', arn: 'مياه' },
+      { k: 'health', icon: 'fa-solid fa-briefcase-medical', color: '#A85C34', tint: '#F7EAE2', en: 'Health', arn: 'صحة' },
+      { k: 'orphan', icon: 'fa-solid fa-child-reaching', color: '#C0921C', tint: '#FBF3DE', en: 'Orphans', arn: 'أيتام' },
+      { k: 'mosque', icon: 'fa-solid fa-mosque', color: '#2E8B63', tint: '#E4F1EA', en: 'Mosques', arn: 'مساجد' },
+      { k: 'zakat', icon: 'fa-solid fa-hand-holding-dollar', color: '#0F8F6B', tint: '#E2F3EE', en: 'Zakat', arn: 'زكاة' },
+      { k: 'emerg', icon: 'fa-solid fa-truck-medical', color: '#C4574E', tint: '#FAE8E6', en: 'Emergency', arn: 'طوارئ' }
+    ];
+
+    const urgentData = [
+      { k: 'gaza', icon: 'fa-solid fa-house-chimney-crack', color: '#C4574E', tint: '#FAE8E6', en: 'Emergency relief for Gaza families', arn: 'إغاثة عاجلة لأسر غزة', d: ar ? '٥ أيام' : '5 days left', pct: '78%', raised: 'AED 78K', goal: 'AED 100K' },
+      { k: 'syria', icon: 'fa-solid fa-temperature-arrow-down', color: '#1F7D9C', tint: '#E5F1F6', en: 'Winter shelter kits, Syria', arn: 'مستلزمات الشتاء، سوريا', d: ar ? '١٢ يوم' : '12 days left', pct: '54%', raised: 'AED 54K', goal: 'AED 100K' },
+      { k: 'yemen', icon: 'fa-solid fa-wheat-awn', color: '#C0921C', tint: '#FBF3DE', en: 'Famine response, Yemen', arn: 'مواجهة المجاعة، اليمن', d: ar ? '٨ أيام' : '8 days left', pct: '36%', raised: 'AED 36K', goal: 'AED 100K' }
+    ];
+
+    const featData = [
+      { k: 'well', icon: 'fa-solid fa-faucet-drip', color: '#1F7D9C', tint: '#E5F1F6', en: '50 water wells project', arn: 'مشروع ٥٠ بئر ماء', cat: ar ? 'مياه' : 'Water', place: 'Mali', pct: '68%', raised: 'AED 68K' },
+      { k: 'village', icon: 'fa-solid fa-house-flag', color: '#C0921C', tint: '#FBF3DE', en: 'Orphan village housing', arn: 'قرية الأيتام السكنية', cat: ar ? 'أيتام' : 'Orphans', place: 'Somalia', pct: '45%', raised: 'AED 45K' },
+      { k: 'school', icon: 'fa-solid fa-school', color: '#5A6B8A', tint: '#EAEDF3', en: 'School rebuild programme', arn: 'برنامج إعادة بناء المدارس', cat: ar ? 'تعليم' : 'Education', place: 'Yemen', pct: '22%', raised: 'AED 11K' }
+    ];
+
+    const navDefs = [
+      { k: 'home', icon: 'fa-solid fa-house', en: 'Home', arn: 'الرئيسية' },
+      { k: 'projects', icon: 'fa-solid fa-layer-group', en: 'Projects', arn: 'المشاريع' },
+      { k: 'spacer', icon: '', en: '', arn: '' },
+      { k: 'programs', icon: 'fa-solid fa-hand-holding-heart', en: 'Programs', arn: 'البرامج' },
+      { k: 'account', icon: 'fa-solid fa-user', en: 'Account', arn: 'حسابي' }
+    ];
+
+    const stubs = {
+      projects: {
+        title: ar ? 'المشاريع' : 'Projects',
+        sub: ar ? 'استكشف الحملات النشطة حول العالم' : 'Explore active campaigns worldwide',
+        rows: featData.concat(urgentData.slice(0, 2)).map(x => ({
+          icon: x.icon, color: x.color, tint: x.tint,
+          l: ar ? x.arn : x.en, s: (x.pct || '—') + ' ' + t.funded, go: () => this.ping(ar ? x.arn : x.en)
+        }))
+      },
+      programs: {
+        title: ar ? 'برامجنا' : 'Our programs',
+        sub: ar ? 'طرق متعددة لصنع الأثر' : 'Ways your giving creates change',
+        rows: progData.map(p => ({
+          icon: p.icon, color: p.color, tint: p.tint,
+          l: ar ? p.arn : p.en, s: ar ? 'اعرف المزيد' : 'Explore this programme', go: () => this.ping(ar ? p.arn : p.en)
+        }))
+      },
+      account: {
+        title: ar ? 'حسابي' : 'My account',
+        sub: ar ? 'شنواس · متبرع ذهبي' : 'Shanavas · Gold donor',
+        rows: (ar ? [
+          { icon: 'fa-solid fa-clock-rotate-left', l: 'سجل التبرعات', s: '28 تبرعاً' },
+          { icon: 'fa-solid fa-hands-holding-child', l: 'سجل التطوّع', s: '6 فعاليات' },
+          { icon: 'fa-solid fa-heart', l: 'المفضلة والسلة', s: '2 عنصر' },
+          { icon: 'fa-solid fa-file-invoice', l: 'الإيصالات والشهادات', s: '12 شهادة' },
+          { icon: 'fa-solid fa-circle-question', l: 'الأسئلة الشائعة', s: 'مركز المساعدة' },
+          { icon: 'fa-solid fa-shield-halved', l: 'سياسة الخصوصية', s: 'الشروط والأحكام' },
+          { icon: 'fa-solid fa-globe', l: 'اللغة', s: 'العربية' }
+        ] : [
+          { icon: 'fa-solid fa-clock-rotate-left', l: 'Donation history', s: '28 donations' },
+          { icon: 'fa-solid fa-hands-holding-child', l: 'Volunteer history', s: '6 events' },
+          { icon: 'fa-solid fa-heart', l: 'Wishlist & cart', s: '2 items' },
+          { icon: 'fa-solid fa-file-invoice', l: 'Receipts & certificates', s: '12 certificates' },
+          { icon: 'fa-solid fa-circle-question', l: 'FAQ', s: 'Help centre' },
+          { icon: 'fa-solid fa-shield-halved', l: 'Privacy policy', s: 'Terms & conditions' },
+          { icon: 'fa-solid fa-globe', l: 'Language', s: 'English' }
+        ]).map(r => ({ ...r, color: '#0F8F6B', tint: '#E2F3EE', go: () => this.ping(r.l) }))
+      },
+      fast: {
+        title: ar ? 'تبرع سريع' : 'Fast donation',
+        sub: ar ? 'اختر قضية وتبرّع فوراً' : 'Choose a cause and give instantly',
+        rows: (ar ? [
+          { icon: 'fa-solid fa-bolt', l: 'تبرع لمرة واحدة', s: 'AED ' + A },
+          { icon: 'fa-solid fa-repeat', l: 'تبرع شهري', s: 'AED ' + A + ' / شهر' },
+          { icon: 'fa-brands fa-apple-pay', l: 'Apple Pay', s: 'دفع سريع' },
+          { icon: 'fa-brands fa-google-pay', l: 'Google Pay', s: 'دفع سريع' },
+          { icon: 'fa-solid fa-credit-card', l: 'بطاقة ائتمان', s: 'فيزا · ماستركارد' }
+        ] : [
+          { icon: 'fa-solid fa-bolt', l: 'One-time donation', s: 'AED ' + A },
+          { icon: 'fa-solid fa-repeat', l: 'Monthly donation', s: 'AED ' + A + ' / month' },
+          { icon: 'fa-brands fa-apple-pay', l: 'Apple Pay', s: 'Express checkout' },
+          { icon: 'fa-brands fa-google-pay', l: 'Google Pay', s: 'Express checkout' },
+          { icon: 'fa-solid fa-credit-card', l: 'Credit card', s: 'Visa · Mastercard' }
+        ]).map(r => ({ ...r, color: '#C0921C', tint: '#FBF3DE', go: () => this.ping(r.l) }))
+      }
+    };
+    const stub = stubs[tab];
+
+    return {
+      dir: ar ? 'rtl' : 'ltr',
+      font: ar ? "'Noto Kufi Arabic','Plus Jakarta Sans',sans-serif" : "'Plus Jakarta Sans',sans-serif",
+      t,
+      greeting: ar ? 'السلام عليكم،' : 'Assalamu alaikum,',
+      userName: ar ? 'شنواس' : 'Shanavas',
+      searchPh: ar ? 'ابحث عن حملة أو مشروع…' : 'Search campaigns, projects, news…',
+      langLabel: ar ? 'EN' : 'عربى',
+      donateLabel: (ar ? 'تبرّع بـ AED ' : 'Donate AED ') + A,
+
+      homeShow: tab === 'home' ? 'block' : 'none',
+      stubShow: tab === 'home' ? 'none' : 'block',
+      stubTitle: stub ? stub.title : '',
+      stubSub: stub ? stub.sub : '',
+      stubRows: stub ? stub.rows : [],
+
+      toast: this.state.toast,
+      toastOp: this.state.toast ? 1 : 0,
+
+      onLang: () => this.setState(s => ({ ar: !s.ar })),
+      onProfile: () => this.setState({ tab: 'account' }),
+      onWishlist: () => this.ping(ar ? 'المفضلة' : 'Wishlist'),
+      onCart: () => this.ping(ar ? 'السلة' : 'Cart'),
+      onNotifs: () => this.ping(ar ? 'الإشعارات' : 'Notifications'),
+      onSearch: () => this.ping(ar ? 'بحث' : 'Search'),
+      goPrograms: () => this.setState({ tab: 'programs' }),
+      goProjects: () => this.setState({ tab: 'projects' }),
+      goFast: () => this.setState({ tab: 'fast' }),
+
+      impact: (ar ? [
+        { v: 'AED 4.2M', l: 'تم جمعه' }, { v: '128', l: 'مشروعاً' }, { v: '92K', l: 'مستفيداً' }
+      ] : [
+        { v: 'AED 4.2M', l: 'Raised' }, { v: '128', l: 'Projects' }, { v: '92K', l: 'Lives touched' }
+      ]).map(s => ({ ...s, go: () => this.ping(s.l) })),
+
+      banners: [
+        { tag: ar ? 'رمضان ٢٠٢٦' : 'RAMADAN 2026', title: ar ? 'أطعم أسرة هذا الشهر' : 'Feed a family this Ramadan', grad: 'linear-gradient(135deg,#0B6E56,#12A07E)' },
+        { tag: ar ? 'مياه نظيفة' : 'CLEAN WATER', title: ar ? 'احفر بئراً، امنح حياة' : 'Build a well, give life', grad: 'linear-gradient(135deg,#1F7D9C,#0C4A5F)' },
+        { tag: ar ? 'كفالة الأيتام' : 'ORPHAN CARE', title: ar ? 'اكفل يتيماً اليوم' : 'Sponsor an orphan today', grad: 'linear-gradient(135deg,#B98A2E,#7A5A12)' }
+      ].map(b => ({ ...b, cta: ar ? 'تبرّع الآن' : 'Donate now', cta2: ar ? 'اعرف المزيد' : 'Learn more', go: () => this.ping(b.title) })),
+
+      programs: progData.map(p => ({ ...p, l: ar ? p.arn : p.en, go: () => this.setState({ tab: 'programs' }) })),
+
+      urgent: urgentData.map(u => ({
+        ...u, title: ar ? u.arn : u.en, days: u.d,
+        heartIcon: this.state.favs[u.k] ? 'fa-solid fa-heart' : 'fa-regular fa-heart',
+        heartColor: this.state.favs[u.k] ? '#EF5A78' : '#C0C9C4',
+        fav: (e) => { if (e && e.stopPropagation) e.stopPropagation(); this.setState(s => ({ favs: { ...s.favs, [u.k]: !s.favs[u.k] } })); },
+        donate: (e) => { if (e && e.stopPropagation) e.stopPropagation(); this.setState({ tab: 'fast' }); },
+        share: (e) => { if (e && e.stopPropagation) e.stopPropagation(); this.ping(ar ? 'مشاركة' : 'Share'); },
+        go: () => this.ping(ar ? u.arn : u.en)
+      })),
+
+      featured: featData.map(f => ({ ...f, title: ar ? f.arn : f.en, go: () => this.ping(ar ? f.arn : f.en) })),
+
+      presets: [25, 50, 100, 250, 500].map(v => ({
+        v: String(v),
+        bg: A === v ? '#fff' : 'rgba(255,255,255,.14)',
+        fg: A === v ? '#0B6E56' : '#fff',
+        pick: () => this.setState({ amount: v })
+      })),
+
+      partners: [
+        { n: 'Emirates RC', icon: 'fa-solid fa-hand-holding-medical' },
+        { n: 'UN OCHA', icon: 'fa-solid fa-globe' },
+        { n: 'Islamic Relief', icon: 'fa-solid fa-mosque' },
+        { n: 'WFP', icon: 'fa-solid fa-wheat-awn' },
+        { n: 'Zakat Fund', icon: 'fa-solid fa-hand-holding-dollar' },
+        { n: 'Dubai Cares', icon: 'fa-solid fa-graduation-cap' },
+        { n: 'Emirates RC', icon: 'fa-solid fa-hand-holding-medical' },
+        { n: 'UN OCHA', icon: 'fa-solid fa-globe' },
+        { n: 'Islamic Relief', icon: 'fa-solid fa-mosque' },
+        { n: 'WFP', icon: 'fa-solid fa-wheat-awn' },
+        { n: 'Zakat Fund', icon: 'fa-solid fa-hand-holding-dollar' },
+        { n: 'Dubai Cares', icon: 'fa-solid fa-graduation-cap' }
+      ],
+
+      nav: navDefs.map(n => {
+        const active = tab === n.k;
+        return {
+          icon: n.icon, l: ar ? n.arn : n.en,
+          disp: n.k === 'spacer' ? 'none' : 'flex',
+          color: active ? '#0F8F6B' : '#94A19B',
+          dot: active ? '#0F8F6B' : 'transparent',
+          go: () => this.setState({ tab: n.k })
+        };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

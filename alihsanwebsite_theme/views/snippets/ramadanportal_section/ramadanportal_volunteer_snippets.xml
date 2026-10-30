@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- The intro column stays sticky while the steps scroll. Duplicate an <article> to add a step. -->
+    <template id="ramadanportal_volunteer_section" name="Ramadan Portal Volunteer Section">
+        <section id="volunteer" class="rm rm-sec s_rm_volunteer pt0 pb0">
+            <div class="rm-section rm-volunteer">
+                <div class="rm-volunteer-intro">
+                    <span class="rm-eyebrow">YOUR TIME CAN MAKE A DIFFERENCE</span>
+                    <h2>Show up for your<br/><em>community.</em></h2>
+                    <p>Join the volunteer team, choose a suitable shift and help share meals safely. Every contribution of time helps goodness reach another doorstep.</p>
+                    <a class="rm-button-primary" href="/volunteer"><span>Register as a volunteer</span><i>↗</i></a>
+                </div>
+                <div class="rm-volunteer-steps">
+                    <article>
+                        <span class="rm-step-number">01</span>
+                        <div>
+                            <h3>Create your membership</h3>
+                            <p>Register as a volunteer. A primary family membership can add other volunteers by entering their names.</p>
+                        </div>
+                        <span class="rm-step-arrow">↗</span>
+                    </article>
+                    <article>
+                        <span class="rm-step-number">02</span>
+                        <div>
+                            <h3>Choose a shift and place</h3>
+                            <p>Book an available day and volunteering schedule, then select a meal distribution location.</p>
+                        </div>
+                        <span class="rm-step-arrow">↗</span>
+                    </article>
+                    <article>
+                        <span class="rm-step-number">03</span>
+                        <div>
+                            <h3>Record your service hours</h3>
+                            <p>Hours are tracked for each volunteer. At the end of the campaign, a certificate can be printed in the volunteer’s name.</p>
+                        </div>
+                        <span class="rm-step-arrow">↗</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

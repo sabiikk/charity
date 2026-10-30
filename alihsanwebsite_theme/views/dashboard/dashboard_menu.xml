@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="action_alihsan_dashboard" model="ir.actions.act_url">
+        <field name="name">Donation Dashboard</field>
+        <field name="url">/alihsan/dashboard</field>
+        <field name="target">self</field>
+    </record>
+
+    <menuitem
+        id="menu_alihsan_dashboard_root"
+        name="Al Ihsan Dashboard"
+        action="action_alihsan_dashboard"
+        web_icon="alihsanwebsite_theme,static/description/icon.png"
+        groups="sales_team.group_sale_salesman"
+        sequence="1"/>
+</odoo>

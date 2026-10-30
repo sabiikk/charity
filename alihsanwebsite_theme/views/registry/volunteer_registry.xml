@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="volunteer_snippets" inherit_id="website.snippets" name="Volunteer Snippets">
+        <!--       Group Creation         -->
+        <xpath expr="//snippets[@id='snippet_groups']" position="inside">
+            <t snippet-group="volunteergroup" t-snippet="website.s_snippet_group" string="Volunteer"/>
+        </xpath>
+
+        <!--       Adding Snippets Into The Group         -->
+        <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+            <t t-snippet="alihsanwebsite_theme.volunteer_banner_section" string="Volunteer Banner Section" group="volunteergroup"/>
+            <t t-snippet="alihsanwebsite_theme.volunteer_register_section" string="Volunteer Register Section" group="volunteergroup"/>
+            <t t-snippet="alihsanwebsite_theme.connect_section" string="Social &amp; Feedback CTA" group="volunteergroup"/>
+        </xpath>
+    </template>
+</odoo>

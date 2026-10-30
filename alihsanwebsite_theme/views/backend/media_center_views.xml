@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- ============================== Image galleries ============================== -->
+    <record id="media_gallery_view_list" model="ir.ui.view">
+        <field name="name">alihsan.media.gallery.list</field>
+        <field name="model">alihsan.media.gallery</field>
+        <field name="arch" type="xml">
+            <list string="Image Galleries" decoration-muted="not active">
+                <field name="image" widget="image" options="{'size': [72, 48]}" string="Cover" width="90"/>
+                <field name="date"/>
+                <field name="name"/>
+                <field name="photo_count"/>
+                <field name="website_id" groups="website.group_multi_website" optional="show"/>
+                <field name="active" widget="boolean_toggle" string="Published"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="media_gallery_view_form" model="ir.ui.view">
+        <field name="name">alihsan.media.gallery.form</field>
+        <field name="model">alihsan.media.gallery</field>
+        <field name="arch" type="xml">
+            <form string="Image Gallery">
+                <sheet>
+                    <widget name="web_ribbon" title="Hidden" bg_color="text-bg-secondary" invisible="active"/>
+                    <field name="image" widget="image" class="oe_avatar" options="{'size': [180, 120]}"/>
+                    <div class="oe_title">
+                        <label for="name" string="Gallery title"/>
+                        <h1><field name="name" placeholder="e.g. Zayed Humanitarian Day"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="date" string="Held On"/>
+                            <field name="active" string="Published"/>
+                        </group>
+                        <group>
+                            <field name="website_id" groups="website.group_multi_website" options="{'no_create': True}" placeholder="All websites"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Photos" name="photos">
+                            <field name="photo_ids" mode="kanban" context="{'default_gallery_id': id}">
+                                <kanban>
+                                    <field name="sequence"/>
+                                    <templates>
+                                        <t t-name="card" class="p-0 overflow-hidden">
+                                            <field name="image" widget="image" options="{'size': [220, 150]}"/>
+                                            <field name="name" class="p-2 small text-truncate"/>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                                <form string="Photo">
+                                    <group>
+                                        <field name="image" widget="image"/>
+                                        <field name="name"/>
+                                        <field name="sequence"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_media_gallery" model="ir.actions.act_window">
+        <field name="name">Image Galleries</field>
+        <field name="res_model">alihsan.media.gallery</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'active_test': False}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Add your first photo gallery</p>
+            <p>Galleries appear in the "Image Gallery Section" of the Media Center, newest first.</p>
+        </field>
+    </record>
+
+    <!-- ============================== Videos ============================== -->
+    <record id="media_video_view_list" model="ir.ui.view">
+        <field name="name">alihsan.media.video.list</field>
+        <field name="model">alihsan.media.video</field>
+        <field name="arch" type="xml">
+            <list string="Videos" decoration-muted="not active">
+                <field name="image" widget="image" options="{'size': [72, 48]}" string="Thumbnail" width="90"/>
+                <field name="date"/>
+                <field name="name"/>
+                <field name="video_url" widget="url"/>
+                <field name="website_id" groups="website.group_multi_website" optional="show"/>
+                <field name="active" widget="boolean_toggle" string="Published"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="media_video_view_form" model="ir.ui.view">
+        <field name="name">alihsan.media.video.form</field>
+        <field name="model">alihsan.media.video</field>
+        <field name="arch" type="xml">
+            <form string="Video">
+                <sheet>
+                    <widget name="web_ribbon" title="Hidden" bg_color="text-bg-secondary" invisible="active"/>
+                    <field name="image" widget="image" class="oe_avatar" options="{'size': [180, 120]}"/>
+                    <div class="oe_title">
+                        <label for="name" string="Video title"/>
+                        <h1><field name="name" placeholder="e.g. Chairman word"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="video_url" widget="url" placeholder="https://www.youtube.com/watch?v=..."/>
+                            <field name="date" string="Held On"/>
+                        </group>
+                        <group>
+                            <field name="active" string="Published"/>
+                            <field name="website_id" groups="website.group_multi_website" options="{'no_create': True}" placeholder="All websites"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_media_video" model="ir.actions.act_window">
+        <field name="name">Videos</field>
+        <field name="res_model">alihsan.media.video</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'active_test': False}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Add your first video</p>
+            <p>Paste a YouTube or Vimeo link: the thumbnail is fetched automatically.</p>
+        </field>
+    </record>
+
+    <!-- ============================== Events ============================== -->
+    <record id="media_event_view_list" model="ir.ui.view">
+        <field name="name">alihsan.media.event.list</field>
+        <field name="model">alihsan.media.event</field>
+        <field name="arch" type="xml">
+            <list string="Events" decoration-muted="not active" decoration-info="upcoming">
+                <field name="image" widget="image" options="{'size': [72, 48]}" string="Image" width="90"/>
+                <field name="date"/>
+                <field name="time" widget="float_time"/>
+                <field name="name"/>
+                <field name="location"/>
+                <field name="upcoming" optional="show"/>
+                <field name="website_id" groups="website.group_multi_website" optional="show"/>
+                <field name="active" widget="boolean_toggle" string="Published"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="media_event_view_form" model="ir.ui.view">
+        <field name="name">alihsan.media.event.form</field>
+        <field name="model">alihsan.media.event</field>
+        <field name="arch" type="xml">
+            <form string="Event">
+                <sheet>
+                    <widget name="web_ribbon" title="Hidden" bg_color="text-bg-secondary" invisible="active"/>
+                    <field name="image" widget="image" class="oe_avatar" options="{'size': [180, 120]}"/>
+                    <div class="oe_title">
+                        <label for="name" string="Event title"/>
+                        <h1><field name="name" placeholder="e.g. Annual Charity Gala Dinner"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="date"/>
+                            <field name="time" widget="float_time"/>
+                            <field name="location" placeholder="Venue to be announced"/>
+                        </group>
+                        <group>
+                            <field name="donate_url" widget="url" placeholder="/shop"/>
+                            <field name="active" string="Published"/>
+                            <field name="website_id" groups="website.group_multi_website" options="{'no_create': True}" placeholder="All websites"/>
+                        </group>
+                    </group>
+                    <field name="description" placeholder="Short description shown on the card and in the details pop-up..."/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_media_event" model="ir.actions.act_window">
+        <field name="name">Events</field>
+        <field name="res_model">alihsan.media.event</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'active_test': False}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Add your first event</p>
+            <p>Events dated today or later show as Upcoming, older ones as Past.</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_media_gallery" name="Image Galleries" parent="website.menu_content"
+              action="action_media_gallery" groups="website.group_website_designer" sequence="92"/>
+    <menuitem id="menu_media_video" name="Videos" parent="website.menu_content"
+              action="action_media_video" groups="website.group_website_designer" sequence="93"/>
+    <menuitem id="menu_media_event" name="Events" parent="website.menu_content"
+              action="action_media_event" groups="website.group_website_designer" sequence="94"/>
+</odoo>

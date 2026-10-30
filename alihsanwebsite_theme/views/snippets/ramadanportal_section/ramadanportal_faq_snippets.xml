@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Native <details> accordion. Duplicate a <details> to add a question. -->
+    <template id="ramadanportal_faq_section" name="Ramadan Portal FAQ Section">
+        <section id="questions" class="rm rm-sec s_rm_faq pt0 pb0">
+            <div class="rm-section rm-faq">
+                <div class="rm-faq-aside">
+                    <span class="rm-eyebrow">NEED A HAND?</span>
+                    <h2>Good to know<br/><em>before you go.</em></h2>
+                    <p>Find quick answers about membership, shifts, volunteer hours and your participation certificate.</p>
+                    <a class="rm-text-link" href="https://ramadanaman.com/faq.php?lang=en" target="_blank" rel="noopener"><span>See all volunteer FAQs</span> ↗</a>
+                </div>
+                <div class="rm-faq-list">
+                    <details open="open">
+                        <summary>How do I add a family volunteer?</summary>
+                        <p>Sign in with the primary membership, select “Add New Volunteer,” enter the volunteer’s name and complete registration.</p>
+                    </details>
+                    <details>
+                        <summary>How do I book a volunteering shift?</summary>
+                        <p>Use the primary membership to view available days, book a schedule and choose a meal distribution location.</p>
+                    </details>
+                    <details>
+                        <summary>How are volunteer hours recorded?</summary>
+                        <p>Volunteer hours are recorded individually for each person under the primary membership. Check that the entries are accurate.</p>
+                    </details>
+                    <details>
+                        <summary>Can I receive a volunteer certificate?</summary>
+                        <p>At the end of the campaign, a certificate can be printed in each volunteer’s name based on the recorded hours.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

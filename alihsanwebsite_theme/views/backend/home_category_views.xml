@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Board: drag cards between "On Home Page" / "Not on Home Page" and up/down to order them -->
+    <record id="home_category_view_kanban" model="ir.ui.view">
+        <field name="name">product.public.category.home.kanban</field>
+        <field name="model">product.public.category</field>
+        <field name="priority">90</field>
+        <field name="arch" type="xml">
+            <kanban class="o_ih_cat_kanban" default_group_by="ih_home_display" default_order="ih_home_sequence, sequence, id"
+                    quick_create="false" group_create="false" group_delete="false" group_edit="false">
+                <field name="ih_home_url"/>
+                <field name="ih_home_display"/>
+                <templates>
+                    <t t-name="card" class="flex-row align-items-center gap-3 p-3">
+                        <field name="ih_home_sequence" widget="handle" class="d-none"/>
+                        <field name="ih_home_icon_preview" class="o_ih_cat_ic flex-shrink-0"/>
+                        <div class="d-flex flex-column min-w-0 flex-grow-1">
+                            <field name="name" class="fw-bold fs-6 text-truncate"/>
+                            <field name="parent_id" class="small text-muted text-truncate"/>
+                            <div class="small text-truncate">
+                                <t t-if="record.ih_home_url.raw_value">
+                                    <i class="fa fa-link me-1 text-primary" title="Custom link"/><field name="ih_home_url"/>
+                                </t>
+                                <span t-else="" class="text-muted"><i class="fa fa-shopping-bag me-1" title="Shop"/>Opens the shop category</span>
+                            </div>
+                            <field name="website_id" class="small text-muted" groups="website.group_multi_website"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="home_category_view_list" model="ir.ui.view">
+        <field name="name">product.public.category.home.list</field>
+        <field name="model">product.public.category</field>
+        <field name="priority">90</field>
+        <field name="arch" type="xml">
+            <list string="Home Categories" default_order="ih_home_sequence, sequence, id" editable="bottom"
+                  decoration-muted="ih_home_display == 'unlisted'">
+                <field name="ih_home_sequence" widget="handle"/>
+                <field name="display_name" string="Category" readonly="1"/>
+                <field name="ih_home_icon"/>
+                <field name="ih_home_url" placeholder="Shop category page"/>
+                <field name="website_id" groups="website.group_multi_website" readonly="1" optional="show"/>
+                <field name="ih_home_display" widget="badge"
+                       decoration-success="ih_home_display == 'shown'"
+                       decoration-muted="ih_home_display == 'unlisted'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="home_category_view_search" model="ir.ui.view">
+        <field name="name">product.public.category.home.search</field>
+        <field name="model">product.public.category</field>
+        <field name="priority">90</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <filter name="on_home" string="On Home Page" domain="[('ih_home_display', '=', 'shown')]"/>
+                <filter name="top_level" string="Top-level Categories" domain="[('parent_id', '=', False)]"/>
+                <group>
+                    <filter name="group_home" string="Home Page" context="{'group_by': 'ih_home_display'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- "Home Page" section on the eCommerce category form -->
+    <record id="product_public_category_form_view_home" model="ir.ui.view">
+        <field name="name">product.public.category.form.inherit.alihsan.home</field>
+        <field name="model">product.public.category</field>
+        <field name="inherit_id" ref="website_sale.product_public_category_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <div class="o_ih_cat_form_block mt-4">
+                    <h5 class="d-flex align-items-center gap-2 border-bottom pb-2">
+                        <i class="fa fa-home text-success" title="Home page"/>Home Page · "Our Projects" carousel
+                    </h5>
+                    <div class="d-flex align-items-start gap-4 flex-wrap">
+                        <field name="ih_home_icon_preview" class="o_ih_cat_ic flex-shrink-0" readonly="1"/>
+                        <group class="flex-grow-1">
+                            <field name="ih_home_display" widget="radio" options="{'horizontal': true}"/>
+                            <field name="ih_home_icon" invisible="ih_home_display == 'unlisted'"/>
+                            <div colspan="2" class="text-muted small" invisible="ih_home_icon != 'image' or ih_home_display == 'unlisted'">
+                                Uses the category image above (shown in a circle).
+                            </div>
+                            <field name="ih_home_url" invisible="ih_home_display == 'unlisted'" placeholder="Leave empty to open this category in the shop"/>
+                            <field name="ih_home_sequence" string="Order" invisible="ih_home_display == 'unlisted'" groups="base.group_no_one"/>
+                        </group>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_home_categories" model="ir.actions.act_window">
+        <field name="name">Home Categories</field>
+        <field name="res_model">product.public.category</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="search_view_id" ref="home_category_view_search"/>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'kanban', 'view_id': ref('home_category_view_kanban')}),
+            (0, 0, {'view_mode': 'list', 'view_id': ref('home_category_view_list')})]"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create your first eCommerce category</p>
+            <p>Drag a category into the "On Home Page" column to show it in the "Our Projects"
+                carousel of the home page, and up or down to change its place.</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_home_categories"
+              name="Home Categories"
+              parent="website.menu_content"
+              action="action_home_categories"
+              groups="website.group_website_designer"
+              sequence="91"/>
+</odoo>

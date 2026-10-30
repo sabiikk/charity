@@ -100,6 +100,19 @@ header#top.ih-header{height:84px;box-shadow:0 1px 10px #09261508}
 }
 #top.ih-header .login-toggle{display:flex;align-items:center;gap:7px;border:0;background:#f0f5f1;padding:10px 14px;border-radius:30px;color:var(--green);font-size:13px;font-weight:700}
 #top.ih-header .login-toggle svg{width:17px;height:17px}
+/* signed in: the user's name in dark ink + an account menu */
+#top.ih-header .ih-user{position:relative}
+#top.ih-header .login-toggle.is-user{color:var(--ink);cursor:pointer;transition:background .2s}
+#top.ih-header .login-toggle.is-user:hover,#top.ih-header .login-toggle.is-user[aria-expanded=true]{background:#e4ece6}
+#top.ih-header .login-toggle.is-user span{max-width:160px;overflow:hidden;text-overflow:ellipsis}
+#top.ih-header .ih-user-menu{position:absolute;top:calc(100% + 10px);inset-inline-end:0;z-index:60;min-width:220px;padding:6px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 18px 40px -16px #06472e55}
+#top.ih-header .ih-user-head{display:grid;gap:2px;padding:10px 12px 12px;margin-bottom:4px;border-bottom:1px solid var(--line)}
+#top.ih-header .ih-user-head b{font-size:14px;color:var(--ink)}
+#top.ih-header .ih-user-head small{font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis}
+#top.ih-header .ih-user-menu a{display:block;padding:9px 12px;border-radius:10px;font-size:13.5px;font-weight:600;color:var(--ink);text-decoration:none}
+#top.ih-header .ih-user-menu a:hover{background:#f0f5f1;color:var(--green)}
+#top.ih-header .ih-user-menu a.ih-user-out{color:#b13a3a}
+#top.ih-header .ih-user-menu a.ih-user-out:hover{background:#fdecec;color:#b13a3a}
 /* --- from mega-menu.css --- */
 header#top.ih-header{position:relative;z-index:50}
 #top.ih-header nav#navigation{align-items:center;gap:0;font-size:14px;font-weight:600;height:100%}

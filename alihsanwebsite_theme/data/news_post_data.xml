@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo noupdate="1">
+    <!-- The stories of the original static News List Section, so the page keeps its content after install -->
+    <record id="news_post_partnership" model="alihsan.news.post">
+        <field name="name">New partnership agreement signed to support our programmes</field>
+        <field name="summary">Al Ihsan signed a new partnership agreement with a corporate partner to expand support for families in need.</field>
+        <field name="tag">Campaigns</field>
+        <field name="date">2026-09-18</field>
+        <field name="featured" eval="True"/>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/media-food.jpg"/>
+    </record>
+    <record id="news_post_award" model="alihsan.news.post">
+        <field name="name">Al Ihsan honoured for charitable excellence</field>
+        <field name="summary">The association received an award recognising its transparent and effective charitable work.</field>
+        <field name="tag">Awards</field>
+        <field name="date">2026-09-02</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/media-award.jpg"/>
+    </record>
+    <record id="news_post_udhiyah" model="alihsan.news.post">
+        <field name="name">Udhiyah project: tender announced</field>
+        <field name="summary">Al Ihsan announced a tender for the supply of sacrificial meat for its Udhiyah project.</field>
+        <field name="tag">Community</field>
+        <field name="date">2026-08-21</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/media-community.jpg"/>
+    </record>
+    <record id="news_post_zayed" model="alihsan.news.post">
+        <field name="name">Children and volunteers celebrate Zayed Humanitarian Day</field>
+        <field name="summary">Al Ihsan marked the day with activities that celebrate the spirit of giving.</field>
+        <field name="tag">Events</field>
+        <field name="date">2026-08-05</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/media-zayed.jpg"/>
+    </record>
+    <record id="news_post_relief" model="alihsan.news.post">
+        <field name="name">Emergency relief campaign continues</field>
+        <field name="summary">Donations continue to fund shelter, food and medical aid for affected families.</field>
+        <field name="tag">Campaigns</field>
+        <field name="date">2026-07-19</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/gaza.jpg"/>
+    </record>
+    <record id="news_post_volunteers" model="alihsan.news.post">
+        <field name="name">New volunteer programme opens registration</field>
+        <field name="summary">Registration is now open for a new programme that matches volunteers with field projects.</field>
+        <field name="tag">Community</field>
+        <field name="date">2026-07-02</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/volunteers.jpg"/>
+    </record>
+    <record id="news_post_partners" model="alihsan.news.post">
+        <field name="name">Partners meet to plan the year ahead</field>
+        <field name="summary">Partners and board members gathered to review achievements and set priorities.</field>
+        <field name="tag">Events</field>
+        <field name="date">2026-06-14</field>
+        <field name="image" type="base64" file="alihsanwebsite_theme/static/src/img/news.jpg"/>
+    </record>
+</odoo>

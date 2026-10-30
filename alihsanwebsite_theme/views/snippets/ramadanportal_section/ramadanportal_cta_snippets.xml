@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Closing call to action. On phones a floating "Join as a volunteer" pill is also shown. -->
+    <template id="ramadanportal_cta_section" name="Ramadan Portal CTA Section">
+        <section class="rm rm-sec s_rm_cta pt0 pb0">
+            <div class="rm-final-cta">
+                <div class="rm-cta-spark">✳</div>
+                <span class="rm-eyebrow">GOODNESS TRAVELS FARTHER TOGETHER</span>
+                <h2>Be the reason someone<br/>gets home <em>safely.</em></h2>
+                <a class="rm-button-light" href="/volunteer"><span>Join Ramadan Aman</span><i>↗</i></a>
+            </div>
+            <a class="rm-mobile-join" href="/volunteer"><span>Join as a volunteer</span><i>↗</i></a>
+        </section>
+    </template>
+</odoo>

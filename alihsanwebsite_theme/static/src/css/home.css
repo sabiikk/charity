@@ -1323,3 +1323,19 @@ html[dir="rtl"] .hm-sec h2,html[dir="rtl"] .hm-sec h3{letter-spacing:0px}
 .hm-btt svg{width:22px;height:22px}
 @media(max-width:600px){.hm-btt{width:42px;height:42px;inset-inline-end:14px;bottom:18px}}
 /*rtl:end:ignore*/
+
+/* ---------- hero slider: backend slides (<picture> with optional mobile image) and "Slide" transition ---------- */
+.hm-sec .campaign-slide picture{display:block;width:100%;height:100%}
+.hm-sec.ih-hero-tr-slide .campaign-slide{opacity:1;transform:translateX(100%);transition:transform 0.8s ease}
+.hm-sec.ih-hero-tr-slide .campaign-slide.is-prev{transform:translateX(-100%)}
+.hm-sec.ih-hero-tr-slide .campaign-slide.is-active{transform:none}
+[dir=rtl] .hm-sec.ih-hero-tr-slide .campaign-slide{transform:translateX(-100%)}
+[dir=rtl] .hm-sec.ih-hero-tr-slide .campaign-slide.is-prev{transform:translateX(100%)}
+[dir=rtl] .hm-sec.ih-hero-tr-slide .campaign-slide.is-active{transform:none}
+@media (prefers-reduced-motion: reduce){
+.hm-sec.ih-hero-tr-slide .campaign-slide{transition:none}
+}
+
+/* ---------- project categories: category image chosen as the card icon (backend "Use the category image") ---------- */
+.hm-sec .cat-ic{overflow:hidden}
+.hm-sec .cat-ic img{width:100%;height:100%;object-fit:cover;border-radius:50%}

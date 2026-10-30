@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="product_template_form_view_donation" model="ir.ui.view">
+        <field name="name">product.template.form.inherit.alihsan.donation</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Donation Page" name="ih_donation">
+                    <div class="d-flex align-items-center gap-3 p-3 mb-3 rounded border">
+                        <field name="ih_is_donation" widget="boolean_toggle" nolabel="1"/>
+                        <div>
+                            <div class="fw-bold">Use the Al Ihsan donation design for this product's website page</div>
+                            <div class="text-muted small">
+                                Visitors pick an amount; it is added to the cart as a quantity, so the
+                                <b>Sales Price must be 1</b> (set automatically when you switch this on).
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alert alert-warning" role="alert" invisible="not ih_is_donation or list_price == 1">
+                        The Sales Price is not 1: a donation of 100 would cost 100 × the Sales Price.
+                    </div>
+                    <group invisible="not ih_is_donation">
+                        <group string="Page Content">
+                            <field name="ih_short_description" placeholder="Build a lasting endowment whose returns support families for a lifetime..."/>
+                            <field name="public_categ_ids" widget="many2many_tags" string="Category badge"
+                                   help="The first eCommerce category is shown on the image and used for the breadcrumb and related projects."/>
+                            <field name="ih_show_related"/>
+                        </group>
+                        <group string="Funding Progress">
+                            <field name="ih_show_progress"/>
+                            <field name="ih_goal_amount" invisible="not ih_show_progress"/>
+                            <field name="ih_raised_offline" invisible="not ih_show_progress"/>
+                            <field name="ih_raised_online" invisible="not ih_show_progress"/>
+                            <field name="ih_raised_amount" string="Current (total)" invisible="not ih_show_progress" class="fw-bold"/>
+                            <field name="ih_progress" widget="progressbar" invisible="not ih_show_progress or not ih_goal_amount"/>
+                        </group>
+                        <group string="Donation Amounts">
+                            <field name="ih_default_amount"/>
+                            <field name="ih_min_amount"/>
+                            <field name="ih_max_amount"/>
+                            <field name="ih_quick_amounts" placeholder="10,15,25,50,100,200,500,1000,2500,5000"/>
+                        </group>
+                        <group string="Buttons">
+                            <field name="ih_sms_link" placeholder="sms:4040?body=1000"/>
+                            <div colspan="2" class="text-muted small">
+                                <b>Donate now</b> adds the amount to the cart and opens the cart.
+                                <b>Add to basket</b> adds it and stays on the page.
+                                <b>SMS donation</b> is shown only when the SMS link is set.
+                            </div>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

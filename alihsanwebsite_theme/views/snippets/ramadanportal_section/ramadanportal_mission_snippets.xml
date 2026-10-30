@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- "#mission" is the target of the banner's "Discover the initiative" link -->
+    <template id="ramadanportal_mission_section" name="Ramadan Portal Mission Section">
+        <section id="mission" class="rm rm-sec s_rm_mission pt0 pb0">
+            <div class="rm-section rm-mission">
+                <div class="rm-section-heading">
+                    <div>
+                        <span class="rm-eyebrow">THE PURPOSE BEHIND EVERY MEAL</span>
+                        <h2>Kindness that helps<br/><em>everyone get home safely.</em></h2>
+                    </div>
+                    <p>Ramadan Aman is a community initiative by Al Ihsan Charity Association, in partnership with the Ministry of Interior and traffic and police departments. Volunteers share iftar meals at busy intersections and help make the moments before sunset safer for everyone.</p>
+                </div>
+                <div class="rm-mission-grid">
+                    <article class="rm-mission-card rm-mission-primary">
+                        <span class="rm-card-index">01 / CARE</span>
+                        <div class="rm-mission-symbol">♡</div>
+                        <h3>Protect every life</h3>
+                        <p>Help preserve lives during iftar time, when roads are busy and every careful choice matters.</p>
+                        <span class="rm-card-orbit"/>
+                    </article>
+                    <article class="rm-mission-card">
+                        <span class="rm-card-index">02 / SAFETY</span>
+                        <div class="rm-mission-symbol">↗</div>
+                        <h3>Encourage safer driving</h3>
+                        <p>Support calm, attentive journeys and help reduce speeding and traffic accidents before iftar.</p>
+                    </article>
+                    <article class="rm-mission-card">
+                        <span class="rm-card-index">03 / COMMUNITY</span>
+                        <div class="rm-mission-symbol">✳</div>
+                        <h3>Make service a shared habit</h3>
+                        <p>Bring individuals and organisations together through practical community service and volunteer work.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

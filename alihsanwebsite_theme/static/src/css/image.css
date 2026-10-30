@@ -77,7 +77,7 @@ html[lang^=ar] .gl-sec,html[lang^=ar] .gl-lb{--gl-ff:'IBM Plex Sans Arabic','Plu
 @media(max-width:620px){.gl-grid{grid-template-columns:1fr}.gl-tools{gap:12px}.gl-sec>.container{padding-inline:14px}}
 
 /* ---------- lightbox (built by image.js) ---------- */
-.gl-lb{position:fixed;inset:0;z-index:1100;background:#04281bf0;display:flex;align-items:center;justify-content:center;gap:16px;padding:20px;animation:glLbIn .3s ease both}
+.gl-lb{position:fixed;inset:0;z-index:1100;background:rgba(4,40,27,0.94);display:flex;align-items:center;justify-content:center;gap:16px;padding:20px;animation:glLbIn .3s ease both}
 @keyframes glLbIn{from{opacity:0}}
 .gl-lb figure{margin:0;max-width:min(980px,86vw);text-align:center;color:#fff}
 .gl-lb img{max-width:100%;max-height:78vh;border-radius:14px;box-shadow:0 30px 70px #0008}

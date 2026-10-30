@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--
+        Story page opened by "Read more" in the News List Section (port of
+        media-details.html?type=news of "Al Ihsan web 8"). Rendered by /news/<slug>
+        (controllers/main.py): title, image, date, share links, the full story
+        (editable here in the website editor, or in Website > Site > Content > News /
+        the dashboard), then the other news of the same year, 6 per page.
+    -->
+    <template id="news_detail_page" name="News Story Page">
+        <t t-call="website.layout">
+            <t t-set="additional_title" t-value="post.name"/>
+            <t t-set="ih_img" t-value="website.image_url(post, 'image')"/>
+            <t t-set="ih_chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></t>
+            <t t-set="ih_cal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></t>
+            <div id="wrap" class="md-page">
+                <div class="container">
+                    <nav class="md-crumb" aria-label="Breadcrumb">
+                        <ol>
+                            <li><a href="/">Home</a></li>
+                            <li><t t-out="ih_chev"/><a t-att-href="list_url">News</a></li>
+                            <li><t t-out="ih_chev"/><span aria-current="page">News details</span></li>
+                        </ol>
+                    </nav>
+                    <article class="md-article">
+                        <h1 class="md-title" t-field="post.name"/>
+                        <figure class="md-hero" t-attf-style="--bg: url('#{ih_img}')"><img t-att-src="ih_img" t-att-alt="post.name"/></figure>
+                        <div class="md-wrap">
+                            <aside class="md-share">
+                                <span>Share this:</span>
+                                <a t-attf-href="https://twitter.com/intent/tweet?url=#{ih_share}" target="_blank" rel="noopener" aria-label="Share on X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.8 3h3.1l-6.8 7.8L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.3-8.3L1.9 3h6.4l4.4 5.8zm-1.1 16.2h1.7L7.4 4.7H5.5z"/></svg></a>
+                                <a t-attf-href="https://www.linkedin.com/sharing/share-offsite/?url=#{ih_share}" target="_blank" rel="noopener" aria-label="Share on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.2 0-2.8-1.8-2.8s-2 1.3-2 2.7V21h-4z"/></svg></a>
+                                <a t-attf-href="https://www.facebook.com/sharer/sharer.php?u=#{ih_share}" target="_blank" rel="noopener" aria-label="Share on Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.2h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.4c-.3 0-1.3-.1-2.5-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7.5V13h2.7v8z"/></svg></a>
+                                <a class="md-ig" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Copy the link and open Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r=".9" fill="currentColor" stroke="none"/></svg></a>
+                            </aside>
+                            <div class="md-content">
+                                <div class="md-info">
+                                    <span><t t-out="ih_cal"/><b>Held on:</b> <time t-att-datetime="post.date" t-out="format_date(post.date)"/></span>
+                                </div>
+                                <div class="md-body">
+                                    <div t-if="post.body or editable" t-field="post.body"/>
+                                    <p t-elif="post.summary" t-out="post.summary"/>
+                                </div>
+                                <a class="md-back" t-att-href="list_url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Back to News</span></a>
+                            </div>
+                        </div>
+                    </article>
+                    <section class="md-other" id="md-other">
+                        <h2>Other News of <em t-out="year"/></h2>
+                        <div t-if="others" class="md-grid">
+                            <t t-foreach="others" t-as="other">
+                                <t t-set="other_link" t-value="other._ih_link()"/>
+                                <article class="md-card">
+                                    <a class="md-cimg" t-att-href="other_link[0]" t-att-target="other_link[1] and '_blank'" t-att-rel="other_link[1] and 'noopener'">
+                                        <img t-att-src="website.image_url(other, 'image', size='1024x1024')" t-att-alt="other.name" loading="lazy"/>
+                                        <span class="md-ov"><b>Read more</b></span>
+                                    </a>
+                                    <div class="md-meta"><span><t t-out="ih_cal"/>Held on: <t t-out="format_date(other.date)"/></span></div>
+                                    <h3><a t-att-href="other_link[0]" t-att-target="other_link[1] and '_blank'" t-att-rel="other_link[1] and 'noopener'" t-out="other.name"/></h3>
+                                    <p t-if="other.summary" t-out="other.summary"/>
+                                    <a class="md-all" t-att-href="other_link[0]" t-att-target="other_link[1] and '_blank'" t-att-rel="other_link[1] and 'noopener'">Read all <t t-out="ih_chev"/></a>
+                                </article>
+                            </t>
+                        </div>
+                        <p t-else="" class="md-none">No other news this year.</p>
+                        <nav t-if="pages &gt; 1" class="md-pager" aria-label="Pagination">
+                            <a t-attf-href="?page=#{page - 1}#md-other" t-att-class="'off' if page == 1 else None"
+                               t-att-aria-disabled="'true' if page == 1 else None" aria-label="Previous page">‹</a>
+                            <t t-foreach="range(1, pages + 1)" t-as="p">
+                                <a t-attf-href="?page=#{p}#md-other" t-att-class="'on' if p == page else None"
+                                   t-att-aria-current="'page' if p == page else None" t-out="p"/>
+                            </t>
+                            <a t-attf-href="?page=#{page + 1}#md-other" t-att-class="'off' if page == pages else None"
+                               t-att-aria-disabled="'true' if page == pages else None" aria-label="Next page">›</a>
+                        </nav>
+                    </section>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

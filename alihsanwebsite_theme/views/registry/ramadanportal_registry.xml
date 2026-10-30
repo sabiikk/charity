@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="ramadanportal_snippets" inherit_id="website.snippets" name="Ramadan Portal Snippets">
+        <!--       Group Creation         -->
+        <xpath expr="//snippets[@id='snippet_groups']" position="inside">
+            <t snippet-group="ramadanportalgroup" t-snippet="website.s_snippet_group" string="Ramadan Portal"/>
+        </xpath>
+
+        <!--       Adding Snippets Into The Group         -->
+        <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+            <t t-snippet="alihsanwebsite_theme.ramadanportal_banner_section" string="Ramadan Portal Banner Section" group="ramadanportalgroup"/>
+            <t t-snippet="alihsanwebsite_theme.ramadanportal_mission_section" string="Ramadan Portal Mission Section" group="ramadanportalgroup"/>
+            <t t-snippet="alihsanwebsite_theme.ramadanportal_volunteer_section" string="Ramadan Portal Volunteer Section" group="ramadanportalgroup"/>
+            <t t-snippet="alihsanwebsite_theme.ramadanportal_quote_section" string="Ramadan Portal Quote Section" group="ramadanportalgroup"/>
+            <t t-snippet="alihsanwebsite_theme.ramadanportal_guide_section" string="Ramadan Portal Guide Section" group="ramadanportalgroup"/>
+            <t t-snippet="alihsanwebsite_theme.ramadanportal_faq_section" string="Ramadan Portal FAQ Section" group="ramadanportalgroup"/>
+            <t t-snippet="alihsanwebsite_theme.ramadanportal_cta_section" string="Ramadan Portal CTA Section" group="ramadanportalgroup"/>
+            <t t-snippet="alihsanwebsite_theme.connect_section" string="Social &amp; Feedback CTA" group="ramadanportalgroup"/>
+        </xpath>
+    </template>
+</odoo>

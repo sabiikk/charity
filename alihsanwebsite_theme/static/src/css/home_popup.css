@@ -1,0 +1,55 @@
+/* Home page "Featured project" popup (from .project-modal of concept.css / responsive.css of "Al Ihsan web 8") */
+.ih-popup{--deep:#06472e;--gold:#d9b564;--green:#009746;padding:0;border:0;border-radius:22px;max-width:900px;width:calc(100% - 32px);overflow:hidden;color:#fffdf8;font-family:'Plus Jakarta Sans','IBM Plex Sans Arabic','Noto Sans Arabic',system-ui,sans-serif;box-shadow:0 30px 80px #0006}
+html[lang^=ar] .ih-popup{font-family:'IBM Plex Sans Arabic','Plus Jakarta Sans','Noto Sans Arabic',system-ui,sans-serif}
+.ih-popup[open]{display:grid;grid-template-columns:42% 1fr;animation:ip-in .35s ease}
+.ih-popup::backdrop{background:#0b241dcc;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+@keyframes ip-in{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+.ih-popup .ip-close{position:absolute;z-index:2;top:14px;inset-inline-end:14px;width:36px;height:36px;padding:0;border-radius:50%;border:1.5px solid #ffffff40;background:#ffffff1f;cursor:pointer;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);transition:background .2s,border-color .2s,transform .25s}
+.ih-popup .ip-close:before,.ih-popup .ip-close:after{content:'';position:absolute;top:50%;left:50%;width:14px;height:2px;border-radius:2px;background:#fff;transition:background .2s}
+.ih-popup .ip-close:before{transform:translate(-50%,-50%) rotate(45deg)}
+.ih-popup .ip-close:after{transform:translate(-50%,-50%) rotate(-45deg)}
+.ih-popup .ip-close:hover{background:var(--gold);border-color:var(--gold);transform:rotate(90deg)}
+.ih-popup .ip-close:hover:before,.ih-popup .ip-close:hover:after{background:var(--deep)}
+.ih-popup .ip-close:focus{outline:none}
+.ih-popup .ip-close:focus-visible{box-shadow:0 0 0 3px #ffffff59}
+.ih-popup .ip-media{position:relative;margin:0;min-height:260px;background:#eef2ec}
+.ih-popup .ip-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ih-popup .ip-body{background:var(--deep);padding:36px 32px;display:flex;flex-direction:column;gap:16px;overflow-y:auto;max-height:85vh}
+.ih-popup .ip-eyebrow{font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold)}
+.ih-popup h2{margin:0;padding-inline-end:36px;color:#fffdf8;font-size:25px;font-weight:700;font-family:Manrope,'Noto Sans Arabic',sans-serif;letter-spacing:-.4px;line-height:1.25}
+.ih-popup .ip-progress{display:flex;flex-direction:column;gap:9px;margin-top:4px}
+.ih-popup .ip-labels{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+.ih-popup .ip-labels small{display:block;margin-bottom:3px;color:#9fb8a9;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em}
+.ih-popup .ip-labels strong{font-size:16px;font-weight:700}
+.ih-popup .ip-labels em{font-style:normal;font-size:12px;font-weight:500;color:#cfe1d7}
+.ih-popup .ip-goal{text-align:end}
+.ih-popup .ip-bar{position:relative;height:6px;background:#ffffff22;border-radius:999px;overflow:hidden}
+.ih-popup .ip-bar i{display:block;height:100%;min-width:6px;background:var(--gold);border-radius:999px}
+.ih-popup .ip-pct{align-self:flex-end;font-size:11.5px;color:var(--gold);font-weight:700}
+.ih-popup .ip-body>p{margin:0;font-size:14px;line-height:1.75;color:#cfe1d7;white-space:pre-line}
+.ih-popup .ip-amounts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:4px}
+.ih-popup .ip-chip{display:flex;align-items:center;justify-content:center;gap:6px;height:46px;padding:0 8px;border-radius:999px;border:1.5px solid #ffffff30;background:transparent;color:#fff;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+.ih-popup .ip-chip:hover{border-color:#ffffff80}
+.ih-popup .ip-chip svg{flex:none;width:14px;height:14px;color:var(--gold);transition:color .2s}
+.ih-popup .ip-chip em{font-style:normal;color:var(--gold)}
+.ih-popup .ip-chip.selected{background:#fff;color:var(--deep);border-color:#fff}
+.ih-popup .ip-chip.selected svg{color:var(--deep)}
+.ih-popup .ip-actions{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:8px;flex-wrap:wrap}
+.ih-popup .ip-explore{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--gold);text-decoration:underline;text-underline-offset:4px}
+.ih-popup .ip-explore:hover{color:#fff}
+.ih-popup .ip-explore svg{width:13px;height:13px}
+html[dir=rtl] .ih-popup .ip-explore svg{transform:scaleX(-1)}
+.ih-popup .ip-donate{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 26px;border-radius:7px;background:var(--green);color:#fff;font-size:14px;font-weight:700;white-space:nowrap;text-decoration:none;transition:transform .2s,background .2s}
+.ih-popup .ip-donate:hover{background:#008a40;color:#fff;transform:translateY(-2px)}
+.ih-popup .ip-donate svg{width:16px;height:16px}
+.ih-popup .ip-donate.is-busy{opacity:.7;pointer-events:none}
+@media(max-width:700px){
+  .ih-popup[open]{grid-template-columns:minmax(0,1fr);max-height:92vh;overflow-y:auto}
+  .ih-popup .ip-media{min-height:170px;max-height:200px}
+  .ih-popup .ip-body{padding:26px 20px;max-height:none;overflow:visible}
+  .ih-popup .ip-chip{padding:0 6px;font-size:13px}
+  .ih-popup .ip-close{z-index:5;top:12px;inset-inline-end:12px;width:38px;height:38px;background:#06472ee6;border-color:#ffffff80;box-shadow:0 4px 12px #0006;-webkit-backdrop-filter:none;backdrop-filter:none}
+  .ih-popup .ip-close:before,.ih-popup .ip-close:after{width:15px}
+  .ih-popup h2{padding-inline-end:0;font-size:22px}
+}
+@media(prefers-reduced-motion:reduce){.ih-popup[open]{animation:none}}

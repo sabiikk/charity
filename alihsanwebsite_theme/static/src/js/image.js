@@ -1,16 +1,28 @@
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 import { Interaction } from "@web/public/interaction";
+import { rpc } from "@web/core/network/rpc";
 
 /**
  * Image + Video gallery snippets (port of image.js / video.js; video cards are
- * .vd-card with an optional data-src and open in the video stage). Public interactions are not
+ * .vd-card with an optional data-src and open in the video stage). The cards
+ * come from the backend (dashboard > Website > Media Center); the static cards
+ * of the snippet are only shown if they cannot be loaded. Public interactions are not
  * started in the website editor (so editors see every card, unpaginated), and
  * every change made here is undone in cleanups, so no runtime state is saved.
  */
 
 const PER_PAGE = 6;
 const isRtl = () => document.documentElement.dir === "rtl";
+
+export const esc = (text) =>
+    String(text ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+const SVG = (paths) =>
+    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${paths}</svg>`;
+export const DATE_ICON = SVG('<rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/>');
+const PHOTO_ICON = SVG('<rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><path d="m4 18 5-5 4 4 3-3 4 4"/>');
+const ZOOM_ICON = SVG('<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/>');
+const PLAY_ICON = SVG('<path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/>');
 
 /** Blocks marked .gl-fade fade in as they scroll into view. */
 export class GalleryReveal extends Interaction {
@@ -82,7 +94,13 @@ export class Gallery extends Interaction {
     // event grids are handled by EventGallery (event.js), a subclass
     static selectorNotHas = ".ev-card";
 
+    /** Backend source of the cards: /alihsan/media_center/<kind> */
+    get kind() {
+        return this.el.classList.contains("s_vd_gallery") ? "videos" : "images";
+    }
+
     setup() {
+        this.grid = this.el.querySelector(".gl-grid");
         this.cards = [...this.el.querySelectorAll(".gl-card")];
         this.pager = this.el.querySelector(".gl-pager");
         this.empty = this.el.querySelector(".gl-empty");
@@ -95,7 +113,46 @@ export class Gallery extends Interaction {
         this.lightbox = null;
     }
 
+    async willStart() {
+        try {
+            this.items = await this.waitFor(rpc(`/alihsan/media_center/${this.kind}`));
+        } catch {
+            this.items = null; // keep the static cards
+        }
+    }
+
+    /**
+     * Replace the static cards with the backend ones (same markup); the
+     * original cards are put back on cleanup so the editor never saves them.
+     */
+    renderItems() {
+        if (this.rendered || !this.items || !this.grid) {
+            return;
+        }
+        this.rendered = true;
+        const oldCards = [...this.grid.childNodes];
+        this.grid.innerHTML = this.items.map((item) => this.cardHtml(item)).join("");
+        this.cards = this.matches = [...this.grid.querySelectorAll(".gl-card")];
+        this.registerCleanup(() => this.grid.replaceChildren(...oldCards));
+    }
+
+    cardHtml(item) {
+        const title = esc(item.title);
+        const date = `<span>${DATE_ICON}<span>${esc(_t("Held on:"))}</span> <time datetime="${esc(item.date)}">${esc(item.dateLabel)}</time></span>`;
+        if (this.kind === "videos") {
+            return `<article class="gl-card vd-card gl-fade" data-src="${esc(item.src)}" data-embed="${esc(item.embed)}">
+                <button class="gl-img" type="button" aria-label="${esc(_t("Play video:"))} ${title}"><img src="${esc(item.image)}" alt="${title}" loading="lazy"/><span class="vd-play">${PLAY_ICON}</span></button>
+                <div class="gl-meta">${date}</div><h3>${title}</h3></article>`;
+        }
+        const count = esc(_t("%s photo(s)", item.photos.length));
+        return `<article class="gl-card gl-fade" data-photos="${esc(JSON.stringify(item.photos))}">
+            <button class="gl-img" type="button" aria-label="${esc(_t("Open gallery:"))} ${title}"><img src="${esc(item.image)}" alt="${title}" loading="lazy"/><span class="gl-zoom">${ZOOM_ICON}</span></button>
+            <div class="gl-meta">${date}<span>${PHOTO_ICON}<span>${esc(_t("Gallery:"))}</span> <span>${count}</span></span></div>
+            <h3>${title}</h3></article>`;
+    }
+
     start() {
+        this.renderItems();
         this.fillYears();
         if (this.search) {
             this.addListener(this.search, "input", () => this.render(1));
@@ -233,8 +290,8 @@ export class Gallery extends Interaction {
         lb.querySelector(".gl-a.prev").setAttribute("aria-label", _t("Previous"));
         lb.querySelector(".gl-a.next").setAttribute("aria-label", _t("Next"));
         this.addListener(lb.querySelector(".gl-x"), "click", this.closeLightbox);
-        this.addListener(lb.querySelector(".gl-a.prev"), "click", () => this.openLightbox(this.current - 1));
-        this.addListener(lb.querySelector(".gl-a.next"), "click", () => this.openLightbox(this.current + 1));
+        this.addListener(lb.querySelector(".gl-a.prev"), "click", () => this.step(-1));
+        this.addListener(lb.querySelector(".gl-a.next"), "click", () => this.step(1));
         this.addListener(lb, "click", (ev) => ev.target === lb && this.closeLightbox());
         document.body.appendChild(lb);
         return lb;
@@ -250,6 +307,9 @@ export class Gallery extends Interaction {
         const card = this.matches[this.current];
         const src = card.querySelector("img");
         const isVideo = card.classList.contains("vd-card");
+        // backend galleries: the lightbox shows the gallery's own photos
+        this.photos = card.dataset.photos ? JSON.parse(card.dataset.photos) : [];
+        this.photo = 0;
         const img = this.lightbox.querySelector(".gl-lb-img");
         const stage = this.lightbox.querySelector(".vd-stage");
         this.lightbox.classList.toggle("vd-lb", isVideo);
@@ -257,26 +317,55 @@ export class Gallery extends Interaction {
         stage.classList.toggle("d-none", !isVideo);
         if (isVideo) {
             const videoSrc = card.dataset.src;
+            const embed = card.dataset.embed;
             this.lightbox.querySelector(".vd-soon img").src = src.src;
-            stage.classList.toggle("has", !!videoSrc);
-            if (videoSrc) {
+            stage.classList.toggle("has", !!(videoSrc || embed));
+            stage.classList.toggle("is-embed", !!embed);
+            if (embed) {
+                // YouTube, Vimeo... player
+                const iframe = document.createElement("iframe");
+                iframe.src = embed;
+                iframe.allow = "autoplay; encrypted-media; fullscreen; picture-in-picture";
+                iframe.allowFullscreen = true;
+                iframe.title = card.querySelector("h3")?.textContent || "";
+                stage.appendChild(iframe);
+            } else if (videoSrc) {
                 const video = stage.querySelector("video");
                 video.src = videoSrc;
                 video.play().catch(() => {});
             }
         } else {
-            img.src = src.src;
+            img.src = this.photos[0] || src.src;
             img.alt = src.alt;
         }
-        const caption = this.lightbox.querySelector("figcaption");
-        const small = document.createElement("small");
-        small.textContent = `${this.current + 1} / ${this.matches.length}`;
-        caption.replaceChildren(card.querySelector("h3")?.textContent || "", small);
+        this.updateCaption();
         this.lightbox.classList.remove("d-none");
         document.body.style.overflow = "hidden";
     }
 
+    updateCaption() {
+        const card = this.matches[this.current];
+        const caption = this.lightbox.querySelector("figcaption");
+        const small = document.createElement("small");
+        small.textContent = this.photos.length > 1
+            ? `${this.photo + 1} / ${this.photos.length}`
+            : `${this.current + 1} / ${this.matches.length}`;
+        caption.replaceChildren(card.querySelector("h3")?.textContent || "", small);
+    }
+
+    /** Previous / next: the photos of a backend gallery, otherwise the cards. */
+    step(direction) {
+        if (this.photos?.length > 1) {
+            this.photo = (this.photo + direction + this.photos.length) % this.photos.length;
+            this.lightbox.querySelector(".gl-lb-img").src = this.photos[this.photo];
+            this.updateCaption();
+        } else {
+            this.openLightbox(this.current + direction);
+        }
+    }
+
     stopVideo() {
+        this.lightbox?.querySelector(".vd-stage iframe")?.remove();
         const video = this.lightbox?.querySelector("video");
         if (video?.getAttribute("src")) {
             video.pause();
@@ -301,9 +390,9 @@ export class Gallery extends Interaction {
         if (ev.key === "Escape") {
             this.closeLightbox();
         } else if (ev.key === "ArrowRight") {
-            this.openLightbox(this.current + step);
+            this.step(step);
         } else if (ev.key === "ArrowLeft") {
-            this.openLightbox(this.current - step);
+            this.step(-step);
         }
     }
 }

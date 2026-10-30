@@ -1,6 +1,6 @@
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
-import { Gallery } from "@alihsanwebsite_theme/js/image";
+import { DATE_ICON, esc, Gallery } from "@alihsanwebsite_theme/js/image";
 
 const ICONS = {
     date: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>',
@@ -8,6 +8,8 @@ const ICONS = {
     loc: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>',
     ticket: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 0 0 6v3h18v-3a2 2 0 0 1 0-6V6H3z"/><path d="M13 6v12" stroke-dasharray="2 2"/></svg>',
 };
+
+const ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 
 /**
  * Event snippets (port of event.js): the image gallery (search, year filter,
@@ -19,6 +21,10 @@ export class EventGallery extends Gallery {
     static selectorHas = ".ev-card";
     static selectorNotHas = "";
 
+    get kind() {
+        return "events";
+    }
+
     setup() {
         super.setup();
         this.status = "all";
@@ -26,7 +32,19 @@ export class EventGallery extends Gallery {
         this.filterButtons = [...document.querySelectorAll(".gl-sec .ev-filter .nw-chip[data-f]")];
     }
 
+    cardHtml(item) {
+        const title = esc(item.title);
+        return `<article class="gl-card ev-card gl-fade" data-donate-url="${esc(item.donateUrl)}">
+            <button class="gl-img" type="button" aria-label="${esc(_t("Details:"))} ${title}"><img src="${esc(item.image)}" alt="${title}" loading="lazy"/><span class="ev-date"><b>${esc(item.day)}</b><small>${esc(item.month)}</small></span><span class="ev-status"></span></button>
+            <div class="gl-meta"><span>${DATE_ICON}<time datetime="${esc(item.date)}">${esc(item.dateLabel)}</time></span>${item.time ? `<span>${ICONS.time}<span>${esc(item.time)}</span></span>` : ""}</div>
+            ${item.location ? `<div class="ev-loc">${ICONS.loc}<span>${esc(item.location)}</span></div>` : ""}
+            <h3>${title}</h3>
+            ${item.description ? `<p class="ev-d">${esc(item.description)}</p>` : ""}
+            <button class="ev-more nw-more" type="button"><span>${esc(_t("View details"))}</span>${ARROW}</button></article>`;
+    }
+
     start() {
+        this.renderItems();
         this.markStatuses();
         for (const button of this.filterButtons) {
             this.addListener(button, "click", () => {
@@ -41,9 +59,15 @@ export class EventGallery extends Gallery {
         super.start();
     }
 
-    /** The visible date wins (it is what editors change); fall back to datetime="". */
+    /**
+     * The visible date wins (it is what editors change in static cards); fall
+     * back to datetime="". Backend cards: datetime="" (the label may be Arabic).
+     */
     dateOf(card) {
         const time = card.querySelector("time");
+        if (this.rendered) {
+            return new Date(`${time?.getAttribute("datetime")}T00:00`);
+        }
         let date = new Date((time?.textContent || "").trim());
         if (isNaN(date)) {
             date = new Date(time?.getAttribute("datetime") || "");
@@ -92,7 +116,8 @@ export class EventGallery extends Gallery {
         lb.innerHTML = `<button type="button" class="gl-x">×</button><div class="ev-modal"><img alt=""/><div class="ev-mb"><span class="ev-status"></span><h3></h3><ul><li>${ICONS.date}<span class="m-date"></span></li><li>${ICONS.time}<span class="m-time"></span></li><li>${ICONS.loc}<span class="m-loc"></span></li></ul><p></p><a class="ev-donate">${ICONS.ticket}<span></span></a></div></div>`;
         lb.querySelector(".gl-x").setAttribute("aria-label", _t("Close"));
         const donate = lb.querySelector(".ev-donate");
-        donate.href = this.el.dataset.donateUrl || "/shop";
+        this.donateDefault = this.el.dataset.donateUrl || "/shop";
+        donate.href = this.donateDefault;
         donate.querySelector("span").textContent = _t("Donate to support");
         this.addListener(lb.querySelector(".gl-x"), "click", this.closeLightbox);
         this.addListener(lb, "click", (ev) => ev.target === lb && this.closeLightbox());
@@ -119,6 +144,12 @@ export class EventGallery extends Gallery {
         lb.querySelector(".m-date").textContent = text("time");
         lb.querySelector(".m-time").textContent = text(".gl-meta>span:nth-child(2)");
         lb.querySelector(".m-loc").textContent = text(".ev-loc span");
+        // hide the time / place lines the event does not have
+        for (const sel of [".m-time", ".m-loc"]) {
+            const line = lb.querySelector(sel);
+            line.parentElement.classList.toggle("d-none", !line.textContent);
+        }
+        lb.querySelector(".ev-donate").href = card.dataset.donateUrl || this.donateDefault;
         lb.querySelector(".ev-mb>p").textContent = text(".ev-d");
         lb.classList.remove("d-none");
         document.body.style.overflow = "hidden";

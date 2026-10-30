@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- /shop header: banner (style of the News header) + category tabs (style of the Direct Donation tabs) -->
+    <template id="shop_projects_header" inherit_id="website_sale.products" name="Al Ihsan Shop Header">
+        <!-- the Al Ihsan banner and category tabs replace Odoo's left column (categories, price
+             range, attribute filters), the category filmstrip, the "All products" / category title
+             and the search / sort toolbar -->
+        <xpath expr="//t[@t-set='hasLeftColumn']" position="before">
+            <t t-set="opt_wsale_categories" t-value="False"/>
+            <t t-set="opt_wsale_attributes" t-value="False"/>
+            <t t-set="opt_wsale_filter_price" t-value="False"/>
+            <t t-set="opt_wsale_categories_top" t-value="False"/>
+            <t t-set="opt_wsale_attributes_top" t-value="False"/>
+            <t t-set="opt_wsale_show_shop_title" t-value="False"/>
+            <t t-set="opt_wsale_show_category_title" t-value="False"/>
+            <t t-set="opt_wsale_floating_bar" t-value="False"/>
+        </xpath>
+        <!-- search / sort / layout toolbar: the banner has its own search -->
+        <xpath expr="//div[hasclass('products_header')]" position="attributes">
+            <attribute name="t-if">False</attribute>
+        </xpath>
+        <xpath expr="//h1[hasclass('o_wsale_shop_title')]" position="replace"/>
+        <xpath expr="//div[@id='oe_structure_website_sale_products_1']" position="after">
+            <t t-call="alihsanwebsite_theme.shop_projects_banner"/>
+        </xpath>
+    </template>
+
+    <template id="shop_projects_banner" name="Shop Projects Banner">
+        <t t-set="ih_cats" t-value="website._ih_shop_categories()"/>
+        <t t-set="ih_active_cats" t-value="category and category.parents_and_self or category"/>
+        <t t-set="ih_search_action" t-value="category and '/shop/category/%s' % slug(category) or '/shop'"/>
+        <section class="nw-sec ih-shop-head pt16 pb0">
+            <div class="container">
+                <div class="mc-crumb" role="navigation" aria-label="Breadcrumb">
+                    <ol>
+                        <li><a href="/">Home</a></li>
+                        <li t-if="category"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><a href="/shop">Projects &amp; Campaigns</a></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><span aria-current="page" t-out="category.name if category else 'Projects &amp; Campaigns'"/></li>
+                    </ol>
+                </div>
+                <div class="pj-head">
+                    <div class="pj-head-row">
+                        <div>
+                            <h2 class="pj-title" t-out="category.name if category else 'Our Projects'"/>
+                            <p class="pj-sub">Pick a category or search for a specific project.</p>
+                        </div>
+                        <form class="pj-search" role="search" method="get" t-att-action="ih_search_action">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                            <input type="search" name="search" t-att-value="search" placeholder="Search projects…" aria-label="Search projects"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section t-if="ih_cats" class="dn-sec ih-shop-tabs pt0 pb0">
+            <div class="container">
+                <div class="pj-tabs-wrap dn-tabswrap">
+                    <button type="button" class="pj-arrow prev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+                    <div class="pj-tabs">
+                        <a t-attf-class="pj-tab dn-pill #{'' if category else 'selected'}" data-tab="all" href="/shop">
+                            <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
+                            <span>All Projects</span>
+                        </a>
+                        <t t-foreach="ih_cats" t-as="ih_cat">
+                            <a t-attf-class="pj-tab dn-pill #{'selected' if ih_cat in ih_active_cats else ''}"
+                               t-att-data-tab="'cat-%s' % ih_cat.id"
+                               t-attf-href="/shop/category/#{slug(ih_cat)}">
+                                <span class="ti" t-out="ih_cat._ih_home_icon_markup(website.image_url(ih_cat, 'image_128'))"/>
+                                <span t-out="ih_cat.name"/>
+                            </a>
+                        </t>
+                    </div>
+                    <button type="button" class="pj-arrow next" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

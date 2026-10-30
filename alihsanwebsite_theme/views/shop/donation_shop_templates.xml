@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- /shop: donation products are listed as Al Ihsan project cards, other products keep the grid -->
+    <template id="products_donation_cards" inherit_id="website_sale.products" name="Al Ihsan Donation Cards">
+        <xpath expr="//div[hasclass('o_wsale_products_grid_table_wrapper')]" position="replace">
+            <t t-set="ih_donations" t-value="products.filtered('ih_is_donation')"/>
+            <div t-if="ih_donations" class="pj-list ih-pj-list">
+                <t t-foreach="ih_donations" t-as="ih_product">
+                    <t t-call="alihsanwebsite_theme.donation_product_card"/>
+                </t>
+            </div>
+            <t t-if="len(ih_donations) &lt; len(products)">$0</t>
+        </xpath>
+        <xpath expr="//t[@t-foreach='tr_product']/t[@t-if='td_product']" position="attributes">
+            <attribute name="t-if">td_product and not td_product['product'].ih_is_donation</attribute>
+        </xpath>
+    </template>
+
+    <!-- Project card ("pjd" card of Projects & Campaigns.html of "Al Ihsan web 8"): photo with the category
+         chip, title and short text | the same Donation Value panel as the product page. donation_product.js
+         (selector .ih-donation) runs the panel; on phones: photo, title, panel, then the text. -->
+    <template id="donation_product_card" name="Donation Product Card">
+        <t t-set="ih_card_cat" t-value="ih_product.public_categ_ids.filtered(lambda c: not c.website_id or c.website_id == website)[:1]"/>
+        <t t-set="ih_card_url" t-value="ih_product.website_url"/>
+        <t t-set="ih_card_desc" t-value="ih_product.ih_short_description or ih_product.description_sale"/>
+        <t t-set="ih_currency" t-value="website.currency_id.name"/>
+        <article class="pj-card pjd ih-donation"
+                 t-att-data-product-template-id="ih_product.id"
+                 t-att-data-product-id="ih_product.product_variant_id.id"
+                 t-att-data-min="ih_product.ih_min_amount"
+                 t-att-data-max="ih_product.ih_max_amount"
+                 t-att-data-default="ih_product.ih_default_amount"
+                 t-att-data-currency="ih_currency">
+            <div class="pjd-info">
+                <figure class="pd-photo pjd-photo">
+                    <a class="pj-img" t-att-href="ih_card_url">
+                        <img t-att-src="website.image_url(ih_product, 'image_1024')" t-att-alt="ih_product.name" loading="lazy"/>
+                    </a>
+                    <span t-if="ih_card_cat" class="pd-chip" t-out="ih_card_cat.name"/>
+                </figure>
+                <div class="pj-body">
+                    <h3><a t-att-href="ih_card_url" t-out="ih_product.name"/></h3>
+                    <p class="pd-desc"><span t-if="ih_card_desc" t-out="ih_card_desc"/><a t-att-href="ih_card_url">Read More</a></p>
+                </div>
+            </div>
+            <t t-call="alihsanwebsite_theme.donation_panel">
+                <t t-set="ih_panel_class" t-value="'pjd-panel'"/>
+            </t>
+        </article>
+    </template>
+    <!-- Donation Value panel of the project cards (same markup as the panel of the product page in
+         donation_product_templates.xml): amount, slider, quick amounts, Donate now / SMS / Add to basket.
+         Run by donation_product.js inside .ih-donation. Uses ih_product, ih_currency and ih_panel_class. -->
+    <template id="donation_panel" name="Donation Panel">
+        <aside t-attf-class="pd-panel #{ih_panel_class or ''}" aria-label="Donation">
+            <div class="pd-head">
+                <span class="pd-hi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></span>
+                <div><h4>Donation Value</h4><small>Pick an amount or enter your own</small></div>
+            </div>
+            <div class="pd-amount">
+                <button type="button" class="pd-step pd-minus" aria-label="Decrease">−</button>
+                <label class="pd-big"><span t-out="ih_currency"/><input type="number" class="pd-amt" inputmode="numeric"
+                       t-att-min="ih_product.ih_min_amount" t-att-max="ih_product.ih_max_amount" t-att-value="ih_product.ih_default_amount"
+                       t-attf-aria-label="Amount in {{ ih_currency }}"/></label>
+                <button type="button" class="pd-step pd-plus" aria-label="Increase">+</button>
+            </div>
+            <div class="pd-slider">
+                <input type="range" class="pd-range" t-att-min="ih_product.ih_min_amount" t-att-max="ih_product.ih_max_amount"
+                       t-att-value="ih_product.ih_default_amount" aria-label="Donation value"/>
+                <div class="pd-ticks"><t t-foreach="ih_product._ih_get_slider_ticks()" t-as="tick"><span t-out="tick"/></t></div>
+            </div>
+            <t t-set="quick_amounts" t-value="ih_product._ih_get_quick_amounts()"/>
+            <t t-if="quick_amounts">
+                <p class="pd-label">Quick amounts</p>
+                <div class="pd-chips">
+                    <t t-foreach="quick_amounts" t-as="quick">
+                        <button type="button" t-att-data-v="quick" t-out="'{:,}'.format(quick)"/>
+                    </t>
+                </div>
+            </t>
+            <button type="button" class="pj-donate pd-go pd-donate w-100">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#fff"/><path d="M12 18s-5.5-3.3-5.5-7a3 3 0 0 1 5.5-1.6A3 3 0 0 1 17.5 11c0 3.7-5.5 7-5.5 7z" fill="#00705a"/></svg>
+                <span>Donate now · <b class="pd-sum"><t t-out="ih_currency"/> <t t-out="ih_product.ih_default_amount"/></b></span>
+            </button>
+            <div t-attf-class="pd-sec #{'' if ih_product.ih_sms_link else 'pd-sec-single'}">
+                <a t-if="ih_product.ih_sms_link" class="pj-sms" t-att-href="ih_product.ih_sms_link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M9 12h.01M12 12h.01M15 12h.01"/></svg>
+                    <span>SMS donation</span>
+                </a>
+                <button class="pd-cartbtn pd-cart" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 10h9.2L19 7"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/><path d="M13 5v5M10.5 7.5h5"/></svg>
+                    <span>Add to basket</span>
+                </button>
+            </div>
+        </aside>
+    </template>
+</odoo>
